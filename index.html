@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="theme-color" content="#4f46e5">
+<title>Estudo de Inglês - Prova</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+  html, body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+    min-height: 100vh;
+    color: #1f2937;
+    -webkit-font-smoothing: antialiased;
+  }
+  .app {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 16px;
+    min-height: 100vh;
+  }
+  .card {
+    background: #fff;
+    border-radius: 20px;
+    padding: 24px 20px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+    margin-bottom: 16px;
+  }
+  h1 {
+    font-size: 1.6rem;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 4px;
+    font-weight: 800;
+  }
+  .subtitle {
+    text-align: center;
+    color: rgba(255,255,255,0.85);
+    margin-bottom: 24px;
+    font-size: 0.95rem;
+  }
+  h2 {
+    font-size: 1.2rem;
+    color: #4f46e5;
+    margin-bottom: 12px;
+  }
+  p { line-height: 1.5; }
+  .topics-list {
+    list-style: none;
+    margin: 16px 0;
+  }
+  .topics-list li {
+    padding: 10px 14px;
+    background: #f3f4f6;
+    margin-bottom: 8px;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .topics-list li::before {
+    content: "📘";
+    font-size: 1.1rem;
+  }
+  button {
+    width: 100%;
+    padding: 16px 20px;
+    font-size: 1rem;
+    font-weight: 700;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    background: #4f46e5;
+    color: white;
+    transition: transform 0.1s, background 0.2s;
+    font-family: inherit;
+  }
+  button:active { transform: scale(0.98); }
+  button.secondary {
+    background: #e5e7eb;
+    color: #1f2937;
+  }
+  button.ghost {
+    background: transparent;
+    color: #4f46e5;
+    border: 2px solid #4f46e5;
+  }
+  .progress {
+    height: 8px;
+    background: #e5e7eb;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 20px;
+  }
+  .progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, #4f46e5, #7c3aed);
+    transition: width 0.3s ease;
+    border-radius: 4px;
+  }
+  .q-meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    color: #6b7280;
+    margin-bottom: 8px;
+    font-weight: 600;
+  }
+  .topic-tag {
+    display: inline-block;
+    padding: 4px 10px;
+    background: #ede9fe;
+    color: #5b21b6;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .question-text {
+    font-size: 1.15rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    color: #111827;
+    font-weight: 500;
+  }
+  .options { display: flex; flex-direction: column; gap: 10px; }
+  .option {
+    padding: 14px 16px;
+    background: #f9fafb;
+    border: 2px solid #e5e7eb;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.15s;
+    text-align: left;
+    font-size: 1rem;
+    color: #1f2937;
+    font-family: inherit;
+    width: 100%;
+    font-weight: 500;
+  }
+  .option:active { transform: scale(0.99); }
+  .option.selected {
+    background: #ede9fe;
+    border-color: #7c3aed;
+    color: #5b21b6;
+  }
+  .option.correct {
+    background: #d1fae5;
+    border-color: #10b981;
+    color: #065f46;
+  }
+  .option.incorrect {
+    background: #fee2e2;
+    border-color: #ef4444;
+    color: #991b1b;
+  }
+  .nav-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  .nav-buttons button { flex: 1; }
+  .score-display {
+    text-align: center;
+    padding: 20px 0;
+  }
+  .score-circle {
+    width: 140px;
+    height: 140px;
+    margin: 0 auto 16px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #4f46e5, #7c3aed);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+  }
+  .score-circle .pct { font-size: 2.4rem; line-height: 1; }
+  .score-circle .lbl { font-size: 0.8rem; opacity: 0.9; margin-top: 4px; }
+  .score-summary {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  .stat {
+    padding: 12px;
+    border-radius: 12px;
+    text-align: center;
+  }
+  .stat.right { background: #d1fae5; color: #065f46; }
+  .stat.wrong { background: #fee2e2; color: #991b1b; }
+  .stat .num { font-size: 1.8rem; font-weight: 800; }
+  .stat .lbl { font-size: 0.8rem; font-weight: 600; }
+  .review-item {
+    border-left: 4px solid #e5e7eb;
+    padding: 12px 14px;
+    margin-bottom: 12px;
+    background: #f9fafb;
+    border-radius: 0 12px 12px 0;
+  }
+  .review-item.correct { border-color: #10b981; background: #ecfdf5; }
+  .review-item.incorrect { border-color: #ef4444; background: #fef2f2; }
+  .review-q {
+    font-weight: 600;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+  }
+  .review-a {
+    font-size: 0.9rem;
+    margin: 4px 0;
+  }
+  .review-a .label { font-weight: 700; }
+  .explanation {
+    margin-top: 10px;
+    padding: 10px 12px;
+    background: #fef3c7;
+    border-radius: 8px;
+    font-size: 0.88rem;
+    line-height: 1.5;
+    color: #78350f;
+  }
+  .explanation strong { color: #92400e; }
+  .filter-btns {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+  }
+  .filter-btns button {
+    flex: 0 0 auto;
+    width: auto;
+    padding: 8px 14px;
+    font-size: 0.85rem;
+    background: #e5e7eb;
+    color: #4b5563;
+  }
+  .filter-btns button.active {
+    background: #4f46e5;
+    color: white;
+  }
+  .tip-box {
+    background: #eff6ff;
+    border-left: 4px solid #3b82f6;
+    padding: 12px;
+    border-radius: 0 8px 8px 0;
+    margin-top: 12px;
+    font-size: 0.88rem;
+    line-height: 1.5;
+    color: #1e3a8a;
+  }
+  .hidden { display: none; }
+  @media (max-width: 380px) {
+    .app { padding: 12px; }
+    .card { padding: 20px 16px; }
+    h1 { font-size: 1.4rem; }
+    .question-text { font-size: 1.05rem; }
+    .option { padding: 12px 14px; font-size: 0.95rem; }
+  }
+</style>
+</head>
+<body>
+<div class="app">
+
+  <!-- HOME SCREEN -->
+  <div id="home-screen">
+    <h1>🎓 Prova de Inglês</h1>
+    <p class="subtitle">Treine para a prova de amanhã</p>
+    <div class="card">
+      <h2>O que vamos estudar?</h2>
+      <ul class="topics-list">
+        <li>Question Tags</li>
+        <li>Indefinite Pronouns</li>
+        <li>Present Simple & Continuous</li>
+        <li>Future: Will & Going To</li>
+        <li>Life Plans</li>
+        <li>KET Practice</li>
+      </ul>
+      <div class="tip-box">
+        💡 <strong>Como funciona:</strong> Escolha uma resposta para cada pergunta. No final você vê o resultado com a explicação de cada questão (certas e erradas).
+      </div>
+    </div>
+    <div class="card">
+      <h2>Escolha o que treinar:</h2>
+      <div class="filter-btns" id="filter-buttons"></div>
+      <button onclick="startQuiz()">▶ Começar Simulado</button>
+      <div style="height:10px"></div>
+      <button class="ghost" onclick="startQuiz(true)">🔀 Modo Aleatório (todos os temas)</button>
+    </div>
+  </div>
+
+  <!-- QUIZ SCREEN -->
+  <div id="quiz-screen" class="hidden">
+    <div class="card">
+      <div class="q-meta">
+        <span id="q-counter">Questão 1 de 40</span>
+        <span id="q-score">✓ 0</span>
+      </div>
+      <div class="progress"><div class="progress-bar" id="progress-bar" style="width: 0%"></div></div>
+      <span class="topic-tag" id="q-topic"></span>
+      <div class="question-text" id="q-text"></div>
+      <div class="options" id="q-options"></div>
+      <div class="nav-buttons">
+        <button class="secondary" onclick="confirmQuit()">Sair</button>
+        <button id="next-btn" onclick="nextQuestion()" disabled style="opacity:0.5">Próxima →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- RESULTS SCREEN -->
+  <div id="results-screen" class="hidden">
+    <div class="card">
+      <div class="score-display">
+        <div class="score-circle">
+          <div class="pct" id="final-pct">0%</div>
+          <div class="lbl">acertos</div>
+        </div>
+        <h2 id="final-message">Bom trabalho!</h2>
+      </div>
+      <div class="score-summary">
+        <div class="stat right">
+          <div class="num" id="final-right">0</div>
+          <div class="lbl">Acertou</div>
+        </div>
+        <div class="stat wrong">
+          <div class="num" id="final-wrong">0</div>
+          <div class="lbl">Errou</div>
+        </div>
+      </div>
+      <button onclick="restart()">🔄 Tentar de novo</button>
+      <div style="height:10px"></div>
+      <button class="ghost" onclick="goHome()">🏠 Voltar ao início</button>
+    </div>
+    <div class="card">
+      <h2>📋 Revisão Detalhada</h2>
+      <p style="font-size:0.9rem;color:#6b7280;margin-bottom:16px">Veja cada questão com a explicação:</p>
+      <div id="review-list"></div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+// ============================================
+// BANCO DE QUESTÕES
+// Cada questão: { topic, q, options, correct (index), explain }
+// ============================================
+const QUESTIONS = [
+  // ===== QUESTION TAGS =====
+  {
+    topic: "Question Tags",
+    q: "You are coming to the party, ______?",
+    options: ["aren't you", "don't you", "are you", "isn't it"],
+    correct: 0,
+    explain: "A frase é afirmativa com <strong>are</strong>, então a tag fica negativa: <strong>aren't you</strong>. Regra: afirmativa → tag negativa; negativa → tag afirmativa."
+  },
+  {
+    topic: "Question Tags",
+    q: "She doesn't speak French, ______?",
+    options: ["doesn't she", "is she", "does she", "don't she"],
+    correct: 2,
+    explain: "A frase é negativa (<strong>doesn't</strong>), então a tag fica afirmativa: <strong>does she</strong>."
+  },
+  {
+    topic: "Question Tags",
+    q: "They have finished their homework, ______?",
+    options: ["didn't they", "haven't they", "don't they", "aren't they"],
+    correct: 1,
+    explain: "O verbo auxiliar é <strong>have</strong> (present perfect). A frase é afirmativa, então a tag é negativa: <strong>haven't they</strong>."
+  },
+  {
+    topic: "Question Tags",
+    q: "We will arrive on time, ______?",
+    options: ["will we", "don't we", "won't we", "aren't we"],
+    correct: 2,
+    explain: "Com <strong>will</strong> afirmativo, a tag negativa é <strong>won't we</strong> (won't = will not)."
+  },
+  {
+    topic: "Question Tags",
+    q: "He can drive a car, ______?",
+    options: ["can't he", "doesn't he", "can he", "didn't he"],
+    correct: 0,
+    explain: "<strong>Can</strong> afirmativo → tag <strong>can't he</strong>. Modais (can, could, should, must, etc.) repetem o próprio modal na tag."
+  },
+  {
+    topic: "Question Tags",
+    q: "Maria didn't call you yesterday, ______?",
+    options: ["didn't she", "did she", "doesn't she", "wasn't she"],
+    correct: 1,
+    explain: "Frase negativa no passado (<strong>didn't</strong>) → tag afirmativa: <strong>did she</strong>."
+  },
+
+  // ===== INDEFINITE PRONOUNS =====
+  {
+    topic: "Indefinite Pronouns",
+    q: "I'm thirsty. I need ______ to drink.",
+    options: ["anything", "nothing", "something", "everything"],
+    correct: 2,
+    explain: "Em frases <strong>afirmativas</strong>, usamos <strong>something</strong>. Usa-se <em>anything</em> em perguntas e negativas."
+  },
+  {
+    topic: "Indefinite Pronouns",
+    q: "Is there ______ I can do to help you?",
+    options: ["something", "anything", "nothing", "everywhere"],
+    correct: 1,
+    explain: "Em <strong>perguntas</strong>, usa-se <strong>anything</strong>. Regra: some- (afirmativas), any- (perguntas e negativas)."
+  },
+  {
+    topic: "Indefinite Pronouns",
+    q: "______ knows the answer. It's too difficult.",
+    options: ["Anybody", "Somebody", "Everybody", "Nobody"],
+    correct: 3,
+    explain: "<strong>Nobody</strong> = ninguém. O verbo fica no afirmativo (Nobody knows), porque o próprio pronome já é negativo."
+  },
+  {
+    topic: "Indefinite Pronouns",
+    q: "I looked ______ but couldn't find my keys.",
+    options: ["somewhere", "anywhere", "nowhere", "everywhere"],
+    correct: 3,
+    explain: "<strong>Everywhere</strong> = em todo lugar. O sentido é que ele procurou em todos os lugares."
+  },
+  {
+    topic: "Indefinite Pronouns",
+    q: "There's ______ at the door. I heard the bell.",
+    options: ["somebody", "anybody", "nobody", "everybody"],
+    correct: 0,
+    explain: "Frase afirmativa → <strong>somebody</strong> (alguém). Em perguntas/negativas seria <em>anybody</em>."
+  },
+  {
+    topic: "Indefinite Pronouns",
+    q: "Would you like ______ to eat? I made sandwiches.",
+    options: ["nothing", "something", "everything", "nowhere"],
+    correct: 1,
+    explain: "Em <strong>ofertas</strong> e <strong>pedidos educados</strong>, usamos <strong>something</strong> mesmo sendo pergunta. Ex: Would you like something to drink?"
+  },
+
+  // ===== PRESENT SIMPLE & CONTINUOUS =====
+  {
+    topic: "Present Tenses",
+    q: "Look! It ______ outside. Take an umbrella.",
+    options: ["rains", "is raining", "rain", "raining"],
+    correct: 1,
+    explain: "<strong>Present Continuous</strong> (is raining) → ação acontecendo AGORA. Palavra-chave: <em>Look!</em>"
+  },
+  {
+    topic: "Present Tenses",
+    q: "My father ______ to work by car every day.",
+    options: ["is going", "goes", "go", "going"],
+    correct: 1,
+    explain: "<strong>Present Simple</strong> (goes) → hábito/rotina. Palavra-chave: <em>every day</em>. Terceira pessoa (he/she/it) leva -s."
+  },
+  {
+    topic: "Present Tenses",
+    q: "She ______ for her English exam right now.",
+    options: ["studies", "study", "is studying", "studying"],
+    correct: 2,
+    explain: "<strong>Present Continuous</strong> → ação acontecendo neste momento. Palavra-chave: <em>right now</em>."
+  },
+  {
+    topic: "Present Tenses",
+    q: "The Earth ______ around the Sun.",
+    options: ["is revolving", "revolves", "revolve", "revolved"],
+    correct: 1,
+    explain: "<strong>Present Simple</strong> → fato científico, verdade universal. Sempre usa-se Simple para fatos permanentes."
+  },
+  {
+    topic: "Present Tenses",
+    q: "They ______ TV at the moment.",
+    options: ["don't watch", "aren't watching", "not watching", "doesn't watch"],
+    correct: 1,
+    explain: "<strong>At the moment</strong> indica Present Continuous. Negativa: <strong>aren't watching</strong> (are not watching)."
+  },
+  {
+    topic: "Present Tenses",
+    q: "______ you ______ chocolate? — Yes, I love it!",
+    options: ["Are / liking", "Do / like", "Does / like", "Is / liking"],
+    correct: 1,
+    explain: "<strong>Like</strong> é verbo de estado (stative verb) — usa-se sempre no <strong>Present Simple</strong>: Do you like...?"
+  },
+  {
+    topic: "Present Tenses",
+    q: "Why ______ you ______ ? Are you sad?",
+    options: ["do / cry", "are / crying", "is / crying", "does / cry"],
+    correct: 1,
+    explain: "Ação acontecendo agora → <strong>Present Continuous</strong>: <em>are you crying</em>."
+  },
+  {
+    topic: "Present Tenses",
+    q: "Sarah usually ______ coffee, but today she ______ tea.",
+    options: ["drinks / is drinking", "is drinking / drinks", "drink / drinks", "drinks / drink"],
+    correct: 0,
+    explain: "<em>Usually</em> → hábito → Present Simple (<strong>drinks</strong>). <em>Today</em> + exceção → Present Continuous (<strong>is drinking</strong>)."
+  },
+
+  // ===== FUTURE: WILL vs GOING TO =====
+  {
+    topic: "Future Tenses",
+    q: "Look at those dark clouds! It ______ rain.",
+    options: ["will", "is going to", "rains", "is raining"],
+    correct: 1,
+    explain: "<strong>Going to</strong> → previsão com <strong>evidência visível</strong> (as nuvens). Will é para previsões sem evidência."
+  },
+  {
+    topic: "Future Tenses",
+    q: "The phone is ringing. I ______ get it!",
+    options: ["am going to", "will", "get", "am getting"],
+    correct: 1,
+    explain: "<strong>Will</strong> → decisão tomada NA HORA da fala. Você decidiu atender só agora."
+  },
+  {
+    topic: "Future Tenses",
+    q: "I've already decided. I ______ buy a new bike next month.",
+    options: ["will", "am going to", "buy", "buying"],
+    correct: 1,
+    explain: "<strong>Going to</strong> → plano/decisão já tomada antes da fala. Palavra-chave: <em>I've already decided</em>."
+  },
+  {
+    topic: "Future Tenses",
+    q: "A: I'm cold. — B: I ______ close the window.",
+    options: ["am going to", "will", "close", "am closing"],
+    correct: 1,
+    explain: "Decisão espontânea, oferta de ajuda na hora → <strong>will</strong>."
+  },
+  {
+    topic: "Future Tenses",
+    q: "Don't worry about the dishes. I ______ wash them later.",
+    options: ["am going to", "will", "wash", "am washing"],
+    correct: 1,
+    explain: "<strong>Promessas</strong> e <strong>ofertas</strong> usam <strong>will</strong>."
+  },
+  {
+    topic: "Future Tenses",
+    q: "We ______ visit Paris next summer. We already booked the flights.",
+    options: ["will", "are going to", "visit", "visiting"],
+    correct: 1,
+    explain: "Plano organizado de antemão (já compraram passagem) → <strong>going to</strong>."
+  },
+  {
+    topic: "Future Tenses",
+    q: "I think Brazil ______ win the next World Cup.",
+    options: ["is going to", "will", "wins", "winning"],
+    correct: 1,
+    explain: "<strong>Opinião/previsão</strong> com <em>I think, I believe, maybe, probably</em> → <strong>will</strong>."
+  },
+  {
+    topic: "Future Tenses",
+    q: "Be careful! You ______ fall!",
+    options: ["will", "are going to", "fall", "falling"],
+    correct: 1,
+    explain: "Previsão com <strong>evidência imediata</strong> (a pessoa está prestes a cair) → <strong>going to</strong>."
+  },
+
+  // ===== LIFE PLANS / BIG DECISIONS =====
+  {
+    topic: "Life Plans",
+    q: "What ______ you ______ after finishing school?",
+    options: ["will / do", "are / going to do", "do / do", "are / do"],
+    correct: 1,
+    explain: "Pergunta sobre <strong>plano de vida</strong> (decisão futura) → <strong>be going to</strong>: <em>are you going to do</em>."
+  },
+  {
+    topic: "Life Plans",
+    q: "My sister ______ a doctor. She's studying medicine.",
+    options: ["will be", "is going to be", "is being", "be"],
+    correct: 1,
+    explain: "Plano de carreira já em andamento → <strong>going to</strong>. Ela já está se preparando para isso."
+  },
+  {
+    topic: "Life Plans",
+    q: "I haven't decided yet, but maybe I ______ travel abroad.",
+    options: ["am going to", "will", "travel", "am traveling"],
+    correct: 1,
+    explain: "<em>Maybe</em> + ainda não decidido → <strong>will</strong>. Going to seria para um plano já feito."
+  },
+  {
+    topic: "Life Plans",
+    q: "He ______ a new job next Monday. Everything is arranged.",
+    options: ["will start", "is going to start", "start", "starting"],
+    correct: 1,
+    explain: "Plano já organizado (<em>everything is arranged</em>) → <strong>going to</strong>."
+  },
+
+  // ===== KET PRACTICE =====
+  {
+    topic: "KET Practice",
+    q: "My brother is ______ engineer.",
+    options: ["a", "an", "the", "—"],
+    correct: 1,
+    explain: "Antes de palavras que começam com <strong>som de vogal</strong> (a, e, i, o, u), usamos <strong>an</strong>: an engineer, an apple, an hour."
+  },
+  {
+    topic: "KET Practice",
+    q: "I have lived in this city ______ 2015.",
+    options: ["for", "since", "from", "ago"],
+    correct: 1,
+    explain: "<strong>Since</strong> + ponto no tempo (2015, Monday, last week). <strong>For</strong> + duração (3 years, two hours)."
+  },
+  {
+    topic: "KET Practice",
+    q: "She is ______ than her brother.",
+    options: ["tall", "taller", "tallest", "more tall"],
+    correct: 1,
+    explain: "Comparativo de adjetivos curtos: adjetivo + <strong>-er</strong> + than. Tall → taller than."
+  },
+  {
+    topic: "KET Practice",
+    q: "______ you ever been to London?",
+    options: ["Did", "Are", "Have", "Do"],
+    correct: 2,
+    explain: "<strong>Have + ever + been</strong> = Present Perfect, usado para experiências de vida (já fez alguma vez?)."
+  },
+  {
+    topic: "KET Practice",
+    q: "I'm interested ______ music and sports.",
+    options: ["on", "at", "in", "for"],
+    correct: 2,
+    explain: "A preposição correta com <strong>interested</strong> é sempre <strong>in</strong>: interested in something."
+  },
+  {
+    topic: "KET Practice",
+    q: "There isn't ______ milk in the fridge.",
+    options: ["some", "any", "a", "many"],
+    correct: 1,
+    explain: "Em <strong>negativas</strong>, usa-se <strong>any</strong>. Milk é incontável, então <em>a</em> e <em>many</em> não servem."
+  },
+  {
+    topic: "KET Practice",
+    q: "He's the ______ student in the class.",
+    options: ["good", "better", "best", "more good"],
+    correct: 2,
+    explain: "<strong>Superlativo irregular</strong>: good → better → <strong>the best</strong>. Sempre com <em>the</em>."
+  },
+  {
+    topic: "KET Practice",
+    q: "Could you tell me ______ the bank is, please?",
+    options: ["where", "what", "which", "how"],
+    correct: 0,
+    explain: "Para perguntar sobre <strong>localização</strong>, usamos <strong>where</strong>. Em pergunta indireta, a ordem fica afirmativa: where the bank is."
+  },
+  {
+    topic: "KET Practice",
+    q: "How ______ sugar do you want in your coffee?",
+    options: ["many", "much", "few", "some"],
+    correct: 1,
+    explain: "<strong>Much</strong> com substantivos <strong>incontáveis</strong> (sugar, water, time). <strong>Many</strong> com contáveis (apples, books)."
+  }
+];
+
+// ============================================
+// ESTADO DA APLICAÇÃO
+// ============================================
+let currentQuestions = [];
+let currentIndex = 0;
+let userAnswers = [];
+let selectedTopic = "all";
+
+// ============================================
+// TELA INICIAL
+// ============================================
+function buildTopicFilters() {
+  const topics = ["all", ...new Set(QUESTIONS.map(q => q.topic))];
+  const container = document.getElementById("filter-buttons");
+  container.innerHTML = "";
+  topics.forEach(t => {
+    const btn = document.createElement("button");
+    btn.textContent = t === "all" ? "Todos os temas" : t;
+    btn.className = t === selectedTopic ? "active" : "";
+    btn.onclick = () => {
+      selectedTopic = t;
+      buildTopicFilters();
+    };
+    container.appendChild(btn);
+  });
+}
+
+// ============================================
+// EMBARALHAR
+// ============================================
+function shuffle(array) {
+  const arr = [...array];
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
+}
+
+// ============================================
+// COMEÇAR QUIZ
+// ============================================
+function startQuiz(randomMode = false) {
+  if (randomMode || selectedTopic === "all") {
+    currentQuestions = shuffle(QUESTIONS);
+  } else {
+    currentQuestions = shuffle(QUESTIONS.filter(q => q.topic === selectedTopic));
+  }
+  currentIndex = 0;
+  userAnswers = [];
+  document.getElementById("home-screen").classList.add("hidden");
+  document.getElementById("results-screen").classList.add("hidden");
+  document.getElementById("quiz-screen").classList.remove("hidden");
+  renderQuestion();
+}
+
+// ============================================
+// RENDERIZAR QUESTÃO
+// ============================================
+function renderQuestion() {
+  const q = currentQuestions[currentIndex];
+  document.getElementById("q-counter").textContent =
+    `Questão ${currentIndex + 1} de ${currentQuestions.length}`;
+  const rightSoFar = userAnswers.filter((a, i) => a === currentQuestions[i].correct).length;
+  document.getElementById("q-score").textContent = `✓ ${rightSoFar}`;
+  document.getElementById("progress-bar").style.width =
+    `${((currentIndex) / currentQuestions.length) * 100}%`;
+  document.getElementById("q-topic").textContent = q.topic;
+  document.getElementById("q-text").textContent = q.q;
+
+  const optionsContainer = document.getElementById("q-options");
+  optionsContainer.innerHTML = "";
+  q.options.forEach((opt, i) => {
+    const btn = document.createElement("button");
+    btn.className = "option";
+    btn.textContent = opt;
+    btn.onclick = () => selectOption(i, btn);
+    optionsContainer.appendChild(btn);
+  });
+
+  const nextBtn = document.getElementById("next-btn");
+  nextBtn.disabled = true;
+  nextBtn.style.opacity = "0.5";
+  nextBtn.textContent = currentIndex === currentQuestions.length - 1 ? "Ver resultado ✓" : "Próxima →";
+  window.scrollTo(0, 0);
+}
+
+// ============================================
+// SELECIONAR OPÇÃO
+// ============================================
+function selectOption(index, btnEl) {
+  const all = document.querySelectorAll("#q-options .option");
+  all.forEach(b => b.classList.remove("selected"));
+  btnEl.classList.add("selected");
+  userAnswers[currentIndex] = index;
+  const nextBtn = document.getElementById("next-btn");
+  nextBtn.disabled = false;
+  nextBtn.style.opacity = "1";
+}
+
+// ============================================
+// PRÓXIMA QUESTÃO
+// ============================================
+function nextQuestion() {
+  if (userAnswers[currentIndex] === undefined) return;
+  if (currentIndex < currentQuestions.length - 1) {
+    currentIndex++;
+    renderQuestion();
+  } else {
+    showResults();
+  }
+}
+
+// ============================================
+// MOSTRAR RESULTADOS
+// ============================================
+function showResults() {
+  document.getElementById("quiz-screen").classList.add("hidden");
+  document.getElementById("results-screen").classList.remove("hidden");
+
+  const right = userAnswers.filter((a, i) => a === currentQuestions[i].correct).length;
+  const wrong = currentQuestions.length - right;
+  const pct = Math.round((right / currentQuestions.length) * 100);
+
+  document.getElementById("final-pct").textContent = pct + "%";
+  document.getElementById("final-right").textContent = right;
+  document.getElementById("final-wrong").textContent = wrong;
+
+  const msgEl = document.getElementById("final-message");
+  if (pct >= 90) msgEl.textContent = "🏆 Excelente! Está pronto pra prova!";
+  else if (pct >= 75) msgEl.textContent = "🎉 Muito bom! Só reveja os erros.";
+  else if (pct >= 60) msgEl.textContent = "👍 No caminho! Estude um pouco mais.";
+  else if (pct >= 40) msgEl.textContent = "📚 Precisa revisar mais. Não desanima!";
+  else msgEl.textContent = "💪 Vamos revisar com calma. Você consegue!";
+
+  const reviewList = document.getElementById("review-list");
+  reviewList.innerHTML = "";
+  currentQuestions.forEach((q, i) => {
+    const isRight = userAnswers[i] === q.correct;
+    const div = document.createElement("div");
+    div.className = `review-item ${isRight ? "correct" : "incorrect"}`;
+    const userAnsText = userAnswers[i] !== undefined ? q.options[userAnswers[i]] : "(não respondida)";
+    div.innerHTML = `
+      <div class="review-q">${i + 1}. ${escapeHtml(q.q)}</div>
+      <div class="review-a"><span class="label">${isRight ? "✅" : "❌"} Sua resposta:</span> ${escapeHtml(userAnsText)}</div>
+      ${!isRight ? `<div class="review-a"><span class="label">✓ Correta:</span> ${escapeHtml(q.options[q.correct])}</div>` : ""}
+      <div class="explanation"><strong>💡 Por quê:</strong> ${q.explain}</div>
+    `;
+    reviewList.appendChild(div);
+  });
+  window.scrollTo(0, 0);
+}
+
+function escapeHtml(s) {
+  return String(s).replace(/[&<>"']/g, c => ({
+    "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"
+  }[c]));
+}
+
+// ============================================
+// RESTART / HOME
+// ============================================
+function restart() { startQuiz(selectedTopic === "all"); }
+function goHome() {
+  document.getElementById("results-screen").classList.add("hidden");
+  document.getElementById("quiz-screen").classList.add("hidden");
+  document.getElementById("home-screen").classList.remove("hidden");
+  window.scrollTo(0, 0);
+}
+function confirmQuit() {
+  if (confirm("Tem certeza que quer sair? Seu progresso será perdido.")) goHome();
+}
+
+// INIT
+buildTopicFilters();
+</script>
+</body>
+</html>
