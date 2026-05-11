@@ -521,6 +521,186 @@
   .tip-box .ico { color: var(--primary); flex-shrink: 0; margin-top: 2px; }
   .tip-box strong { font-weight: 800; }
 
+  /* ========= STUDY MODE ========= */
+  .study-screen-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+  .study-back {
+    width: 38px;
+    height: 38px;
+    border-radius: 12px;
+    background: var(--bg-soft);
+    border: 1px solid var(--line);
+    color: var(--ink-soft);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-family: inherit;
+    flex-shrink: 0;
+  }
+  .study-back:active { transform: scale(0.96); }
+  .study-title {
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: var(--ink);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex: 1;
+    letter-spacing: -0.01em;
+  }
+  .s-intro {
+    padding: 14px;
+    background: #ecfeff;
+    border-radius: 12px;
+    color: var(--primary-dark);
+    font-size: 0.92rem;
+    line-height: 1.55;
+    font-weight: 500;
+    margin-bottom: 18px;
+  }
+  .s-sec { margin-bottom: 20px; }
+  .s-sec h3 {
+    font-size: 0.85rem;
+    font-weight: 800;
+    color: var(--ink);
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    margin-bottom: 10px;
+    padding-bottom: 6px;
+    border-bottom: 2px solid var(--line);
+  }
+  .s-sec p {
+    font-size: 0.92rem;
+    line-height: 1.55;
+    color: var(--ink-soft);
+    margin-bottom: 10px;
+  }
+  .s-sec ul {
+    list-style: none;
+    padding: 0;
+  }
+  .s-sec ul li {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: var(--ink-soft);
+    padding: 6px 0 6px 18px;
+    position: relative;
+  }
+  .s-sec ul li::before {
+    content: '';
+    position: absolute;
+    left: 4px;
+    top: 14px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--primary);
+  }
+  .s-sec u {
+    text-decoration: underline;
+    text-decoration-color: var(--primary);
+    text-underline-offset: 3px;
+    text-decoration-thickness: 2px;
+  }
+  .s-rule {
+    padding: 12px 14px;
+    background: #f0f9ff;
+    border-left: 4px solid var(--primary);
+    border-radius: 0 10px 10px 0;
+    font-size: 0.92rem;
+    line-height: 1.55;
+    color: var(--ink);
+    margin-bottom: 10px;
+    font-weight: 500;
+  }
+  .s-ex {
+    padding: 10px 12px;
+    background: var(--bg-soft);
+    border-radius: 10px;
+    margin: 6px 0;
+    font-size: 0.9rem;
+  }
+  .s-ex .en {
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 2px;
+  }
+  .s-ex .pt {
+    color: var(--ink-soft);
+    font-size: 0.85rem;
+    font-style: italic;
+  }
+  .s-warn {
+    padding: 12px 14px;
+    background: #fffbeb;
+    border: 1px solid #fde68a;
+    border-radius: 10px;
+    font-size: 0.88rem;
+    line-height: 1.55;
+    color: #78350f;
+    margin: 14px 0;
+  }
+  .s-warn strong { color: #92400e; }
+  .s-warn .bad { color: var(--error); font-weight: 800; margin-right: 4px; }
+  .s-warn .good { color: var(--success); font-weight: 800; margin-right: 4px; }
+  .s-tip {
+    padding: 12px 14px;
+    background: #ecfeff;
+    border: 1px solid #a5f3fc;
+    border-radius: 10px;
+    font-size: 0.88rem;
+    line-height: 1.55;
+    color: var(--primary-dark);
+    margin: 14px 0;
+  }
+  .s-tip strong { font-weight: 800; color: var(--primary-dark); }
+  .s-table {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.76rem;
+    background: var(--bg-soft);
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    margin: 6px 0;
+  }
+  .s-thead, .s-trow {
+    display: grid;
+    grid-template-columns: 0.6fr 1fr 0.85fr 0.9fr;
+  }
+  .s-thead {
+    background: var(--primary);
+    color: #fff;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+  }
+  .s-thead > div, .s-trow > div {
+    padding: 8px 6px;
+    border-right: 1px solid rgba(0,0,0,0.05);
+  }
+  .s-thead > div:last-child, .s-trow > div:last-child { border-right: none; }
+  .s-trow {
+    background: #fff;
+    border-top: 1px solid var(--line);
+    font-weight: 600;
+    color: var(--ink);
+  }
+  .s-trow .prefix {
+    background: #f1f5f9;
+    font-weight: 800;
+    color: var(--primary-dark);
+  }
+  @media (max-width: 380px) {
+    .s-thead, .s-trow { font-size: 0.68rem; }
+    .s-thead > div, .s-trow > div { padding: 6px 4px; }
+  }
+
   /* ========= SMALL SCREENS ========= */
   @media (max-width: 380px) {
     .app { padding: 16px 12px 30px; }
@@ -560,6 +740,14 @@
     </div>
 
     <div class="card">
+      <div class="section-title"><span class="bar"></span> Modo Estudo</div>
+      <p style="font-size:0.92rem;line-height:1.55;color:var(--ink-soft);font-weight:500;margin-bottom:14px">
+        Quer entender melhor um tema antes do simulado? Escolhe um abaixo pra ver as regras, exemplos e dicas.
+      </p>
+      <div class="topics-grid" id="study-grid"></div>
+    </div>
+
+    <div class="card">
       <div class="section-title"><span class="bar"></span> Como funciona</div>
       <p style="font-size:0.92rem;line-height:1.55;color:var(--ink-soft);font-weight:500">
         Você responde uma questão por vez. No final aparece <strong style="color:var(--ink)">tudo que acertou e errou</strong>, com a explicação em português pra você entender o porquê. Quanto mais você treina, melhor fica.
@@ -590,6 +778,21 @@
           <span id="next-label">Próxima</span>
         </button>
       </div>
+    </div>
+  </div>
+
+  <!-- ========= STUDY ========= -->
+  <div id="study-screen" class="screen hidden">
+    <div class="card">
+      <div class="study-screen-header">
+        <button class="study-back" onclick="goHome()" id="study-back-btn" aria-label="Voltar"></button>
+        <div class="study-title" id="study-title"></div>
+      </div>
+      <div id="study-body"></div>
+      <div style="height:18px"></div>
+      <button class="btn btn-primary" id="study-train-btn"></button>
+      <div style="height:10px"></div>
+      <button class="btn btn-ghost" onclick="goHome()" id="study-home-btn"></button>
     </div>
   </div>
 
@@ -647,7 +850,9 @@ const ICONS = {
   target:    '<circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/>',
   award:     '<circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/>',
   book:      '<path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>',
-  zap:       '<polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>'
+  zap:       '<polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>',
+  chevronL:  '<polyline points="15 18 9 12 15 6"/>',
+  open:      '<path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>'
 };
 function icon(name, size = 18, strokeWidth = 2) {
   return `<svg class="icon" viewBox="0 0 24 24" width="${size}" height="${size}" fill="none" stroke="currentColor" stroke-width="${strokeWidth}" stroke-linecap="round" stroke-linejoin="round">${ICONS[name] || ''}</svg>`;
@@ -850,6 +1055,283 @@ const QUESTIONS = [
     explain: "Preposição de tempo com <strong>horas</strong>: <strong>at</strong> (at 7, at noon, at midnight). On para dias, in para meses/anos." }
 ];
 
+// ============================================
+// CONTEÚDO DO MODO ESTUDO
+// ============================================
+const STUDY_CONTENT = {
+  "Question Tags": `
+    <div class="s-intro">Question tags são aquelas perguntinhas no fim da frase ("não é?", "right?"). Servem pra confirmar ou pedir concordância.</div>
+
+    <div class="s-sec">
+      <h3>Regra de ouro</h3>
+      <div class="s-rule">
+        Frase <strong>afirmativa</strong> → tag <strong>negativa</strong><br>
+        Frase <strong>negativa</strong> → tag <strong>afirmativa</strong>
+      </div>
+    </div>
+
+    <div class="s-sec">
+      <h3>Como formar</h3>
+      <ul>
+        <li>Use o mesmo <strong>verbo auxiliar</strong> da frase</li>
+        <li>Se não tem auxiliar, use <strong>do / does / did</strong></li>
+        <li>Modais (can, will, should, must) repetem o próprio modal na tag</li>
+        <li>O sujeito da tag é sempre um <strong>pronome</strong> (he, she, it, they...)</li>
+      </ul>
+    </div>
+
+    <div class="s-sec">
+      <h3>Exemplos</h3>
+      <div class="s-ex"><div class="en">You <u>are</u> tired, <u>aren't</u> you?</div><div class="pt">Você está cansado, não está?</div></div>
+      <div class="s-ex"><div class="en">She <u>doesn't</u> like coffee, <u>does</u> she?</div><div class="pt">Ela não gosta de café, gosta?</div></div>
+      <div class="s-ex"><div class="en">We <u>will</u> win, <u>won't</u> we?</div><div class="pt">Nós vamos vencer, não vamos?</div></div>
+      <div class="s-ex"><div class="en">They <u>have</u> finished, <u>haven't</u> they?</div><div class="pt">Eles já terminaram, não terminaram?</div></div>
+    </div>
+
+    <div class="s-sec">
+      <h3>Casos especiais</h3>
+      <ul>
+        <li><strong>I am</strong> → tag: <strong>aren't I</strong> (não existe "amn't")</li>
+        <li><strong>Let's...</strong> → tag: <strong>shall we?</strong></li>
+        <li>Imperativo ("Open the door, ___?") → <strong>will you?</strong></li>
+        <li><strong>There is/are...</strong> → ...<strong>isn't there / aren't there?</strong></li>
+      </ul>
+    </div>
+
+    <div class="s-warn">
+      <strong>Cuidado:</strong> a tag usa sempre um pronome, nunca repete o nome.<br>
+      <span class="bad">Errado:</span> Maria likes pizza, doesn't Maria?<br>
+      <span class="good">Certo:</span> Maria likes pizza, doesn't <strong>she</strong>?
+    </div>
+  `,
+
+  "Indefinite Pronouns": `
+    <div class="s-intro">Pronomes indefinidos se referem a pessoas, coisas ou lugares sem dizer exatamente qual. São formados pelos prefixos <strong>some-</strong>, <strong>any-</strong>, <strong>no-</strong>, <strong>every-</strong> + body/one/thing/where.</div>
+
+    <div class="s-sec">
+      <h3>Tabela completa</h3>
+      <div class="s-table">
+        <div class="s-thead"><div>prefixo</div><div>pessoa</div><div>coisa</div><div>lugar</div></div>
+        <div class="s-trow"><div class="prefix">some-</div><div>somebody / someone</div><div>something</div><div>somewhere</div></div>
+        <div class="s-trow"><div class="prefix">any-</div><div>anybody / anyone</div><div>anything</div><div>anywhere</div></div>
+        <div class="s-trow"><div class="prefix">no-</div><div>nobody / no one</div><div>nothing</div><div>nowhere</div></div>
+        <div class="s-trow"><div class="prefix">every-</div><div>everybody / everyone</div><div>everything</div><div>everywhere</div></div>
+      </div>
+    </div>
+
+    <div class="s-sec">
+      <h3>Quando usar cada um</h3>
+
+      <div class="s-rule"><strong>some-</strong> → frases <strong>afirmativas</strong> e ofertas/pedidos educados</div>
+      <div class="s-ex"><div class="en">I have <u>something</u> to tell you.</div><div class="pt">Eu tenho algo pra te contar.</div></div>
+      <div class="s-ex"><div class="en">Would you like <u>something</u> to drink?</div><div class="pt">Você gostaria de algo pra beber? (oferta)</div></div>
+
+      <div class="s-rule" style="margin-top:14px"><strong>any-</strong> → frases <strong>negativas</strong> e <strong>perguntas</strong></div>
+      <div class="s-ex"><div class="en">I don't have <u>anything</u> to do.</div><div class="pt">Eu não tenho nada pra fazer.</div></div>
+      <div class="s-ex"><div class="en">Is there <u>anyone</u> at home?</div><div class="pt">Tem alguém em casa?</div></div>
+
+      <div class="s-rule" style="margin-top:14px"><strong>no-</strong> → significa "nenhum/ninguém/nada" (verbo fica afirmativo)</div>
+      <div class="s-ex"><div class="en"><u>Nobody</u> knows the answer.</div><div class="pt">Ninguém sabe a resposta.</div></div>
+      <div class="s-ex"><div class="en">I have <u>nothing</u> to say.</div><div class="pt">Eu não tenho nada a dizer.</div></div>
+
+      <div class="s-rule" style="margin-top:14px"><strong>every-</strong> → significa "todos / todo lugar / tudo"</div>
+      <div class="s-ex"><div class="en"><u>Everybody</u> loves music.</div><div class="pt">Todo mundo ama música.</div></div>
+      <div class="s-ex"><div class="en">I looked <u>everywhere</u>.</div><div class="pt">Eu olhei em todo lugar.</div></div>
+    </div>
+
+    <div class="s-warn">
+      <strong>Cuidado:</strong> <em>nobody, nothing, nowhere</em> já são negativos — não combine com "not".<br>
+      <span class="bad">Errado:</span> Nobody doesn't know.<br>
+      <span class="good">Certo:</span> Nobody knows.
+    </div>
+
+    <div class="s-tip">
+      <strong>Dica de memória:</strong> pensa em "some" como "alguma quantidade real" (afirmativa) e "any" como "qualquer quantidade" (perguntas e negativas). Por isso "Is there <u>any</u>body?" é qualquer pessoa, e "There's <u>some</u>body" é alguém de verdade.
+    </div>
+  `,
+
+  "Present Tenses": `
+    <div class="s-intro">São dois tempos verbais no presente, com usos bem diferentes: <strong>Simple</strong> pra rotinas e fatos, <strong>Continuous</strong> pra ações acontecendo agora.</div>
+
+    <div class="s-sec">
+      <h3>Present Simple</h3>
+      <p>Usado para hábitos, rotinas, fatos e verdades gerais.</p>
+      <div class="s-rule">
+        Forma: verbo no infinitivo (he/she/it leva <strong>-s</strong>)<br>
+        Negativa: <strong>don't / doesn't</strong> + verbo<br>
+        Pergunta: <strong>Do / Does</strong> + sujeito + verbo
+      </div>
+      <div class="s-ex"><div class="en">I <u>study</u> every day.</div><div class="pt">Eu estudo todo dia.</div></div>
+      <div class="s-ex"><div class="en">She <u>works</u> at a hospital.</div><div class="pt">Ela trabalha num hospital.</div></div>
+      <div class="s-ex"><div class="en">They <u>don't speak</u> French.</div><div class="pt">Eles não falam francês.</div></div>
+      <p style="margin-top:10px"><strong>Palavras-chave:</strong> always, usually, often, sometimes, never, every day, on Mondays</p>
+    </div>
+
+    <div class="s-sec">
+      <h3>Present Continuous</h3>
+      <p>Usado para ações acontecendo agora ou mudanças temporárias.</p>
+      <div class="s-rule">
+        Forma: <strong>am / is / are</strong> + verbo-<strong>ing</strong><br>
+        Negativa: am/is/are + <strong>not</strong> + verbo-ing<br>
+        Pergunta: <strong>Am / Is / Are</strong> + sujeito + verbo-ing?
+      </div>
+      <div class="s-ex"><div class="en">I <u>am studying</u> right now.</div><div class="pt">Eu estou estudando agora.</div></div>
+      <div class="s-ex"><div class="en">Look! It <u>is raining</u>.</div><div class="pt">Olha! Está chovendo.</div></div>
+      <div class="s-ex"><div class="en">They <u>aren't watching</u> TV at the moment.</div><div class="pt">Eles não estão assistindo TV agora.</div></div>
+      <p style="margin-top:10px"><strong>Palavras-chave:</strong> now, right now, at the moment, today, this week, <em>Look!</em>, <em>Listen!</em></p>
+    </div>
+
+    <div class="s-warn">
+      <strong>Stative verbs (verbos de estado):</strong> like, love, hate, want, need, know, believe, have (possuir) — esses verbos <strong>nunca usam continuous</strong>, mesmo quando a ação é agora.<br>
+      <span class="bad">Errado:</span> I am liking this song.<br>
+      <span class="good">Certo:</span> I like this song.
+    </div>
+
+    <div class="s-tip">
+      <strong>Comparação rápida:</strong><br>
+      • Sarah <u>drinks</u> coffee every morning. (rotina → Simple)<br>
+      • Sarah <u>is drinking</u> tea right now. (agora → Continuous)
+    </div>
+  `,
+
+  "Future Tenses": `
+    <div class="s-intro">Dois jeitos de falar do futuro: <strong>will</strong> e <strong>be going to</strong>. A diferença está em <em>quando</em> a decisão foi tomada e se há evidência.</div>
+
+    <div class="s-sec">
+      <h3>WILL</h3>
+      <p>Use quando:</p>
+      <ul>
+        <li><strong>Decisões tomadas agora</strong>, na hora da fala</li>
+        <li>Promessas, ofertas, pedidos</li>
+        <li>Previsões sem evidência (opinião pessoal)</li>
+      </ul>
+      <div class="s-rule">Forma: <strong>will</strong> + verbo (sem "to")<br>Negativa: <strong>won't</strong> (will not) + verbo</div>
+      <div class="s-ex"><div class="en">The phone is ringing. I'<u>ll get</u> it!</div><div class="pt">O telefone está tocando. Eu atendo! (decidiu agora)</div></div>
+      <div class="s-ex"><div class="en">Don't worry, I <u>will help</u> you.</div><div class="pt">Não se preocupe, eu vou te ajudar. (promessa)</div></div>
+      <div class="s-ex"><div class="en">I think it <u>will rain</u> tomorrow.</div><div class="pt">Acho que vai chover amanhã. (opinião)</div></div>
+    </div>
+
+    <div class="s-sec">
+      <h3>BE GOING TO</h3>
+      <p>Use quando:</p>
+      <ul>
+        <li><strong>Planos já decididos</strong> antes da fala</li>
+        <li>Previsões com <strong>evidência visível</strong> agora</li>
+      </ul>
+      <div class="s-rule">Forma: <strong>am / is / are + going to</strong> + verbo<br>Negativa: am/is/are + <strong>not</strong> + going to + verbo</div>
+      <div class="s-ex"><div class="en">I've already decided. I <u>am going to buy</u> a new bike.</div><div class="pt">Já decidi. Vou comprar uma bike nova. (plano antes)</div></div>
+      <div class="s-ex"><div class="en">Look at those clouds! It <u>is going to rain</u>.</div><div class="pt">Olha aquelas nuvens! Vai chover. (evidência)</div></div>
+      <div class="s-ex"><div class="en">We <u>are going to visit</u> Paris. We already booked.</div><div class="pt">Vamos visitar Paris. Já reservamos. (plano organizado)</div></div>
+    </div>
+
+    <div class="s-tip">
+      <strong>Truque mental:</strong><br>
+      A: "I'm hungry." — B: "I<strong>'ll make</strong> a sandwich." → decidiu agora = <strong>will</strong><br>
+      "I already bought the eggs. I<strong>'m going to make</strong> a cake." → plano anterior = <strong>going to</strong>
+    </div>
+
+    <div class="s-warn">
+      <strong>Dica para evidência:</strong> se você consegue VER a previsão acontecendo (nuvens carregadas, alguém prestes a cair, carro acelerando), use <strong>going to</strong>. Se é só opinião ("I think..."), use <strong>will</strong>.
+    </div>
+  `,
+
+  "Life Plans": `
+    <div class="s-intro">Como falar sobre planos de vida, sonhos e decisões importantes em inglês. Gira em torno de <strong>will</strong> e <strong>going to</strong>, com algumas estruturas extras.</div>
+
+    <div class="s-sec">
+      <h3>Estruturas mais comuns</h3>
+
+      <div class="s-rule"><strong>be going to</strong> + verbo → plano já definido</div>
+      <div class="s-ex"><div class="en">I'<u>m going to study</u> medicine.</div><div class="pt">Vou estudar medicina. (já decidido)</div></div>
+
+      <div class="s-rule" style="margin-top:14px"><strong>want to / would like to</strong> + verbo → desejo</div>
+      <div class="s-ex"><div class="en">I <u>want to travel</u> the world.</div><div class="pt">Eu quero viajar o mundo.</div></div>
+      <div class="s-ex"><div class="en">I'<u>d like to learn</u> Japanese.</div><div class="pt">Eu gostaria de aprender japonês.</div></div>
+
+      <div class="s-rule" style="margin-top:14px"><strong>might / may</strong> + verbo → talvez</div>
+      <div class="s-ex"><div class="en">I <u>might become</u> a teacher.</div><div class="pt">Talvez eu vire professor.</div></div>
+
+      <div class="s-rule" style="margin-top:14px"><strong>will probably</strong> + verbo → provavelmente</div>
+      <div class="s-ex"><div class="en">I'<u>ll probably go</u> to college next year.</div><div class="pt">Provavelmente vou pra faculdade no ano que vem.</div></div>
+    </div>
+
+    <div class="s-sec">
+      <h3>Perguntas típicas sobre planos</h3>
+      <div class="s-ex"><div class="en">What <u>are you going to do</u> after school?</div><div class="pt">O que você vai fazer depois da escola?</div></div>
+      <div class="s-ex"><div class="en">What <u>do you want to be</u>?</div><div class="pt">O que você quer ser?</div></div>
+      <div class="s-ex"><div class="en">Where <u>do you see yourself</u> in 10 years?</div><div class="pt">Onde você se vê em 10 anos?</div></div>
+    </div>
+
+    <div class="s-tip">
+      <strong>Resumão de quando usar:</strong><br>
+      • Plano <strong>confirmado</strong>, em andamento → <strong>going to</strong><br>
+      • Plano <strong>incerto</strong>, "talvez" → <strong>might / will probably</strong><br>
+      • Sonho/desejo sem plano concreto → <strong>want to / would like to</strong>
+    </div>
+  `,
+
+  "KET Practice": `
+    <div class="s-intro">O KET (Key English Test) é o exame básico da Cambridge (nível A2). Aqui estão os temas que mais aparecem.</div>
+
+    <div class="s-sec">
+      <h3>Artigos: a / an / the</h3>
+      <ul>
+        <li><strong>a</strong> + som de consoante: a book, a university (você-niversity)</li>
+        <li><strong>an</strong> + som de vogal: an apple, an hour (h mudo)</li>
+        <li><strong>the</strong>: quando é algo específico, conhecido</li>
+      </ul>
+      <div class="s-ex"><div class="en">She has <u>a</u> dog and <u>an</u> umbrella.</div></div>
+    </div>
+
+    <div class="s-sec">
+      <h3>Preposições de tempo</h3>
+      <ul>
+        <li><strong>at</strong> + horas: at 7 o'clock, at noon, at night</li>
+        <li><strong>on</strong> + dias: on Monday, on my birthday</li>
+        <li><strong>in</strong> + meses/anos/estações: in July, in 2025, in summer</li>
+      </ul>
+    </div>
+
+    <div class="s-sec">
+      <h3>Comparativo e superlativo</h3>
+      <ul>
+        <li><strong>Curtos</strong>: tall → tall<u>er</u> → the tall<u>est</u></li>
+        <li><strong>Longos</strong>: beautiful → <u>more</u> beautiful → the <u>most</u> beautiful</li>
+        <li><strong>Irregulares</strong>: good → better → best · bad → worse → worst</li>
+      </ul>
+    </div>
+
+    <div class="s-sec">
+      <h3>Since vs For</h3>
+      <ul>
+        <li><strong>since</strong> + ponto no tempo: since 2010, since Monday, since I was a child</li>
+        <li><strong>for</strong> + duração: for 3 years, for two hours, for a long time</li>
+      </ul>
+    </div>
+
+    <div class="s-sec">
+      <h3>Some / any / much / many</h3>
+      <ul>
+        <li><strong>some</strong>: afirmativas (some water, some books)</li>
+        <li><strong>any</strong>: negativas e perguntas (any milk, any friends)</li>
+        <li><strong>much</strong>: substantivos incontáveis (much sugar, much time)</li>
+        <li><strong>many</strong>: substantivos contáveis (many apples, many cars)</li>
+      </ul>
+    </div>
+
+    <div class="s-sec">
+      <h3>Present Perfect (Have + particípio)</h3>
+      <p>Usado para experiências de vida e ações que começaram no passado e continuam.</p>
+      <div class="s-ex"><div class="en"><u>Have you ever been</u> to Paris?</div><div class="pt">Você já esteve em Paris?</div></div>
+      <div class="s-ex"><div class="en">I <u>have lived</u> here since 2010.</div><div class="pt">Eu moro aqui desde 2010.</div></div>
+    </div>
+
+    <div class="s-tip">
+      <strong>Dica geral KET:</strong> leia as instruções com calma e procure palavras-chave (since, for, at, in, ever, never, already, yet). Elas indicam qual estrutura usar.
+    </div>
+  `
+};
+
 // Ícones por tema
 const TOPIC_ICONS = {
   "Question Tags": "help",
@@ -917,11 +1399,39 @@ function renderStaticIcons() {
     <span class="ico">${icon("bulb", 18)}</span>
     <div><strong>Dica:</strong> não decora as respostas — entende a regra. Se errar uma questão, lê a explicação com calma antes de seguir.</div>
   `;
-  // Buttons
   const startBtn = document.getElementById("start-btn");
   if (startBtn) startBtn.innerHTML = `${icon("play", 16)} <span>Começar Simulado</span>`;
   const randomBtn = document.getElementById("random-btn");
   if (randomBtn) randomBtn.innerHTML = `${icon("shuffle", 16)} <span>Modo Aleatório (tudo misturado)</span>`;
+}
+
+function renderStudyGrid() {
+  const topics = [...new Set(QUESTIONS.map(q => q.topic))];
+  const grid = document.getElementById("study-grid");
+  grid.innerHTML = "";
+  topics.forEach(t => {
+    const btn = document.createElement("button");
+    btn.className = "topic-card";
+    btn.innerHTML = `<span class="ico-box">${icon(TOPIC_ICONS[t] || "book", 18)}</span><div><div class="lbl">${t}</div><div class="count">Ver regras e dicas</div></div>`;
+    btn.onclick = () => openStudy(t);
+    grid.appendChild(btn);
+  });
+}
+
+function openStudy(topic) {
+  document.getElementById("study-back-btn").innerHTML = icon("chevronL", 20);
+  document.getElementById("study-title").innerHTML = `${icon(TOPIC_ICONS[topic] || "book", 22)} <span>${topic}</span>`;
+  document.getElementById("study-body").innerHTML = STUDY_CONTENT[topic] || "<p>Conteúdo em breve.</p>";
+  const trainBtn = document.getElementById("study-train-btn");
+  trainBtn.innerHTML = `${icon("play", 16)} <span>Treinar este tema agora</span>`;
+  trainBtn.onclick = () => {
+    selectedTopic = topic;
+    renderTopicGrid();
+    startQuiz();
+  };
+  const homeBtn = document.getElementById("study-home-btn");
+  homeBtn.innerHTML = `${icon("home", 16)} <span>Voltar ao início</span>`;
+  showScreen("study-screen");
 }
 
 // ============================================
@@ -950,7 +1460,7 @@ function escapeHtml(s) {
 }
 
 function showScreen(id) {
-  ["home-screen", "quiz-screen", "results-screen"].forEach(s => {
+  ["home-screen", "quiz-screen", "results-screen", "study-screen"].forEach(s => {
     document.getElementById(s).classList.add("hidden");
   });
   const el = document.getElementById(id);
@@ -1153,7 +1663,7 @@ function animateNumber(elId, from, to, duration, suffix = "") {
 }
 
 function restart() { startQuiz(selectedTopic === "all"); }
-function goHome() { renderStatsBar(); renderTopicGrid(); renderStaticIcons(); showScreen("home-screen"); }
+function goHome() { renderStatsBar(); renderTopicGrid(); renderStudyGrid(); renderStaticIcons(); showScreen("home-screen"); }
 function confirmQuit() {
   if (confirm("Sair do simulado? Seu progresso será perdido.")) goHome();
 }
@@ -1221,6 +1731,7 @@ window.addEventListener("resize", () => {
 // ============================================
 renderStatsBar();
 renderTopicGrid();
+renderStudyGrid();
 renderStaticIcons();
 </script>
 </body>
