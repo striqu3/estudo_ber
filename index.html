@@ -676,6 +676,18 @@ const QUESTIONS = [
   { topic: "Question Tags", q: "Maria didn't call you yesterday, ______?",
     options: ["didn't she", "did she", "doesn't she", "wasn't she"], correct: 1,
     explain: "Frase negativa no passado (<strong>didn't</strong>) → tag afirmativa: <strong>did she</strong>." },
+  { topic: "Question Tags", q: "You went to the cinema last night, ______?",
+    options: ["didn't you", "did you", "weren't you", "haven't you"], correct: 0,
+    explain: "Passado simples afirmativo (<strong>went</strong>) → tag negativa com auxiliar <strong>did</strong>: <strong>didn't you</strong>." },
+  { topic: "Question Tags", q: "Let's watch a movie, ______?",
+    options: ["don't we", "will we", "shall we", "won't we"], correct: 2,
+    explain: "Com sugestões usando <strong>Let's</strong>, a tag é sempre <strong>shall we</strong>." },
+  { topic: "Question Tags", q: "There aren't any cookies left, ______?",
+    options: ["aren't there", "are there", "aren't they", "do they"], correct: 1,
+    explain: "Em frases com <strong>there is/are</strong> negativa → tag afirmativa: <strong>are there</strong>." },
+  { topic: "Question Tags", q: "Close the window, ______?",
+    options: ["don't you", "shan't you", "will you", "do you"], correct: 2,
+    explain: "Em pedidos no imperativo, usamos <strong>will you</strong> (ou won't you, can you) para soar mais educado." },
 
   // ===== INDEFINITE PRONOUNS =====
   { topic: "Indefinite Pronouns", q: "I'm thirsty. I need ______ to drink.",
@@ -696,6 +708,18 @@ const QUESTIONS = [
   { topic: "Indefinite Pronouns", q: "Would you like ______ to eat? I made sandwiches.",
     options: ["nothing", "something", "everything", "nowhere"], correct: 1,
     explain: "Em <strong>ofertas</strong> e <strong>pedidos educados</strong>, usamos <strong>something</strong> mesmo sendo pergunta. Ex: Would you like something to drink?" },
+  { topic: "Indefinite Pronouns", q: "I lost my wallet — I have ______ in my pocket.",
+    options: ["something", "anything", "nothing", "everything"], correct: 2,
+    explain: "<strong>Nothing</strong> = nada. O verbo fica afirmativo (I have nothing) porque o pronome já é negativo. Equivale a 'I don't have anything'." },
+  { topic: "Indefinite Pronouns", q: "He went to the party but didn't talk to ______.",
+    options: ["somebody", "anybody", "nobody", "everybody"], correct: 1,
+    explain: "Em frases <strong>negativas</strong> (didn't talk), usa-se <strong>anybody</strong>. Lembra: any- vai com negativas e perguntas." },
+  { topic: "Indefinite Pronouns", q: "The room is empty — ______ is here.",
+    options: ["somebody", "anybody", "nobody", "everybody"], correct: 2,
+    explain: "<strong>Nobody</strong> = ninguém. Como o pronome já é negativo, o verbo fica afirmativo (nobody IS, não nobody ISN'T)." },
+  { topic: "Indefinite Pronouns", q: "Let's go ______ quiet. I can't think with this noise.",
+    options: ["somewhere", "anywhere", "nowhere", "everywhere"], correct: 0,
+    explain: "Frase <strong>afirmativa</strong> (Let's go) → <strong>somewhere</strong> (algum lugar). Anywhere seria em negativas/perguntas." },
 
   // ===== PRESENT TENSES =====
   { topic: "Present Tenses", q: "Look! It ______ outside. Take an umbrella.",
@@ -722,6 +746,12 @@ const QUESTIONS = [
   { topic: "Present Tenses", q: "Sarah usually ______ coffee, but today she ______ tea.",
     options: ["drinks / is drinking", "is drinking / drinks", "drink / drinks", "drinks / drink"], correct: 0,
     explain: "<em>Usually</em> → hábito → Present Simple (<strong>drinks</strong>). <em>Today</em> + exceção → Present Continuous (<strong>is drinking</strong>)." },
+  { topic: "Present Tenses", q: "Listen! Someone ______ in the next room.",
+    options: ["sings", "sing", "is singing", "singing"], correct: 2,
+    explain: "<em>Listen!</em> indica ação acontecendo AGORA → <strong>Present Continuous</strong>: is singing." },
+  { topic: "Present Tenses", q: "Polar bears ______ in cold regions of the world.",
+    options: ["are living", "live", "lives", "living"], correct: 1,
+    explain: "<strong>Present Simple</strong> → verdade geral/fato sobre a natureza. Sujeito plural (bears) → verbo sem -s." },
 
   // ===== FUTURE TENSES =====
   { topic: "Future Tenses", q: "Look at those dark clouds! It ______ rain.",
@@ -748,6 +778,12 @@ const QUESTIONS = [
   { topic: "Future Tenses", q: "Be careful! You ______ fall!",
     options: ["will", "are going to", "fall", "falling"], correct: 1,
     explain: "Previsão com <strong>evidência imediata</strong> (a pessoa está prestes a cair) → <strong>going to</strong>." },
+  { topic: "Future Tenses", q: "The sky is completely clear. It ______ be a beautiful day.",
+    options: ["will", "is going to", "shall", "would"], correct: 1,
+    explain: "Previsão com <strong>evidência visível</strong> (céu limpo) → <strong>going to</strong>." },
+  { topic: "Future Tenses", q: "— I'm going to the store. — Oh, ______ you bring me some milk?",
+    options: ["are", "will", "do", "going"], correct: 1,
+    explain: "<strong>Pedidos educados</strong> usam <strong>will you</strong>...? Equivale a 'você pode me trazer leite?'" },
 
   // ===== LIFE PLANS =====
   { topic: "Life Plans", q: "What ______ you ______ after finishing school?",
@@ -762,6 +798,24 @@ const QUESTIONS = [
   { topic: "Life Plans", q: "He ______ a new job next Monday. Everything is arranged.",
     options: ["will start", "is going to start", "start", "starting"], correct: 1,
     explain: "Plano já organizado (<em>everything is arranged</em>) → <strong>going to</strong>." },
+  { topic: "Life Plans", q: "I'm finally taking action — I ______ get my driver's license. I start lessons next week.",
+    options: ["will", "am going to", "would", "could"], correct: 1,
+    explain: "Plano já em andamento (aulas marcadas) → <strong>be going to</strong>: am going to get." },
+  { topic: "Life Plans", q: "After graduation, my brother ______ move to Canada. He already has a job offer.",
+    options: ["will", "is going to", "moves", "moving"], correct: 1,
+    explain: "Plano confirmado (oferta de emprego pronta) → <strong>going to</strong>." },
+  { topic: "Life Plans", q: "Mariana has already chosen — she ______ study engineering at university.",
+    options: ["will", "is going to", "studies", "study"], correct: 1,
+    explain: "Decisão já tomada (<em>has already chosen</em>) → <strong>going to</strong>." },
+  { topic: "Life Plans", q: "— What are your plans for tonight? — I ______ watch a movie with friends.",
+    options: ["will", "am going to", "do", "watch"], correct: 1,
+    explain: "Pergunta sobre <strong>planos</strong> + resposta com plano combinado → <strong>going to</strong>." },
+  { topic: "Life Plans", q: "I'm not sure yet — maybe I ______ become a teacher, maybe a doctor.",
+    options: ["will", "am going to", "be", "going"], correct: 0,
+    explain: "<em>Not sure</em> + <em>maybe</em> = incerteza → <strong>will</strong>. Going to é para planos definidos." },
+  { topic: "Life Plans", q: "After saving for years, they ______ buy their dream house next month.",
+    options: ["will", "are going to", "buy", "buying"], correct: 1,
+    explain: "Plano planejado por muito tempo, prestes a se realizar → <strong>going to</strong>." },
 
   // ===== KET PRACTICE =====
   { topic: "KET Practice", q: "My brother is ______ engineer.",
@@ -790,7 +844,10 @@ const QUESTIONS = [
     explain: "Para perguntar sobre <strong>localização</strong>, usamos <strong>where</strong>. Em pergunta indireta, a ordem fica afirmativa: where the bank is." },
   { topic: "KET Practice", q: "How ______ sugar do you want in your coffee?",
     options: ["many", "much", "few", "some"], correct: 1,
-    explain: "<strong>Much</strong> com substantivos <strong>incontáveis</strong> (sugar, water, time). <strong>Many</strong> com contáveis (apples, books)." }
+    explain: "<strong>Much</strong> com substantivos <strong>incontáveis</strong> (sugar, water, time). <strong>Many</strong> com contáveis (apples, books)." },
+  { topic: "KET Practice", q: "I usually wake up ______ 7 o'clock.",
+    options: ["on", "in", "at", "for"], correct: 2,
+    explain: "Preposição de tempo com <strong>horas</strong>: <strong>at</strong> (at 7, at noon, at midnight). On para dias, in para meses/anos." }
 ];
 
 // Ícones por tema
@@ -840,7 +897,7 @@ function renderTopicGrid() {
 
   const allBtn = document.createElement("button");
   allBtn.className = "topic-card full" + (selectedTopic === "all" ? " active" : "");
-  allBtn.innerHTML = `<span class="ico-box">${icon("book", 20)}</span><div class="lbl-wrap"><div class="lbl">Todos os temas</div><div class="count">${QUESTIONS.length} questões</div></div>`;
+  allBtn.innerHTML = `<span class="ico-box">${icon("book", 20)}</span><div class="lbl-wrap"><div class="lbl">Todos os temas</div><div class="count">15 por tentativa · sorteadas de ${QUESTIONS.length} questões</div></div>`;
   allBtn.onclick = () => { selectedTopic = "all"; renderTopicGrid(); };
   grid.appendChild(allBtn);
 
@@ -908,11 +965,16 @@ function showScreen(id) {
 // QUIZ
 // ============================================
 function startQuiz(randomMode = false) {
-  const pool = (randomMode || selectedTopic === "all")
-    ? QUESTIONS
-    : QUESTIONS.filter(q => q.topic === selectedTopic);
-  // Embaralha a ordem das questões E as alternativas dentro de cada uma
-  currentQuestions = shuffle(pool).map(shuffleOptions);
+  let pool, count;
+  if (randomMode || selectedTopic === "all") {
+    pool = QUESTIONS;
+    count = 15; // sorteia 15 do banco inteiro
+  } else {
+    pool = QUESTIONS.filter(q => q.topic === selectedTopic);
+    count = pool.length; // 10 do tema escolhido
+  }
+  // Embaralha questões, pega só `count`, e embaralha as alternativas de cada
+  currentQuestions = shuffle(pool).slice(0, count).map(shuffleOptions);
   currentIndex = 0;
   userAnswers = [];
   showScreen("quiz-screen");
