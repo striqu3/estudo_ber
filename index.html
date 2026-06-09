@@ -102,6 +102,42 @@
     font-weight: 500;
   }
 
+  /* ========= SET SWITCH (bloco de estudo) ========= */
+  .set-switch {
+    display: flex;
+    gap: 6px;
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 16px;
+    padding: 5px;
+    margin: 4px 0 12px;
+  }
+  .set-switch button {
+    flex: 1;
+    border: none;
+    background: transparent;
+    color: rgba(255, 255, 255, 0.82);
+    font-family: inherit;
+    cursor: pointer;
+    padding: 9px 8px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1px;
+    transition: all 0.2s;
+  }
+  .set-switch button .t { font-size: 0.92rem; font-weight: 800; letter-spacing: -0.01em; }
+  .set-switch button .sub { font-size: 0.66rem; font-weight: 600; opacity: 0.72; }
+  .set-switch button.active {
+    background: #fff;
+    color: var(--primary-dark);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+  }
+  .set-switch button.active .sub { opacity: 0.78; }
+
   /* ========= STATS BAR ========= */
   .stats-bar {
     display: grid;
@@ -724,6 +760,8 @@
       <p>Hora de detonar a prova de inglês</p>
     </div>
 
+    <div class="set-switch" id="set-switch"></div>
+
     <div class="stats-bar" id="stats-bar"></div>
 
     <div class="card">
@@ -852,7 +890,11 @@ const ICONS = {
   book:      '<path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>',
   zap:       '<polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>',
   chevronL:  '<polyline points="15 18 9 12 15 6"/>',
-  open:      '<path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>'
+  open:      '<path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>',
+  tag:       '<path d="M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.704 8.704a2.426 2.426 0 0 0 3.42 0l6.58-6.58a2.426 2.426 0 0 0 0-3.42z"/><circle cx="7.5" cy="7.5" r="1"/>',
+  alert:     '<path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/>',
+  link:      '<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>',
+  repeat:    '<path d="m17 2 4 4-4 4"/><path d="M3 11v-1a4 4 0 0 1 4-4h14"/><path d="m7 22-4-4 4-4"/><path d="M21 13v1a4 4 0 0 1-4 4H3"/>'
 };
 function icon(name, size = 18, strokeWidth = 2) {
   return `<svg class="icon" viewBox="0 0 24 24" width="${size}" height="${size}" fill="none" stroke="currentColor" stroke-width="${strokeWidth}" stroke-linecap="round" stroke-linejoin="round">${ICONS[name] || ''}</svg>`;
@@ -1052,7 +1094,231 @@ const QUESTIONS = [
     explain: "<strong>Much</strong> com substantivos <strong>incontáveis</strong> (sugar, water, time). <strong>Many</strong> com contáveis (apples, books)." },
   { topic: "KET Practice", q: "I usually wake up ______ 7 o'clock.",
     options: ["on", "in", "at", "for"], correct: 2,
-    explain: "Preposição de tempo com <strong>horas</strong>: <strong>at</strong> (at 7, at noon, at midnight). On para dias, in para meses/anos." }
+    explain: "Preposição de tempo com <strong>horas</strong>: <strong>at</strong> (at 7, at noon, at midnight). On para dias, in para meses/anos." },
+
+  // ===== USED TO & WOULD (Unit 02 – A Hard Life) =====
+  { topic: "Used to & Would", q: "I ______ smoke, but I quit five years ago.",
+    options: ["used to", "would", "am used to", "use to"], correct: 0,
+    explain: "<strong>Used to</strong> + verbo = hábito do passado que <strong>não acontece mais</strong>. 'Would' sem marcador de tempo não funciona bem aqui." },
+  { topic: "Used to & Would", q: "There ______ a cinema here, but they knocked it down.",
+    options: ["used to be", "would be", "would have", "use to be"], correct: 0,
+    explain: "Com <strong>verbos de estado</strong> (there be, have, like, know) só se usa <strong>used to</strong>. <em>Would</em> só serve para ações repetidas." },
+  { topic: "Used to & Would", q: "I ______ like vegetables when I was young, but now I love them.",
+    options: ["didn't use to", "didn't used to", "usedn't to", "don't use to"], correct: 0,
+    explain: "Na negativa, depois de <strong>didn't</strong> volta a forma base: <strong>didn't use to</strong> (sem -d em 'use')." },
+  { topic: "Used to & Would", q: "______ you ______ play football as a kid?",
+    options: ["Did / use to", "Did / used to", "Do / use to", "Were / used to"], correct: 0,
+    explain: "Na pergunta usa-se <strong>Did + sujeito + use to</strong> (forma base 'use to', sem -d)." },
+  { topic: "Used to & Would", q: "On Sundays, my grandfather ______ us stories for hours.",
+    options: ["would tell", "will tell", "would told", "would telling"], correct: 0,
+    explain: "<strong>Would</strong> + verbo base = ação repetida no passado. Depois de would, o verbo fica no infinitivo sem 'to': <strong>would tell</strong>." },
+  { topic: "Used to & Would", q: "When we were children, we ______ a big garden.",
+    options: ["used to have", "would have", "would had", "use to have"], correct: 0,
+    explain: "<em>Have</em> (possuir) é verbo de estado → só <strong>used to have</strong>. 'Would have' aqui estaria errado." },
+  { topic: "Used to & Would", q: "She ______ be very shy, but now she's confident.",
+    options: ["used to", "would", "uses to", "would be"], correct: 0,
+    explain: "<em>Be</em> é estado → <strong>used to</strong>. 'She used to be shy' = ela era tímida (não é mais)." },
+  { topic: "Used to & Would", q: "Did people ______ travel by horse in the past?",
+    options: ["use to", "used to", "would", "using to"], correct: 0,
+    explain: "Depois de <strong>did</strong>, sempre a forma base: <strong>use to</strong> (sem -d)." },
+  { topic: "Used to & Would", q: "I'm not ______ getting up so early — it's really hard.",
+    options: ["used to", "use to", "would", "used"], correct: 0,
+    explain: "Atenção: <strong>be used to + -ing</strong> = estar acostumado (presente). Diferente de 'used to + verbo' (hábito passado)." },
+  { topic: "Used to & Would", q: "When money was tight, we ______ meat only on special days.",
+    options: ["would eat", "would ate", "will eat", "would eating"], correct: 0,
+    explain: "Ação repetida no passado → <strong>would + verbo base</strong>: would eat." },
+
+  // ===== RELATIVE CLAUSES (Unit 03 – What's in a name?) =====
+  { topic: "Relative Clauses", q: "The man ______ lives next door is a doctor.",
+    options: ["who", "which", "whose", "where"], correct: 0,
+    explain: "<strong>Who</strong> = para <strong>pessoas</strong>. (That também serviria, mas para pessoas o natural é who.)" },
+  { topic: "Relative Clauses", q: "This is the book ______ I told you about.",
+    options: ["who", "which", "whose", "where"], correct: 1,
+    explain: "<strong>Which</strong> = para <strong>coisas</strong>. Para pessoas seria 'who'." },
+  { topic: "Relative Clauses", q: "She's the girl ______ bag was stolen.",
+    options: ["who", "whose", "which", "who's"], correct: 1,
+    explain: "<strong>Whose</strong> = <strong>posse</strong> ('cujo/cuja'). The girl whose bag = a garota cuja bolsa." },
+  { topic: "Relative Clauses", q: "That's the house ______ I was born.",
+    options: ["which", "who", "where", "that"], correct: 2,
+    explain: "<strong>Where</strong> = para <strong>lugares</strong>. The house where I was born = a casa onde nasci." },
+  { topic: "Relative Clauses", q: "Do you remember the day ______ we first met?",
+    options: ["where", "when", "which", "who"], correct: 1,
+    explain: "<strong>When</strong> = para <strong>tempo</strong> (dia, ano, momento). The day when we met." },
+  { topic: "Relative Clauses", q: "The car ______ broke down was very old.",
+    options: ["who", "that", "whose", "where"], correct: 1,
+    explain: "<strong>That</strong> (ou which) = para coisas. Aqui é o sujeito da oração: the car that broke down." },
+  { topic: "Relative Clauses", q: "I have a friend ______ speaks five languages.",
+    options: ["who", "which", "whose", "where"], correct: 0,
+    explain: "<strong>Who</strong> = pessoa que faz a ação. A friend who speaks = um amigo que fala." },
+  { topic: "Relative Clauses", q: "He's the author ______ books are famous worldwide.",
+    options: ["who", "which", "whose", "that"], correct: 2,
+    explain: "<strong>Whose</strong> indica posse: the author whose books = o autor cujos livros." },
+  { topic: "Relative Clauses", q: "That's the restaurant ______ serves the best pizza in town.",
+    options: ["who", "whose", "where", "that"], correct: 3,
+    explain: "<strong>That</strong> (ou which) para coisas/lugares como sujeito. Cuidado: aqui o restaurante 'serve' (faz a ação), então não é 'where'." },
+  { topic: "Relative Clauses", q: "Paris is a city ______ millions of tourists visit every year.",
+    options: ["which", "where", "who", "whose"], correct: 0,
+    explain: "<strong>Which</strong> (objeto de 'visit'): tourists visit the city. Seria 'where' só se não houvesse objeto: 'the city where I live'." },
+
+  // ===== MAKING & SELLING (Vocabulary) =====
+  { topic: "Making & Selling", q: "A person who buys goods from a shop is a ______.",
+    options: ["customer", "seller", "manager", "owner"], correct: 0,
+    explain: "<strong>Customer</strong> = cliente (quem compra). Seller = vendedor; owner = dono." },
+  { topic: "Making & Selling", q: "The money a company keeps after paying its costs is the ______.",
+    options: ["price", "profit", "cost", "loss"], correct: 1,
+    explain: "<strong>Profit</strong> = lucro (o que sobra). Loss = prejuízo; cost = custo; price = preço." },
+  { topic: "Making & Selling", q: "To ______ a product means to tell the public about it so more people buy it.",
+    options: ["advertise", "manufacture", "deliver", "store"], correct: 0,
+    explain: "<strong>Advertise</strong> = anunciar/fazer propaganda. Manufacture = fabricar; deliver = entregar." },
+  { topic: "Making & Selling", q: "Factories ______ thousands of cars every year.",
+    options: ["manufacture", "sell", "buy", "advertise"], correct: 0,
+    explain: "<strong>Manufacture</strong> = fabricar/produzir em grande quantidade. É o que as fábricas fazem." },
+  { topic: "Making & Selling", q: "I can't ______ a new phone right now; it's too expensive.",
+    options: ["afford", "spend", "cost", "win"], correct: 0,
+    explain: "<strong>Afford</strong> = ter dinheiro para (poder pagar). 'I can't afford it' = não posso bancar." },
+  { topic: "Making & Selling", q: "The shop gave me a ______ because the shirt was damaged.",
+    options: ["receipt", "refund", "discount", "bargain"], correct: 1,
+    explain: "<strong>Refund</strong> = devolução do dinheiro. Receipt = recibo; discount = desconto." },
+  { topic: "Making & Selling", q: "Keep the ______ in case you want to return the item.",
+    options: ["recipe", "receipt", "refund", "brand"], correct: 1,
+    explain: "<strong>Receipt</strong> = recibo/nota (prova da compra). Cuidado: <em>recipe</em> = receita de cozinha!" },
+  { topic: "Making & Selling", q: "During the sale, everything had a 50% ______.",
+    options: ["discount", "profit", "refund", "tax"], correct: 0,
+    explain: "<strong>Discount</strong> = desconto. '50% discount' = 50% de desconto." },
+  { topic: "Making & Selling", q: "Nike and Adidas are famous ______.",
+    options: ["brands", "customers", "factories", "markets"], correct: 0,
+    explain: "<strong>Brands</strong> = marcas. São nomes comerciais conhecidos." },
+  { topic: "Making & Selling", q: "If there is high ______ for a product, the price usually goes up.",
+    options: ["supply", "demand", "discount", "refund"], correct: 1,
+    explain: "<strong>Demand</strong> = procura. Muita procura → preço sobe. Supply = oferta (o oposto)." },
+
+  // ===== OBLIGATION, ADVICE & PROHIBITION (modais) =====
+  { topic: "Obligation & Advice", q: "You ______ wear a seatbelt in the car. It's the law.",
+    options: ["must", "mustn't", "don't have to", "needn't"], correct: 0,
+    explain: "<strong>Must</strong> / have to = obrigação. É a lei, então é obrigatório." },
+  { topic: "Obligation & Advice", q: "You ______ smoke here — it's a hospital.",
+    options: ["don't have to", "mustn't", "should", "have to"], correct: 1,
+    explain: "<strong>Mustn't</strong> = proibição (não pode). É a forma para algo que NÃO é permitido." },
+  { topic: "Obligation & Advice", q: "It's Sunday, so I ______ get up early. I can sleep in.",
+    options: ["mustn't", "don't have to", "have to", "should"], correct: 1,
+    explain: "<strong>Don't have to</strong> = não é necessário (mas pode, se quiser). Diferente de 'mustn't', que é proibição." },
+  { topic: "Obligation & Advice", q: "You ______ see a doctor about that cough.",
+    options: ["mustn't", "don't have to", "should", "can't"], correct: 2,
+    explain: "<strong>Should</strong> = conselho/recomendação. 'You should see a doctor' = seria bom ir ao médico." },
+  { topic: "Obligation & Advice", q: "You ______ eat so much sugar; it's bad for you.",
+    options: ["shouldn't", "don't have to", "must", "can"], correct: 0,
+    explain: "<strong>Shouldn't</strong> = conselho negativo (não é uma boa ideia). Não é proibição, é recomendação." },
+  { topic: "Obligation & Advice", q: "Students ______ use their phones during the exam.",
+    options: ["don't have to", "mustn't", "should", "ought to"], correct: 1,
+    explain: "<strong>Mustn't</strong> = proibido. Durante a prova, usar o celular não é permitido." },
+  { topic: "Obligation & Advice", q: "We ______ hurry — the train leaves in five minutes!",
+    options: ["don't have to", "have to", "shouldn't", "mustn't"], correct: 1,
+    explain: "<strong>Have to</strong> / must = obrigação/necessidade. Precisamos correr agora." },
+  { topic: "Obligation & Advice", q: "You ______ to apologize to her — it's the right thing to do.",
+    options: ["should", "must", "ought", "can"], correct: 2,
+    explain: "<strong>Ought to</strong> = dever/conselho. É o único que vem seguido de <strong>to</strong> ('ought TO apologize')." },
+  { topic: "Obligation & Advice", q: "She ______ work tomorrow because it's a holiday.",
+    options: ["mustn't", "doesn't have to", "must", "should"], correct: 1,
+    explain: "<strong>Doesn't have to</strong> = não precisa (é feriado). Não é proibição — ela poderia trabalhar se quisesse." },
+  { topic: "Obligation & Advice", q: "Visitors ______ feed the animals at the zoo.",
+    options: ["don't have to", "mustn't", "should", "have to"], correct: 1,
+    explain: "<strong>Mustn't</strong> = proibido. Alimentar os animais não é permitido." },
+
+  // ===== HAD BETTER / HAD BETTER NOT =====
+  { topic: "Had Better", q: "You'd better ______ now, or you'll miss the bus.",
+    options: ["leave", "to leave", "leaving", "left"], correct: 0,
+    explain: "Depois de <strong>had better</strong> vem o verbo na <strong>forma base</strong>, sem 'to': 'd better leave." },
+  { topic: "Had Better", q: "It's raining hard. We ______ take an umbrella.",
+    options: ["had better", "had better to", "would better", "better had"], correct: 0,
+    explain: "<strong>Had better</strong> ('d better) = conselho forte/aviso, com consequência se não fizer." },
+  { topic: "Had Better", q: "You ______ be late again, or the boss will be angry.",
+    options: ["had better not", "had not better", "hadn't better to", "better not had"], correct: 0,
+    explain: "A negativa é <strong>had better not</strong> + verbo base. O 'not' vem depois de 'better'." },
+  { topic: "Had Better", q: "You'd better not ______ him now; he's in a terrible mood.",
+    options: ["disturb", "to disturb", "disturbing", "disturbed"], correct: 0,
+    explain: "Depois de <strong>had better not</strong>, verbo na forma base: not disturb." },
+  { topic: "Had Better", q: "Saying \"You'd better see a dentist\" means it is ______.",
+    options: ["a strong piece of advice", "a polite offer", "a law you must obey", "a past habit"], correct: 0,
+    explain: "<strong>Had better</strong> = conselho forte / aviso, geralmente com uma consequência ruim se a pessoa não seguir." },
+  { topic: "Had Better", q: "I ______ study tonight; the test is tomorrow morning.",
+    options: ["had better", "would better", "had better to", "am better"], correct: 0,
+    explain: "<strong>Had better</strong> ('d better) para aviso urgente. Forma fixa: had better + verbo base." },
+  { topic: "Had Better", q: "Which sentence is correct?",
+    options: ["You'd better call her.", "You'd better to call her.", "You had better calling her.", "You better had call her."], correct: 0,
+    explain: "Forma correta: <strong>had better + verbo base</strong>, sem 'to' e sem -ing: 'You'd better call her.'" },
+  { topic: "Had Better", q: "We'd better not ______ the last train home.",
+    options: ["miss", "to miss", "missing", "missed"], correct: 0,
+    explain: "<strong>Had better not + verbo base</strong>: not miss." },
+  { topic: "Had Better", q: "You look really ill. You ______ go home and rest.",
+    options: ["had better", "don't have to", "used to", "would"], correct: 0,
+    explain: "<strong>Had better</strong> = conselho forte para uma situação específica e urgente." },
+  { topic: "Had Better", q: "You'd better hurry, ______ you'll be late for school.",
+    options: ["or", "and", "so", "but"], correct: 0,
+    explain: "Had better costuma vir com <strong>or</strong> + consequência: 'or you'll be late' = senão você vai se atrasar." },
+
+  // ===== FIRST & SECOND CONDITIONAL (Unit 04 – What would you do?) =====
+  { topic: "Conditionals", q: "If it ______ tomorrow, we'll stay home.",
+    options: ["rains", "will rain", "rained", "would rain"], correct: 0,
+    explain: "<strong>First conditional</strong> (situação real/futura): If + <strong>present simple</strong>, will + verbo. If it rains, we'll stay." },
+  { topic: "Conditionals", q: "If you study hard, you ______ the exam.",
+    options: ["will pass", "pass", "would pass", "passed"], correct: 0,
+    explain: "First conditional: a parte do resultado leva <strong>will + verbo</strong>: you will pass." },
+  { topic: "Conditionals", q: "If I ______ rich, I would travel the world.",
+    options: ["am", "were", "will be", "would be"], correct: 1,
+    explain: "<strong>Second conditional</strong> (hipotético/irreal): If + <strong>past simple</strong>, would + verbo. Com 'I', usa-se <strong>were</strong>." },
+  { topic: "Conditionals", q: "What would you do if you ______ a million dollars?",
+    options: ["win", "won", "will win", "would win"], correct: 1,
+    explain: "Second conditional (situação imaginária): a parte do 'if' fica no <strong>past simple</strong>: if you won." },
+  { topic: "Conditionals", q: "If I had more time, I ______ the piano.",
+    options: ["will learn", "would learn", "learn", "learned"], correct: 1,
+    explain: "Second conditional: o resultado leva <strong>would + verbo</strong>: I would learn." },
+  { topic: "Conditionals", q: "She won't come ______ you invite her.",
+    options: ["if", "unless", "when", "so"], correct: 1,
+    explain: "<strong>Unless</strong> = 'if not' (a menos que). 'Unless you invite her' = se você não a convidar." },
+  { topic: "Conditionals", q: "If I ______ you, I'd apologize right now.",
+    options: ["am", "was", "were", "will be"], correct: 2,
+    explain: "Expressão fixa de conselho no second conditional: <strong>If I were you</strong> = se eu fosse você." },
+  { topic: "Conditionals", q: "If we ______, we'll catch the bus.",
+    options: ["hurry", "will hurry", "hurried", "would hurry"], correct: 0,
+    explain: "First conditional: a parte do 'if' fica no <strong>present simple</strong>: if we hurry." },
+  { topic: "Conditionals", q: "If I ______ the lottery, I would buy a big house.",
+    options: ["win", "won", "will win", "have won"], correct: 1,
+    explain: "Situação imaginária (improvável) → <strong>second conditional</strong>: if + past simple (won) + would." },
+  { topic: "Conditionals", q: "If you don't hurry, you ______ the train.",
+    options: ["will miss", "miss", "would miss", "missed"], correct: 0,
+    explain: "First conditional (situação real): If + present, <strong>will + verbo</strong> no resultado: you will miss." },
+
+  // ===== TIME CONJUNCTIONS =====
+  { topic: "Time Conjunctions", q: "I'll call you as soon as I ______ home.",
+    options: ["get", "will get", "got", "getting"], correct: 0,
+    explain: "Depois de conjunções de tempo (as soon as, when, after...) referindo-se ao futuro, usa-se o <strong>present simple</strong>, nunca 'will'." },
+  { topic: "Time Conjunctions", q: "______ I was cooking dinner, the phone rang.",
+    options: ["While", "Until", "Before", "As soon as"], correct: 0,
+    explain: "<strong>While</strong> = enquanto. Usado para uma ação longa (cooking) interrompida por outra (the phone rang)." },
+  { topic: "Time Conjunctions", q: "Wait here ______ I come back.",
+    options: ["until", "while", "as soon as", "since"], correct: 0,
+    explain: "<strong>Until</strong> = até (que). 'Wait until I come back' = espere até eu voltar." },
+  { topic: "Time Conjunctions", q: "Brush your teeth ______ you go to bed.",
+    options: ["before", "after", "until", "while"], correct: 0,
+    explain: "<strong>Before</strong> = antes de. A escovação acontece antes de ir dormir." },
+  { topic: "Time Conjunctions", q: "______ finishing his homework, he watched TV.",
+    options: ["After", "Until", "While", "Before"], correct: 0,
+    explain: "<strong>After</strong> = depois de. Pode vir com -ing: 'After finishing' = depois de terminar." },
+  { topic: "Time Conjunctions", q: "I'll text you when I ______ there.",
+    options: ["get", "will get", "would get", "getting"], correct: 0,
+    explain: "Depois de <strong>when</strong> apontando para o futuro, usa-se present simple: when I get there (não 'will get')." },
+  { topic: "Time Conjunctions", q: "We can't leave ______ everyone is ready.",
+    options: ["until", "as soon as", "while", "before"], correct: 0,
+    explain: "<strong>Until</strong> = até (que). Não podemos sair até todos estarem prontos." },
+  { topic: "Time Conjunctions", q: "______ we had dinner, we watched a film together.",
+    options: ["After", "Until", "While", "As soon as"], correct: 0,
+    explain: "<strong>After</strong> = depois (que). Primeiro o jantar, depois o filme." },
+  { topic: "Time Conjunctions", q: "She always listens to music ______ she studies.",
+    options: ["while", "until", "before", "as soon as"], correct: 0,
+    explain: "<strong>While</strong> = enquanto. Duas ações acontecendo ao mesmo tempo." },
+  { topic: "Time Conjunctions", q: "Turn off the lights ______ you leave the room.",
+    options: ["before", "until", "while", "since"], correct: 0,
+    explain: "<strong>Before</strong> = antes de. Apague as luzes antes de sair." }
 ];
 
 // ============================================
@@ -1329,6 +1595,264 @@ const STUDY_CONTENT = {
     <div class="s-tip">
       <strong>Dica geral KET:</strong> leia as instruções com calma e procure palavras-chave (since, for, at, in, ever, never, already, yet). Elas indicam qual estrutura usar.
     </div>
+  `,
+
+  "Used to & Would": `
+    <div class="s-intro">Servem para falar de <strong>hábitos e situações do passado</strong> que não acontecem mais. Aparecem muito na Unit 02 (A Hard Life), contando como a vida era antigamente.</div>
+
+    <div class="s-sec">
+      <h3>USED TO</h3>
+      <p>Hábitos, repetições E estados do passado que mudaram.</p>
+      <div class="s-rule">
+        Afirmativa: <strong>used to</strong> + verbo base<br>
+        Negativa: <strong>didn't use to</strong> + verbo (sem -d!)<br>
+        Pergunta: <strong>Did</strong> + sujeito + <strong>use to</strong> + verbo?
+      </div>
+      <div class="s-ex"><div class="en">I <u>used to</u> live in the countryside.</div><div class="pt">Eu morava no campo (não moro mais).</div></div>
+      <div class="s-ex"><div class="en">She <u>didn't use to</u> like coffee.</div><div class="pt">Ela não gostava de café.</div></div>
+      <div class="s-ex"><div class="en"><u>Did</u> you <u>use to</u> play football?</div><div class="pt">Você costumava jogar futebol?</div></div>
+    </div>
+
+    <div class="s-sec">
+      <h3>WOULD</h3>
+      <p>Só para <strong>ações repetidas</strong> do passado (não para estados).</p>
+      <div class="s-rule">Forma: <strong>would</strong> + verbo base</div>
+      <div class="s-ex"><div class="en">Every summer we <u>would go</u> to the beach.</div><div class="pt">Todo verão a gente ia à praia.</div></div>
+      <div class="s-ex"><div class="en">Grandpa <u>would tell</u> us stories.</div><div class="pt">O vovô (sempre) nos contava histórias.</div></div>
+    </div>
+
+    <div class="s-warn">
+      <strong>Cuidado — would NÃO serve para estados</strong> (be, have, like, know):<br>
+      <span class="bad">Errado:</span> We would have a big garden.<br>
+      <span class="good">Certo:</span> We <strong>used to have</strong> a big garden.
+    </div>
+
+    <div class="s-tip">
+      <strong>Não confunda:</strong> <em>used to + verbo</em> = hábito passado · <em>be used to + -ing</em> = estar acostumado (presente).<br>
+      • I <u>used to</u> get up early. (eu costumava acordar cedo — antes)<br>
+      • I'm <u>used to</u> get<strong>ting</strong> up early. (estou acostumado a acordar cedo — agora)
+    </div>
+  `,
+
+  "Relative Clauses": `
+    <div class="s-intro">Orações relativas dão mais informação sobre uma pessoa, coisa ou lugar, usando pronomes como <strong>who, which, that, whose, where, when</strong>. Foco da Unit 03 (What's in a name?).</div>
+
+    <div class="s-sec">
+      <h3>Qual pronome usar</h3>
+      <div class="s-table">
+        <div class="s-thead"><div>pronome</div><div>usa para</div><div>exemplo</div></div>
+        <div class="s-trow"><div class="prefix">who</div><div>pessoas</div><div>the man who...</div></div>
+        <div class="s-trow"><div class="prefix">which</div><div>coisas/animais</div><div>the book which...</div></div>
+        <div class="s-trow"><div class="prefix">that</div><div>pessoas ou coisas</div><div>the car that...</div></div>
+        <div class="s-trow"><div class="prefix">whose</div><div>posse (cujo)</div><div>the girl whose...</div></div>
+        <div class="s-trow"><div class="prefix">where</div><div>lugares</div><div>the house where...</div></div>
+        <div class="s-trow"><div class="prefix">when</div><div>tempo</div><div>the day when...</div></div>
+      </div>
+    </div>
+
+    <div class="s-sec">
+      <h3>Exemplos</h3>
+      <div class="s-ex"><div class="en">The woman <u>who</u> called you is my aunt.</div><div class="pt">A mulher que te ligou é minha tia.</div></div>
+      <div class="s-ex"><div class="en">This is the phone <u>which</u> I bought yesterday.</div><div class="pt">Esse é o celular que comprei ontem.</div></div>
+      <div class="s-ex"><div class="en">That's the boy <u>whose</u> dog ran away.</div><div class="pt">Aquele é o menino cujo cachorro fugiu.</div></div>
+      <div class="s-ex"><div class="en">This is the town <u>where</u> I grew up.</div><div class="pt">Essa é a cidade onde cresci.</div></div>
+    </div>
+
+    <div class="s-warn">
+      <strong>Cuidado:</strong> não confunda <u>whose</u> (posse) com <u>who's</u> (= who is).<br>
+      <span class="good">Certo:</span> The author <strong>whose</strong> books are famous. (cujos livros)<br>
+      <span class="bad">Errado:</span> The author who's books are famous.
+    </div>
+
+    <div class="s-tip">
+      <strong>Dica:</strong> <u>where</u> só quando NÃO há objeto depois ('the city where I live'). Se o verbo tem objeto, use which/that: 'the city <u>which</u> tourists visit'.
+    </div>
+  `,
+
+  "Making & Selling": `
+    <div class="s-intro">Vocabulário de comércio: fabricar, vender, comprar e tudo que envolve dinheiro e produtos. Decora o sentido de cada palavra com os exemplos.</div>
+
+    <div class="s-sec">
+      <h3>Palavras essenciais</h3>
+      <ul>
+        <li><strong>manufacture / produce</strong> — fabricar / produzir</li>
+        <li><strong>advertise</strong> — anunciar, fazer propaganda</li>
+        <li><strong>customer</strong> — cliente (quem compra)</li>
+        <li><strong>brand</strong> — marca</li>
+        <li><strong>profit</strong> — lucro · <strong>loss</strong> — prejuízo</li>
+        <li><strong>price</strong> — preço · <strong>cost</strong> — custo</li>
+        <li><strong>discount</strong> — desconto · <strong>bargain</strong> — pechincha</li>
+        <li><strong>refund</strong> — reembolso · <strong>receipt</strong> — recibo</li>
+        <li><strong>supply</strong> — oferta · <strong>demand</strong> — procura</li>
+        <li><strong>afford</strong> — poder pagar / bancar</li>
+      </ul>
+    </div>
+
+    <div class="s-sec">
+      <h3>Exemplos</h3>
+      <div class="s-ex"><div class="en">The factory <u>manufactures</u> 500 cars a day.</div><div class="pt">A fábrica produz 500 carros por dia.</div></div>
+      <div class="s-ex"><div class="en">I got a 20% <u>discount</u> on these shoes.</div><div class="pt">Ganhei 20% de desconto nesses sapatos.</div></div>
+      <div class="s-ex"><div class="en">I can't <u>afford</u> a new car.</div><div class="pt">Não tenho como pagar um carro novo.</div></div>
+      <div class="s-ex"><div class="en">Keep your <u>receipt</u> to get a <u>refund</u>.</div><div class="pt">Guarde o recibo para conseguir o reembolso.</div></div>
+    </div>
+
+    <div class="s-warn">
+      <strong>Cuidado com falsos amigos:</strong><br>
+      <span class="bad">≠</span> <strong>receipt</strong> = recibo · <strong>recipe</strong> = receita de cozinha<br>
+      <span class="bad">≠</span> <strong>cost</strong> = custo (quanto custa) · <strong>price</strong> = preço (etiqueta)
+    </div>
+
+    <div class="s-tip">
+      <strong>Truque:</strong> high <u>demand</u> + low <u>supply</u> → o preço sobe. É a lei da oferta e procura, igual em português.
+    </div>
+  `,
+
+  "Obligation & Advice": `
+    <div class="s-intro">Modais para dizer o que é obrigatório, proibido ou recomendado: <strong>have to, must, mustn't, should, shouldn't, ought to, can't</strong>. Cada um tem uma força diferente.</div>
+
+    <div class="s-sec">
+      <h3>Obrigação (precisa fazer)</h3>
+      <div class="s-rule"><strong>must</strong> / <strong>have to</strong> + verbo base = é obrigatório</div>
+      <div class="s-ex"><div class="en">You <u>must</u> wear a seatbelt.</div><div class="pt">Você tem que usar cinto.</div></div>
+      <div class="s-ex"><div class="en">I <u>have to</u> finish this today.</div><div class="pt">Eu tenho que terminar isso hoje.</div></div>
+    </div>
+
+    <div class="s-sec">
+      <h3>Proibição (não pode)</h3>
+      <div class="s-rule"><strong>mustn't</strong> / <strong>can't</strong> + verbo base = é proibido</div>
+      <div class="s-ex"><div class="en">You <u>mustn't</u> smoke here.</div><div class="pt">Você não pode fumar aqui.</div></div>
+      <div class="s-ex"><div class="en">You <u>can't</u> park here.</div><div class="pt">Não é permitido estacionar aqui.</div></div>
+    </div>
+
+    <div class="s-sec">
+      <h3>Falta de obrigação (não precisa)</h3>
+      <div class="s-rule"><strong>don't / doesn't have to</strong> = não é necessário (mas pode, se quiser)</div>
+      <div class="s-ex"><div class="en">It's Sunday — I <u>don't have to</u> work.</div><div class="pt">É domingo, não preciso trabalhar.</div></div>
+    </div>
+
+    <div class="s-sec">
+      <h3>Conselho (seria bom)</h3>
+      <div class="s-rule"><strong>should</strong> / <strong>ought to</strong> = recomendação · <strong>shouldn't</strong> = não é uma boa ideia</div>
+      <div class="s-ex"><div class="en">You <u>should</u> see a doctor.</div><div class="pt">Você deveria ir ao médico.</div></div>
+      <div class="s-ex"><div class="en">You <u>ought to</u> apologize.</div><div class="pt">Você deveria pedir desculpas.</div></div>
+      <div class="s-ex"><div class="en">You <u>shouldn't</u> eat so much sugar.</div><div class="pt">Você não deveria comer tanto açúcar.</div></div>
+    </div>
+
+    <div class="s-warn">
+      <strong>A pegadinha mais comum:</strong> <u>mustn't</u> ≠ <u>don't have to</u>!<br>
+      <span class="bad">mustn't</span> = proibido (NÃO pode fazer)<br>
+      <span class="good">don't have to</span> = opcional (não precisa, mas pode)
+    </div>
+
+    <div class="s-tip">
+      <strong>Lembra:</strong> só <u>ought</u> vem com 'to' depois (ought <strong>to</strong> go). Must, should, can't vêm direto com o verbo base (must go, should go).
+    </div>
+  `,
+
+  "Had Better": `
+    <div class="s-intro">Usado para dar um <strong>conselho forte ou aviso</strong>, quase sempre com uma consequência ruim se a pessoa não seguir. Mais urgente que 'should'.</div>
+
+    <div class="s-sec">
+      <h3>Forma</h3>
+      <div class="s-rule">
+        Afirmativa: <strong>had better</strong> ('d better) + verbo base<br>
+        Negativa: <strong>had better not</strong> + verbo base<br>
+        <strong>Nunca</strong> use 'to' nem -ing depois.
+      </div>
+      <div class="s-ex"><div class="en">You'<u>d better leave</u> now.</div><div class="pt">É melhor você ir agora.</div></div>
+      <div class="s-ex"><div class="en">We'<u>d better not be</u> late.</div><div class="pt">É melhor a gente não se atrasar.</div></div>
+    </div>
+
+    <div class="s-sec">
+      <h3>Padrão com consequência</h3>
+      <p>Muito comum vir com <strong>or</strong> + o que vai dar errado:</p>
+      <div class="s-ex"><div class="en">You'd better hurry, <u>or</u> you'll miss the bus.</div><div class="pt">É melhor correr, senão vai perder o ônibus.</div></div>
+      <div class="s-ex"><div class="en">You'd better study, <u>or</u> you'll fail.</div><div class="pt">É melhor estudar, senão vai reprovar.</div></div>
+    </div>
+
+    <div class="s-warn">
+      <strong>Erros clássicos:</strong><br>
+      <span class="bad">Errado:</span> You'd better <strong>to</strong> call her.<br>
+      <span class="bad">Errado:</span> You'd better <strong>calling</strong> her.<br>
+      <span class="good">Certo:</span> You'd better <strong>call</strong> her.
+    </div>
+
+    <div class="s-tip">
+      <strong>Should vs had better:</strong> 'should' é um conselho geral; <u>had better</u> é mais forte e para uma situação específica e urgente, com risco se ignorar.
+    </div>
+  `,
+
+  "Conditionals": `
+    <div class="s-intro">Condicionais falam sobre "se isso acontecer, então...". O foco da Unit 04 (What would you do?) é o <strong>First</strong> (situações reais) e o <strong>Second</strong> (situações imaginárias).</div>
+
+    <div class="s-sec">
+      <h3>First Conditional — real / provável</h3>
+      <p>Para o futuro: algo que pode realmente acontecer.</p>
+      <div class="s-rule">If + <strong>present simple</strong>, <strong>will</strong> + verbo</div>
+      <div class="s-ex"><div class="en">If it <u>rains</u>, we <u>will stay</u> home.</div><div class="pt">Se chover, vamos ficar em casa.</div></div>
+      <div class="s-ex"><div class="en">If you <u>study</u>, you <u>will pass</u>.</div><div class="pt">Se você estudar, vai passar.</div></div>
+    </div>
+
+    <div class="s-sec">
+      <h3>Second Conditional — imaginário / irreal</h3>
+      <p>Para situações hipotéticas, sonhos, "e se...".</p>
+      <div class="s-rule">If + <strong>past simple</strong>, <strong>would</strong> + verbo</div>
+      <div class="s-ex"><div class="en">If I <u>won</u> the lottery, I <u>would travel</u>.</div><div class="pt">Se eu ganhasse na loteria, viajaria.</div></div>
+      <div class="s-ex"><div class="en">If I <u>were</u> you, I <u>would apologize</u>.</div><div class="pt">Se eu fosse você, pediria desculpas.</div></div>
+    </div>
+
+    <div class="s-sec">
+      <h3>Comparando os dois</h3>
+      <div class="s-table">
+        <div class="s-thead"><div>tipo</div><div>if...</div><div>resultado</div><div>quando</div></div>
+        <div class="s-trow"><div class="prefix">1st</div><div>present</div><div>will + verbo</div><div>real</div></div>
+        <div class="s-trow"><div class="prefix">2nd</div><div>past</div><div>would + verbo</div><div>imaginário</div></div>
+      </div>
+    </div>
+
+    <div class="s-warn">
+      <strong>Cuidado:</strong> nunca use 'will' nem 'would' logo depois de <u>if</u>.<br>
+      <span class="bad">Errado:</span> If it <strong>will</strong> rain... · If I <strong>would</strong> win...<br>
+      <span class="good">Certo:</span> If it <strong>rains</strong>... · If I <strong>won</strong>...
+    </div>
+
+    <div class="s-tip">
+      <strong>Dica:</strong> no second conditional, com qualquer sujeito o correto é <u>were</u>: 'If I <strong>were</strong> rich', 'If he <strong>were</strong> here'. E lembra do <u>unless</u> = 'if not' (a menos que).
+    </div>
+  `,
+
+  "Time Conjunctions": `
+    <div class="s-intro">Conjunções de tempo conectam duas ações no tempo: <strong>when, while, before, after, until, as soon as</strong>. Mostram a ordem ou o momento em que as coisas acontecem.</div>
+
+    <div class="s-sec">
+      <h3>As principais</h3>
+      <ul>
+        <li><strong>when</strong> — quando</li>
+        <li><strong>while</strong> — enquanto (duas ações ao mesmo tempo)</li>
+        <li><strong>before</strong> — antes de</li>
+        <li><strong>after</strong> — depois de</li>
+        <li><strong>until</strong> — até (que)</li>
+        <li><strong>as soon as</strong> — assim que</li>
+      </ul>
+    </div>
+
+    <div class="s-sec">
+      <h3>Exemplos</h3>
+      <div class="s-ex"><div class="en"><u>While</u> I was cooking, the phone rang.</div><div class="pt">Enquanto eu cozinhava, o telefone tocou.</div></div>
+      <div class="s-ex"><div class="en">Brush your teeth <u>before</u> you go to bed.</div><div class="pt">Escove os dentes antes de dormir.</div></div>
+      <div class="s-ex"><div class="en">Wait here <u>until</u> I come back.</div><div class="pt">Espere aqui até eu voltar.</div></div>
+      <div class="s-ex"><div class="en">I'll call you <u>as soon as</u> I arrive.</div><div class="pt">Te ligo assim que eu chegar.</div></div>
+    </div>
+
+    <div class="s-warn">
+      <strong>Regra de ouro:</strong> falando do <strong>futuro</strong>, depois dessas conjunções use o <u>present simple</u>, NÃO 'will'.<br>
+      <span class="bad">Errado:</span> I'll call you when I <strong>will get</strong> home.<br>
+      <span class="good">Certo:</span> I'll call you when I <strong>get</strong> home.
+    </div>
+
+    <div class="s-tip">
+      <strong>Dica:</strong> <u>while</u> combina com ações longas/contínuas (while I was reading); <u>when</u> com momentos pontuais (when the bell rang).
+    </div>
   `
 };
 
@@ -1339,8 +1863,46 @@ const TOPIC_ICONS = {
   "Present Tenses": "clock",
   "Future Tenses": "trending",
   "Life Plans": "target",
-  "KET Practice": "award"
+  "KET Practice": "award",
+  "Used to & Would": "repeat",
+  "Relative Clauses": "link",
+  "Making & Selling": "tag",
+  "Obligation & Advice": "alert",
+  "Had Better": "bulb",
+  "Conditionals": "shuffle",
+  "Time Conjunctions": "clock"
 };
+
+// ============================================
+// BLOCOS DE ESTUDO (cada um agrupa vários temas)
+// ============================================
+const SETS = [
+  { id: "u24", label: "Prova atual", sub: "Units 2–4" },
+  { id: "rev", label: "Revisão", sub: "Geral · KET" }
+];
+// A qual bloco cada tema pertence
+const TOPIC_SET = {
+  // Revisão (provas anteriores)
+  "Question Tags": "rev",
+  "Indefinite Pronouns": "rev",
+  "Present Tenses": "rev",
+  "Future Tenses": "rev",
+  "Life Plans": "rev",
+  "KET Practice": "rev",
+  // Prova atual (Units 2–4)
+  "Used to & Would": "u24",
+  "Relative Clauses": "u24",
+  "Making & Selling": "u24",
+  "Obligation & Advice": "u24",
+  "Had Better": "u24",
+  "Conditionals": "u24",
+  "Time Conjunctions": "u24"
+};
+let currentSet = "u24";
+
+// Helpers de bloco
+function poolForSet(set) { return QUESTIONS.filter(q => TOPIC_SET[q.topic] === set); }
+function topicsInSet(set) { return [...new Set(poolForSet(set).map(q => q.topic))]; }
 
 // ============================================
 // STATE
@@ -1363,6 +1925,26 @@ function saveStats(s) {
 // ============================================
 // HOME UI
 // ============================================
+function renderSetSwitch() {
+  const el = document.getElementById("set-switch");
+  if (!el) return;
+  el.innerHTML = "";
+  SETS.forEach(s => {
+    const b = document.createElement("button");
+    b.className = currentSet === s.id ? "active" : "";
+    b.innerHTML = `<span class="t">${s.label}</span><span class="sub">${s.sub}</span>`;
+    b.onclick = () => {
+      if (currentSet === s.id) return;
+      currentSet = s.id;
+      selectedTopic = "all";
+      renderSetSwitch();
+      renderTopicGrid();
+      renderStudyGrid();
+    };
+    el.appendChild(b);
+  });
+}
+
 function renderStatsBar() {
   const s = loadStats();
   document.getElementById("stats-bar").innerHTML = `
@@ -1373,13 +1955,15 @@ function renderStatsBar() {
 }
 
 function renderTopicGrid() {
-  const topics = [...new Set(QUESTIONS.map(q => q.topic))];
+  const topics = topicsInSet(currentSet);
+  const poolSize = poolForSet(currentSet).length;
+  const drawn = Math.min(15, poolSize);
   const grid = document.getElementById("topic-grid");
   grid.innerHTML = "";
 
   const allBtn = document.createElement("button");
   allBtn.className = "topic-card full" + (selectedTopic === "all" ? " active" : "");
-  allBtn.innerHTML = `<span class="ico-box">${icon("book", 20)}</span><div class="lbl-wrap"><div class="lbl">Todos os temas</div><div class="count">15 por tentativa · sorteadas de ${QUESTIONS.length} questões</div></div>`;
+  allBtn.innerHTML = `<span class="ico-box">${icon("book", 20)}</span><div class="lbl-wrap"><div class="lbl">Todos os temas deste bloco</div><div class="count">${drawn} por tentativa · sorteadas de ${poolSize} questões</div></div>`;
   allBtn.onclick = () => { selectedTopic = "all"; renderTopicGrid(); };
   grid.appendChild(allBtn);
 
@@ -1406,7 +1990,7 @@ function renderStaticIcons() {
 }
 
 function renderStudyGrid() {
-  const topics = [...new Set(QUESTIONS.map(q => q.topic))];
+  const topics = topicsInSet(currentSet);
   const grid = document.getElementById("study-grid");
   grid.innerHTML = "";
   topics.forEach(t => {
@@ -1477,11 +2061,11 @@ function showScreen(id) {
 function startQuiz(randomMode = false) {
   let pool, count;
   if (randomMode || selectedTopic === "all") {
-    pool = QUESTIONS;
-    count = 15; // sorteia 15 do banco inteiro
+    pool = poolForSet(currentSet);
+    count = Math.min(15, pool.length); // sorteia até 15 do bloco atual
   } else {
     pool = QUESTIONS.filter(q => q.topic === selectedTopic);
-    count = pool.length; // 10 do tema escolhido
+    count = pool.length; // todas as questões do tema escolhido
   }
   // Embaralha questões, pega só `count`, e embaralha as alternativas de cada
   currentQuestions = shuffle(pool).slice(0, count).map(shuffleOptions);
@@ -1663,7 +2247,7 @@ function animateNumber(elId, from, to, duration, suffix = "") {
 }
 
 function restart() { startQuiz(selectedTopic === "all"); }
-function goHome() { renderStatsBar(); renderTopicGrid(); renderStudyGrid(); renderStaticIcons(); showScreen("home-screen"); }
+function goHome() { renderSetSwitch(); renderStatsBar(); renderTopicGrid(); renderStudyGrid(); renderStaticIcons(); showScreen("home-screen"); }
 function confirmQuit() {
   if (confirm("Sair do simulado? Seu progresso será perdido.")) goHome();
 }
@@ -1729,6 +2313,7 @@ window.addEventListener("resize", () => {
 // ============================================
 // INIT
 // ============================================
+renderSetSwitch();
 renderStatsBar();
 renderTopicGrid();
 renderStudyGrid();
