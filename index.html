@@ -1514,7 +1514,39 @@ const QUESTIONS = [
     explain: "<strong>Sometimes</strong> = às vezes. Always = sempre; never = nunca; usually = geralmente." },
   { topic: "Adverbs of Frequency", q: "My dad ______ cooks on Sundays. (muitas vezes, frequentemente)",
     options: ["never", "often", "always", "sometimes"], correct: 1,
-    explain: "<strong>Often</strong> = frequentemente/muitas vezes (mais que sometimes, menos que usually)." }
+    explain: "<strong>Often</strong> = frequentemente/muitas vezes (mais que sometimes, menos que usually)." },
+
+  // ===== SPEAKING PRACTICE (perguntas reais da prova oral do Léo) =====
+  { topic: "Speaking Practice", q: "Do you have a pet? — Yes, I ______.",
+    options: ["do", "does", "have", "am"], correct: 0,
+    explain: "Short answer: pergunta com <strong>Do</strong> → resposta com <strong>do</strong>: Yes, I do / No, I don't." },
+  { topic: "Speaking Practice", q: "Does your teacher have a pet? — No, she ______.",
+    options: ["don't", "doesn't", "isn't", "not"], correct: 1,
+    explain: "Pergunta com <strong>Does</strong> (she) → resposta negativa: No, she <strong>doesn't</strong>." },
+  { topic: "Speaking Practice", q: "Do your grandparents have a pet? — Yes, they ______.",
+    options: ["does", "have", "do", "are"], correct: 2,
+    explain: "<strong>They</strong> → short answer com <strong>do</strong>: Yes, they do." },
+  { topic: "Speaking Practice", q: "Does your brother eat bread for breakfast? — Yes, he ______.",
+    options: ["do", "does", "eats", "is"], correct: 1,
+    explain: "<strong>He</strong> → short answer com <strong>does</strong>: Yes, he does. (Não repete o verbo eat!)" },
+  { topic: "Speaking Practice", q: "Do you eat cereal for breakfast? — No, I ______.",
+    options: ["don't", "doesn't", "am not", "no"], correct: 0,
+    explain: "<strong>I</strong> → resposta negativa: No, I <strong>don't</strong>." },
+  { topic: "Speaking Practice", q: "What time ______ you get up?",
+    options: ["does", "do", "are", "is"], correct: 1,
+    explain: "Pergunta com <strong>you</strong> → auxiliar <strong>do</strong>: What time do you get up? Resposta: I get up at 7 o'clock." },
+  { topic: "Speaking Practice", q: "What ______ your father do in the morning?",
+    options: ["do", "is", "does", "are"], correct: 2,
+    explain: "<strong>Your father</strong> = he → auxiliar <strong>does</strong>: What does your father do...?" },
+  { topic: "Speaking Practice", q: "______ do you go to school with? — With my mom.",
+    options: ["What", "Who", "Where", "When"], correct: 1,
+    explain: "<strong>Who</strong> = quem. A resposta é uma PESSOA (with my mom), então a pergunta é com Who." },
+  { topic: "Speaking Practice", q: "How ______ do you go to the park? — Sometimes.",
+    options: ["much", "many", "often", "old"], correct: 2,
+    explain: "<strong>How often</strong> = com que frequência. A resposta é um advérbio de frequência (sometimes, always, never...)." },
+  { topic: "Speaking Practice", q: "How often do you swim? — I ______ swim on Saturdays. (geralmente)",
+    options: ["never", "usually", "am", "does"], correct: 1,
+    explain: "<strong>Usually</strong> = geralmente. Resposta completa: I usually swim on Saturdays." }
 ];
 
 // ============================================
@@ -2154,6 +2186,23 @@ const STUDY_CONTENT = {
       <div class="s-ex"><div class="en">Is there <u>any</u> sugar?</div><div class="pt">Tem açúcar?</div></div>
     </div>
 
+    <div class="s-sec">
+      <h3>Lugares da cidade (vocabulário da unit)</h3>
+      <ul>
+        <li><strong>bank</strong> — banco · <strong>school</strong> — escola</li>
+        <li><strong>hospital</strong> — hospital · <strong>pharmacy / drugstore</strong> — farmácia</li>
+        <li><strong>supermarket</strong> — mercado · <strong>restaurant</strong> — restaurante</li>
+        <li><strong>park</strong> — parque · <strong>playground</strong> — parquinho</li>
+        <li><strong>cinema / movie theater</strong> — cinema · <strong>museum</strong> — museu</li>
+        <li><strong>library</strong> — biblioteca · <strong>post office</strong> — correio</li>
+        <li><strong>bus station</strong> — rodoviária · <strong>bus stop</strong> — ponto de ônibus</li>
+        <li><strong>train station</strong> — estação de trem · <strong>police station</strong> — delegacia</li>
+        <li><strong>pet shop</strong> — pet shop · <strong>zoo</strong> — zoológico</li>
+        <li><strong>café</strong> — cafeteria · <strong>hotel</strong> — hotel · <strong>stadium</strong> — estádio</li>
+      </ul>
+      <div class="s-ex"><div class="en">There is a <u>library</u> next to the <u>post office</u>.</div><div class="pt">Tem uma biblioteca ao lado do correio. (combina com as preposições!)</div></div>
+    </div>
+
     <div class="s-tip">
       <strong>Resumo rápido:</strong> 1 coisa → <u>is</u> · várias → <u>are</u> · afirmativa → <u>some</u> · negativa/pergunta → <u>any</u>.
     </div>
@@ -2276,6 +2325,62 @@ const STUDY_CONTENT = {
     <div class="s-tip">
       <strong>Truque:</strong> pensa numa escada descendo — <u>always</u> (topo, 100%) → usually → often → sometimes → <u>never</u> (chão, 0%). E a posição: antes do verbo comum, depois do verbo be.
     </div>
+  `,
+
+  "Speaking Practice": `
+    <div class="s-intro">A prova é <strong>oral</strong>! Aqui estão as perguntas que a professora mandou no material — treina responder cada uma <strong>em voz alta</strong>, com frases completas.</div>
+
+    <div class="s-sec">
+      <h3>Como responder (short answers)</h3>
+      <div class="s-rule">
+        Do you...? → <strong>Yes, I do. / No, I don't.</strong><br>
+        Does he/she...? → <strong>Yes, he does. / No, she doesn't.</strong><br>
+        Do they...? → <strong>Yes, they do. / No, they don't.</strong>
+      </div>
+      <div class="s-ex"><div class="en">Do you have a pet? — Yes, I do. I have a dog.</div><div class="pt">Responde curto e depois completa com uma frase!</div></div>
+    </div>
+
+    <div class="s-sec">
+      <h3>Perguntas de conversação (da professora)</h3>
+      <div class="s-ex"><div class="en">Do you have a big family?</div><div class="pt">Yes, I do. / No, I don't. I have a small family.</div></div>
+      <div class="s-ex"><div class="en">Do you have a pet?</div><div class="pt">Yes, I do. I have a dog/cat. · No, I don't.</div></div>
+      <div class="s-ex"><div class="en">Does your best friend have a pet?</div><div class="pt">Yes, he/she does. · No, he/she doesn't.</div></div>
+      <div class="s-ex"><div class="en">Do your grandparents have a pet?</div><div class="pt">Yes, they do. · No, they don't.</div></div>
+      <div class="s-ex"><div class="en">Does your teacher have a pet?</div><div class="pt">Yes, she does. · No, she doesn't. · I don't know!</div></div>
+      <div class="s-ex"><div class="en">Do you eat cereal for breakfast?</div><div class="pt">Yes, I do. · No, I don't. I eat bread.</div></div>
+      <div class="s-ex"><div class="en">Does your brother or sister eat bread for breakfast?</div><div class="pt">Yes, he/she does. · No, he/she doesn't.</div></div>
+    </div>
+
+    <div class="s-sec">
+      <h3>Sua rotina (responde com frase completa)</h3>
+      <div class="s-ex"><div class="en">What time do you get up?</div><div class="pt">I get up at 7 o'clock.</div></div>
+      <div class="s-ex"><div class="en">What do you have for breakfast?</div><div class="pt">I have bread and milk.</div></div>
+      <div class="s-ex"><div class="en">Who do you go to school with?</div><div class="pt">I go to school with my mom / my dad / my brother.</div></div>
+      <div class="s-ex"><div class="en">What do you do after school?</div><div class="pt">I do my homework and play video games.</div></div>
+      <div class="s-ex"><div class="en">What time do you have lunch?</div><div class="pt">I have lunch at noon / at 12 o'clock.</div></div>
+      <div class="s-ex"><div class="en">What do you do when you get home?</div><div class="pt">I wash my hands and have a snack.</div></div>
+      <div class="s-ex"><div class="en">What time do you go to bed?</div><div class="pt">I go to bed at 9 o'clock.</div></div>
+      <div class="s-ex"><div class="en">What does your mother/father do in the morning?</div><div class="pt">She/He works. · She/He makes breakfast. (com -S: works, makes!)</div></div>
+    </div>
+
+    <div class="s-sec">
+      <h3>How often...? (usa os advérbios!)</h3>
+      <p>A professora vai perguntar "How often do you...?" (com que frequência). Responde com <strong>always, usually, often, sometimes, never</strong> ou com expressões:</p>
+      <ul>
+        <li><strong>every day</strong> — todo dia</li>
+        <li><strong>once a week</strong> — uma vez por semana</li>
+        <li><strong>twice a week</strong> — duas vezes por semana</li>
+        <li><strong>on Saturdays</strong> — aos sábados</li>
+      </ul>
+      <div class="s-ex"><div class="en">How often do you eat pizza?</div><div class="pt">I sometimes eat pizza. / I eat pizza once a week.</div></div>
+      <div class="s-ex"><div class="en">How often do you play games?</div><div class="pt">I often play games. / I play games every day.</div></div>
+      <div class="s-ex"><div class="en">How often do you drink coffee?</div><div class="pt">I never drink coffee!</div></div>
+      <div class="s-ex"><div class="en">How often do you go to the beach?</div><div class="pt">I sometimes go to the beach in summer.</div></div>
+    </div>
+
+    <div class="s-tip">
+      <strong>Dica de ouro pra prova oral:</strong> nunca responde só "yes" ou "no" — usa a short answer (Yes, I do) e completa com mais uma frase. Treina em voz alta na frente do espelho!
+    </div>
   `
 };
 
@@ -2299,7 +2404,8 @@ const TOPIC_ICONS = {
   "There is & There are": "building",
   "Prepositions of Place": "pin",
   "Simple Present": "sun",
-  "Adverbs of Frequency": "calendar"
+  "Adverbs of Frequency": "calendar",
+  "Speaking Practice": "help"
 };
 
 // ============================================
@@ -2333,7 +2439,8 @@ const TOPIC_SET = {
   "There is & There are": "leo",
   "Prepositions of Place": "leo",
   "Simple Present": "leo",
-  "Adverbs of Frequency": "leo"
+  "Adverbs of Frequency": "leo",
+  "Speaking Practice": "leo"
 };
 let currentSet = "leo";
 function setName() { return (SETS.find(s => s.id === currentSet) || {}).name || "Bernardo"; }
