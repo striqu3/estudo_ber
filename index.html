@@ -6,7 +6,7 @@
 <meta name="theme-color" content="#6366f1">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<title>Estudo do Bernardo · Inglês</title>
+<title>Estudo de Inglês · Léo & Bernardo</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -756,7 +756,7 @@
   <div id="home-screen" class="screen">
     <div class="hero">
       <div class="crest" id="hero-crest"></div>
-      <h1>Vai com tudo, <span class="name">Bernardo!</span></h1>
+      <h1>Vai com tudo, <span class="name" id="hero-name">Léo!</span></h1>
       <p>Hora de detonar a prova de inglês</p>
     </div>
 
@@ -894,7 +894,11 @@ const ICONS = {
   tag:       '<path d="M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.704 8.704a2.426 2.426 0 0 0 3.42 0l6.58-6.58a2.426 2.426 0 0 0 0-3.42z"/><circle cx="7.5" cy="7.5" r="1"/>',
   alert:     '<path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/>',
   link:      '<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>',
-  repeat:    '<path d="m17 2 4 4-4 4"/><path d="M3 11v-1a4 4 0 0 1 4-4h14"/><path d="m7 22-4-4 4-4"/><path d="M21 13v1a4 4 0 0 1-4 4H3"/>'
+  repeat:    '<path d="m17 2 4 4-4 4"/><path d="M3 11v-1a4 4 0 0 1 4-4h14"/><path d="m7 22-4-4 4-4"/><path d="M21 13v1a4 4 0 0 1-4 4H3"/>',
+  pin:       '<path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/>',
+  building:  '<rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01"/><path d="M16 6h.01"/><path d="M8 10h.01"/><path d="M16 10h.01"/><path d="M8 14h.01"/><path d="M16 14h.01"/><path d="M12 6h.01"/><path d="M12 10h.01"/><path d="M12 14h.01"/>',
+  sun:       '<circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/>',
+  calendar:  '<rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>'
 };
 function icon(name, size = 18, strokeWidth = 2) {
   return `<svg class="icon" viewBox="0 0 24 24" width="${size}" height="${size}" fill="none" stroke="currentColor" stroke-width="${strokeWidth}" stroke-linecap="round" stroke-linejoin="round">${ICONS[name] || ''}</svg>`;
@@ -1318,7 +1322,199 @@ const QUESTIONS = [
     explain: "<strong>While</strong> = enquanto. Duas ações acontecendo ao mesmo tempo." },
   { topic: "Time Conjunctions", q: "Turn off the lights ______ you leave the room.",
     options: ["before", "until", "while", "since"], correct: 0,
-    explain: "<strong>Before</strong> = antes de. Apague as luzes antes de sair." }
+    explain: "<strong>Before</strong> = antes de. Apague as luzes antes de sair." },
+
+  // ===== FAMILY MEMBERS (Unit 03 – Léo) =====
+  { topic: "Family Members", q: "My father's brother is my ______.",
+    options: ["uncle", "aunt", "cousin", "grandfather"], correct: 0,
+    explain: "<strong>Uncle</strong> = tio (irmão do pai ou da mãe). Aunt = tia; cousin = primo(a)." },
+  { topic: "Family Members", q: "My mother's mother is my ______.",
+    options: ["aunt", "grandmother", "sister", "cousin"], correct: 1,
+    explain: "<strong>Grandmother</strong> = avó (a mãe da mãe ou do pai). Grandfather = avô." },
+  { topic: "Family Members", q: "My uncle's children are my ______.",
+    options: ["brothers", "nephews", "cousins", "sons"], correct: 2,
+    explain: "<strong>Cousins</strong> = primos (os filhos dos tios). Nephew = sobrinho." },
+  { topic: "Family Members", q: "My parents' daughter is my ______.",
+    options: ["sister", "brother", "aunt", "mother"], correct: 0,
+    explain: "<strong>Sister</strong> = irmã (a filha dos meus pais). Brother = irmão; daughter = filha." },
+  { topic: "Family Members", q: "My mom and my dad are my ______.",
+    options: ["cousins", "grandparents", "parents", "children"], correct: 2,
+    explain: "<strong>Parents</strong> = pais (pai + mãe). Cuidado: 'parentes' em inglês é <em>relatives</em>!" },
+  { topic: "Family Members", q: "My mother's sister is my ______.",
+    options: ["aunt", "uncle", "grandmother", "niece"], correct: 0,
+    explain: "<strong>Aunt</strong> = tia (irmã do pai ou da mãe). Uncle = tio." },
+  { topic: "Family Members", q: "My brother is my parents' ______.",
+    options: ["daughter", "son", "uncle", "nephew"], correct: 1,
+    explain: "<strong>Son</strong> = filho. Daughter = filha. Meu irmão é o filho dos meus pais." },
+  { topic: "Family Members", q: "My grandmother and my grandfather are my ______.",
+    options: ["parents", "cousins", "uncles", "grandparents"], correct: 3,
+    explain: "<strong>Grandparents</strong> = avós (avô + avó)." },
+  { topic: "Family Members", q: "Ana is a girl. She is her parents' ______.",
+    options: ["son", "daughter", "brother", "uncle"], correct: 1,
+    explain: "<strong>Daughter</strong> = filha. Son = filho (menino)." },
+  { topic: "Family Members", q: "My mother is my father's wife, and my father is my mother's ______.",
+    options: ["husband", "brother", "son", "uncle"], correct: 0,
+    explain: "<strong>Husband</strong> = marido. Wife = esposa." },
+
+  // ===== THIS, THAT, THESE & THOSE (Léo) =====
+  { topic: "This, That, These & Those", q: "______ is my pen, here in my hand.",
+    options: ["This", "That", "These", "Those"], correct: 0,
+    explain: "<strong>This</strong> = isto/este (UMA coisa PERTO de você). 'Here in my hand' mostra que está perto." },
+  { topic: "This, That, These & Those", q: "______ are my friends over there.",
+    options: ["This", "That", "These", "Those"], correct: 3,
+    explain: "<strong>Those</strong> = aqueles (VÁRIAS coisas/pessoas LONGE). 'Over there' = lá longe." },
+  { topic: "This, That, These & Those", q: "Look at ______ picture here on this wall.",
+    options: ["this", "that", "these", "those"], correct: 0,
+    explain: "<strong>This</strong> = uma coisa perto ('here'). Picture está no singular." },
+  { topic: "This, That, These & Those", q: "______ shoes here are new.",
+    options: ["This", "That", "These", "Those"], correct: 2,
+    explain: "<strong>These</strong> = estes (VÁRIAS coisas PERTO). Shoes é plural e 'here' mostra que está perto." },
+  { topic: "This, That, These & Those", q: "What is ______ over there, near the school?",
+    options: ["this", "these", "that", "those"], correct: 2,
+    explain: "<strong>That</strong> = aquilo/aquele (UMA coisa LONGE). 'Over there' = longe de quem fala." },
+  { topic: "This, That, These & Those", q: "______ books on my desk are mine.",
+    options: ["This", "That", "These", "Those"], correct: 2,
+    explain: "<strong>These</strong> = plural + perto (os livros estão na MINHA mesa, perto de mim)." },
+  { topic: "This, That, These & Those", q: "Can you see ______ mountain far away?",
+    options: ["this", "that", "these", "those"], correct: 1,
+    explain: "<strong>That</strong> = singular + longe ('far away' = bem longe)." },
+  { topic: "This, That, These & Those", q: "______ is my brother Leo. (apresentando alguém ao seu lado)",
+    options: ["This", "That", "These", "Those"], correct: 0,
+    explain: "Para <strong>apresentar</strong> alguém que está do seu lado, usamos <strong>This is...</strong> = Este é..." },
+  { topic: "This, That, These & Those", q: "______ apples over there look delicious.",
+    options: ["This", "That", "These", "Those"], correct: 3,
+    explain: "<strong>Those</strong> = plural + longe (apples = várias, 'over there' = lá)." },
+  { topic: "This, That, These & Those", q: "______ car here is my dad's.",
+    options: ["This", "That", "These", "Those"], correct: 0,
+    explain: "<strong>This</strong> = singular + perto ('here'). Um carro só, do lado de quem fala." },
+
+  // ===== THERE IS & THERE ARE (Unit 04 – City Life – Léo) =====
+  { topic: "There is & There are", q: "There ______ a supermarket in my street.",
+    options: ["is", "are", "am", "be"], correct: 0,
+    explain: "<strong>There is</strong> = tem/há UMA coisa (singular): a supermarket." },
+  { topic: "There is & There are", q: "There ______ many parks in the city.",
+    options: ["is", "are", "be", "am"], correct: 1,
+    explain: "<strong>There are</strong> = tem/há VÁRIAS coisas (plural): many parks." },
+  { topic: "There is & There are", q: "There isn't ______ sugar in my coffee.",
+    options: ["some", "any", "a", "an"], correct: 1,
+    explain: "Em frases <strong>negativas</strong> usamos <strong>any</strong>: There isn't any sugar = não tem açúcar nenhum." },
+  { topic: "There is & There are", q: "There are ______ good restaurants downtown.",
+    options: ["any", "a", "some", "an"], correct: 2,
+    explain: "Em frases <strong>afirmativas</strong> usamos <strong>some</strong>: there are some restaurants = tem alguns restaurantes." },
+  { topic: "There is & There are", q: "______ there a hospital near here?",
+    options: ["Is", "Are", "Do", "Have"], correct: 0,
+    explain: "Pergunta no singular: <strong>Is there...?</strong> = Tem um...? (a hospital = um hospital, singular)." },
+  { topic: "There is & There are", q: "There ______ any buses after midnight.",
+    options: ["isn't", "aren't", "not", "is"], correct: 1,
+    explain: "<strong>Aren't</strong> = are not (plural: buses). There aren't any buses = não tem ônibus nenhum." },
+  { topic: "There is & There are", q: "Is there ______ milk in the fridge?",
+    options: ["some", "any", "a", "many"], correct: 1,
+    explain: "Em <strong>perguntas</strong> usamos <strong>any</strong>: Is there any milk? = Tem leite?" },
+  { topic: "There is & There are", q: "There ______ two banks in this street.",
+    options: ["is", "are", "be", "isn't"], correct: 1,
+    explain: "<strong>Two banks</strong> = plural → <strong>there are</strong>." },
+  { topic: "There is & There are", q: "There is ______ water on the floor.",
+    options: ["any", "some", "an", "many"], correct: 1,
+    explain: "Afirmativa → <strong>some</strong>: there is some water = tem (um pouco de) água." },
+  { topic: "There is & There are", q: "______ there any museums in your city?",
+    options: ["Is", "Are", "Do", "Does"], correct: 1,
+    explain: "<strong>Museums</strong> = plural → <strong>Are there...?</strong> = Tem museus...?" },
+
+  // ===== PREPOSITIONS OF PLACE (Léo) =====
+  { topic: "Prepositions of Place", q: "The cat is ______ the box. (dentro)",
+    options: ["on", "in", "under", "behind"], correct: 1,
+    explain: "<strong>In</strong> = dentro de. The cat is in the box = o gato está dentro da caixa." },
+  { topic: "Prepositions of Place", q: "The book is ______ the table. (em cima)",
+    options: ["in", "under", "on", "between"], correct: 2,
+    explain: "<strong>On</strong> = em cima de (tocando a superfície). The book is on the table." },
+  { topic: "Prepositions of Place", q: "The ball is ______ the bed. (embaixo)",
+    options: ["on", "in", "next to", "under"], correct: 3,
+    explain: "<strong>Under</strong> = embaixo de. The ball is under the bed = a bola está embaixo da cama." },
+  { topic: "Prepositions of Place", q: "The bus stop is ______ the bank and the school. (no meio dos dois)",
+    options: ["between", "behind", "under", "on"], correct: 0,
+    explain: "<strong>Between</strong> = entre DOIS lugares/coisas. Between the bank and the school." },
+  { topic: "Prepositions of Place", q: "The car is ______ the house. (na frente)",
+    options: ["behind", "in front of", "under", "in"], correct: 1,
+    explain: "<strong>In front of</strong> = na frente de. O contrário é <em>behind</em> (atrás)." },
+  { topic: "Prepositions of Place", q: "The garden is ______ the house. (atrás)",
+    options: ["in front of", "on", "behind", "between"], correct: 2,
+    explain: "<strong>Behind</strong> = atrás de. The garden is behind the house = o jardim fica atrás da casa." },
+  { topic: "Prepositions of Place", q: "The bakery is ______ the pharmacy. (ao lado)",
+    options: ["next to", "under", "in", "between"], correct: 0,
+    explain: "<strong>Next to</strong> = ao lado de. The bakery is next to the pharmacy = a padaria é vizinha da farmácia." },
+  { topic: "Prepositions of Place", q: "My keys are ______ my bag. (dentro)",
+    options: ["on", "under", "in", "behind"], correct: 2,
+    explain: "<strong>In</strong> = dentro. My keys are in my bag = minhas chaves estão dentro da bolsa." },
+  { topic: "Prepositions of Place", q: "The picture is ______ the wall.",
+    options: ["in", "on", "under", "between"], correct: 1,
+    explain: "<strong>On the wall</strong> = na parede (encostado na superfície). Em inglês, quadro fica ON the wall, não 'in'." },
+  { topic: "Prepositions of Place", q: "The dog is sleeping ______ the table. (embaixo)",
+    options: ["on", "in", "under", "next to"], correct: 2,
+    explain: "<strong>Under</strong> = embaixo de. The dog is under the table." },
+
+  // ===== SIMPLE PRESENT (Unit 05 – Free Time – Léo) =====
+  { topic: "Simple Present", q: "She ______ to school by bus.",
+    options: ["go", "goes", "going", "gos"], correct: 1,
+    explain: "Com <strong>he/she/it</strong>, o verbo ganha <strong>-es/-s</strong>: she go<strong>es</strong>. Verbos terminados em -o levam -es." },
+  { topic: "Simple Present", q: "I ______ football on weekends.",
+    options: ["plays", "play", "playing", "played"], correct: 1,
+    explain: "Com <strong>I/you/we/they</strong>, o verbo fica na forma normal, SEM -s: I play." },
+  { topic: "Simple Present", q: "He ______ TV every night.",
+    options: ["watch", "watchs", "watches", "watching"], correct: 2,
+    explain: "Verbos terminados em <strong>-ch</strong> ganham <strong>-es</strong> com he/she/it: watch → watch<strong>es</strong>." },
+  { topic: "Simple Present", q: "My parents ______ in a hospital.",
+    options: ["works", "work", "working", "workes"], correct: 1,
+    explain: "<strong>My parents</strong> = they (plural) → verbo sem -s: work." },
+  { topic: "Simple Present", q: "______ you like pizza?",
+    options: ["Does", "Do", "Is", "Are"], correct: 1,
+    explain: "Pergunta com <strong>you</strong> → <strong>Do</strong>: Do you like...? (Does é só para he/she/it.)" },
+  { topic: "Simple Present", q: "______ she speak English?",
+    options: ["Do", "Is", "Does", "Are"], correct: 2,
+    explain: "Pergunta com <strong>she</strong> → <strong>Does</strong>: Does she speak...? O verbo principal fica SEM -s." },
+  { topic: "Simple Present", q: "I ______ like horror movies. (frase negativa)",
+    options: ["don't", "doesn't", "not", "am not"], correct: 0,
+    explain: "Negativa com <strong>I</strong> → <strong>don't</strong> + verbo: I don't like." },
+  { topic: "Simple Present", q: "He ______ coffee. (frase negativa)",
+    options: ["don't drink", "doesn't drink", "doesn't drinks", "not drink"], correct: 1,
+    explain: "Negativa com <strong>he</strong> → <strong>doesn't</strong> + verbo SEM -s: doesn't drink (o -s fica no doesn't)." },
+  { topic: "Simple Present", q: "Tom ______ his homework after school.",
+    options: ["do", "dos", "does", "doing"], correct: 2,
+    explain: "<strong>Tom</strong> = he → do vira <strong>does</strong>: Tom does his homework." },
+  { topic: "Simple Present", q: "We ______ breakfast at 7 o'clock.",
+    options: ["has", "have", "haves", "having"], correct: 1,
+    explain: "<strong>We</strong> → verbo sem -s: have. (Só he/she/it usa <em>has</em>.)" },
+
+  // ===== ADVERBS OF FREQUENCY (Léo) =====
+  { topic: "Adverbs of Frequency", q: "I ______ brush my teeth. (100% do tempo, todo dia)",
+    options: ["never", "sometimes", "always", "often"], correct: 2,
+    explain: "<strong>Always</strong> = sempre (100%). Never = nunca (0%)." },
+  { topic: "Adverbs of Frequency", q: "He ______ eats fish. (0% — nunca)",
+    options: ["always", "never", "usually", "often"], correct: 1,
+    explain: "<strong>Never</strong> = nunca (0%). Atenção: o verbo continua afirmativo (never eats, sem 'don't')." },
+  { topic: "Adverbs of Frequency", q: "We ______ go to the cinema. (às vezes)",
+    options: ["sometimes", "never", "always", "usually"], correct: 0,
+    explain: "<strong>Sometimes</strong> = às vezes (mais ou menos 50%)." },
+  { topic: "Adverbs of Frequency", q: "She ______ gets up at 6 o'clock. (quase sempre)",
+    options: ["never", "sometimes", "usually", "always"], correct: 2,
+    explain: "<strong>Usually</strong> = geralmente/quase sempre (uns 80-90% das vezes)." },
+  { topic: "Adverbs of Frequency", q: "Which adverb is the MOST frequent (o mais frequente de todos)?",
+    options: ["sometimes", "often", "always", "usually"], correct: 2,
+    explain: "Ordem de frequência: <strong>always</strong> (100%) > usually > often > sometimes > never (0%)." },
+  { topic: "Adverbs of Frequency", q: "He is ______ late for school. (nunca)",
+    options: ["never", "always", "often", "usually"], correct: 0,
+    explain: "<strong>Never</strong> = nunca. Com o verbo <strong>be</strong>, o advérbio vem DEPOIS: he IS never late." },
+  { topic: "Adverbs of Frequency", q: "Choose the correct sentence:",
+    options: ["I always drink milk.", "I drink always milk.", "Always I drink milk.", "I drink milk always."], correct: 0,
+    explain: "O advérbio de frequência vem <strong>ANTES do verbo principal</strong>: I <u>always</u> drink." },
+  { topic: "Adverbs of Frequency", q: "Choose the correct sentence:",
+    options: ["She never is sad.", "She is never sad.", "Never she is sad.", "She is sad never."], correct: 1,
+    explain: "Com o verbo <strong>be</strong>, o advérbio vem <strong>DEPOIS</strong>: she is <u>never</u> sad." },
+  { topic: "Adverbs of Frequency", q: "Which adverb means 'às vezes'?",
+    options: ["always", "never", "usually", "sometimes"], correct: 3,
+    explain: "<strong>Sometimes</strong> = às vezes. Always = sempre; never = nunca; usually = geralmente." },
+  { topic: "Adverbs of Frequency", q: "My dad ______ cooks on Sundays. (muitas vezes, frequentemente)",
+    options: ["never", "often", "always", "sometimes"], correct: 1,
+    explain: "<strong>Often</strong> = frequentemente/muitas vezes (mais que sometimes, menos que usually)." }
 ];
 
 // ============================================
@@ -1853,6 +2049,233 @@ const STUDY_CONTENT = {
     <div class="s-tip">
       <strong>Dica:</strong> <u>while</u> combina com ações longas/contínuas (while I was reading); <u>when</u> com momentos pontuais (when the bell rang).
     </div>
+  `,
+
+  "Family Members": `
+    <div class="s-intro">Os membros da família em inglês (Unit 03). Decora cada palavra com os exemplos — e cuidado com as pegadinhas de tradução!</div>
+
+    <div class="s-sec">
+      <h3>A família</h3>
+      <ul>
+        <li><strong>father / dad</strong> — pai · <strong>mother / mom</strong> — mãe</li>
+        <li><strong>parents</strong> — pais (pai + mãe)</li>
+        <li><strong>brother</strong> — irmão · <strong>sister</strong> — irmã</li>
+        <li><strong>son</strong> — filho · <strong>daughter</strong> — filha</li>
+        <li><strong>grandfather</strong> — avô · <strong>grandmother</strong> — avó</li>
+        <li><strong>grandparents</strong> — avós</li>
+        <li><strong>uncle</strong> — tio · <strong>aunt</strong> — tia</li>
+        <li><strong>cousin</strong> — primo / prima</li>
+        <li><strong>husband</strong> — marido · <strong>wife</strong> — esposa</li>
+      </ul>
+    </div>
+
+    <div class="s-sec">
+      <h3>Exemplos</h3>
+      <div class="s-ex"><div class="en">My father's brother is my <u>uncle</u>.</div><div class="pt">O irmão do meu pai é meu tio.</div></div>
+      <div class="s-ex"><div class="en">My uncle's children are my <u>cousins</u>.</div><div class="pt">Os filhos do meu tio são meus primos.</div></div>
+      <div class="s-ex"><div class="en">My mom and dad are my <u>parents</u>.</div><div class="pt">Minha mãe e meu pai são meus pais.</div></div>
+    </div>
+
+    <div class="s-warn">
+      <strong>Pegadinha clássica:</strong> <u>parents</u> = PAIS (só pai e mãe), NÃO "parentes"!<br>
+      <span class="bad">parents</span> = pais<br>
+      <span class="good">relatives</span> = parentes (a família toda)
+    </div>
+
+    <div class="s-tip">
+      <strong>Dica:</strong> o <u>'s</u> mostra posse: <em>my father's brother</em> = o irmão DO MEU PAI. Lê de trás pra frente que fica fácil.
+    </div>
+  `,
+
+  "This, That, These & Those": `
+    <div class="s-intro">Os demonstrativos apontam para coisas e pessoas. A escolha depende de duas perguntas: está <strong>perto ou longe</strong>? É <strong>um ou vários</strong>?</div>
+
+    <div class="s-sec">
+      <h3>A tabela mágica</h3>
+      <div class="s-table">
+        <div class="s-thead"><div></div><div>perto</div><div>longe</div></div>
+        <div class="s-trow"><div class="prefix">1 (singular)</div><div>this (este/isto)</div><div>that (aquele/aquilo)</div></div>
+        <div class="s-trow"><div class="prefix">2+ (plural)</div><div>these (estes)</div><div>those (aqueles)</div></div>
+      </div>
+    </div>
+
+    <div class="s-sec">
+      <h3>Exemplos</h3>
+      <div class="s-ex"><div class="en"><u>This</u> is my pen. (na minha mão)</div><div class="pt">Esta é minha caneta.</div></div>
+      <div class="s-ex"><div class="en"><u>These</u> are my books. (aqui do meu lado)</div><div class="pt">Estes são meus livros.</div></div>
+      <div class="s-ex"><div class="en"><u>That</u> is my school. (do outro lado da rua)</div><div class="pt">Aquela é minha escola.</div></div>
+      <div class="s-ex"><div class="en"><u>Those</u> are my friends. (lá longe)</div><div class="pt">Aqueles são meus amigos.</div></div>
+    </div>
+
+    <div class="s-sec">
+      <h3>Palavras que ajudam</h3>
+      <ul>
+        <li><strong>here</strong> (aqui) → this / these</li>
+        <li><strong>there / over there / far away</strong> (lá, longe) → that / those</li>
+      </ul>
+    </div>
+
+    <div class="s-tip">
+      <strong>Truque pra decorar:</strong> this e these têm um "E" a mais no plural — thi<u>s</u> (1) → the<u>se</u> (vários). E pra apresentar alguém do seu lado: "<u>This</u> is my brother."
+    </div>
+  `,
+
+  "There is & There are": `
+    <div class="s-intro">Usados para dizer que algo <strong>existe</strong> em um lugar (Unit 04 – City Life): "tem/há um parque", "tem duas escolas". Com <strong>some</strong> e <strong>any</strong> para quantidades.</div>
+
+    <div class="s-sec">
+      <h3>Singular ou plural?</h3>
+      <div class="s-rule">
+        <strong>There is</strong> + UMA coisa (singular)<br>
+        <strong>There are</strong> + VÁRIAS coisas (plural)
+      </div>
+      <div class="s-ex"><div class="en"><u>There is</u> a park in my city.</div><div class="pt">Tem um parque na minha cidade.</div></div>
+      <div class="s-ex"><div class="en"><u>There are</u> two schools here.</div><div class="pt">Tem duas escolas aqui.</div></div>
+    </div>
+
+    <div class="s-sec">
+      <h3>Negativa e pergunta</h3>
+      <div class="s-rule">
+        Negativa: there <strong>isn't</strong> / there <strong>aren't</strong><br>
+        Pergunta: <strong>Is there...?</strong> / <strong>Are there...?</strong>
+      </div>
+      <div class="s-ex"><div class="en">There <u>isn't</u> a cinema near here.</div><div class="pt">Não tem cinema perto daqui.</div></div>
+      <div class="s-ex"><div class="en"><u>Are there</u> any buses at night?</div><div class="pt">Tem ônibus à noite?</div></div>
+    </div>
+
+    <div class="s-sec">
+      <h3>Some e Any</h3>
+      <div class="s-rule">
+        <strong>some</strong> → frases afirmativas<br>
+        <strong>any</strong> → negativas e perguntas
+      </div>
+      <div class="s-ex"><div class="en">There are <u>some</u> restaurants downtown.</div><div class="pt">Tem alguns restaurantes no centro.</div></div>
+      <div class="s-ex"><div class="en">There isn't <u>any</u> milk.</div><div class="pt">Não tem leite nenhum.</div></div>
+      <div class="s-ex"><div class="en">Is there <u>any</u> sugar?</div><div class="pt">Tem açúcar?</div></div>
+    </div>
+
+    <div class="s-tip">
+      <strong>Resumo rápido:</strong> 1 coisa → <u>is</u> · várias → <u>are</u> · afirmativa → <u>some</u> · negativa/pergunta → <u>any</u>.
+    </div>
+  `,
+
+  "Prepositions of Place": `
+    <div class="s-intro">As preposições de lugar dizem <strong>onde</strong> algo está: dentro, em cima, embaixo, na frente, atrás, ao lado, entre.</div>
+
+    <div class="s-sec">
+      <h3>As 7 preposições</h3>
+      <ul>
+        <li><strong>in</strong> — dentro de (in the box)</li>
+        <li><strong>on</strong> — em cima de / na superfície (on the table)</li>
+        <li><strong>under</strong> — embaixo de (under the bed)</li>
+        <li><strong>in front of</strong> — na frente de</li>
+        <li><strong>behind</strong> — atrás de</li>
+        <li><strong>next to</strong> — ao lado de</li>
+        <li><strong>between</strong> — entre (DOIS lugares)</li>
+      </ul>
+    </div>
+
+    <div class="s-sec">
+      <h3>Exemplos</h3>
+      <div class="s-ex"><div class="en">The cat is <u>in</u> the box.</div><div class="pt">O gato está dentro da caixa.</div></div>
+      <div class="s-ex"><div class="en">The book is <u>on</u> the table.</div><div class="pt">O livro está em cima da mesa.</div></div>
+      <div class="s-ex"><div class="en">The ball is <u>under</u> the bed.</div><div class="pt">A bola está embaixo da cama.</div></div>
+      <div class="s-ex"><div class="en">The car is <u>in front of</u> the house.</div><div class="pt">O carro está na frente da casa.</div></div>
+      <div class="s-ex"><div class="en">The garden is <u>behind</u> the house.</div><div class="pt">O jardim fica atrás da casa.</div></div>
+      <div class="s-ex"><div class="en">The bakery is <u>next to</u> the bank.</div><div class="pt">A padaria fica ao lado do banco.</div></div>
+      <div class="s-ex"><div class="en">The school is <u>between</u> the park and the market.</div><div class="pt">A escola fica entre o parque e o mercado.</div></div>
+    </div>
+
+    <div class="s-warn">
+      <strong>Pares de opostos</strong> (decora junto):<br>
+      <span class="good">in front of</span> (na frente) ↔ <span class="bad">behind</span> (atrás)<br>
+      <span class="good">on</span> (em cima) ↔ <span class="bad">under</span> (embaixo)
+    </div>
+
+    <div class="s-tip">
+      <strong>Dica:</strong> <u>between</u> sempre envolve DOIS: between the bank <strong>and</strong> the school. E em inglês o quadro fica <u>on</u> the wall (na parede), não "in".
+    </div>
+  `,
+
+  "Simple Present": `
+    <div class="s-intro">O Simple Present fala de rotinas, gostos e hábitos (Unit 05 – Free Time): o que você faz todo dia, o que gosta, seu tempo livre.</div>
+
+    <div class="s-sec">
+      <h3>A regra do -S (a mais importante!)</h3>
+      <div class="s-rule">
+        <strong>I / you / we / they</strong> → verbo normal: play, like, go<br>
+        <strong>he / she / it</strong> → verbo + <strong>-s</strong>: plays, likes, goes
+      </div>
+      <div class="s-ex"><div class="en">I <u>play</u> video games. · She <u>plays</u> tennis.</div><div class="pt">Eu jogo videogame. · Ela joga tênis.</div></div>
+      <div class="s-ex"><div class="en">He <u>watches</u> TV. · She <u>goes</u> to school.</div><div class="pt">Verbos em -ch, -sh, -o ganham -ES: watches, goes.</div></div>
+    </div>
+
+    <div class="s-sec">
+      <h3>Negativa: don't / doesn't</h3>
+      <div class="s-rule">
+        I/you/we/they → <strong>don't</strong> + verbo<br>
+        he/she/it → <strong>doesn't</strong> + verbo (SEM -s!)
+      </div>
+      <div class="s-ex"><div class="en">I <u>don't like</u> horror movies.</div><div class="pt">Eu não gosto de filmes de terror.</div></div>
+      <div class="s-ex"><div class="en">He <u>doesn't drink</u> coffee.</div><div class="pt">Ele não bebe café. (drink sem -s!)</div></div>
+    </div>
+
+    <div class="s-sec">
+      <h3>Pergunta: Do / Does</h3>
+      <div class="s-rule">
+        <strong>Do</strong> + I/you/we/they...?<br>
+        <strong>Does</strong> + he/she/it...? (verbo SEM -s)
+      </div>
+      <div class="s-ex"><div class="en"><u>Do</u> you like pizza?</div><div class="pt">Você gosta de pizza?</div></div>
+      <div class="s-ex"><div class="en"><u>Does</u> she speak English?</div><div class="pt">Ela fala inglês? (speak sem -s)</div></div>
+    </div>
+
+    <div class="s-warn">
+      <strong>O erro nº 1:</strong> usar -s duas vezes. Quando aparece <u>does/doesn't</u>, o -s já está nele!<br>
+      <span class="bad">Errado:</span> She doesn't like<strong>s</strong>. · Does he play<strong>s</strong>?<br>
+      <span class="good">Certo:</span> She doesn't like. · Does he play?
+    </div>
+
+    <div class="s-tip">
+      <strong>Palavras-chave</strong> do Simple Present: every day, on weekends, always, usually, never. Se é rotina/hábito → Simple Present.
+    </div>
+  `,
+
+  "Adverbs of Frequency": `
+    <div class="s-intro">Os advérbios de frequência dizem <strong>quantas vezes</strong> você faz algo: sempre, geralmente, muitas vezes, às vezes ou nunca.</div>
+
+    <div class="s-sec">
+      <h3>A escada da frequência</h3>
+      <div class="s-table">
+        <div class="s-thead"><div>advérbio</div><div>significado</div><div>frequência</div></div>
+        <div class="s-trow"><div class="prefix">always</div><div>sempre</div><div>100%</div></div>
+        <div class="s-trow"><div class="prefix">usually</div><div>geralmente</div><div>~85%</div></div>
+        <div class="s-trow"><div class="prefix">often</div><div>muitas vezes</div><div>~65%</div></div>
+        <div class="s-trow"><div class="prefix">sometimes</div><div>às vezes</div><div>~40%</div></div>
+        <div class="s-trow"><div class="prefix">never</div><div>nunca</div><div>0%</div></div>
+      </div>
+    </div>
+
+    <div class="s-sec">
+      <h3>Onde colocar na frase?</h3>
+      <div class="s-rule">
+        <strong>ANTES</strong> do verbo principal: I <u>always</u> study.<br>
+        <strong>DEPOIS</strong> do verbo <strong>be</strong>: He is <u>always</u> happy.
+      </div>
+      <div class="s-ex"><div class="en">I <u>usually</u> get up at 7.</div><div class="pt">Eu geralmente acordo às 7.</div></div>
+      <div class="s-ex"><div class="en">She <u>never</u> eats fish.</div><div class="pt">Ela nunca come peixe.</div></div>
+      <div class="s-ex"><div class="en">They are <u>often</u> tired.</div><div class="pt">Eles estão frequentemente cansados. (depois do are!)</div></div>
+    </div>
+
+    <div class="s-warn">
+      <strong>Cuidado com o never:</strong> ele já é negativo, então o verbo fica normal.<br>
+      <span class="bad">Errado:</span> I don't never eat fish.<br>
+      <span class="good">Certo:</span> I never eat fish.
+    </div>
+
+    <div class="s-tip">
+      <strong>Truque:</strong> pensa numa escada descendo — <u>always</u> (topo, 100%) → usually → often → sometimes → <u>never</u> (chão, 0%). E a posição: antes do verbo comum, depois do verbo be.
+    </div>
   `
 };
 
@@ -1870,35 +2293,50 @@ const TOPIC_ICONS = {
   "Obligation & Advice": "alert",
   "Had Better": "bulb",
   "Conditionals": "shuffle",
-  "Time Conjunctions": "clock"
+  "Time Conjunctions": "clock",
+  "Family Members": "users",
+  "This, That, These & Those": "target",
+  "There is & There are": "building",
+  "Prepositions of Place": "pin",
+  "Simple Present": "sun",
+  "Adverbs of Frequency": "calendar"
 };
 
 // ============================================
 // BLOCOS DE ESTUDO (cada um agrupa vários temas)
 // ============================================
 const SETS = [
-  { id: "u24", label: "Prova atual", sub: "Units 2–4" },
-  { id: "rev", label: "Revisão", sub: "Geral · KET" }
+  { id: "leo", label: "Léo", sub: "Units 3–5", name: "Léo" },
+  { id: "u24", label: "Bernardo", sub: "Units 2–4", name: "Bernardo" },
+  { id: "rev", label: "Revisão", sub: "Geral · KET", name: "Bernardo" }
 ];
 // A qual bloco cada tema pertence
 const TOPIC_SET = {
-  // Revisão (provas anteriores)
+  // Revisão (provas anteriores do Bernardo)
   "Question Tags": "rev",
   "Indefinite Pronouns": "rev",
   "Present Tenses": "rev",
   "Future Tenses": "rev",
   "Life Plans": "rev",
   "KET Practice": "rev",
-  // Prova atual (Units 2–4)
+  // Prova do Bernardo (Units 2–4)
   "Used to & Would": "u24",
   "Relative Clauses": "u24",
   "Making & Selling": "u24",
   "Obligation & Advice": "u24",
   "Had Better": "u24",
   "Conditionals": "u24",
-  "Time Conjunctions": "u24"
+  "Time Conjunctions": "u24",
+  // Prova do Léo (Units 3–5)
+  "Family Members": "leo",
+  "This, That, These & Those": "leo",
+  "There is & There are": "leo",
+  "Prepositions of Place": "leo",
+  "Simple Present": "leo",
+  "Adverbs of Frequency": "leo"
 };
-let currentSet = "u24";
+let currentSet = "leo";
+function setName() { return (SETS.find(s => s.id === currentSet) || {}).name || "Bernardo"; }
 
 // Helpers de bloco
 function poolForSet(set) { return QUESTIONS.filter(q => TOPIC_SET[q.topic] === set); }
@@ -1913,13 +2351,21 @@ let userAnswers = [];
 let selectedTopic = "all";
 const STORAGE_KEY = "estudo_ber_v1";
 
+function statsKey() { return STORAGE_KEY + "_" + currentSet; }
 function loadStats() {
   try {
-    return JSON.parse(localStorage.getItem(STORAGE_KEY)) || { best: 0, runs: 0, lastPct: null };
+    const own = JSON.parse(localStorage.getItem(statsKey()));
+    if (own) return own;
+    // migração: estatísticas antigas (globais) valem para os blocos do Bernardo
+    if (currentSet !== "leo") {
+      const legacy = JSON.parse(localStorage.getItem(STORAGE_KEY));
+      if (legacy) return legacy;
+    }
+    return { best: 0, runs: 0, lastPct: null };
   } catch { return { best: 0, runs: 0, lastPct: null }; }
 }
 function saveStats(s) {
-  try { localStorage.setItem(STORAGE_KEY, JSON.stringify(s)); } catch {}
+  try { localStorage.setItem(statsKey(), JSON.stringify(s)); } catch {}
 }
 
 // ============================================
@@ -1938,11 +2384,14 @@ function renderSetSwitch() {
       currentSet = s.id;
       selectedTopic = "all";
       renderSetSwitch();
+      renderStatsBar();
       renderTopicGrid();
       renderStudyGrid();
     };
     el.appendChild(b);
   });
+  const heroName = document.getElementById("hero-name");
+  if (heroName) heroName.textContent = setName() + "!";
 }
 
 function renderStatsBar() {
@@ -2196,7 +2645,7 @@ function showResults() {
   const titleEl = document.getElementById("final-title");
   const subEl = document.getElementById("final-sub");
   if (pct === 100) {
-    titleEl.textContent = "Perfeito, Bernardo!";
+    titleEl.textContent = `Perfeito, ${setName()}!`;
     subEl.textContent = "Acertou tudo. Está pronto demais pra prova.";
     fireConfetti(120);
   } else if (pct >= 85) {
