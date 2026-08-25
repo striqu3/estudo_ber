@@ -1324,134 +1324,6 @@ const QUESTIONS = [
     options: ["before", "until", "while", "since"], correct: 0,
     explain: "<strong>Before</strong> = antes de. Apague as luzes antes de sair." },
 
-  // ===== FAMILY MEMBERS (Unit 03 – Léo) =====
-  { topic: "Family Members", q: "My father's brother is my ______.",
-    options: ["uncle", "aunt", "cousin", "grandfather"], correct: 0,
-    explain: "<strong>Uncle</strong> = tio (irmão do pai ou da mãe). Aunt = tia; cousin = primo(a)." },
-  { topic: "Family Members", q: "My mother's mother is my ______.",
-    options: ["aunt", "grandmother", "sister", "cousin"], correct: 1,
-    explain: "<strong>Grandmother</strong> = avó (a mãe da mãe ou do pai). Grandfather = avô." },
-  { topic: "Family Members", q: "My uncle's children are my ______.",
-    options: ["brothers", "nephews", "cousins", "sons"], correct: 2,
-    explain: "<strong>Cousins</strong> = primos (os filhos dos tios). Nephew = sobrinho." },
-  { topic: "Family Members", q: "My parents' daughter is my ______.",
-    options: ["sister", "brother", "aunt", "mother"], correct: 0,
-    explain: "<strong>Sister</strong> = irmã (a filha dos meus pais). Brother = irmão; daughter = filha." },
-  { topic: "Family Members", q: "My mom and my dad are my ______.",
-    options: ["cousins", "grandparents", "parents", "children"], correct: 2,
-    explain: "<strong>Parents</strong> = pais (pai + mãe). Cuidado: 'parentes' em inglês é <em>relatives</em>!" },
-  { topic: "Family Members", q: "My mother's sister is my ______.",
-    options: ["aunt", "uncle", "grandmother", "niece"], correct: 0,
-    explain: "<strong>Aunt</strong> = tia (irmã do pai ou da mãe). Uncle = tio." },
-  { topic: "Family Members", q: "My brother is my parents' ______.",
-    options: ["daughter", "son", "uncle", "nephew"], correct: 1,
-    explain: "<strong>Son</strong> = filho. Daughter = filha. Meu irmão é o filho dos meus pais." },
-  { topic: "Family Members", q: "My grandmother and my grandfather are my ______.",
-    options: ["parents", "cousins", "uncles", "grandparents"], correct: 3,
-    explain: "<strong>Grandparents</strong> = avós (avô + avó)." },
-  { topic: "Family Members", q: "Ana is a girl. She is her parents' ______.",
-    options: ["son", "daughter", "brother", "uncle"], correct: 1,
-    explain: "<strong>Daughter</strong> = filha. Son = filho (menino)." },
-  { topic: "Family Members", q: "My mother is my father's wife, and my father is my mother's ______.",
-    options: ["husband", "brother", "son", "uncle"], correct: 0,
-    explain: "<strong>Husband</strong> = marido. Wife = esposa." },
-
-  // ===== THIS, THAT, THESE & THOSE (Léo) =====
-  { topic: "This, That, These & Those", q: "______ is my pen, here in my hand.",
-    options: ["This", "That", "These", "Those"], correct: 0,
-    explain: "<strong>This</strong> = isto/este (UMA coisa PERTO de você). 'Here in my hand' mostra que está perto." },
-  { topic: "This, That, These & Those", q: "______ are my friends over there.",
-    options: ["This", "That", "These", "Those"], correct: 3,
-    explain: "<strong>Those</strong> = aqueles (VÁRIAS coisas/pessoas LONGE). 'Over there' = lá longe." },
-  { topic: "This, That, These & Those", q: "Look at ______ picture here on this wall.",
-    options: ["this", "that", "these", "those"], correct: 0,
-    explain: "<strong>This</strong> = uma coisa perto ('here'). Picture está no singular." },
-  { topic: "This, That, These & Those", q: "______ shoes here are new.",
-    options: ["This", "That", "These", "Those"], correct: 2,
-    explain: "<strong>These</strong> = estes (VÁRIAS coisas PERTO). Shoes é plural e 'here' mostra que está perto." },
-  { topic: "This, That, These & Those", q: "What is ______ over there, near the school?",
-    options: ["this", "these", "that", "those"], correct: 2,
-    explain: "<strong>That</strong> = aquilo/aquele (UMA coisa LONGE). 'Over there' = longe de quem fala." },
-  { topic: "This, That, These & Those", q: "______ books on my desk are mine.",
-    options: ["This", "That", "These", "Those"], correct: 2,
-    explain: "<strong>These</strong> = plural + perto (os livros estão na MINHA mesa, perto de mim)." },
-  { topic: "This, That, These & Those", q: "Can you see ______ mountain far away?",
-    options: ["this", "that", "these", "those"], correct: 1,
-    explain: "<strong>That</strong> = singular + longe ('far away' = bem longe)." },
-  { topic: "This, That, These & Those", q: "______ is my brother Leo. (apresentando alguém ao seu lado)",
-    options: ["This", "That", "These", "Those"], correct: 0,
-    explain: "Para <strong>apresentar</strong> alguém que está do seu lado, usamos <strong>This is...</strong> = Este é..." },
-  { topic: "This, That, These & Those", q: "______ apples over there look delicious.",
-    options: ["This", "That", "These", "Those"], correct: 3,
-    explain: "<strong>Those</strong> = plural + longe (apples = várias, 'over there' = lá)." },
-  { topic: "This, That, These & Those", q: "______ car here is my dad's.",
-    options: ["This", "That", "These", "Those"], correct: 0,
-    explain: "<strong>This</strong> = singular + perto ('here'). Um carro só, do lado de quem fala." },
-
-  // ===== THERE IS & THERE ARE (Unit 04 – City Life – Léo) =====
-  { topic: "There is & There are", q: "There ______ a supermarket in my street.",
-    options: ["is", "are", "am", "be"], correct: 0,
-    explain: "<strong>There is</strong> = tem/há UMA coisa (singular): a supermarket." },
-  { topic: "There is & There are", q: "There ______ many parks in the city.",
-    options: ["is", "are", "be", "am"], correct: 1,
-    explain: "<strong>There are</strong> = tem/há VÁRIAS coisas (plural): many parks." },
-  { topic: "There is & There are", q: "There isn't ______ sugar in my coffee.",
-    options: ["some", "any", "a", "an"], correct: 1,
-    explain: "Em frases <strong>negativas</strong> usamos <strong>any</strong>: There isn't any sugar = não tem açúcar nenhum." },
-  { topic: "There is & There are", q: "There are ______ good restaurants downtown.",
-    options: ["any", "a", "some", "an"], correct: 2,
-    explain: "Em frases <strong>afirmativas</strong> usamos <strong>some</strong>: there are some restaurants = tem alguns restaurantes." },
-  { topic: "There is & There are", q: "______ there a hospital near here?",
-    options: ["Is", "Are", "Do", "Have"], correct: 0,
-    explain: "Pergunta no singular: <strong>Is there...?</strong> = Tem um...? (a hospital = um hospital, singular)." },
-  { topic: "There is & There are", q: "There ______ any buses after midnight.",
-    options: ["isn't", "aren't", "not", "is"], correct: 1,
-    explain: "<strong>Aren't</strong> = are not (plural: buses). There aren't any buses = não tem ônibus nenhum." },
-  { topic: "There is & There are", q: "Is there ______ milk in the fridge?",
-    options: ["some", "any", "a", "many"], correct: 1,
-    explain: "Em <strong>perguntas</strong> usamos <strong>any</strong>: Is there any milk? = Tem leite?" },
-  { topic: "There is & There are", q: "There ______ two banks in this street.",
-    options: ["is", "are", "be", "isn't"], correct: 1,
-    explain: "<strong>Two banks</strong> = plural → <strong>there are</strong>." },
-  { topic: "There is & There are", q: "There is ______ water on the floor.",
-    options: ["any", "some", "an", "many"], correct: 1,
-    explain: "Afirmativa → <strong>some</strong>: there is some water = tem (um pouco de) água." },
-  { topic: "There is & There are", q: "______ there any museums in your city?",
-    options: ["Is", "Are", "Do", "Does"], correct: 1,
-    explain: "<strong>Museums</strong> = plural → <strong>Are there...?</strong> = Tem museus...?" },
-
-  // ===== PREPOSITIONS OF PLACE (Léo) =====
-  { topic: "Prepositions of Place", q: "The cat is ______ the box. (dentro)",
-    options: ["on", "in", "under", "behind"], correct: 1,
-    explain: "<strong>In</strong> = dentro de. The cat is in the box = o gato está dentro da caixa." },
-  { topic: "Prepositions of Place", q: "The book is ______ the table. (em cima)",
-    options: ["in", "under", "on", "between"], correct: 2,
-    explain: "<strong>On</strong> = em cima de (tocando a superfície). The book is on the table." },
-  { topic: "Prepositions of Place", q: "The ball is ______ the bed. (embaixo)",
-    options: ["on", "in", "next to", "under"], correct: 3,
-    explain: "<strong>Under</strong> = embaixo de. The ball is under the bed = a bola está embaixo da cama." },
-  { topic: "Prepositions of Place", q: "The bus stop is ______ the bank and the school. (no meio dos dois)",
-    options: ["between", "behind", "under", "on"], correct: 0,
-    explain: "<strong>Between</strong> = entre DOIS lugares/coisas. Between the bank and the school." },
-  { topic: "Prepositions of Place", q: "The car is ______ the house. (na frente)",
-    options: ["behind", "in front of", "under", "in"], correct: 1,
-    explain: "<strong>In front of</strong> = na frente de. O contrário é <em>behind</em> (atrás)." },
-  { topic: "Prepositions of Place", q: "The garden is ______ the house. (atrás)",
-    options: ["in front of", "on", "behind", "between"], correct: 2,
-    explain: "<strong>Behind</strong> = atrás de. The garden is behind the house = o jardim fica atrás da casa." },
-  { topic: "Prepositions of Place", q: "The bakery is ______ the pharmacy. (ao lado)",
-    options: ["next to", "under", "in", "between"], correct: 0,
-    explain: "<strong>Next to</strong> = ao lado de. The bakery is next to the pharmacy = a padaria é vizinha da farmácia." },
-  { topic: "Prepositions of Place", q: "My keys are ______ my bag. (dentro)",
-    options: ["on", "under", "in", "behind"], correct: 2,
-    explain: "<strong>In</strong> = dentro. My keys are in my bag = minhas chaves estão dentro da bolsa." },
-  { topic: "Prepositions of Place", q: "The picture is ______ the wall.",
-    options: ["in", "on", "under", "between"], correct: 1,
-    explain: "<strong>On the wall</strong> = na parede (encostado na superfície). Em inglês, quadro fica ON the wall, não 'in'." },
-  { topic: "Prepositions of Place", q: "The dog is sleeping ______ the table. (embaixo)",
-    options: ["on", "in", "under", "next to"], correct: 2,
-    explain: "<strong>Under</strong> = embaixo de. The dog is under the table." },
-
   // ===== SIMPLE PRESENT (Unit 05 – Free Time – Léo) =====
   { topic: "Simple Present", q: "She ______ to school by bus.",
     options: ["go", "goes", "going", "gos"], correct: 1,
@@ -1515,38 +1387,6 @@ const QUESTIONS = [
   { topic: "Adverbs of Frequency", q: "My dad ______ cooks on Sundays. (muitas vezes, frequentemente)",
     options: ["never", "often", "always", "sometimes"], correct: 1,
     explain: "<strong>Often</strong> = frequentemente/muitas vezes (mais que sometimes, menos que usually)." },
-
-  // ===== SPEAKING PRACTICE (perguntas reais da prova oral do Léo) =====
-  { topic: "Speaking Practice", q: "Do you have a pet? — Yes, I ______.",
-    options: ["do", "does", "have", "am"], correct: 0,
-    explain: "Short answer: pergunta com <strong>Do</strong> → resposta com <strong>do</strong>: Yes, I do / No, I don't." },
-  { topic: "Speaking Practice", q: "Does your teacher have a pet? — No, she ______.",
-    options: ["don't", "doesn't", "isn't", "not"], correct: 1,
-    explain: "Pergunta com <strong>Does</strong> (she) → resposta negativa: No, she <strong>doesn't</strong>." },
-  { topic: "Speaking Practice", q: "Do your grandparents have a pet? — Yes, they ______.",
-    options: ["does", "have", "do", "are"], correct: 2,
-    explain: "<strong>They</strong> → short answer com <strong>do</strong>: Yes, they do." },
-  { topic: "Speaking Practice", q: "Does your brother eat bread for breakfast? — Yes, he ______.",
-    options: ["do", "does", "eats", "is"], correct: 1,
-    explain: "<strong>He</strong> → short answer com <strong>does</strong>: Yes, he does. (Não repete o verbo eat!)" },
-  { topic: "Speaking Practice", q: "Do you eat cereal for breakfast? — No, I ______.",
-    options: ["don't", "doesn't", "am not", "no"], correct: 0,
-    explain: "<strong>I</strong> → resposta negativa: No, I <strong>don't</strong>." },
-  { topic: "Speaking Practice", q: "What time ______ you get up?",
-    options: ["does", "do", "are", "is"], correct: 1,
-    explain: "Pergunta com <strong>you</strong> → auxiliar <strong>do</strong>: What time do you get up? Resposta: I get up at 7 o'clock." },
-  { topic: "Speaking Practice", q: "What ______ your father do in the morning?",
-    options: ["do", "is", "does", "are"], correct: 2,
-    explain: "<strong>Your father</strong> = he → auxiliar <strong>does</strong>: What does your father do...?" },
-  { topic: "Speaking Practice", q: "______ do you go to school with? — With my mom.",
-    options: ["What", "Who", "Where", "When"], correct: 1,
-    explain: "<strong>Who</strong> = quem. A resposta é uma PESSOA (with my mom), então a pergunta é com Who." },
-  { topic: "Speaking Practice", q: "How ______ do you go to the park? — Sometimes.",
-    options: ["much", "many", "often", "old"], correct: 2,
-    explain: "<strong>How often</strong> = com que frequência. A resposta é um advérbio de frequência (sometimes, always, never...)." },
-  { topic: "Speaking Practice", q: "How often do you swim? — I ______ swim on Saturdays. (geralmente)",
-    options: ["never", "usually", "am", "does"], correct: 1,
-    explain: "<strong>Usually</strong> = geralmente. Resposta completa: I usually swim on Saturdays." },
 
   // ===== GADGETS & FREE TIME (Unit 5 – online test 25/08 – Léo) =====
   { topic: "Gadgets & Free Time", q: "You use this to listen to music without other people hearing: ______.",
@@ -2115,169 +1955,6 @@ const STUDY_CONTENT = {
     </div>
   `,
 
-  "Family Members": `
-    <div class="s-intro">Os membros da família em inglês (Unit 03). Decora cada palavra com os exemplos — e cuidado com as pegadinhas de tradução!</div>
-
-    <div class="s-sec">
-      <h3>A família</h3>
-      <ul>
-        <li><strong>father / dad</strong> — pai · <strong>mother / mom</strong> — mãe</li>
-        <li><strong>parents</strong> — pais (pai + mãe)</li>
-        <li><strong>brother</strong> — irmão · <strong>sister</strong> — irmã</li>
-        <li><strong>son</strong> — filho · <strong>daughter</strong> — filha</li>
-        <li><strong>grandfather</strong> — avô · <strong>grandmother</strong> — avó</li>
-        <li><strong>grandparents</strong> — avós</li>
-        <li><strong>uncle</strong> — tio · <strong>aunt</strong> — tia</li>
-        <li><strong>cousin</strong> — primo / prima</li>
-        <li><strong>husband</strong> — marido · <strong>wife</strong> — esposa</li>
-      </ul>
-    </div>
-
-    <div class="s-sec">
-      <h3>Exemplos</h3>
-      <div class="s-ex"><div class="en">My father's brother is my <u>uncle</u>.</div><div class="pt">O irmão do meu pai é meu tio.</div></div>
-      <div class="s-ex"><div class="en">My uncle's children are my <u>cousins</u>.</div><div class="pt">Os filhos do meu tio são meus primos.</div></div>
-      <div class="s-ex"><div class="en">My mom and dad are my <u>parents</u>.</div><div class="pt">Minha mãe e meu pai são meus pais.</div></div>
-    </div>
-
-    <div class="s-warn">
-      <strong>Pegadinha clássica:</strong> <u>parents</u> = PAIS (só pai e mãe), NÃO "parentes"!<br>
-      <span class="bad">parents</span> = pais<br>
-      <span class="good">relatives</span> = parentes (a família toda)
-    </div>
-
-    <div class="s-tip">
-      <strong>Dica:</strong> o <u>'s</u> mostra posse: <em>my father's brother</em> = o irmão DO MEU PAI. Lê de trás pra frente que fica fácil.
-    </div>
-  `,
-
-  "This, That, These & Those": `
-    <div class="s-intro">Os demonstrativos apontam para coisas e pessoas. A escolha depende de duas perguntas: está <strong>perto ou longe</strong>? É <strong>um ou vários</strong>?</div>
-
-    <div class="s-sec">
-      <h3>A tabela mágica</h3>
-      <div class="s-table">
-        <div class="s-thead"><div></div><div>perto</div><div>longe</div></div>
-        <div class="s-trow"><div class="prefix">1 (singular)</div><div>this (este/isto)</div><div>that (aquele/aquilo)</div></div>
-        <div class="s-trow"><div class="prefix">2+ (plural)</div><div>these (estes)</div><div>those (aqueles)</div></div>
-      </div>
-    </div>
-
-    <div class="s-sec">
-      <h3>Exemplos</h3>
-      <div class="s-ex"><div class="en"><u>This</u> is my pen. (na minha mão)</div><div class="pt">Esta é minha caneta.</div></div>
-      <div class="s-ex"><div class="en"><u>These</u> are my books. (aqui do meu lado)</div><div class="pt">Estes são meus livros.</div></div>
-      <div class="s-ex"><div class="en"><u>That</u> is my school. (do outro lado da rua)</div><div class="pt">Aquela é minha escola.</div></div>
-      <div class="s-ex"><div class="en"><u>Those</u> are my friends. (lá longe)</div><div class="pt">Aqueles são meus amigos.</div></div>
-    </div>
-
-    <div class="s-sec">
-      <h3>Palavras que ajudam</h3>
-      <ul>
-        <li><strong>here</strong> (aqui) → this / these</li>
-        <li><strong>there / over there / far away</strong> (lá, longe) → that / those</li>
-      </ul>
-    </div>
-
-    <div class="s-tip">
-      <strong>Truque pra decorar:</strong> this e these têm um "E" a mais no plural — thi<u>s</u> (1) → the<u>se</u> (vários). E pra apresentar alguém do seu lado: "<u>This</u> is my brother."
-    </div>
-  `,
-
-  "There is & There are": `
-    <div class="s-intro">Usados para dizer que algo <strong>existe</strong> em um lugar (Unit 04 – City Life): "tem/há um parque", "tem duas escolas". Com <strong>some</strong> e <strong>any</strong> para quantidades.</div>
-
-    <div class="s-sec">
-      <h3>Singular ou plural?</h3>
-      <div class="s-rule">
-        <strong>There is</strong> + UMA coisa (singular)<br>
-        <strong>There are</strong> + VÁRIAS coisas (plural)
-      </div>
-      <div class="s-ex"><div class="en"><u>There is</u> a park in my city.</div><div class="pt">Tem um parque na minha cidade.</div></div>
-      <div class="s-ex"><div class="en"><u>There are</u> two schools here.</div><div class="pt">Tem duas escolas aqui.</div></div>
-    </div>
-
-    <div class="s-sec">
-      <h3>Negativa e pergunta</h3>
-      <div class="s-rule">
-        Negativa: there <strong>isn't</strong> / there <strong>aren't</strong><br>
-        Pergunta: <strong>Is there...?</strong> / <strong>Are there...?</strong>
-      </div>
-      <div class="s-ex"><div class="en">There <u>isn't</u> a cinema near here.</div><div class="pt">Não tem cinema perto daqui.</div></div>
-      <div class="s-ex"><div class="en"><u>Are there</u> any buses at night?</div><div class="pt">Tem ônibus à noite?</div></div>
-    </div>
-
-    <div class="s-sec">
-      <h3>Some e Any</h3>
-      <div class="s-rule">
-        <strong>some</strong> → frases afirmativas<br>
-        <strong>any</strong> → negativas e perguntas
-      </div>
-      <div class="s-ex"><div class="en">There are <u>some</u> restaurants downtown.</div><div class="pt">Tem alguns restaurantes no centro.</div></div>
-      <div class="s-ex"><div class="en">There isn't <u>any</u> milk.</div><div class="pt">Não tem leite nenhum.</div></div>
-      <div class="s-ex"><div class="en">Is there <u>any</u> sugar?</div><div class="pt">Tem açúcar?</div></div>
-    </div>
-
-    <div class="s-sec">
-      <h3>Lugares da cidade (vocabulário da unit)</h3>
-      <ul>
-        <li><strong>bank</strong> — banco · <strong>school</strong> — escola</li>
-        <li><strong>hospital</strong> — hospital · <strong>pharmacy / drugstore</strong> — farmácia</li>
-        <li><strong>supermarket</strong> — mercado · <strong>restaurant</strong> — restaurante</li>
-        <li><strong>park</strong> — parque · <strong>playground</strong> — parquinho</li>
-        <li><strong>cinema / movie theater</strong> — cinema · <strong>museum</strong> — museu</li>
-        <li><strong>library</strong> — biblioteca · <strong>post office</strong> — correio</li>
-        <li><strong>bus station</strong> — rodoviária · <strong>bus stop</strong> — ponto de ônibus</li>
-        <li><strong>train station</strong> — estação de trem · <strong>police station</strong> — delegacia</li>
-        <li><strong>pet shop</strong> — pet shop · <strong>zoo</strong> — zoológico</li>
-        <li><strong>café</strong> — cafeteria · <strong>hotel</strong> — hotel · <strong>stadium</strong> — estádio</li>
-      </ul>
-      <div class="s-ex"><div class="en">There is a <u>library</u> next to the <u>post office</u>.</div><div class="pt">Tem uma biblioteca ao lado do correio. (combina com as preposições!)</div></div>
-    </div>
-
-    <div class="s-tip">
-      <strong>Resumo rápido:</strong> 1 coisa → <u>is</u> · várias → <u>are</u> · afirmativa → <u>some</u> · negativa/pergunta → <u>any</u>.
-    </div>
-  `,
-
-  "Prepositions of Place": `
-    <div class="s-intro">As preposições de lugar dizem <strong>onde</strong> algo está: dentro, em cima, embaixo, na frente, atrás, ao lado, entre.</div>
-
-    <div class="s-sec">
-      <h3>As 7 preposições</h3>
-      <ul>
-        <li><strong>in</strong> — dentro de (in the box)</li>
-        <li><strong>on</strong> — em cima de / na superfície (on the table)</li>
-        <li><strong>under</strong> — embaixo de (under the bed)</li>
-        <li><strong>in front of</strong> — na frente de</li>
-        <li><strong>behind</strong> — atrás de</li>
-        <li><strong>next to</strong> — ao lado de</li>
-        <li><strong>between</strong> — entre (DOIS lugares)</li>
-      </ul>
-    </div>
-
-    <div class="s-sec">
-      <h3>Exemplos</h3>
-      <div class="s-ex"><div class="en">The cat is <u>in</u> the box.</div><div class="pt">O gato está dentro da caixa.</div></div>
-      <div class="s-ex"><div class="en">The book is <u>on</u> the table.</div><div class="pt">O livro está em cima da mesa.</div></div>
-      <div class="s-ex"><div class="en">The ball is <u>under</u> the bed.</div><div class="pt">A bola está embaixo da cama.</div></div>
-      <div class="s-ex"><div class="en">The car is <u>in front of</u> the house.</div><div class="pt">O carro está na frente da casa.</div></div>
-      <div class="s-ex"><div class="en">The garden is <u>behind</u> the house.</div><div class="pt">O jardim fica atrás da casa.</div></div>
-      <div class="s-ex"><div class="en">The bakery is <u>next to</u> the bank.</div><div class="pt">A padaria fica ao lado do banco.</div></div>
-      <div class="s-ex"><div class="en">The school is <u>between</u> the park and the market.</div><div class="pt">A escola fica entre o parque e o mercado.</div></div>
-    </div>
-
-    <div class="s-warn">
-      <strong>Pares de opostos</strong> (decora junto):<br>
-      <span class="good">in front of</span> (na frente) ↔ <span class="bad">behind</span> (atrás)<br>
-      <span class="good">on</span> (em cima) ↔ <span class="bad">under</span> (embaixo)
-    </div>
-
-    <div class="s-tip">
-      <strong>Dica:</strong> <u>between</u> sempre envolve DOIS: between the bank <strong>and</strong> the school. E em inglês o quadro fica <u>on</u> the wall (na parede), não "in".
-    </div>
-  `,
-
   "Simple Present": `
     <div class="s-intro">O Simple Present fala de rotinas, gostos e hábitos (Unit 05 – Free Time): o que você faz todo dia, o que gosta, seu tempo livre.</div>
 
@@ -2359,62 +2036,6 @@ const STUDY_CONTENT = {
     </div>
   `,
 
-  "Speaking Practice": `
-    <div class="s-intro">A prova é <strong>oral</strong>! Aqui estão as perguntas que a professora mandou no material — treina responder cada uma <strong>em voz alta</strong>, com frases completas.</div>
-
-    <div class="s-sec">
-      <h3>Como responder (short answers)</h3>
-      <div class="s-rule">
-        Do you...? → <strong>Yes, I do. / No, I don't.</strong><br>
-        Does he/she...? → <strong>Yes, he does. / No, she doesn't.</strong><br>
-        Do they...? → <strong>Yes, they do. / No, they don't.</strong>
-      </div>
-      <div class="s-ex"><div class="en">Do you have a pet? — Yes, I do. I have a dog.</div><div class="pt">Responde curto e depois completa com uma frase!</div></div>
-    </div>
-
-    <div class="s-sec">
-      <h3>Perguntas de conversação (da professora)</h3>
-      <div class="s-ex"><div class="en">Do you have a big family?</div><div class="pt">Yes, I do. / No, I don't. I have a small family.</div></div>
-      <div class="s-ex"><div class="en">Do you have a pet?</div><div class="pt">Yes, I do. I have a dog/cat. · No, I don't.</div></div>
-      <div class="s-ex"><div class="en">Does your best friend have a pet?</div><div class="pt">Yes, he/she does. · No, he/she doesn't.</div></div>
-      <div class="s-ex"><div class="en">Do your grandparents have a pet?</div><div class="pt">Yes, they do. · No, they don't.</div></div>
-      <div class="s-ex"><div class="en">Does your teacher have a pet?</div><div class="pt">Yes, she does. · No, she doesn't. · I don't know!</div></div>
-      <div class="s-ex"><div class="en">Do you eat cereal for breakfast?</div><div class="pt">Yes, I do. · No, I don't. I eat bread.</div></div>
-      <div class="s-ex"><div class="en">Does your brother or sister eat bread for breakfast?</div><div class="pt">Yes, he/she does. · No, he/she doesn't.</div></div>
-    </div>
-
-    <div class="s-sec">
-      <h3>Sua rotina (responde com frase completa)</h3>
-      <div class="s-ex"><div class="en">What time do you get up?</div><div class="pt">I get up at 7 o'clock.</div></div>
-      <div class="s-ex"><div class="en">What do you have for breakfast?</div><div class="pt">I have bread and milk.</div></div>
-      <div class="s-ex"><div class="en">Who do you go to school with?</div><div class="pt">I go to school with my mom / my dad / my brother.</div></div>
-      <div class="s-ex"><div class="en">What do you do after school?</div><div class="pt">I do my homework and play video games.</div></div>
-      <div class="s-ex"><div class="en">What time do you have lunch?</div><div class="pt">I have lunch at noon / at 12 o'clock.</div></div>
-      <div class="s-ex"><div class="en">What do you do when you get home?</div><div class="pt">I wash my hands and have a snack.</div></div>
-      <div class="s-ex"><div class="en">What time do you go to bed?</div><div class="pt">I go to bed at 9 o'clock.</div></div>
-      <div class="s-ex"><div class="en">What does your mother/father do in the morning?</div><div class="pt">She/He works. · She/He makes breakfast. (com -S: works, makes!)</div></div>
-    </div>
-
-    <div class="s-sec">
-      <h3>How often...? (usa os advérbios!)</h3>
-      <p>A professora vai perguntar "How often do you...?" (com que frequência). Responde com <strong>always, usually, often, sometimes, never</strong> ou com expressões:</p>
-      <ul>
-        <li><strong>every day</strong> — todo dia</li>
-        <li><strong>once a week</strong> — uma vez por semana</li>
-        <li><strong>twice a week</strong> — duas vezes por semana</li>
-        <li><strong>on Saturdays</strong> — aos sábados</li>
-      </ul>
-      <div class="s-ex"><div class="en">How often do you eat pizza?</div><div class="pt">I sometimes eat pizza. / I eat pizza once a week.</div></div>
-      <div class="s-ex"><div class="en">How often do you play games?</div><div class="pt">I often play games. / I play games every day.</div></div>
-      <div class="s-ex"><div class="en">How often do you drink coffee?</div><div class="pt">I never drink coffee!</div></div>
-      <div class="s-ex"><div class="en">How often do you go to the beach?</div><div class="pt">I sometimes go to the beach in summer.</div></div>
-    </div>
-
-    <div class="s-tip">
-      <strong>Dica de ouro pra prova oral:</strong> nunca responde só "yes" ou "no" — usa a short answer (Yes, I do) e completa com mais uma frase. Treina em voz alta na frente do espelho!
-    </div>
-  `,
-
   "Gadgets & Free Time": `
     <div class="s-intro">Vocabulário da Unit 5 pra prova online: os <strong>gadgets</strong> (aparelhos eletrônicos) e as <strong>atividades de tempo livre</strong>.</div>
 
@@ -2491,13 +2112,8 @@ const TOPIC_ICONS = {
   "Had Better": "bulb",
   "Conditionals": "shuffle",
   "Time Conjunctions": "clock",
-  "Family Members": "users",
-  "This, That, These & Those": "target",
-  "There is & There are": "building",
-  "Prepositions of Place": "pin",
   "Simple Present": "sun",
   "Adverbs of Frequency": "calendar",
-  "Speaking Practice": "help",
   "Gadgets & Free Time": "zap"
 };
 
@@ -2505,7 +2121,7 @@ const TOPIC_ICONS = {
 // BLOCOS DE ESTUDO (cada um agrupa vários temas)
 // ============================================
 const SETS = [
-  { id: "leo", label: "Léo", sub: "Units 3–5", name: "Léo" },
+  { id: "leo", label: "Léo", sub: "Unit 5 · 25/08", name: "Léo" },
   { id: "u24", label: "Bernardo", sub: "Units 2–4", name: "Bernardo" },
   { id: "rev", label: "Revisão", sub: "Geral · KET", name: "Bernardo" }
 ];
@@ -2527,13 +2143,8 @@ const TOPIC_SET = {
   "Conditionals": "u24",
   "Time Conjunctions": "u24",
   // Prova do Léo (Units 3–5)
-  "Family Members": "leo",
-  "This, That, These & Those": "leo",
-  "There is & There are": "leo",
-  "Prepositions of Place": "leo",
   "Simple Present": "leo",
   "Adverbs of Frequency": "leo",
-  "Speaking Practice": "leo",
   "Gadgets & Free Time": "leo"
 };
 let currentSet = "leo";
