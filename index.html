@@ -6,7 +6,7 @@
 <meta name="theme-color" content="#6366f1">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<title>Estudo de Inglês · Léo & Bernardo</title>
+<title>Caderno de Estudos · Léo & Bernardo</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -105,6 +105,7 @@
   /* ========= SET SWITCH (bloco de estudo) ========= */
   .set-switch {
     display: flex;
+    flex-wrap: wrap;
     gap: 6px;
     background: rgba(255, 255, 255, 0.12);
     backdrop-filter: blur(12px);
@@ -115,7 +116,8 @@
     margin: 4px 0 12px;
   }
   .set-switch button {
-    flex: 1;
+    flex: 1 1 calc(50% - 3px);
+    min-width: 0;
     border: none;
     background: transparent;
     color: rgba(255, 255, 255, 0.82);
@@ -757,7 +759,7 @@
     <div class="hero">
       <div class="crest" id="hero-crest"></div>
       <h1>Vai com tudo, <span class="name" id="hero-name">Léo!</span></h1>
-      <p>Hora de detonar a prova de inglês</p>
+      <p id="hero-sub">Hora de detonar a prova de inglês</p>
     </div>
 
     <div class="set-switch" id="set-switch"></div>
@@ -788,7 +790,7 @@
     <div class="card">
       <div class="section-title"><span class="bar"></span> Como funciona</div>
       <p style="font-size:0.92rem;line-height:1.55;color:var(--ink-soft);font-weight:500">
-        Você responde uma questão por vez. No final aparece <strong style="color:var(--ink)">tudo que acertou e errou</strong>, com a explicação em português pra você entender o porquê. Quanto mais você treina, melhor fica.
+        Você responde uma questão por vez. No final aparece <strong style="color:var(--ink)">tudo que acertou e errou</strong>, com a explicação pra você entender o porquê. Quanto mais você treina, melhor fica.
       </p>
       <div class="tip-box" id="tip-box"></div>
     </div>
@@ -898,7 +900,12 @@ const ICONS = {
   pin:       '<path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/>',
   building:  '<rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01"/><path d="M16 6h.01"/><path d="M8 10h.01"/><path d="M16 10h.01"/><path d="M8 14h.01"/><path d="M16 14h.01"/><path d="M12 6h.01"/><path d="M12 10h.01"/><path d="M12 14h.01"/>',
   sun:       '<circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/>',
-  calendar:  '<rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>'
+  calendar:  '<rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>',
+  mountain:  '<path d="m8 3 4 8 5-5 5 15H2L8 3z"/>',
+  droplet:   '<path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"/>',
+  compass:   '<circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/>',
+  leaf:      '<path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/>',
+  waves:     '<path d="M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.4 2 5 2 1.3 0 1.9-.5 2.5-1"/><path d="M2 12c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 1.3 0 1.9-.5 2.5-1"/><path d="M2 18c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 1.3 0 1.9-.5 2.5-1"/>'
 };
 function icon(name, size = 18, strokeWidth = 2) {
   return `<svg class="icon" viewBox="0 0 24 24" width="${size}" height="${size}" fill="none" stroke="currentColor" stroke-width="${strokeWidth}" stroke-linecap="round" stroke-linejoin="round">${ICONS[name] || ''}</svg>`;
@@ -1418,7 +1425,199 @@ const QUESTIONS = [
     explain: "<strong>Ride a bike</strong> = andar de bicicleta. Ride para bike/horse; play para jogos e esportes com bola." },
   { topic: "Gadgets & Free Time", q: "What do you do in your free time? — I ______ video games and watch TV.",
     options: ["ride", "go", "play", "make"], correct: 2,
-    explain: "<strong>Play</strong> video games = jogar videogame. Play também para esportes: play football, play tennis." }
+    explain: "<strong>Play</strong> video games = jogar videogame. Play também para esportes: play football, play tennis." },
+
+  // ===== GEOGRAFIA · ÁSIA: RELEVO (9º ano – Bernardo) =====
+  { topic: "Ásia: Relevo", q: "Qual é a maior cadeia montanhosa da Ásia, formada pelo choque entre as placas Indo-Australiana e Euroasiática?",
+    options: ["Himalaia", "Alpes", "Andes", "Montes Urais"], correct: 0,
+    explain: "O <strong>Himalaia</strong> nasceu da colisão da placa Indo-Australiana com a Euroasiática. O processo continua até hoje, e por isso a cordilheira ainda cresce alguns milímetros por ano." },
+  { topic: "Ásia: Relevo", q: "O Monte Everest, com 8.848 m o ponto mais alto do planeta, fica na fronteira entre quais países?",
+    options: ["Nepal e China", "Índia e Paquistão", "Rússia e Mongólia", "Irã e Iraque"], correct: 0,
+    explain: "O <strong>Everest</strong> fica na fronteira entre o <strong>Nepal</strong> e a <strong>China</strong> (região do Tibete), no coração do Himalaia." },
+  { topic: "Ásia: Relevo", q: "O Planalto do Tibete recebe o apelido de:",
+    options: ["Teto do Mundo", "Celeiro da Ásia", "Deserto Vermelho", "Berço da Civilização"], correct: 0,
+    explain: "É o maior e mais alto planalto do mundo, com altitude média de cerca de <strong>4.500 m</strong> — daí o apelido de <strong>Teto do Mundo</strong>." },
+  { topic: "Ásia: Relevo", q: "Qual formação de relevo é tradicionalmente considerada o limite natural entre a Europa e a Ásia?",
+    options: ["Montes Urais", "Himalaia", "Alpes", "Cordilheira do Atlas"], correct: 0,
+    explain: "Os <strong>Montes Urais</strong>, no sentido norte-sul pela Rússia, marcam a divisa convencional entre os dois continentes. São montanhas antigas e bastante desgastadas pela erosão." },
+  { topic: "Ásia: Relevo", q: "O ponto mais baixo das terras emersas do planeta, cerca de 430 m abaixo do nível do mar, é:",
+    options: ["Mar Morto", "Mar Cáspio", "Vale da Morte", "Lago Baikal"], correct: 0,
+    explain: "O <strong>Mar Morto</strong>, entre Israel e Jordânia, é uma depressão absoluta: fica abaixo do nível do mar. Sua água é hipersalina." },
+  { topic: "Ásia: Relevo", q: "Japão, Indonésia e Filipinas integram o Círculo de Fogo do Pacífico. Isso significa que essas áreas:",
+    options: ["têm intensa atividade sísmica e vulcânica", "são planícies muito férteis", "possuem clima polar", "não apresentam montanhas"], correct: 0,
+    explain: "O <strong>Círculo de Fogo do Pacífico</strong> é uma zona de encontro de placas tectônicas, o que gera <strong>terremotos, tsunamis e vulcões</strong> com frequência." },
+  { topic: "Ásia: Relevo", q: "Qual é a maior península do mundo, localizada no sudoeste da Ásia?",
+    options: ["Arábica", "Indostânica", "Coreana", "Anatólia"], correct: 0,
+    explain: "A <strong>Península Arábica</strong> é a maior do mundo. Ali estão países como Arábia Saudita, Iêmen e Omã, em área de clima predominantemente desértico." },
+  { topic: "Ásia: Relevo", q: "O K2, segunda montanha mais alta do mundo, pertence a qual cordilheira?",
+    options: ["Karakoram", "Alpes", "Cáucaso", "Zagros"], correct: 0,
+    explain: "O <strong>K2</strong> (8.611 m) fica na cordilheira do <strong>Karakoram</strong>, vizinha ao Himalaia, entre Paquistão e China." },
+  { topic: "Ásia: Relevo", q: "A Planície Indo-Gangética, uma das áreas mais povoadas do mundo, formou-se principalmente pela:",
+    options: ["deposição de sedimentos pelos rios Indo e Ganges", "atividade vulcânica recente", "erosão causada por geleiras", "movimentação de dunas de areia"], correct: 0,
+    explain: "É uma <strong>planície aluvial</strong>: os rios Indo e Ganges depositaram sedimentos por milhares de anos, criando solos muito férteis que sustentam enorme população." },
+  { topic: "Ásia: Relevo", q: "Sobre o relevo asiático, é correto afirmar que:",
+    options: ["apresenta os maiores contrastes de altitude do planeta", "é totalmente plano", "não possui planaltos", "tem a menor altitude média do mundo"], correct: 0,
+    explain: "A Ásia reúne o ponto <strong>mais alto</strong> (Everest, +8.848 m) e o <strong>mais baixo</strong> (Mar Morto, −430 m) das terras emersas — os maiores contrastes altimétricos do mundo." },
+
+  // ===== GEOGRAFIA · ÁSIA: CLIMA E VEGETAÇÃO =====
+  { topic: "Ásia: Clima e Vegetação", q: "As monções são ventos sazonais que afetam principalmente qual região da Ásia?",
+    options: ["O sul e o sudeste asiático", "A Sibéria", "A Península Arábica", "O Planalto do Tibete"], correct: 0,
+    explain: "As <strong>monções</strong> marcam o clima do <strong>sul e sudeste da Ásia</strong> — Índia, Bangladesh, Sudeste Asiático e sul da China." },
+  { topic: "Ásia: Clima e Vegetação", q: "A monção de verão, que sopra do oceano para o continente, provoca:",
+    options: ["chuvas intensas", "secas prolongadas", "nevascas", "ondas de calor sem chuva"], correct: 0,
+    explain: "No verão o continente esquenta mais que o oceano; o ar úmido vindo do mar avança sobre a terra e traz <strong>chuvas torrenciais</strong>, essenciais para a agricultura." },
+  { topic: "Ásia: Clima e Vegetação", q: "Durante a monção de inverno, os ventos sopram do continente para o oceano, resultando em:",
+    options: ["tempo seco", "chuvas torrenciais", "furacões", "nevascas no sul da Índia"], correct: 0,
+    explain: "O sentido se inverte: o ar sai do continente frio e seco em direção ao mar, provocando a <strong>estação seca</strong>." },
+  { topic: "Ásia: Clima e Vegetação", q: "A taiga, maior floresta de coníferas do mundo, estende-se principalmente por qual região asiática?",
+    options: ["Sibéria, no norte da Ásia", "Sudeste Asiático", "Península Arábica", "Planalto do Tibete"], correct: 0,
+    explain: "A <strong>taiga</strong> (floresta boreal) cobre imensas áreas da <strong>Sibéria</strong>, com árvores como pinheiros e abetos, adaptadas ao inverno rigoroso." },
+  { topic: "Ásia: Clima e Vegetação", q: "Qual deserto se localiza entre a Mongólia e o norte da China?",
+    options: ["Gobi", "Saara", "Kalahari", "Atacama"], correct: 0,
+    explain: "O <strong>Gobi</strong> é um deserto frio de altitude, entre Mongólia e China. Saara e Kalahari ficam na África; Atacama, na América do Sul." },
+  { topic: "Ásia: Clima e Vegetação", q: "A vegetação de tundra, formada por musgos e liquens, ocorre na Ásia:",
+    options: ["no extremo norte, próximo ao Ártico", "no Sudeste Asiático", "no centro da Índia", "na Arábia Saudita"], correct: 0,
+    explain: "A <strong>tundra</strong> aparece no <strong>extremo norte</strong> da Sibéria, onde o solo fica congelado boa parte do ano (permafrost) e só vegetação rasteira sobrevive." },
+  { topic: "Ásia: Clima e Vegetação", q: "A localidade de Oymyakon, na Sibéria, é conhecida como polo do frio do Hemisfério Norte porque:",
+    options: ["registra temperaturas extremamente baixas, abaixo de −60 °C", "fica exatamente no Polo Norte", "é coberta por geleiras permanentes", "não recebe luz solar nunca"], correct: 0,
+    explain: "É o lugar habitado mais frio do planeta. A <strong>continentalidade</strong> (distância do oceano) faz o inverno ser extremamente rigoroso." },
+  { topic: "Ásia: Clima e Vegetação", q: "O clima equatorial, quente e úmido o ano inteiro, ocorre na Ásia em países como:",
+    options: ["Indonésia e Malásia", "Mongólia e Cazaquistão", "Arábia Saudita e Iraque", "Rússia e Coreia do Norte"], correct: 0,
+    explain: "<strong>Indonésia e Malásia</strong> ficam sobre a linha do Equador: chove o ano todo e a vegetação é de <strong>floresta tropical densa</strong>." },
+  { topic: "Ásia: Clima e Vegetação", q: "A enorme diversidade climática da Ásia explica-se principalmente pela:",
+    options: ["grande extensão em latitude somada às variações de altitude", "pequena área do continente", "localização inteiramente na zona tropical", "ausência de oceanos ao redor"], correct: 0,
+    explain: "A Ásia vai do <strong>Ártico ao Equador</strong> e tem desde planícies ao nível do mar até o Himalaia — por isso reúne quase todos os tipos de clima do planeta." },
+  { topic: "Ásia: Clima e Vegetação", q: "As estepes asiáticas caracterizam-se por:",
+    options: ["vegetação rasteira de gramíneas, em clima semiárido", "floresta densa e úmida", "árvores altas de folhas largas", "musgos e liquens do Ártico"], correct: 0,
+    explain: "As <strong>estepes</strong> são campos de gramíneas em áreas de chuva escassa, típicas da Ásia Central (Cazaquistão, Mongólia). Historicamente ocupadas por povos pastores." },
+
+  // ===== GEOGRAFIA · ÁSIA: HIDROGRAFIA =====
+  { topic: "Ásia: Hidrografia", q: "Qual é o maior rio da Ásia e o terceiro maior do mundo em extensão?",
+    options: ["Yangtzé (Chang Jiang)", "Ganges", "Mekong", "Indo"], correct: 0,
+    explain: "O <strong>Yangtzé</strong>, na China, tem cerca de 6.300 km. Nele fica a usina de Três Gargantas, a maior hidrelétrica do mundo em potência instalada." },
+  { topic: "Ásia: Hidrografia", q: "O rio Huang He é chamado de Rio Amarelo por causa:",
+    options: ["da grande quantidade de sedimentos (loess) que transporta", "da cor das rochas do seu leito", "da poluição industrial", "das algas amarelas que nele vivem"], correct: 0,
+    explain: "Ele atravessa o Planalto de Loess e carrega enorme quantidade desse <strong>sedimento amarelado</strong>. É considerado o berço da civilização chinesa." },
+  { topic: "Ásia: Hidrografia", q: "Qual rio é considerado sagrado pelo hinduísmo?",
+    options: ["Ganges", "Mekong", "Amur", "Yenisei"], correct: 0,
+    explain: "O <strong>Ganges</strong>, na Índia, tem forte significado religioso: milhões de fiéis se banham em suas águas em rituais de purificação." },
+  { topic: "Ásia: Hidrografia", q: "O maior lago do mundo em extensão, que apesar do nome é um lago salgado fechado, é:",
+    options: ["Mar Cáspio", "Mar Morto", "Lago Baikal", "Mar de Aral"], correct: 0,
+    explain: "O <strong>Mar Cáspio</strong> é um lago <strong>endorreico</strong> (não tem saída para o oceano). Chama-se 'mar' pelo tamanho e pela salinidade, mas é um lago." },
+  { topic: "Ásia: Hidrografia", q: "O Lago Baikal, na Sibéria, é mundialmente conhecido por ser:",
+    options: ["o lago mais profundo do mundo", "o maior lago salgado", "o menor lago da Ásia", "um lago artificial"], correct: 0,
+    explain: "Com cerca de <strong>1.642 m de profundidade</strong>, o Baikal é o lago mais profundo do planeta e guarda enorme volume de água doce." },
+  { topic: "Ásia: Hidrografia", q: "A drástica redução do Mar de Aral foi provocada principalmente pelo(a):",
+    options: ["desvio dos rios que o abasteciam para irrigação agrícola", "ocorrência de terremotos", "elevação do nível do mar", "desmatamento da taiga"], correct: 0,
+    explain: "Os rios Amu Daria e Sir Daria foram desviados para irrigar plantações de algodão. O lago quase secou — um dos maiores <strong>desastres ambientais</strong> causados pelo homem." },
+  { topic: "Ásia: Hidrografia", q: "Os rios Tigre e Eufrates banham qual região histórica?",
+    options: ["Mesopotâmia", "Vale do Indo", "Indochina", "Sibéria"], correct: 0,
+    explain: "A <strong>Mesopotâmia</strong> (hoje Iraque) significa 'terra entre rios'. Foi um dos berços da agricultura e das primeiras cidades." },
+  { topic: "Ásia: Hidrografia", q: "Os rios Ob, Yenisei e Lena têm em comum o fato de:",
+    options: ["correrem em direção ao Oceano Glacial Ártico", "desaguarem no Oceano Índico", "serem rios temporários", "nascerem no Himalaia"], correct: 0,
+    explain: "São os grandes <strong>rios siberianos</strong>, que correm de sul para norte até o <strong>Ártico</strong>. Ficam congelados boa parte do ano." },
+  { topic: "Ásia: Hidrografia", q: "A importância do rio Mekong está no fato de que ele:",
+    options: ["atravessa vários países do Sudeste Asiático, sustentando agricultura e pesca", "é o maior rio do mundo", "corre inteiramente pelo deserto", "deságua no Mar Cáspio"], correct: 0,
+    explain: "O <strong>Mekong</strong> passa por China, Mianmar, Laos, Tailândia, Camboja e Vietnã. Seu delta é uma das maiores áreas produtoras de arroz do mundo." },
+  { topic: "Ásia: Hidrografia", q: "Grandes rios asiáticos como Ganges, Indo e Yangtzé nascem:",
+    options: ["nas montanhas do Himalaia e no Planalto do Tibete", "no deserto de Gobi", "na Sibéria", "na Península Arábica"], correct: 0,
+    explain: "O <strong>degelo</strong> das geleiras do Himalaia e do Tibete alimenta esses rios. Por isso o derretimento acelerado pelas mudanças climáticas preocupa bilhões de pessoas." },
+
+  // ===== GEOGRAFIA · EUROPA: RELEVO E RIOS =====
+  { topic: "Europa: Relevo e Rios", q: "Em relação ao relevo, a Europa caracteriza-se por ser:",
+    options: ["um continente de altitudes baixas, com predomínio de planícies", "o continente mais montanhoso do mundo", "totalmente coberta por planaltos elevados", "um continente sem áreas planas"], correct: 0,
+    explain: "A Europa é o continente de <strong>menor altitude média</strong>. As planícies dominam a paisagem, o que facilitou a agricultura, as cidades e a circulação." },
+  { topic: "Europa: Relevo e Rios", q: "A principal cordilheira da Europa Central, que separa a Península Itálica do restante do continente, é:",
+    options: ["Alpes", "Cárpatos", "Pirineus", "Montes Urais"], correct: 0,
+    explain: "Os <strong>Alpes</strong> formam uma barreira entre a Itália e países como França, Suíça e Áustria. São montanhas jovens, altas e de picos pontiagudos." },
+  { topic: "Europa: Relevo e Rios", q: "O Mont Blanc (4.808 m), ponto culminante dos Alpes, localiza-se na fronteira entre:",
+    options: ["França e Itália", "Espanha e França", "Alemanha e Polônia", "Grécia e Turquia"], correct: 0,
+    explain: "O <strong>Mont Blanc</strong> fica entre <strong>França e Itália</strong>. É o pico mais alto da Europa Ocidental." },
+  { topic: "Europa: Relevo e Rios", q: "Os fiordes, marca registrada da paisagem da Noruega, são:",
+    options: ["vales escavados por geleiras e depois invadidos pelo mar", "vulcões submersos", "desertos costeiros", "recifes de corais"], correct: 0,
+    explain: "Na última glaciação, geleiras escavaram <strong>vales profundos em forma de U</strong>. Com o degelo, o mar entrou neles, criando os fiordes." },
+  { topic: "Europa: Relevo e Rios", q: "Qual é o maior rio da Europa, que deságua no Mar Cáspio?",
+    options: ["Volga", "Danúbio", "Reno", "Tâmisa"], correct: 0,
+    explain: "O <strong>Volga</strong>, na Rússia, tem cerca de 3.530 km. É o maior rio europeu e uma via de transporte histórica." },
+  { topic: "Europa: Relevo e Rios", q: "O rio Danúbio destaca-se por:",
+    options: ["atravessar vários países europeus e desaguar no Mar Negro", "ser o maior rio do mundo", "nascer nos Montes Urais", "ser um rio temporário"], correct: 0,
+    explain: "O <strong>Danúbio</strong> passa por cerca de dez países, ligando o centro da Europa ao <strong>Mar Negro</strong> — é um grande corredor de integração." },
+  { topic: "Europa: Relevo e Rios", q: "Os rios europeus são amplamente usados para navegação porque:",
+    options: ["são regulares, caudalosos e de baixa declividade", "são muito rasos e estreitos", "secam durante o verão", "correm sob a terra"], correct: 0,
+    explain: "O clima temperado garante <strong>volume constante</strong> de água o ano todo, e o relevo plano evita quedas e corredeiras. Por isso são ótimas <strong>hidrovias</strong>." },
+  { topic: "Europa: Relevo e Rios", q: "A Grande Planície Europeia estende-se:",
+    options: ["da França até os Montes Urais", "apenas pelo território da Itália", "do norte da África à Escandinávia", "somente pela Península Ibérica"], correct: 0,
+    explain: "É a maior planície do continente, atravessando França, Alemanha, Polônia e Rússia até os <strong>Urais</strong>. Concentra grande parte da produção agrícola europeia." },
+  { topic: "Europa: Relevo e Rios", q: "Os Montes Urais, que marcam o limite entre Europa e Ásia, apresentam relevo:",
+    options: ["antigo e desgastado, com altitudes modestas", "recente e muito elevado", "vulcânico e ativo", "formado por corais"], correct: 0,
+    explain: "Os <strong>Urais</strong> são montanhas muito antigas, já bastante <strong>erodidas</strong>. Por isso são baixas e arredondadas, bem diferentes dos Alpes." },
+  { topic: "Europa: Relevo e Rios", q: "A importância econômica do rio Reno está em:",
+    options: ["ser uma das principais vias navegáveis, ligando regiões industriais ao Mar do Norte", "ser o rio mais longo do planeta", "atravessar o deserto europeu", "desaguar no Mar Mediterrâneo"], correct: 0,
+    explain: "O <strong>Reno</strong> conecta o coração industrial da Alemanha ao porto de Roterdã, na Holanda — um dos maiores do mundo." },
+
+  // ===== GEOGRAFIA · EUROPA: CLIMA E VEGETAÇÃO =====
+  { topic: "Europa: Clima e Vegetação", q: "O tipo climático predominante na Europa é o:",
+    options: ["temperado", "equatorial", "árido", "tropical úmido"], correct: 0,
+    explain: "A Europa está quase toda na <strong>zona temperada</strong> do Hemisfério Norte, com as quatro estações bem definidas." },
+  { topic: "Europa: Clima e Vegetação", q: "A Corrente do Golfo influencia o clima europeu porque:",
+    options: ["traz águas quentes que amenizam o inverno no noroeste do continente", "resfria todo o continente", "provoca secas no sul", "causa as monções"], correct: 0,
+    explain: "A <strong>Corrente do Golfo</strong> leva água quente do Caribe até o noroeste europeu. Por isso Londres e Oslo têm invernos bem mais amenos que outras cidades na mesma latitude." },
+  { topic: "Europa: Clima e Vegetação", q: "O clima mediterrâneo, típico do sul da Europa, caracteriza-se por:",
+    options: ["verões quentes e secos e invernos amenos e chuvosos", "chuvas bem distribuídas o ano todo", "invernos muito rigorosos e secos", "seca permanente"], correct: 0,
+    explain: "É a marca do sul da Europa (Portugal, Espanha, Itália, Grécia): a <strong>chuva se concentra no inverno</strong> e o verão é seco e ensolarado." },
+  { topic: "Europa: Clima e Vegetação", q: "A vegetação mediterrânea é formada por espécies adaptadas à seca do verão, como:",
+    options: ["oliveiras, vinhedos e arbustos (maquis)", "coníferas de grande porte", "musgos e liquens", "floresta equatorial"], correct: 0,
+    explain: "Plantas de folhas duras e raízes profundas resistem ao verão seco. <strong>Oliveiras e videiras</strong> sustentam a produção de azeite e vinho da região." },
+  { topic: "Europa: Clima e Vegetação", q: "O clima temperado continental, no leste europeu, diferencia-se do oceânico por apresentar:",
+    options: ["maior amplitude térmica, com invernos mais rigorosos", "temperaturas constantes o ano todo", "chuvas apenas no verão", "ausência de estações do ano"], correct: 0,
+    explain: "Longe da influência amenizadora do oceano, a <strong>continentalidade</strong> aumenta a diferença entre verão e inverno." },
+  { topic: "Europa: Clima e Vegetação", q: "O clima temperado oceânico, típico do oeste europeu (Reino Unido, França), apresenta:",
+    options: ["chuvas bem distribuídas o ano todo e invernos amenos", "seca prolongada no inverno", "invernos muito frios e secos", "apenas duas estações"], correct: 0,
+    explain: "A proximidade do <strong>Oceano Atlântico</strong> mantém a umidade alta e as temperaturas suaves — daí a fama do tempo nublado e chuvoso de Londres." },
+  { topic: "Europa: Clima e Vegetação", q: "A taiga (floresta de coníferas) aparece na Europa principalmente:",
+    options: ["na Escandinávia e no norte da Rússia", "na Península Ibérica", "no sul da Itália", "na Grécia"], correct: 0,
+    explain: "Nas latitudes mais altas, o frio favorece pinheiros e abetos — árvores em forma de cone, cujas folhas em agulha resistem à neve." },
+  { topic: "Europa: Clima e Vegetação", q: "A floresta temperada decídua (caducifólia) caracteriza-se por:",
+    options: ["árvores que perdem as folhas no outono e no inverno", "árvores sempre verdes", "predomínio de cactos", "gramíneas rasteiras"], correct: 0,
+    explain: "<strong>Decídua/caducifólia</strong> = perde as folhas. É uma adaptação para economizar água e energia durante o inverno frio." },
+  { topic: "Europa: Clima e Vegetação", q: "A vegetação de tundra ocorre na Europa:",
+    options: ["no extremo norte, além do Círculo Polar Ártico", "no sul da Espanha", "apenas no interior da Itália", "na Grécia"], correct: 0,
+    explain: "Na faixa mais setentrional da Escandinávia e da Rússia, o frio extremo permite apenas <strong>musgos, liquens e arbustos baixos</strong>." },
+  { topic: "Europa: Clima e Vegetação", q: "A vegetação original da Europa foi bastante reduzida sobretudo por causa:",
+    options: ["da ocupação humana antiga, da agricultura e da industrialização", "de erupções vulcânicas", "de tsunamis frequentes", "da falta total de chuvas"], correct: 0,
+    explain: "A Europa é ocupada e cultivada há milhares de anos. Restam poucas áreas de <strong>vegetação nativa preservada</strong> — a paisagem é quase toda modificada." },
+
+  // ===== GEOGRAFIA · OCEANIA: ASPECTOS NATURAIS =====
+  { topic: "Oceania: Aspectos Naturais", q: "Em relação à extensão territorial, a Oceania é:",
+    options: ["o menor continente do mundo", "o maior continente do mundo", "o continente mais populoso", "um continente coberto por gelo"], correct: 0,
+    explain: "Com cerca de 8,5 milhões de km², a <strong>Oceania</strong> é o menor continente. É formada pela Austrália, Nova Zelândia, Papua-Nova Guiné e milhares de ilhas." },
+  { topic: "Oceania: Aspectos Naturais", q: "A Oceania costuma ser dividida nas regiões:",
+    options: ["Melanésia, Micronésia e Polinésia", "Norte, Sul e Centro", "Ocidental e Oriental", "Alta e Baixa"], correct: 0,
+    explain: "Além da Australásia (Austrália e Nova Zelândia), as ilhas se agrupam em <strong>Melanésia</strong> (ilhas negras), <strong>Micronésia</strong> (ilhas pequenas) e <strong>Polinésia</strong> (muitas ilhas)." },
+  { topic: "Oceania: Aspectos Naturais", q: "O interior árido e semiárido da Austrália, de baixíssima densidade populacional, é conhecido como:",
+    options: ["Outback", "Pampa", "Savana", "Taiga"], correct: 0,
+    explain: "O <strong>Outback</strong> ocupa a maior parte do território australiano. Como é seco demais, a população se concentra no litoral, sobretudo no sudeste." },
+  { topic: "Oceania: Aspectos Naturais", q: "A Grande Barreira de Corais, o maior recife do mundo, localiza-se:",
+    options: ["na costa nordeste da Austrália", "no litoral da Nova Zelândia", "no interior do deserto australiano", "no extremo sul da Austrália"], correct: 0,
+    explain: "Com cerca de <strong>2.300 km</strong> ao longo da costa de Queensland, é Patrimônio Natural da UNESCO e abriga biodiversidade marinha enorme." },
+  { topic: "Oceania: Aspectos Naturais", q: "A principal ameaça atual à Grande Barreira de Corais é:",
+    options: ["o branqueamento provocado pelo aquecimento das águas", "o excesso de chuvas", "os terremotos", "o avanço das dunas de areia"], correct: 0,
+    explain: "Com a água mais quente, os corais expulsam as algas que lhes dão cor e alimento e ficam brancos — o <strong>branqueamento</strong>. Se o estresse continuar, eles morrem." },
+  { topic: "Oceania: Aspectos Naturais", q: "A Grande Cordilheira Divisória (Great Dividing Range) situa-se:",
+    options: ["no leste da Austrália", "no centro do deserto australiano", "na Nova Zelândia", "na Papua-Nova Guiné"], correct: 0,
+    explain: "Ela corre paralela à <strong>costa leste</strong> australiana e separa a estreita faixa litorânea úmida do interior seco." },
+  { topic: "Oceania: Aspectos Naturais", q: "O ponto mais alto da Austrália continental é o:",
+    options: ["Monte Kosciuszko (2.228 m)", "Monte Everest", "Mont Blanc", "Monte Fuji"], correct: 0,
+    explain: "O <strong>Kosciuszko</strong> fica na Grande Cordilheira Divisória. Note como é baixo: o relevo australiano é antigo e muito desgastado pela erosão." },
+  { topic: "Oceania: Aspectos Naturais", q: "A Nova Zelândia apresenta intensa atividade vulcânica e sísmica porque:",
+    options: ["está situada sobre o Círculo de Fogo do Pacífico", "fica sobre a linha do Equador", "é formada apenas por corais", "não possui montanhas"], correct: 0,
+    explain: "A Nova Zelândia fica em zona de encontro de placas tectônicas, o que gera <strong>vulcões, gêiseres e terremotos</strong> — bem diferente da Austrália, geologicamente estável." },
+  { topic: "Oceania: Aspectos Naturais", q: "A fauna típica da Austrália, com marsupiais como o canguru e o coala, é explicada:",
+    options: ["pelo longo isolamento geográfico do continente", "pelo clima frio", "pela ação humana recente", "pela proximidade com a Ásia"], correct: 0,
+    explain: "Separada dos demais continentes há milhões de anos, a Austrália teve uma evolução isolada. Por isso possui altíssimo grau de <strong>endemismo</strong> (espécies que só existem ali)." },
+  { topic: "Oceania: Aspectos Naturais", q: "Pequenas nações insulares do Pacífico, como Tuvalu e Kiribati, são especialmente vulneráveis:",
+    options: ["à elevação do nível do mar causada pelas mudanças climáticas", "a nevascas intensas", "a avalanches", "à desertificação do interior"], correct: 0,
+    explain: "São ilhas <strong>muito baixas</strong> (atóis de coral, poucos metros acima do mar). O aumento do nível dos oceanos ameaça literalmente fazê-las desaparecer." }
 ];
 
 // ============================================
@@ -2095,6 +2294,285 @@ const STUDY_CONTENT = {
       <strong>Pra prova:</strong> revisa também Simple Present (o tema aqui do site) — a prova cobra os dois juntos: "She <u>plays</u> video games", "He <u>doesn't watch</u> TV". E confere as páginas 46–53 do Student's Book + Workbook Unit 5.
     </div>
   `
+,
+
+  "Ásia: Relevo": `
+    <div class="s-intro">A Ásia é o <strong>maior continente do mundo</strong> (cerca de 44,6 milhões de km², um terço das terras emersas) e o que tem os relevos mais extremos do planeta.</div>
+
+    <div class="s-sec">
+      <h3>Os extremos do planeta estão aqui</h3>
+      <div class="s-rule">
+        Ponto mais <strong>alto</strong>: Monte Everest — <strong>8.848 m</strong> (Nepal/China)<br>
+        Ponto mais <strong>baixo</strong>: Mar Morto — <strong>430 m abaixo</strong> do nível do mar
+      </div>
+      <p>Nenhum outro continente reúne contrastes de altitude tão grandes.</p>
+    </div>
+
+    <div class="s-sec">
+      <h3>Como o Himalaia se formou</h3>
+      <p>A placa <strong>Indo-Australiana</strong> colidiu com a placa <strong>Euroasiática</strong>. O choque dobrou e ergueu as rochas, criando a maior cadeia montanhosa do mundo. O processo continua: o Himalaia ainda cresce alguns milímetros por ano.</p>
+      <div class="s-rule">Montanhas <strong>jovens</strong> = altas e pontiagudas (Himalaia, Alpes)<br>Montanhas <strong>antigas</strong> = baixas e arredondadas (Urais)</div>
+    </div>
+
+    <div class="s-sec">
+      <h3>Principais formas de relevo</h3>
+      <ul>
+        <li><strong>Himalaia</strong> — maior cadeia do mundo; abriga o Everest</li>
+        <li><strong>Karakoram</strong> — cordilheira vizinha, onde fica o K2 (2º pico mais alto)</li>
+        <li><strong>Planalto do Tibete</strong> — o "Teto do Mundo", média de 4.500 m</li>
+        <li><strong>Montes Urais</strong> — limite natural entre Europa e Ásia</li>
+        <li><strong>Cáucaso, Tian Shan, Hindu Kush, Zagros</strong> — outras cordilheiras</li>
+        <li><strong>Planície Indo-Gangética</strong> — sedimentos dos rios Indo e Ganges; solo fértil e altíssima população</li>
+        <li><strong>Planície da Sibéria Ocidental</strong> — vasta e plana, no norte</li>
+      </ul>
+    </div>
+
+    <div class="s-sec">
+      <h3>Penínsulas e ilhas</h3>
+      <ul>
+        <li><strong>Arábica</strong> — a maior península do mundo</li>
+        <li><strong>Indostânica</strong> (Índia), <strong>Indochina</strong>, <strong>Coreana</strong>, <strong>Anatólia</strong></li>
+        <li>Arquipélagos: Japão, Indonésia, Filipinas</li>
+      </ul>
+    </div>
+
+    <div class="s-warn">
+      <strong>Círculo de Fogo do Pacífico:</strong> Japão, Indonésia e Filipinas estão em zona de encontro de placas tectônicas. Resultado: <strong>terremotos, tsunamis e vulcões</strong> frequentes. É por isso que o Japão constrói prédios antissísmicos.
+    </div>
+
+    <div class="s-tip">
+      <strong>Pra decorar:</strong> Everest (mais alto) e Mar Morto (mais baixo) estão os dois na Ásia. Se a questão falar em "extremo" de altitude, a resposta quase sempre é asiática.
+    </div>
+  `,
+
+  "Ásia: Clima e Vegetação": `
+    <div class="s-intro">A Ásia vai do <strong>Ártico ao Equador</strong> e do nível do mar ao Himalaia. Por isso reúne praticamente <strong>todos os tipos de clima</strong> do planeta.</div>
+
+    <div class="s-sec">
+      <h3>As monções (o tema que mais cai)</h3>
+      <p>Monções são <strong>ventos sazonais</strong> que mudam de direção conforme a estação. Afetam o sul e o sudeste asiático.</p>
+      <div class="s-table">
+        <div class="s-thead"><div>monção</div><div>direção do vento</div><div>tempo</div><div>estação</div></div>
+        <div class="s-trow"><div class="prefix">verão</div><div>oceano → continente</div><div>chuva intensa</div><div>úmida</div></div>
+        <div class="s-trow"><div class="prefix">inverno</div><div>continente → oceano</div><div>tempo seco</div><div>seca</div></div>
+      </div>
+      <p style="margin-top:10px">A lógica: no verão o continente esquenta mais que o mar; o ar úmido do oceano avança sobre a terra e traz chuva. No inverno acontece o contrário.</p>
+    </div>
+
+    <div class="s-sec">
+      <h3>Principais climas</h3>
+      <ul>
+        <li><strong>Equatorial</strong> — Indonésia, Malásia: quente e úmido o ano todo</li>
+        <li><strong>Tropical de monções</strong> — Índia, Sudeste Asiático</li>
+        <li><strong>Desértico</strong> — Arábia, Gobi, Thar</li>
+        <li><strong>Temperado</strong> — China, Japão, Coreia</li>
+        <li><strong>Frio e subpolar</strong> — Sibéria</li>
+        <li><strong>Frio de montanha</strong> — Himalaia, Tibete</li>
+      </ul>
+    </div>
+
+    <div class="s-sec">
+      <h3>Vegetação, do norte ao sul</h3>
+      <ul>
+        <li><strong>Tundra</strong> — extremo norte: musgos e liquens sobre solo congelado</li>
+        <li><strong>Taiga</strong> — Sibéria: maior floresta de coníferas do mundo</li>
+        <li><strong>Estepes</strong> — Ásia Central: gramíneas, clima semiárido</li>
+        <li><strong>Desertos</strong> — vegetação rala e adaptada à seca</li>
+        <li><strong>Floresta temperada</strong> — leste asiático</li>
+        <li><strong>Floresta tropical</strong> — Sudeste Asiático, densa e biodiversa</li>
+      </ul>
+    </div>
+
+    <div class="s-tip">
+      <strong>Curiosidade que cai em prova:</strong> Oymyakon, na Sibéria, é o <strong>polo do frio</strong> do Hemisfério Norte (abaixo de −60 °C). Já Mawsynram e Cherrapunji, na Índia, são os lugares <strong>mais chuvosos</strong> do mundo, graças às monções.
+    </div>
+  `,
+
+  "Ásia: Hidrografia": `
+    <div class="s-intro">Os rios asiáticos sustentam <strong>bilhões de pessoas</strong>. Não é coincidência: as primeiras civilizações nasceram justamente às margens deles.</div>
+
+    <div class="s-sec">
+      <h3>De onde vem a água</h3>
+      <p>Boa parte dos grandes rios da Ásia nasce do <strong>degelo</strong> do Himalaia e do Planalto do Tibete. Por isso o derretimento acelerado das geleiras é uma preocupação enorme: afeta o abastecimento de bilhões de pessoas.</p>
+    </div>
+
+    <div class="s-sec">
+      <h3>Principais rios</h3>
+      <ul>
+        <li><strong>Yangtzé (Chang Jiang)</strong> — maior da Ásia, 3º do mundo (~6.300 km); usina de Três Gargantas</li>
+        <li><strong>Huang He (Rio Amarelo)</strong> — a cor vem do <strong>loess</strong>, sedimento que ele carrega; berço da civilização chinesa</li>
+        <li><strong>Ganges</strong> — rio sagrado do hinduísmo (Índia/Bangladesh)</li>
+        <li><strong>Indo</strong> — Paquistão; civilização do Vale do Indo</li>
+        <li><strong>Mekong</strong> — atravessa 6 países do Sudeste Asiático; delta produtor de arroz</li>
+        <li><strong>Tigre e Eufrates</strong> — Mesopotâmia ("terra entre rios"), atual Iraque</li>
+        <li><strong>Ob, Yenisei e Lena</strong> — rios siberianos, correm para o <strong>Ártico</strong></li>
+      </ul>
+    </div>
+
+    <div class="s-sec">
+      <h3>Lagos que são recordistas</h3>
+      <div class="s-table">
+        <div class="s-thead"><div>lago</div><div>recorde</div><div>onde</div><div>detalhe</div></div>
+        <div class="s-trow"><div class="prefix">Cáspio</div><div>maior do mundo</div><div>Ásia/Europa</div><div>salgado, fechado</div></div>
+        <div class="s-trow"><div class="prefix">Baikal</div><div>mais profundo</div><div>Sibéria</div><div>~1.642 m</div></div>
+        <div class="s-trow"><div class="prefix">Morto</div><div>mais baixo</div><div>Israel/Jordânia</div><div>hipersalino</div></div>
+      </div>
+    </div>
+
+    <div class="s-warn">
+      <strong>Mar de Aral — desastre ambiental clássico:</strong> os rios que o abasteciam (Amu Daria e Sir Daria) foram desviados para irrigar plantações de <strong>algodão</strong>. O lago quase secou, deixando barcos encalhados no deserto. É o exemplo mais cobrado de impacto humano sobre a hidrografia.
+    </div>
+
+    <div class="s-tip">
+      <strong>Atenção ao nome:</strong> Mar Cáspio, Mar Morto e Mar de Aral têm "mar" no nome, mas são <strong>lagos</strong> — não têm ligação com o oceano.
+    </div>
+  `,
+
+  "Europa: Relevo e Rios": `
+    <div class="s-intro">A Europa é o continente de <strong>menor altitude média</strong> e o mais recortado por mares e penínsulas. Relevo plano + rios navegáveis = circulação fácil, o que ajuda a explicar sua história econômica.</div>
+
+    <div class="s-sec">
+      <h3>Um continente baixo e plano</h3>
+      <p>Predominam as <strong>planícies</strong>. A <strong>Grande Planície Europeia</strong> vai da França até os Montes Urais, atravessando Alemanha, Polônia e Rússia. É onde se concentram a agricultura e as maiores cidades.</p>
+    </div>
+
+    <div class="s-sec">
+      <h3>Montanhas: as jovens e as velhas</h3>
+      <div class="s-rule">
+        <strong>Jovens</strong> (altas, pontiagudas): Alpes, Pirineus, Cárpatos, Apeninos, Cáucaso<br>
+        <strong>Antigas</strong> (baixas, arredondadas): Montes Urais, Maciço Central Francês
+      </div>
+      <ul>
+        <li><strong>Alpes</strong> — principal cordilheira; <strong>Mont Blanc (4.808 m)</strong>, entre França e Itália, é o pico mais alto da Europa Ocidental</li>
+        <li><strong>Pirineus</strong> — separam Espanha e França</li>
+        <li><strong>Montes Urais</strong> — limite com a Ásia</li>
+        <li><strong>Cáucaso</strong> — onde fica o Monte Elbrus (5.642 m), considerado por muitos o ponto mais alto da Europa</li>
+      </ul>
+    </div>
+
+    <div class="s-sec">
+      <h3>A marca das geleiras: os fiordes</h3>
+      <p>Na última glaciação, geleiras escavaram <strong>vales profundos em forma de U</strong> na Noruega. Quando o gelo derreteu, o mar invadiu esses vales, formando os <strong>fiordes</strong> — braços de mar estreitos entre paredões altíssimos.</p>
+    </div>
+
+    <div class="s-sec">
+      <h3>Rios: as hidrovias da Europa</h3>
+      <ul>
+        <li><strong>Volga</strong> — o maior da Europa (~3.530 km); deságua no Mar Cáspio</li>
+        <li><strong>Danúbio</strong> — 2º maior; cruza cerca de 10 países e deságua no Mar Negro</li>
+        <li><strong>Reno</strong> — liga a região industrial alemã ao Mar do Norte (porto de Roterdã)</li>
+        <li><strong>Sena</strong> (Paris), <strong>Tâmisa</strong> (Londres), <strong>Pó</strong> (Itália), <strong>Elba</strong>, <strong>Loire</strong></li>
+      </ul>
+      <div class="s-rule">Por que são tão navegáveis? Clima temperado → volume <strong>regular</strong> o ano todo. Relevo plano → <strong>pouca declividade</strong>, sem corredeiras.</div>
+    </div>
+
+    <div class="s-tip">
+      <strong>Não confunda:</strong> o <u>Volga</u> é o mais <strong>longo</strong>; o <u>Danúbio</u> é o mais <strong>internacional</strong> (atravessa mais países); o <u>Reno</u> é o mais <strong>industrial</strong>.
+    </div>
+  `,
+
+  "Europa: Clima e Vegetação": `
+    <div class="s-intro">A Europa está quase toda na <strong>zona temperada</strong> do Hemisfério Norte, com as quatro estações bem marcadas. Mas há diferenças importantes entre oeste, leste, sul e norte.</div>
+
+    <div class="s-sec">
+      <h3>A Corrente do Golfo explica muita coisa</h3>
+      <p>É uma corrente marítima <strong>quente</strong> que vem do Caribe e banha o noroeste europeu. Ela aquece o ar e ameniza o inverno.</p>
+      <div class="s-rule">Por isso Londres e Oslo têm invernos <strong>muito mais amenos</strong> que cidades do Canadá na mesma latitude.</div>
+    </div>
+
+    <div class="s-sec">
+      <h3>Os tipos de clima</h3>
+      <div class="s-table">
+        <div class="s-thead"><div>clima</div><div>onde</div><div>verão</div><div>inverno</div></div>
+        <div class="s-trow"><div class="prefix">Oceânico</div><div>oeste</div><div>ameno</div><div>ameno, chuvoso</div></div>
+        <div class="s-trow"><div class="prefix">Continental</div><div>leste</div><div>quente</div><div>rigoroso</div></div>
+        <div class="s-trow"><div class="prefix">Mediterrâneo</div><div>sul</div><div>quente e seco</div><div>ameno e chuvoso</div></div>
+        <div class="s-trow"><div class="prefix">Frio/polar</div><div>norte</div><div>curto e frio</div><div>muito rigoroso</div></div>
+      </div>
+      <p style="margin-top:10px">Há ainda o <strong>clima de montanha</strong>, nos Alpes, onde a temperatura cai conforme a altitude aumenta.</p>
+    </div>
+
+    <div class="s-sec">
+      <h3>Oceânico × Continental</h3>
+      <div class="s-rule">
+        Perto do oceano → <strong>menor amplitude térmica</strong> (temperaturas suaves)<br>
+        Longe do oceano (continentalidade) → <strong>maior amplitude térmica</strong>
+      </div>
+      <p><strong>Amplitude térmica</strong> é a diferença entre a temperatura mais alta e a mais baixa. O oceano funciona como um regulador: demora a esquentar e a esfriar.</p>
+    </div>
+
+    <div class="s-sec">
+      <h3>Vegetação</h3>
+      <ul>
+        <li><strong>Tundra</strong> — extremo norte: musgos, liquens, arbustos baixos</li>
+        <li><strong>Taiga</strong> — Escandinávia e norte da Rússia: coníferas (pinheiros, abetos)</li>
+        <li><strong>Floresta temperada decídua</strong> — centro: árvores que <strong>perdem as folhas</strong> no outono/inverno</li>
+        <li><strong>Vegetação mediterrânea</strong> — sul: oliveiras, videiras, arbustos (maquis), adaptados ao verão seco</li>
+        <li><strong>Estepes</strong> — leste: gramíneas em clima mais seco</li>
+      </ul>
+    </div>
+
+    <div class="s-warn">
+      <strong>Ponto importante:</strong> a vegetação <strong>original</strong> da Europa quase não existe mais. Milhares de anos de agricultura, urbanização e industrialização transformaram a paisagem. O que se vê hoje é, em grande parte, <strong>vegetação modificada ou replantada</strong>.
+    </div>
+
+    <div class="s-tip">
+      <strong>Dica:</strong> "decídua" e "caducifólia" significam a mesma coisa — árvores que perdem as folhas. Pensa em "caduco" = que cai.
+    </div>
+  `,
+
+  "Oceania: Aspectos Naturais": `
+    <div class="s-intro">A Oceania é o <strong>menor continente</strong> (~8,5 milhões de km²), formado pela Austrália, Nova Zelândia, Papua-Nova Guiné e milhares de ilhas espalhadas pelo Pacífico.</div>
+
+    <div class="s-sec">
+      <h3>Como o continente é dividido</h3>
+      <ul>
+        <li><strong>Australásia</strong> — Austrália e Nova Zelândia</li>
+        <li><strong>Melanésia</strong> — "ilhas negras" (Papua-Nova Guiné, Fiji)</li>
+        <li><strong>Micronésia</strong> — "ilhas pequenas" (Kiribati, Palau)</li>
+        <li><strong>Polinésia</strong> — "muitas ilhas" (Samoa, Tonga, Tuvalu)</li>
+      </ul>
+    </div>
+
+    <div class="s-sec">
+      <h3>Austrália: relevo antigo e desgastado</h3>
+      <ul>
+        <li><strong>Grande Cordilheira Divisória</strong> — no <strong>leste</strong>, separa o litoral úmido do interior seco</li>
+        <li><strong>Monte Kosciuszko (2.228 m)</strong> — ponto mais alto da Austrália continental (repara como é baixo!)</li>
+        <li><strong>Outback</strong> — o vasto interior árido e semiárido, quase desabitado</li>
+        <li><strong>Uluru (Ayers Rock)</strong> — monólito no centro do país, sagrado para os aborígenes</li>
+        <li><strong>Bacia Murray-Darling</strong> — principal sistema hidrográfico, vital para a agricultura</li>
+      </ul>
+      <div class="s-rule">O relevo australiano é <strong>muito antigo</strong> e já foi bastante erodido — por isso é plano e de baixa altitude.</div>
+    </div>
+
+    <div class="s-sec">
+      <h3>Clima e povoamento</h3>
+      <p>A maior parte da Austrália tem clima <strong>árido ou semiárido</strong>. No norte é tropical e no sul/sudeste, temperado. Como o interior é seco demais, a população se concentra no <strong>litoral</strong>, principalmente no sudeste (Sydney, Melbourne).</p>
+    </div>
+
+    <div class="s-sec">
+      <h3>Grande Barreira de Corais</h3>
+      <p>Maior recife de corais do mundo (~2.300 km), na costa <strong>nordeste</strong> da Austrália. É Patrimônio Natural da UNESCO.</p>
+      <div class="s-rule"><strong>Branqueamento:</strong> com a água mais quente, o coral expulsa as algas que lhe dão cor e alimento e fica branco. Se o estresse continuar, ele morre.</div>
+    </div>
+
+    <div class="s-sec">
+      <h3>Nova Zelândia e ilhas do Pacífico</h3>
+      <ul>
+        <li><strong>Nova Zelândia</strong> — relevo montanhoso, vulcões, gêiseres e terremotos, por estar no <strong>Círculo de Fogo do Pacífico</strong></li>
+        <li><strong>Ilhas do Pacífico</strong> — origem vulcânica ou coralínea (atóis), quase todas muito baixas</li>
+      </ul>
+    </div>
+
+    <div class="s-warn">
+      <strong>Mudanças climáticas:</strong> nações como <strong>Tuvalu e Kiribati</strong> ficam a poucos metros acima do nível do mar. A elevação dos oceanos ameaça literalmente fazê-las desaparecer — são os primeiros "refugiados climáticos" do planeta.
+    </div>
+
+    <div class="s-tip">
+      <strong>Por que só existe canguru e coala lá?</strong> A Austrália se separou dos outros continentes há milhões de anos (fragmentação da Gondwana). O <strong>isolamento geográfico</strong> fez a fauna evoluir sozinha — daí o altíssimo <strong>endemismo</strong> (espécies que só existem ali).
+    </div>
+  `
 };
 
 // Ícones por tema
@@ -2114,16 +2592,23 @@ const TOPIC_ICONS = {
   "Time Conjunctions": "clock",
   "Simple Present": "sun",
   "Adverbs of Frequency": "calendar",
-  "Gadgets & Free Time": "zap"
+  "Gadgets & Free Time": "zap",
+  "Ásia: Relevo": "mountain",
+  "Ásia: Clima e Vegetação": "sun",
+  "Ásia: Hidrografia": "droplet",
+  "Europa: Relevo e Rios": "compass",
+  "Europa: Clima e Vegetação": "leaf",
+  "Oceania: Aspectos Naturais": "waves"
 };
 
 // ============================================
 // BLOCOS DE ESTUDO (cada um agrupa vários temas)
 // ============================================
 const SETS = [
-  { id: "leo", label: "Léo", sub: "Unit 5 · 25/08", name: "Léo" },
-  { id: "u24", label: "Bernardo", sub: "Units 2–4", name: "Bernardo" },
-  { id: "rev", label: "Revisão", sub: "Geral · KET", name: "Bernardo" }
+  { id: "leo", label: "Léo", sub: "Inglês · Unit 5", name: "Léo", subject: "inglês" },
+  { id: "u24", label: "Bernardo", sub: "Inglês · Units 2–4", name: "Bernardo", subject: "inglês" },
+  { id: "geo", label: "Geografia", sub: "Bernardo · 9º ano", name: "Bernardo", subject: "geografia" },
+  { id: "rev", label: "Revisão", sub: "Inglês · KET", name: "Bernardo", subject: "inglês" }
 ];
 // A qual bloco cada tema pertence
 const TOPIC_SET = {
@@ -2145,10 +2630,18 @@ const TOPIC_SET = {
   // Prova do Léo (Units 3–5)
   "Simple Present": "leo",
   "Adverbs of Frequency": "leo",
-  "Gadgets & Free Time": "leo"
+  "Gadgets & Free Time": "leo",
+  // Geografia do Bernardo (9º ano)
+  "Ásia: Relevo": "geo",
+  "Ásia: Clima e Vegetação": "geo",
+  "Ásia: Hidrografia": "geo",
+  "Europa: Relevo e Rios": "geo",
+  "Europa: Clima e Vegetação": "geo",
+  "Oceania: Aspectos Naturais": "geo"
 };
 let currentSet = "leo";
 function setName() { return (SETS.find(s => s.id === currentSet) || {}).name || "Bernardo"; }
+function setSubject() { return (SETS.find(s => s.id === currentSet) || {}).subject || "inglês"; }
 
 // Helpers de bloco
 function poolForSet(set) { return QUESTIONS.filter(q => TOPIC_SET[q.topic] === set); }
@@ -2204,6 +2697,8 @@ function renderSetSwitch() {
   });
   const heroName = document.getElementById("hero-name");
   if (heroName) heroName.textContent = setName() + "!";
+  const heroSub = document.getElementById("hero-sub");
+  if (heroSub) heroSub.textContent = "Hora de detonar a prova de " + setSubject();
 }
 
 function renderStatsBar() {
@@ -2242,7 +2737,7 @@ function renderStaticIcons() {
   document.getElementById("hero-crest").innerHTML = icon("cap", 28, 2);
   document.getElementById("tip-box").innerHTML = `
     <span class="ico">${icon("bulb", 18)}</span>
-    <div><strong>Dica:</strong> não decora as respostas — entende a regra. Se errar uma questão, lê a explicação com calma antes de seguir.</div>
+    <div><strong>Dica:</strong> não decora as respostas — entende o porquê. Se errar uma questão, lê a explicação com calma antes de seguir.</div>
   `;
   const startBtn = document.getElementById("start-btn");
   if (startBtn) startBtn.innerHTML = `${icon("play", 16)} <span>Começar Simulado</span>`;
