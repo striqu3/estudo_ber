@@ -69,7 +69,7 @@
     color: #fff;
     padding: 16px 8px 24px;
   }
-  .hero .crest {
+  .hero .crest, .menu-hero .crest {
     width: 56px;
     height: 56px;
     margin: 0 auto 14px;
@@ -102,7 +102,88 @@
     font-weight: 500;
   }
 
-  /* ========= SET SWITCH (bloco de estudo) ========= */
+  /* ========= MENU DE ALUNOS ========= */
+  .menu-hero {
+    text-align: center;
+    color: #fff;
+    padding: 28px 8px 22px;
+  }
+  .menu-hero h1 {
+    font-size: 1.75rem;
+    font-weight: 800;
+    letter-spacing: -0.025em;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.15);
+  }
+  .menu-hero p { font-size: 0.98rem; margin-top: 6px; opacity: 0.85; font-weight: 500; }
+  .student-card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    width: 100%;
+    text-align: left;
+    background: #fff;
+    border: none;
+    border-radius: 22px;
+    padding: 18px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-family: inherit;
+    color: var(--ink);
+    box-shadow: 0 18px 50px rgba(15, 23, 42, 0.18), 0 4px 12px rgba(15, 23, 42, 0.06);
+    transition: transform 0.15s;
+  }
+  .student-card:active { transform: scale(0.98); }
+  .student-card .avatar {
+    width: 58px;
+    height: 58px;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 1.6rem;
+    color: #fff;
+    flex-shrink: 0;
+    letter-spacing: -0.02em;
+  }
+  .student-card .avatar.leo { background: linear-gradient(135deg, #f59e0b, #ea580c); box-shadow: 0 8px 18px rgba(234, 88, 12, 0.3); }
+  .student-card .avatar.ber { background: linear-gradient(135deg, var(--primary), var(--primary-dark)); box-shadow: 0 8px 18px rgba(8, 145, 178, 0.3); }
+  .student-card .info { flex: 1; min-width: 0; }
+  .student-card .name { font-size: 1.15rem; font-weight: 800; letter-spacing: -0.01em; }
+  .student-card .grade { font-size: 0.78rem; color: var(--muted); font-weight: 600; margin-top: 1px; }
+  .student-card .chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 9px; }
+  .student-card .chip {
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 4px 9px;
+    border-radius: 100px;
+    background: #f1f5f9;
+    color: var(--ink-soft);
+  }
+  .student-card .chip.en { background: #ecfeff; color: var(--primary-dark); }
+  .student-card .chip.geo { background: #ecfdf5; color: #047857; }
+  .student-card .go { color: var(--muted); flex-shrink: 0; }
+
+  /* ========= TOP BAR (voltar ao menu) ========= */
+  .top-bar { display: flex; align-items: center; margin-bottom: 4px; }
+  .back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: rgba(255, 255, 255, 0.14);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #fff;
+    border-radius: 100px;
+    padding: 7px 13px 7px 8px;
+    font-family: inherit;
+    font-weight: 700;
+    font-size: 0.8rem;
+    cursor: pointer;
+  }
+  .back-btn:active { transform: scale(0.97); }
+  .top-bar + .hero { padding-top: 8px; }
+
+  /* ========= SET SWITCH (matérias do aluno) ========= */
   .set-switch {
     display: flex;
     flex-wrap: wrap;
@@ -116,7 +197,7 @@
     margin: 4px 0 12px;
   }
   .set-switch button {
-    flex: 1 1 calc(50% - 3px);
+    flex: 1 1 30%;
     min-width: 0;
     border: none;
     background: transparent;
@@ -754,8 +835,27 @@
 <body>
 <div class="app">
 
-  <!-- ========= HOME ========= -->
-  <div id="home-screen" class="screen">
+  <!-- ========= MENU (escolha do aluno) ========= -->
+  <div id="menu-screen" class="screen">
+    <div class="menu-hero">
+      <div class="crest" id="menu-crest"></div>
+      <h1>Caderno de Estudos</h1>
+      <p>Quem vai estudar hoje?</p>
+    </div>
+    <div id="student-list"></div>
+    <div class="card">
+      <div class="section-title"><span class="bar"></span> Como funciona</div>
+      <p style="font-size:0.92rem;line-height:1.55;color:var(--ink-soft);font-weight:500">
+        Escolhe o aluno e depois a matéria. Cada prova tem seus temas: dá pra <strong style="color:var(--ink)">estudar as regras</strong> ou <strong style="color:var(--ink)">fazer um simulado</strong>, com explicação de cada resposta no final.
+      </p>
+    </div>
+  </div>
+
+  <!-- ========= HOME (página do aluno) ========= -->
+  <div id="home-screen" class="screen hidden">
+    <div class="top-bar">
+      <button class="back-btn" id="menu-back-btn" onclick="goMenu()"></button>
+    </div>
     <div class="hero">
       <div class="crest" id="hero-crest"></div>
       <h1>Vai com tudo, <span class="name" id="hero-name">Léo!</span></h1>
@@ -2667,12 +2767,20 @@ const TOPIC_ICONS = {
 // ============================================
 // BLOCOS DE ESTUDO (cada um agrupa vários temas)
 // ============================================
-const SETS = [
-  { id: "leo", label: "Léo", sub: "Inglês · Unit 5", name: "Léo", subject: "inglês" },
-  { id: "u24", label: "Bernardo", sub: "Inglês · Units 2–4", name: "Bernardo", subject: "inglês" },
-  { id: "geo", label: "Geografia", sub: "Bernardo · Cap. 5", name: "Bernardo", subject: "geografia" },
-  { id: "rev", label: "Revisão", sub: "Inglês · KET", name: "Bernardo", subject: "inglês" }
+const STUDENTS = [
+  { id: "leo", name: "Léo", grade: "6º ano" },
+  { id: "ber", name: "Bernardo", grade: "9º ano" }
 ];
+// Cada bloco = uma prova/matéria de um aluno
+const SETS = [
+  { id: "leo", student: "leo", label: "Inglês", sub: "Unit 5", subject: "inglês" },
+  { id: "u24", student: "ber", label: "Inglês", sub: "Units 2–4", subject: "inglês" },
+  { id: "geo", student: "ber", label: "Geografia", sub: "Cap. 5", subject: "geografia" },
+  { id: "rev", student: "ber", label: "Inglês", sub: "Revisão · KET", subject: "inglês" }
+];
+let currentStudent = "leo";
+const lastSetByStudent = {};
+function setsForStudent(sid) { return SETS.filter(s => s.student === sid); }
 // A qual bloco cada tema pertence
 const TOPIC_SET = {
   // Revisão (provas anteriores do Bernardo)
@@ -2703,7 +2811,11 @@ const TOPIC_SET = {
   "Vegetação e Domínios": "geo"
 };
 let currentSet = "leo";
-function setName() { return (SETS.find(s => s.id === currentSet) || {}).name || "Bernardo"; }
+function setName() {
+  const set = SETS.find(s => s.id === currentSet);
+  const st = STUDENTS.find(x => x.id === (set ? set.student : currentStudent));
+  return st ? st.name : "Bernardo";
+}
 function setSubject() { return (SETS.find(s => s.id === currentSet) || {}).subject || "inglês"; }
 
 // Helpers de bloco
@@ -2720,18 +2832,20 @@ let selectedTopic = "all";
 const STORAGE_KEY = "estudo_ber_v1";
 
 function statsKey() { return STORAGE_KEY + "_" + currentSet; }
-function loadStats() {
+function statsForSet(id) {
   try {
-    const own = JSON.parse(localStorage.getItem(statsKey()));
+    const own = JSON.parse(localStorage.getItem(STORAGE_KEY + "_" + id));
     if (own) return own;
     // migração: estatísticas antigas (globais) valem para os blocos do Bernardo
-    if (currentSet !== "leo") {
+    const set = SETS.find(s => s.id === id);
+    if (set && set.student === "ber") {
       const legacy = JSON.parse(localStorage.getItem(STORAGE_KEY));
       if (legacy) return legacy;
     }
     return { best: 0, runs: 0, lastPct: null };
   } catch { return { best: 0, runs: 0, lastPct: null }; }
 }
+function loadStats() { return statsForSet(currentSet); }
 function saveStats(s) {
   try { localStorage.setItem(statsKey(), JSON.stringify(s)); } catch {}
 }
@@ -2739,17 +2853,56 @@ function saveStats(s) {
 // ============================================
 // HOME UI
 // ============================================
+function renderMenu() {
+  const list = document.getElementById("student-list");
+  if (!list) return;
+  list.innerHTML = "";
+  STUDENTS.forEach(st => {
+    const sets = setsForStudent(st.id);
+    const topics = sets.reduce((n, s) => n + topicsInSet(s.id).length, 0);
+    const qs = sets.reduce((n, s) => n + poolForSet(s.id).length, 0);
+    const best = Math.max(0, ...sets.map(s => statsForSet(s.id).best || 0));
+    const b = document.createElement("button");
+    b.className = "student-card";
+    b.innerHTML = `
+      <div class="avatar ${st.id}">${st.name[0]}</div>
+      <div class="info">
+        <div class="name">${st.name}</div>
+        <div class="grade">${st.grade} · ${topics} temas · ${qs} questões${best ? ` · recorde ${best}%` : ""}</div>
+        <div class="chips">${sets.map(s => `<span class="chip ${s.subject === "geografia" ? "geo" : "en"}">${s.label} · ${s.sub}</span>`).join("")}</div>
+      </div>
+      <span class="go">${icon("arrow", 20)}</span>`;
+    b.onclick = () => openStudent(st.id);
+    list.appendChild(b);
+  });
+  const crest = document.getElementById("menu-crest");
+  if (crest) crest.innerHTML = icon("cap", 28, 2);
+}
+
+function openStudent(sid) {
+  currentStudent = sid;
+  const sets = setsForStudent(sid);
+  currentSet = lastSetByStudent[sid] || (sets[0] && sets[0].id);
+  selectedTopic = "all";
+  goHome();
+}
+
+function goMenu() { renderMenu(); showScreen("menu-screen"); }
+
 function renderSetSwitch() {
   const el = document.getElementById("set-switch");
   if (!el) return;
   el.innerHTML = "";
-  SETS.forEach(s => {
+  const sets = setsForStudent(currentStudent);
+  el.classList.toggle("hidden", sets.length < 2);
+  sets.forEach(s => {
     const b = document.createElement("button");
     b.className = currentSet === s.id ? "active" : "";
     b.innerHTML = `<span class="t">${s.label}</span><span class="sub">${s.sub}</span>`;
     b.onclick = () => {
       if (currentSet === s.id) return;
       currentSet = s.id;
+      lastSetByStudent[currentStudent] = s.id;
       selectedTopic = "all";
       renderSetSwitch();
       renderStatsBar();
@@ -2762,6 +2915,8 @@ function renderSetSwitch() {
   if (heroName) heroName.textContent = setName() + "!";
   const heroSub = document.getElementById("hero-sub");
   if (heroSub) heroSub.textContent = "Hora de detonar a prova de " + setSubject();
+  const back = document.getElementById("menu-back-btn");
+  if (back) back.innerHTML = `${icon("chevronL", 16, 2.4)}<span>Trocar aluno</span>`;
 }
 
 function renderStatsBar() {
@@ -2863,7 +3018,7 @@ function escapeHtml(s) {
 }
 
 function showScreen(id) {
-  ["home-screen", "quiz-screen", "results-screen", "study-screen"].forEach(s => {
+  ["menu-screen", "home-screen", "quiz-screen", "results-screen", "study-screen"].forEach(s => {
     document.getElementById(s).classList.add("hidden");
   });
   const el = document.getElementById(id);
@@ -3132,11 +3287,9 @@ window.addEventListener("resize", () => {
 // ============================================
 // INIT
 // ============================================
-renderSetSwitch();
-renderStatsBar();
-renderTopicGrid();
-renderStudyGrid();
 renderStaticIcons();
+renderMenu();
+showScreen("menu-screen");
 </script>
 </body>
 </html>
