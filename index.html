@@ -465,6 +465,37 @@
   .review-ctx { font-size: 0.82rem; color: var(--ink-soft); margin: 2px 0 8px 22px; line-height: 1.45; }
   .review-ctx div { padding: 2px 0; }
   .review-ctx strong { color: var(--ink); margin-right: 4px; }
+  #hint-wrap { margin: -10px 0 18px; }
+  .hint-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--primary-tint);
+    color: var(--primary);
+    border: none;
+    border-radius: 100px;
+    padding: 7px 13px;
+    font-family: inherit;
+    font-weight: 700;
+    font-size: 0.8rem;
+    cursor: pointer;
+  }
+  .hint-btn:active { transform: scale(0.97); }
+  .hint-box {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    background: #fff7e6;
+    border: 1px solid #ffe0a3;
+    border-radius: 12px;
+    padding: 12px 14px;
+    font-size: 0.9rem;
+    line-height: 1.55;
+    color: #7a4b00;
+    animation: fadeIn 0.25s ease;
+  }
+  .hint-box .ico { color: #b26a00; flex-shrink: 0; margin-top: 2px; }
+  .hint-box strong { color: #8a5600; }
   .question-text {
     font-size: 1.18rem;
     line-height: 1.5;
@@ -948,6 +979,10 @@
       <span class="topic-tag" id="q-topic"></span>
       <div class="q-context hidden" id="q-context"></div>
       <div class="question-text" id="q-text"></div>
+      <div id="hint-wrap" class="hidden">
+        <button class="hint-btn" id="hint-btn" type="button"></button>
+        <div class="hint-box hidden" id="hint-box"></div>
+      </div>
       <div class="options" id="q-options"></div>
       <div style="height:16px"></div>
       <div class="btn-row">
@@ -2182,161 +2217,211 @@ const QUESTIONS = [
   // ===== MATEMÁTICA · FRAÇÕES DECIMAIS (Léo, 6º ano) =====
   { topic: "Frações Decimais", q: "A fração 7/10 escrita como número decimal é:",
     options: ["0,7", "0,07", "7,0", "0,007"], correct: 0,
+    hint: "Olha o denominador: quantos zeros ele tem? Esse é o número de casas depois da vírgula.",
     explain: "Denominador <strong>10</strong> → <strong>uma</strong> casa decimal. 7/10 = <strong>0,7</strong> (sete décimos)." },
   { topic: "Frações Decimais", q: "O número decimal 0,25 corresponde à fração decimal:",
     options: ["25/100", "25/10", "25/1000", "2/5"], correct: 0,
+    hint: "Conta quantas casas tem depois da vírgula. Duas casas pedem qual denominador? Depois é só tirar a vírgula do número.",
     explain: "0,25 tem <strong>duas</strong> casas decimais → denominador <strong>100</strong>: <strong>25/100</strong>. (2/5 também vale 0,25, mas não é fração <em>decimal</em>, pois o denominador não é 10, 100 ou 1000.)" },
   { topic: "Frações Decimais", q: "Qual destas frações é uma fração decimal?",
     options: ["3/100", "3/7", "3/8", "3/15"], correct: 0,
+    hint: "Fração decimal é só a que tem denominador 10, 100, 1000... Olha o denominador de cada uma.",
     explain: "Fração decimal é a que tem denominador <strong>10, 100, 1000...</strong> (potências de 10). Só <strong>3/100</strong> se encaixa." },
   { topic: "Frações Decimais", q: "A fração 45/1000 escrita como número decimal é:",
     options: ["0,045", "0,45", "4,5", "0,0045"], correct: 0,
+    hint: "Três zeros no denominador = três casas decimais. O 45 só tem dois algarismos — o que você coloca na frente pra completar?",
     explain: "Denominador <strong>1000</strong> → <strong>três</strong> casas decimais. 45 tem só dois algarismos, então completa com zero na frente: <strong>0,045</strong>." },
   { topic: "Frações Decimais", q: "Como se lê o número 0,8?",
     options: ["oito décimos", "oito centésimos", "oito milésimos", "oito inteiros"], correct: 0,
+    hint: "Uma casa depois da vírgula tem um nome; duas casas, outro; três casas, outro. Quantas casas o 0,8 tem?",
     explain: "Uma casa depois da vírgula = <strong>décimos</strong>. 0,8 = 8/10 = <strong>oito décimos</strong>. Duas casas seriam centésimos; três, milésimos." },
   { topic: "Frações Decimais", q: "A fração 3/4 é equivalente a qual fração decimal?",
     options: ["75/100", "34/100", "3/40", "75/10"], correct: 0,
+    hint: "Que número multiplica 4 pra dar 100? Multiplica o 3 por esse mesmo número.",
     explain: "Multiplica numerador e denominador por <strong>25</strong>: 3×25 = 75 e 4×25 = 100 → <strong>75/100</strong> = 0,75." },
   { topic: "Frações Decimais", q: "O número 1,5 escrito como fração decimal é:",
     options: ["15/10", "15/100", "1/5", "5/10"], correct: 0,
+    hint: "Uma casa decimal → denominador 10. Tira a vírgula: o número inteiro (com o 1 junto) vai todo pro numerador.",
     explain: "1,5 tem <strong>uma</strong> casa decimal → denominador 10. Tira a vírgula: <strong>15/10</strong>. (5/10 seria só 0,5, sem o inteiro.)" },
   { topic: "Frações Decimais", q: "O número 0,06 corresponde a:",
     options: ["seis centésimos", "seis décimos", "seis milésimos", "sessenta centésimos"], correct: 0,
+    hint: "Conta as casas depois da vírgula. O zero logo depois da vírgula também conta como casa.",
     explain: "Duas casas decimais → <strong>centésimos</strong>. 0,06 = 6/100 = <strong>seis centésimos</strong>. Cuidado: 0,6 é que seria seis décimos (ou sessenta centésimos)." },
   { topic: "Frações Decimais", q: "Qual é o MAIOR número?",
     options: ["0,5", "0,45", "0,405", "0,055"], correct: 0,
+    hint: "Compara casa por casa, começando pelos décimos (a primeira depois da vírgula). Quem tem o maior décimo ganha — não importa quantos algarismos o número tem.",
     explain: "Compara casa por casa, da esquerda pra direita. Nos décimos: 0,<strong>5</strong> &gt; 0,<strong>4</strong>5 &gt; 0,<strong>4</strong>05 &gt; 0,<strong>0</strong>55. Ter mais algarismos não significa ser maior!" },
   { topic: "Frações Decimais", q: "A fração 2/5 escrita como número decimal é:",
     options: ["0,4", "0,25", "2,5", "0,2"], correct: 0,
+    hint: "Transforma o 5 em 10: multiplica em cima e embaixo pelo mesmo número. Aí vira fração decimal.",
     explain: "Transforma em fração decimal: 2/5 = 4/10 (multiplicou por 2). Então 2/5 = <strong>0,4</strong>." },
 
   // ===== MATEMÁTICA · OPERAÇÕES COM DECIMAIS =====
   { topic: "Operações com Decimais", q: "2,5 + 1,75 = ?",
     options: ["4,25", "3,25", "4,15", "4,35"], correct: 0,
+    hint: "Escreve 2,5 como 2,50 e arma a conta com vírgula embaixo de vírgula.",
     explain: "Alinha as <strong>vírgulas</strong>: 2,50 + 1,75. Centésimos: 0+5 = 5. Décimos: 5+7 = 12 (vai 1). Inteiros: 2+1+1 = 4. Resultado: <strong>4,25</strong>." },
   { topic: "Operações com Decimais", q: "5 − 1,8 = ?",
     options: ["3,2", "4,2", "3,8", "4,8"], correct: 0,
+    hint: "Escreve o 5 como 5,0, alinha as vírgulas e lembra de emprestar do inteiro se precisar.",
     explain: "Escreve 5 como <strong>5,0</strong> e alinha: 5,0 − 1,8. Décimos: 0−8 não dá, empresta 1 do inteiro → 10−8 = 2. Inteiros: 4−1 = 3. Resultado: <strong>3,2</strong>." },
   { topic: "Operações com Decimais", q: "0,3 × 0,2 = ?",
     options: ["0,06", "0,6", "0,5", "6"], correct: 0,
+    hint: "Multiplica 3×2 ignorando a vírgula. Depois conta as casas decimais dos dois números e soma — esse é o número de casas da resposta.",
     explain: "Multiplica sem vírgula: 3×2 = 6. Conta as casas decimais dos dois fatores: 1 + 1 = <strong>2 casas</strong>. Resultado: <strong>0,06</strong>." },
   { topic: "Operações com Decimais", q: "1,5 × 4 = ?",
     options: ["6", "4,5", "6,5", "5,4"], correct: 0,
+    hint: "Faz 15×4 e depois devolve uma casa decimal. Ou pensa: quanto é quatro vezes um e meio?",
     explain: "15 × 4 = 60. Uma casa decimal → 6,0 = <strong>6</strong>. Ou pensa: 1,5 é um e meio; quatro vezes um e meio = 6." },
   { topic: "Operações com Decimais", q: "7,2 ÷ 3 = ?",
     options: ["2,4", "2,1", "24", "0,24"], correct: 0,
+    hint: "Divide como se fosse 72÷3 e, no final, coloca a vírgula de volta (uma casa).",
     explain: "Divide normalmente e coloca a vírgula no quociente quando passar pela vírgula do dividendo: 7÷3 = 2 (sobra 1); 12÷3 = 4. Resultado: <strong>2,4</strong>." },
   { topic: "Operações com Decimais", q: "3,6 ÷ 0,4 = ?",
     options: ["9", "0,9", "90", "1,2"], correct: 0,
+    hint: "Os dois números têm uma casa decimal. Tira a vírgula dos dois ao mesmo tempo e divide os inteiros.",
     explain: "Quando o divisor tem vírgula, <strong>iguala as casas decimais</strong> e tira a vírgula dos dois: 3,6 ÷ 0,4 = 36 ÷ 4 = <strong>9</strong>." },
   { topic: "Operações com Decimais", q: "12,45 − 3,9 = ?",
     options: ["8,55", "9,55", "8,45", "12,06"], correct: 0,
+    hint: "Escreve 3,9 como 3,90 pra ficar com o mesmo número de casas e alinha as vírgulas.",
     explain: "Alinha as vírgulas: 12,45 − 3,90. Centésimos: 5−0 = 5. Décimos: 4−9 não dá, empresta → 14−9 = 5. Inteiros: 11−3 = 8. Resultado: <strong>8,55</strong>." },
   { topic: "Operações com Decimais", q: "2,35 × 10 = ?",
     options: ["23,5", "2,350", "235", "0,235"], correct: 0,
+    hint: "Multiplicar por 10 não precisa de conta: a vírgula anda uma casa. Pra qual lado ela anda quando o número aumenta?",
     explain: "Multiplicar por <strong>10</strong> = andar a vírgula <strong>uma casa para a direita</strong>: 2,35 → <strong>23,5</strong>. Por 100 seriam duas casas (235)." },
   { topic: "Operações com Decimais", q: "45,8 ÷ 100 = ?",
     options: ["0,458", "4,58", "4580", "0,0458"], correct: 0,
+    hint: "Dividir por 100 é andar a vírgula duas casas. Pra qual lado ela anda quando o número diminui?",
     explain: "Dividir por <strong>100</strong> = andar a vírgula <strong>duas casas para a esquerda</strong>: 45,8 → 4,58 → <strong>0,458</strong>." },
   { topic: "Operações com Decimais", q: "Léo comprou um lanche de R$ 3,50, um suco de R$ 12,25 e uma bala de R$ 0,75. Quanto gastou no total?",
     options: ["R$ 16,50", "R$ 15,50", "R$ 16,00", "R$ 17,50"], correct: 0,
+    hint: "Soma os centavos primeiro (0,50 + 0,25 + 0,75) e depois os reais inteiros.",
     explain: "3,50 + 12,25 = 15,75. Depois 15,75 + 0,75 = <strong>16,50</strong>. Dica: 0,75 + 0,75 fecha 1,50 — é mais fácil somar os centavos primeiro." },
 
   // ===== MATEMÁTICA · OPERAÇÕES COM FRAÇÕES =====
   { topic: "Operações com Frações", q: "2/7 + 3/7 = ?",
     options: ["5/7", "5/14", "6/7", "6/49"], correct: 0,
+    hint: "Os denominadores são iguais. Nesse caso, só uma parte da fração muda — qual?",
     explain: "Denominadores <strong>iguais</strong>: soma só os numeradores e <strong>mantém</strong> o denominador. 2+3 = 5 → <strong>5/7</strong>. Nunca some os denominadores!" },
   { topic: "Operações com Frações", q: "5/8 − 1/8 = ? (dê a resposta simplificada)",
     options: ["1/2", "6/8", "4/16", "1/4"], correct: 0,
+    hint: "Denominadores iguais: subtrai só os numeradores. Depois vê se dá pra simplificar dividindo em cima e embaixo pelo mesmo número.",
     explain: "5−1 = 4 → 4/8. Simplifica dividindo os dois por 4: <strong>1/2</strong>." },
   { topic: "Operações com Frações", q: "1/2 + 1/4 = ?",
     options: ["3/4", "2/6", "1/6", "2/4"], correct: 0,
+    hint: "Denominadores diferentes. Transforma 1/2 numa fração com denominador 4 (multiplica em cima e embaixo por 2) e aí soma.",
     explain: "Denominadores <strong>diferentes</strong>: acha o denominador comum (4). 1/2 = 2/4. Então 2/4 + 1/4 = <strong>3/4</strong>." },
   { topic: "Operações com Frações", q: "1/3 + 1/6 = ? (resposta simplificada)",
     options: ["1/2", "2/9", "1/9", "2/3"], correct: 0,
+    hint: "Transforma 1/3 em sextos (multiplica por 2 em cima e embaixo). Soma e depois simplifica.",
     explain: "Denominador comum: 6. 1/3 = 2/6. Então 2/6 + 1/6 = 3/6 = <strong>1/2</strong>." },
   { topic: "Operações com Frações", q: "2/3 × 3/4 = ? (resposta simplificada)",
     options: ["1/2", "5/7", "6/7", "8/9"], correct: 0,
+    hint: "Na multiplicação é direto: cima vezes cima, baixo vezes baixo. No final, simplifica.",
     explain: "Multiplicação é <strong>direto</strong>: numerador × numerador, denominador × denominador. 2×3 = 6, 3×4 = 12 → 6/12 = <strong>1/2</strong>." },
   { topic: "Operações com Frações", q: "3/5 ÷ 2 = ?",
     options: ["3/10", "6/5", "3/7", "1/5"], correct: 0,
+    hint: "Dividir por 2 é o mesmo que multiplicar por 1/2. O 2 vira 2/1 e, invertido, fica 1/2.",
     explain: "Dividir por 2 é multiplicar por <strong>1/2</strong>: 3/5 × 1/2 = <strong>3/10</strong>. Dividir uma fração por um número inteiro deixa o pedaço menor." },
   { topic: "Operações com Frações", q: "1/2 ÷ 1/4 = ?",
     options: ["2", "1/8", "1/2", "4"], correct: 0,
+    hint: "Mantém a primeira fração, inverte a segunda (1/4 vira 4/1) e multiplica. Ou pergunta: quantos quartos cabem em meio?",
     explain: "Divisão de frações: mantém a primeira e <strong>multiplica pelo inverso</strong> da segunda. 1/2 × 4/1 = 4/2 = <strong>2</strong>. Faz sentido: cabem 2 quartos em meio." },
   { topic: "Operações com Frações", q: "A fração 12/18 na forma irredutível (mais simplificada) é:",
     options: ["2/3", "3/4", "1/2", "3/5"], correct: 0,
+    hint: "Procura o maior número que divide o 12 e o 18 ao mesmo tempo. Divide os dois por ele.",
     explain: "Divide numerador e denominador pelo maior divisor comum, que é <strong>6</strong>: 12÷6 = 2 e 18÷6 = 3 → <strong>2/3</strong>." },
   { topic: "Operações com Frações", q: "3/4 − 1/2 = ?",
     options: ["1/4", "2/2", "2/4", "1/2"], correct: 0,
+    hint: "Transforma 1/2 em quartos (multiplica por 2 em cima e embaixo) e subtrai.",
     explain: "Denominador comum 4: 1/2 = 2/4. Então 3/4 − 2/4 = <strong>1/4</strong>." },
   { topic: "Operações com Frações", q: "Uma pizza foi cortada em 8 pedaços. Léo comeu 3/8 e o irmão comeu 2/8. Que fração da pizza sobrou?",
     options: ["3/8", "5/8", "1/8", "4/8"], correct: 0,
+    hint: "Primeiro soma o que os dois comeram. A pizza inteira é 8/8 — tira dela o que foi comido.",
     explain: "Comeram 3/8 + 2/8 = 5/8. A pizza inteira é 8/8. Sobrou 8/8 − 5/8 = <strong>3/8</strong>." },
 
   // ===== MATEMÁTICA · PORCENTAGEM =====
   { topic: "Porcentagem", q: "50% de 80 é:",
     options: ["40", "30", "45", "50"], correct: 0,
+    hint: "50% é a metade. Qual é a metade de 80?",
     explain: "50% = <strong>metade</strong>. Metade de 80 = <strong>40</strong>." },
   { topic: "Porcentagem", q: "25% escrito como fração simplificada é:",
     options: ["1/4", "1/5", "1/2", "25/10"], correct: 0,
+    hint: "25% = 25/100. Divide os dois por 25 pra simplificar.",
     explain: "25% = 25/100. Simplifica por 25: <strong>1/4</strong>. Então 25% é <strong>um quarto</strong>." },
   { topic: "Porcentagem", q: "10% de 250 é:",
     options: ["25", "2,5", "50", "20"], correct: 0,
+    hint: "10% é dividir por 10 — a vírgula anda uma casa pra esquerda.",
     explain: "10% = dividir por 10 (anda a vírgula uma casa). 250 ÷ 10 = <strong>25</strong>." },
   { topic: "Porcentagem", q: "O número decimal 0,3 escrito como porcentagem é:",
     options: ["30%", "3%", "0,3%", "300%"], correct: 0,
+    hint: "Pra virar porcentagem, multiplica o decimal por 100 (a vírgula anda duas casas pra direita).",
     explain: "Decimal → porcentagem: multiplica por 100. 0,3 × 100 = <strong>30%</strong>. (0,3 = 30/100.)" },
   { topic: "Porcentagem", q: "A fração 3/4 corresponde a que porcentagem?",
     options: ["75%", "34%", "43%", "25%"], correct: 0,
+    hint: "Transforma em centésimos: que número vezes 4 dá 100? Multiplica o 3 por ele. Ou lembra quanto vale 1/4 em porcentagem.",
     explain: "3/4 = 75/100 = <strong>75%</strong>. Dica: 1/4 = 25%, então 3/4 = 3 × 25% = 75%." },
   { topic: "Porcentagem", q: "20% de 150 é:",
     options: ["30", "20", "15", "35"], correct: 0,
+    hint: "Acha 10% primeiro (divide por 10). 20% é o dobro disso.",
     explain: "Calcula 10% (150 ÷ 10 = 15) e dobra: 20% = 2 × 15 = <strong>30</strong>." },
   { topic: "Porcentagem", q: "Uma camiseta custa R$ 60,00 e está com 10% de desconto. Quanto Léo vai pagar?",
     options: ["R$ 54,00", "R$ 50,00", "R$ 56,00", "R$ 66,00"], correct: 0,
+    hint: "Calcula 10% de 60. Desconto tira do preço — então subtrai.",
     explain: "10% de 60 = 6. Desconto <strong>tira</strong> do preço: 60 − 6 = <strong>R$ 54,00</strong>. (66 seria um aumento de 10%.)" },
   { topic: "Porcentagem", q: "Numa prova de 60 questões, Léo acertou 15. Que porcentagem ele acertou?",
     options: ["25%", "15%", "40%", "50%"], correct: 0,
+    hint: "Monta a fração parte/todo: 15/60. Simplifica e vê que fração conhecida aparece.",
     explain: "15/60 = 1/4 (dividiu os dois por 15). E 1/4 = <strong>25%</strong>." },
   { topic: "Porcentagem", q: "100% de um número é:",
     options: ["o número inteiro", "a metade do número", "o dobro do número", "zero"], correct: 0,
+    hint: "100 de 100 partes. Isso é tudo, metade ou o dobro?",
     explain: "100% = 100/100 = <strong>1 inteiro</strong>, ou seja, o número todo. 50% é a metade; 200% é o dobro." },
   { topic: "Porcentagem", q: "Numa turma de 40 alunos, 75% foram aprovados. Quantos alunos foram aprovados?",
     options: ["30", "25", "35", "10"], correct: 0,
+    hint: "75% = 3/4. Divide 40 por 4 e multiplica por 3.",
     explain: "75% = 3/4. 40 ÷ 4 = 10, e 3 × 10 = <strong>30</strong> alunos." },
 
   // ===== MATEMÁTICA · POTENCIAÇÃO DE DECIMAIS =====
   { topic: "Potenciação de Decimais", q: "(0,2)² = ?",
     options: ["0,04", "0,4", "0,02", "0,004"], correct: 0,
+    hint: "Elevar ao quadrado é multiplicar o número por ele mesmo. Faz 2×2 sem vírgula e conta as casas decimais: 1 casa + 1 casa.",
     explain: "Potência é multiplicação repetida: 0,2 × 0,2. Sem vírgula: 2×2 = 4. Casas decimais: 1+1 = <strong>2</strong>. Resultado: <strong>0,04</strong>." },
   { topic: "Potenciação de Decimais", q: "(1,5)² = ?",
     options: ["2,25", "3", "1,25", "2,5"], correct: 0,
+    hint: "É 1,5 × 1,5 (não 1,5 × 2!). Faz 15×15 e devolve duas casas decimais.",
     explain: "1,5 × 1,5. Sem vírgula: 15×15 = 225. Duas casas decimais: <strong>2,25</strong>. Cuidado: elevar ao quadrado NÃO é multiplicar por 2 (isso daria 3)." },
   { topic: "Potenciação de Decimais", q: "(0,1)³ = ?",
     options: ["0,001", "0,3", "0,01", "0,0001"], correct: 0,
+    hint: "Expoente 3 = o número três vezes: 0,1 × 0,1 × 0,1. Cada 0,1 tem 1 casa; soma as casas.",
     explain: "0,1 × 0,1 × 0,1. Sem vírgula: 1×1×1 = 1. Casas decimais: 1+1+1 = <strong>3</strong>. Resultado: <strong>0,001</strong>." },
   { topic: "Potenciação de Decimais", q: "(0,5)² = ?",
     options: ["0,25", "1", "0,5", "2,5"], correct: 0,
+    hint: "0,5 × 0,5. Metade de metade é quanto? Ou: 5×5 e depois duas casas decimais.",
     explain: "0,5 × 0,5 = <strong>0,25</strong>. Metade de metade é um quarto. Repara: o resultado ficou <strong>menor</strong> que a base — isso sempre acontece com decimais entre 0 e 1." },
   { topic: "Potenciação de Decimais", q: "(2,1)² = ?",
     options: ["4,41", "4,2", "4,1", "4,21"], correct: 0,
+    hint: "21×21 sem vírgula; depois devolve duas casas decimais.",
     explain: "Sem vírgula: 21×21 = 441. Duas casas decimais: <strong>4,41</strong>." },
   { topic: "Potenciação de Decimais", q: "(0,3)³ = ?",
     options: ["0,027", "0,9", "0,27", "0,09"], correct: 0,
+    hint: "3×3×3 sem vírgula. Depois conta as casas: 1+1+1.",
     explain: "3×3×3 = 27. Casas decimais: 1+1+1 = <strong>3</strong>. Resultado: <strong>0,027</strong>. (0,09 é só o quadrado.)" },
   { topic: "Potenciação de Decimais", q: "(1,2)² = ?",
     options: ["1,44", "2,4", "1,4", "1,24"], correct: 0,
+    hint: "12×12 e devolve duas casas decimais.",
     explain: "12×12 = 144. Duas casas decimais: <strong>1,44</strong>." },
   { topic: "Potenciação de Decimais", q: "Quantas casas decimais tem o resultado de (0,05)²?",
     options: ["4", "2", "1", "3"], correct: 0,
+    hint: "0,05 tem 2 casas. No quadrado, as casas da base multiplicam pelo expoente.",
     explain: "0,05 tem 2 casas; ao quadrado, as casas <strong>somam</strong>: 2+2 = <strong>4</strong>. De fato, (0,05)² = 0,0025." },
   { topic: "Potenciação de Decimais", q: "(0,7)¹ = ?",
     options: ["0,7", "1", "0,49", "7"], correct: 0,
+    hint: "Expoente 1 quer dizer que o número aparece uma vez só. Nada muda.",
     explain: "Qualquer número elevado a <strong>1</strong> é ele mesmo: <strong>0,7</strong>. (0,49 seria o quadrado.)" },
   { topic: "Potenciação de Decimais", q: "(0,4)² = ?",
     options: ["0,16", "0,8", "1,6", "0,016"], correct: 0,
+    hint: "4×4 sem vírgula e duas casas decimais. Cuidado pra não fazer 0,4 + 0,4.",
     explain: "4×4 = 16, com 1+1 = 2 casas decimais: <strong>0,16</strong>. 0,8 seria 0,4 + 0,4 (soma, não potência)." }
 ];
 
@@ -4012,6 +4097,22 @@ function renderQuestion() {
   ctx.innerHTML = ctxHtml;
   ctx.classList.toggle("hidden", !ctxHtml);
   document.getElementById("q-text").textContent = q.q;
+  const hintWrap = document.getElementById("hint-wrap");
+  const hintBtn = document.getElementById("hint-btn");
+  const hintBox = document.getElementById("hint-box");
+  if (q.hint) {
+    hintWrap.classList.remove("hidden");
+    hintBox.classList.add("hidden");
+    hintBtn.classList.remove("hidden");
+    hintBtn.innerHTML = `${icon("bulb", 15)}<span>Ver uma dica</span>`;
+    hintBtn.onclick = () => {
+      hintBox.innerHTML = `<span class="ico">${icon("bulb", 16)}</span><div><strong>Dica:</strong> ${q.hint}</div>`;
+      hintBox.classList.remove("hidden");
+      hintBtn.classList.add("hidden");
+    };
+  } else {
+    hintWrap.classList.add("hidden");
+  }
 
   const optionsContainer = document.getElementById("q-options");
   optionsContainer.innerHTML = "";
