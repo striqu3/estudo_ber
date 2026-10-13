@@ -158,6 +158,7 @@
   }
   .student-card .chip.en { background: var(--primary-tint); color: var(--primary); }
   .student-card .chip.geo { background: #e8f8ee; color: #248a3d; }
+  .student-card .chip.mat { background: #fff1e6; color: #c2410c; }
   .student-card .go { color: var(--muted); flex-shrink: 0; }
 
   /* ========= TOP BAR (voltar ao menu) ========= */
@@ -1044,7 +1045,12 @@ const ICONS = {
   leaf:      '<path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/>',
   waves:     '<path d="M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.4 2 5 2 1.3 0 1.9-.5 2.5-1"/><path d="M2 12c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 1.3 0 1.9-.5 2.5-1"/><path d="M2 18c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 1.3 0 1.9-.5 2.5-1"/>',
   globe:     '<circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/>',
-  wind:      '<path d="M12.8 19.6A2 2 0 1 0 14 16H2"/><path d="M17.5 8a2.5 2.5 0 1 1 2 4H2"/><path d="M9.8 4.4A2 2 0 1 1 11 8H2"/>'
+  wind:      '<path d="M12.8 19.6A2 2 0 1 0 14 16H2"/><path d="M17.5 8a2.5 2.5 0 1 1 2 4H2"/><path d="M9.8 4.4A2 2 0 1 1 11 8H2"/>',
+  pie:       '<path d="M21.21 15.89A10 10 0 1 1 8 2.83"/><path d="M22 12A10 10 0 0 0 12 2v10z"/>',
+  calculator:'<rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="16" y1="14" x2="16" y2="18"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/>',
+  divide:    '<circle cx="12" cy="6" r="1.2" fill="currentColor"/><line x1="5" y1="12" x2="19" y2="12"/><circle cx="12" cy="18" r="1.2" fill="currentColor"/>',
+  percent:   '<line x1="19" y1="5" x2="5" y2="19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/>',
+  superscript:'<path d="m4 19 8-8"/><path d="m12 19-8-8"/><path d="M20 12h-4c0-1.5.44-2 1.5-2.5S20 8.334 20 7.002c0-.472-.17-.93-.484-1.29a2.105 2.105 0 0 0-2.617-.436c-.42.239-.738.614-.899 1.06"/>'
 };
 function icon(name, size = 18, strokeWidth = 2) {
   return `<svg class="icon" viewBox="0 0 24 24" width="${size}" height="${size}" fill="none" stroke="currentColor" stroke-width="${strokeWidth}" stroke-linecap="round" stroke-linejoin="round">${ICONS[name] || ''}</svg>`;
@@ -2171,7 +2177,167 @@ const QUESTIONS = [
               "A floresta temperada da Europa Central tem árvores caducifólias, como carvalhos e faias.",
               "A vegetação xerófila dos desertos é adaptada a longos períodos sem chuva.",
               "A tundra ártica é composta de musgos e liquens sobre solo congelado (permafrost)."], correct: 0,
-    explain: "A alternativa <strong>incorreta</strong> mistura dois domínios: coníferas são da <strong>taiga</strong> (frio); a floresta <strong>equatorial</strong> é quente, úmida, densa e de folhas largas. As outras três estão certas." }
+    explain: "A alternativa <strong>incorreta</strong> mistura dois domínios: coníferas são da <strong>taiga</strong> (frio); a floresta <strong>equatorial</strong> é quente, úmida, densa e de folhas largas. As outras três estão certas." },
+
+  // ===== MATEMÁTICA · FRAÇÕES DECIMAIS (Léo, 6º ano) =====
+  { topic: "Frações Decimais", q: "A fração 7/10 escrita como número decimal é:",
+    options: ["0,7", "0,07", "7,0", "0,007"], correct: 0,
+    explain: "Denominador <strong>10</strong> → <strong>uma</strong> casa decimal. 7/10 = <strong>0,7</strong> (sete décimos)." },
+  { topic: "Frações Decimais", q: "O número decimal 0,25 corresponde à fração decimal:",
+    options: ["25/100", "25/10", "25/1000", "2/5"], correct: 0,
+    explain: "0,25 tem <strong>duas</strong> casas decimais → denominador <strong>100</strong>: <strong>25/100</strong>. (2/5 também vale 0,25, mas não é fração <em>decimal</em>, pois o denominador não é 10, 100 ou 1000.)" },
+  { topic: "Frações Decimais", q: "Qual destas frações é uma fração decimal?",
+    options: ["3/100", "3/7", "3/8", "3/15"], correct: 0,
+    explain: "Fração decimal é a que tem denominador <strong>10, 100, 1000...</strong> (potências de 10). Só <strong>3/100</strong> se encaixa." },
+  { topic: "Frações Decimais", q: "A fração 45/1000 escrita como número decimal é:",
+    options: ["0,045", "0,45", "4,5", "0,0045"], correct: 0,
+    explain: "Denominador <strong>1000</strong> → <strong>três</strong> casas decimais. 45 tem só dois algarismos, então completa com zero na frente: <strong>0,045</strong>." },
+  { topic: "Frações Decimais", q: "Como se lê o número 0,8?",
+    options: ["oito décimos", "oito centésimos", "oito milésimos", "oito inteiros"], correct: 0,
+    explain: "Uma casa depois da vírgula = <strong>décimos</strong>. 0,8 = 8/10 = <strong>oito décimos</strong>. Duas casas seriam centésimos; três, milésimos." },
+  { topic: "Frações Decimais", q: "A fração 3/4 é equivalente a qual fração decimal?",
+    options: ["75/100", "34/100", "3/40", "75/10"], correct: 0,
+    explain: "Multiplica numerador e denominador por <strong>25</strong>: 3×25 = 75 e 4×25 = 100 → <strong>75/100</strong> = 0,75." },
+  { topic: "Frações Decimais", q: "O número 1,5 escrito como fração decimal é:",
+    options: ["15/10", "15/100", "1/5", "5/10"], correct: 0,
+    explain: "1,5 tem <strong>uma</strong> casa decimal → denominador 10. Tira a vírgula: <strong>15/10</strong>. (5/10 seria só 0,5, sem o inteiro.)" },
+  { topic: "Frações Decimais", q: "O número 0,06 corresponde a:",
+    options: ["seis centésimos", "seis décimos", "seis milésimos", "sessenta centésimos"], correct: 0,
+    explain: "Duas casas decimais → <strong>centésimos</strong>. 0,06 = 6/100 = <strong>seis centésimos</strong>. Cuidado: 0,6 é que seria seis décimos (ou sessenta centésimos)." },
+  { topic: "Frações Decimais", q: "Qual é o MAIOR número?",
+    options: ["0,5", "0,45", "0,405", "0,055"], correct: 0,
+    explain: "Compara casa por casa, da esquerda pra direita. Nos décimos: 0,<strong>5</strong> &gt; 0,<strong>4</strong>5 &gt; 0,<strong>4</strong>05 &gt; 0,<strong>0</strong>55. Ter mais algarismos não significa ser maior!" },
+  { topic: "Frações Decimais", q: "A fração 2/5 escrita como número decimal é:",
+    options: ["0,4", "0,25", "2,5", "0,2"], correct: 0,
+    explain: "Transforma em fração decimal: 2/5 = 4/10 (multiplicou por 2). Então 2/5 = <strong>0,4</strong>." },
+
+  // ===== MATEMÁTICA · OPERAÇÕES COM DECIMAIS =====
+  { topic: "Operações com Decimais", q: "2,5 + 1,75 = ?",
+    options: ["4,25", "3,25", "4,15", "4,35"], correct: 0,
+    explain: "Alinha as <strong>vírgulas</strong>: 2,50 + 1,75. Centésimos: 0+5 = 5. Décimos: 5+7 = 12 (vai 1). Inteiros: 2+1+1 = 4. Resultado: <strong>4,25</strong>." },
+  { topic: "Operações com Decimais", q: "5 − 1,8 = ?",
+    options: ["3,2", "4,2", "3,8", "4,8"], correct: 0,
+    explain: "Escreve 5 como <strong>5,0</strong> e alinha: 5,0 − 1,8. Décimos: 0−8 não dá, empresta 1 do inteiro → 10−8 = 2. Inteiros: 4−1 = 3. Resultado: <strong>3,2</strong>." },
+  { topic: "Operações com Decimais", q: "0,3 × 0,2 = ?",
+    options: ["0,06", "0,6", "0,5", "6"], correct: 0,
+    explain: "Multiplica sem vírgula: 3×2 = 6. Conta as casas decimais dos dois fatores: 1 + 1 = <strong>2 casas</strong>. Resultado: <strong>0,06</strong>." },
+  { topic: "Operações com Decimais", q: "1,5 × 4 = ?",
+    options: ["6", "4,5", "6,5", "5,4"], correct: 0,
+    explain: "15 × 4 = 60. Uma casa decimal → 6,0 = <strong>6</strong>. Ou pensa: 1,5 é um e meio; quatro vezes um e meio = 6." },
+  { topic: "Operações com Decimais", q: "7,2 ÷ 3 = ?",
+    options: ["2,4", "2,1", "24", "0,24"], correct: 0,
+    explain: "Divide normalmente e coloca a vírgula no quociente quando passar pela vírgula do dividendo: 7÷3 = 2 (sobra 1); 12÷3 = 4. Resultado: <strong>2,4</strong>." },
+  { topic: "Operações com Decimais", q: "3,6 ÷ 0,4 = ?",
+    options: ["9", "0,9", "90", "1,2"], correct: 0,
+    explain: "Quando o divisor tem vírgula, <strong>iguala as casas decimais</strong> e tira a vírgula dos dois: 3,6 ÷ 0,4 = 36 ÷ 4 = <strong>9</strong>." },
+  { topic: "Operações com Decimais", q: "12,45 − 3,9 = ?",
+    options: ["8,55", "9,55", "8,45", "12,06"], correct: 0,
+    explain: "Alinha as vírgulas: 12,45 − 3,90. Centésimos: 5−0 = 5. Décimos: 4−9 não dá, empresta → 14−9 = 5. Inteiros: 11−3 = 8. Resultado: <strong>8,55</strong>." },
+  { topic: "Operações com Decimais", q: "2,35 × 10 = ?",
+    options: ["23,5", "2,350", "235", "0,235"], correct: 0,
+    explain: "Multiplicar por <strong>10</strong> = andar a vírgula <strong>uma casa para a direita</strong>: 2,35 → <strong>23,5</strong>. Por 100 seriam duas casas (235)." },
+  { topic: "Operações com Decimais", q: "45,8 ÷ 100 = ?",
+    options: ["0,458", "4,58", "4580", "0,0458"], correct: 0,
+    explain: "Dividir por <strong>100</strong> = andar a vírgula <strong>duas casas para a esquerda</strong>: 45,8 → 4,58 → <strong>0,458</strong>." },
+  { topic: "Operações com Decimais", q: "Léo comprou um lanche de R$ 3,50, um suco de R$ 12,25 e uma bala de R$ 0,75. Quanto gastou no total?",
+    options: ["R$ 16,50", "R$ 15,50", "R$ 16,00", "R$ 17,50"], correct: 0,
+    explain: "3,50 + 12,25 = 15,75. Depois 15,75 + 0,75 = <strong>16,50</strong>. Dica: 0,75 + 0,75 fecha 1,50 — é mais fácil somar os centavos primeiro." },
+
+  // ===== MATEMÁTICA · OPERAÇÕES COM FRAÇÕES =====
+  { topic: "Operações com Frações", q: "2/7 + 3/7 = ?",
+    options: ["5/7", "5/14", "6/7", "6/49"], correct: 0,
+    explain: "Denominadores <strong>iguais</strong>: soma só os numeradores e <strong>mantém</strong> o denominador. 2+3 = 5 → <strong>5/7</strong>. Nunca some os denominadores!" },
+  { topic: "Operações com Frações", q: "5/8 − 1/8 = ? (dê a resposta simplificada)",
+    options: ["1/2", "6/8", "4/16", "1/4"], correct: 0,
+    explain: "5−1 = 4 → 4/8. Simplifica dividindo os dois por 4: <strong>1/2</strong>." },
+  { topic: "Operações com Frações", q: "1/2 + 1/4 = ?",
+    options: ["3/4", "2/6", "1/6", "2/4"], correct: 0,
+    explain: "Denominadores <strong>diferentes</strong>: acha o denominador comum (4). 1/2 = 2/4. Então 2/4 + 1/4 = <strong>3/4</strong>." },
+  { topic: "Operações com Frações", q: "1/3 + 1/6 = ? (resposta simplificada)",
+    options: ["1/2", "2/9", "1/9", "2/3"], correct: 0,
+    explain: "Denominador comum: 6. 1/3 = 2/6. Então 2/6 + 1/6 = 3/6 = <strong>1/2</strong>." },
+  { topic: "Operações com Frações", q: "2/3 × 3/4 = ? (resposta simplificada)",
+    options: ["1/2", "5/7", "6/7", "8/9"], correct: 0,
+    explain: "Multiplicação é <strong>direto</strong>: numerador × numerador, denominador × denominador. 2×3 = 6, 3×4 = 12 → 6/12 = <strong>1/2</strong>." },
+  { topic: "Operações com Frações", q: "3/5 ÷ 2 = ?",
+    options: ["3/10", "6/5", "3/7", "1/5"], correct: 0,
+    explain: "Dividir por 2 é multiplicar por <strong>1/2</strong>: 3/5 × 1/2 = <strong>3/10</strong>. Dividir uma fração por um número inteiro deixa o pedaço menor." },
+  { topic: "Operações com Frações", q: "1/2 ÷ 1/4 = ?",
+    options: ["2", "1/8", "1/2", "4"], correct: 0,
+    explain: "Divisão de frações: mantém a primeira e <strong>multiplica pelo inverso</strong> da segunda. 1/2 × 4/1 = 4/2 = <strong>2</strong>. Faz sentido: cabem 2 quartos em meio." },
+  { topic: "Operações com Frações", q: "A fração 12/18 na forma irredutível (mais simplificada) é:",
+    options: ["2/3", "3/4", "1/2", "3/5"], correct: 0,
+    explain: "Divide numerador e denominador pelo maior divisor comum, que é <strong>6</strong>: 12÷6 = 2 e 18÷6 = 3 → <strong>2/3</strong>." },
+  { topic: "Operações com Frações", q: "3/4 − 1/2 = ?",
+    options: ["1/4", "2/2", "2/4", "1/2"], correct: 0,
+    explain: "Denominador comum 4: 1/2 = 2/4. Então 3/4 − 2/4 = <strong>1/4</strong>." },
+  { topic: "Operações com Frações", q: "Uma pizza foi cortada em 8 pedaços. Léo comeu 3/8 e o irmão comeu 2/8. Que fração da pizza sobrou?",
+    options: ["3/8", "5/8", "1/8", "4/8"], correct: 0,
+    explain: "Comeram 3/8 + 2/8 = 5/8. A pizza inteira é 8/8. Sobrou 8/8 − 5/8 = <strong>3/8</strong>." },
+
+  // ===== MATEMÁTICA · PORCENTAGEM =====
+  { topic: "Porcentagem", q: "50% de 80 é:",
+    options: ["40", "30", "45", "50"], correct: 0,
+    explain: "50% = <strong>metade</strong>. Metade de 80 = <strong>40</strong>." },
+  { topic: "Porcentagem", q: "25% escrito como fração simplificada é:",
+    options: ["1/4", "1/5", "1/2", "25/10"], correct: 0,
+    explain: "25% = 25/100. Simplifica por 25: <strong>1/4</strong>. Então 25% é <strong>um quarto</strong>." },
+  { topic: "Porcentagem", q: "10% de 250 é:",
+    options: ["25", "2,5", "50", "20"], correct: 0,
+    explain: "10% = dividir por 10 (anda a vírgula uma casa). 250 ÷ 10 = <strong>25</strong>." },
+  { topic: "Porcentagem", q: "O número decimal 0,3 escrito como porcentagem é:",
+    options: ["30%", "3%", "0,3%", "300%"], correct: 0,
+    explain: "Decimal → porcentagem: multiplica por 100. 0,3 × 100 = <strong>30%</strong>. (0,3 = 30/100.)" },
+  { topic: "Porcentagem", q: "A fração 3/4 corresponde a que porcentagem?",
+    options: ["75%", "34%", "43%", "25%"], correct: 0,
+    explain: "3/4 = 75/100 = <strong>75%</strong>. Dica: 1/4 = 25%, então 3/4 = 3 × 25% = 75%." },
+  { topic: "Porcentagem", q: "20% de 150 é:",
+    options: ["30", "20", "15", "35"], correct: 0,
+    explain: "Calcula 10% (150 ÷ 10 = 15) e dobra: 20% = 2 × 15 = <strong>30</strong>." },
+  { topic: "Porcentagem", q: "Uma camiseta custa R$ 60,00 e está com 10% de desconto. Quanto Léo vai pagar?",
+    options: ["R$ 54,00", "R$ 50,00", "R$ 56,00", "R$ 66,00"], correct: 0,
+    explain: "10% de 60 = 6. Desconto <strong>tira</strong> do preço: 60 − 6 = <strong>R$ 54,00</strong>. (66 seria um aumento de 10%.)" },
+  { topic: "Porcentagem", q: "Numa prova de 60 questões, Léo acertou 15. Que porcentagem ele acertou?",
+    options: ["25%", "15%", "40%", "50%"], correct: 0,
+    explain: "15/60 = 1/4 (dividiu os dois por 15). E 1/4 = <strong>25%</strong>." },
+  { topic: "Porcentagem", q: "100% de um número é:",
+    options: ["o número inteiro", "a metade do número", "o dobro do número", "zero"], correct: 0,
+    explain: "100% = 100/100 = <strong>1 inteiro</strong>, ou seja, o número todo. 50% é a metade; 200% é o dobro." },
+  { topic: "Porcentagem", q: "Numa turma de 40 alunos, 75% foram aprovados. Quantos alunos foram aprovados?",
+    options: ["30", "25", "35", "10"], correct: 0,
+    explain: "75% = 3/4. 40 ÷ 4 = 10, e 3 × 10 = <strong>30</strong> alunos." },
+
+  // ===== MATEMÁTICA · POTENCIAÇÃO DE DECIMAIS =====
+  { topic: "Potenciação de Decimais", q: "(0,2)² = ?",
+    options: ["0,04", "0,4", "0,02", "0,004"], correct: 0,
+    explain: "Potência é multiplicação repetida: 0,2 × 0,2. Sem vírgula: 2×2 = 4. Casas decimais: 1+1 = <strong>2</strong>. Resultado: <strong>0,04</strong>." },
+  { topic: "Potenciação de Decimais", q: "(1,5)² = ?",
+    options: ["2,25", "3", "1,25", "2,5"], correct: 0,
+    explain: "1,5 × 1,5. Sem vírgula: 15×15 = 225. Duas casas decimais: <strong>2,25</strong>. Cuidado: elevar ao quadrado NÃO é multiplicar por 2 (isso daria 3)." },
+  { topic: "Potenciação de Decimais", q: "(0,1)³ = ?",
+    options: ["0,001", "0,3", "0,01", "0,0001"], correct: 0,
+    explain: "0,1 × 0,1 × 0,1. Sem vírgula: 1×1×1 = 1. Casas decimais: 1+1+1 = <strong>3</strong>. Resultado: <strong>0,001</strong>." },
+  { topic: "Potenciação de Decimais", q: "(0,5)² = ?",
+    options: ["0,25", "1", "0,5", "2,5"], correct: 0,
+    explain: "0,5 × 0,5 = <strong>0,25</strong>. Metade de metade é um quarto. Repara: o resultado ficou <strong>menor</strong> que a base — isso sempre acontece com decimais entre 0 e 1." },
+  { topic: "Potenciação de Decimais", q: "(2,1)² = ?",
+    options: ["4,41", "4,2", "4,1", "4,21"], correct: 0,
+    explain: "Sem vírgula: 21×21 = 441. Duas casas decimais: <strong>4,41</strong>." },
+  { topic: "Potenciação de Decimais", q: "(0,3)³ = ?",
+    options: ["0,027", "0,9", "0,27", "0,09"], correct: 0,
+    explain: "3×3×3 = 27. Casas decimais: 1+1+1 = <strong>3</strong>. Resultado: <strong>0,027</strong>. (0,09 é só o quadrado.)" },
+  { topic: "Potenciação de Decimais", q: "(1,2)² = ?",
+    options: ["1,44", "2,4", "1,4", "1,24"], correct: 0,
+    explain: "12×12 = 144. Duas casas decimais: <strong>1,44</strong>." },
+  { topic: "Potenciação de Decimais", q: "Quantas casas decimais tem o resultado de (0,05)²?",
+    options: ["4", "2", "1", "3"], correct: 0,
+    explain: "0,05 tem 2 casas; ao quadrado, as casas <strong>somam</strong>: 2+2 = <strong>4</strong>. De fato, (0,05)² = 0,0025." },
+  { topic: "Potenciação de Decimais", q: "(0,7)¹ = ?",
+    options: ["0,7", "1", "0,49", "7"], correct: 0,
+    explain: "Qualquer número elevado a <strong>1</strong> é ele mesmo: <strong>0,7</strong>. (0,49 seria o quadrado.)" },
+  { topic: "Potenciação de Decimais", q: "(0,4)² = ?",
+    options: ["0,16", "0,8", "1,6", "0,016"], correct: 0,
+    explain: "4×4 = 16, com 1+1 = 2 casas decimais: <strong>0,16</strong>. 0,8 seria 0,4 + 0,4 (soma, não potência)." }
 ];
 
 // ============================================
@@ -3264,6 +3430,217 @@ const STUDY_CONTENT = {
     <div class="s-tip">
       <strong>Ordem do frio:</strong> descendo do polo para o equador → <u>tundra</u> (liquens e musgo) → <u>taiga</u> (coníferas) → <u>floresta temperada</u> (caducifólias) → <u>mediterrânea</u> (maquis). E na montanha a mesma sequência se repete, só que subindo: quanto mais alto, mais parecido com o polo.
     </div>
+  `,
+
+  "Frações Decimais": `
+    <div class="s-intro">Fração decimal é toda fração com denominador <strong>10, 100, 1000...</strong>. Ela vira número com vírgula na hora — e o número com vírgula vira fração decimal também.</div>
+
+    <div class="s-sec">
+      <h3>A regra das casas</h3>
+      <div class="s-table">
+        <div class="s-thead"><div>denominador</div><div>casas decimais</div><div>nome</div><div>exemplo</div></div>
+        <div class="s-trow"><div class="prefix">10</div><div>1</div><div>décimos</div><div>7/10 = 0,7</div></div>
+        <div class="s-trow"><div class="prefix">100</div><div>2</div><div>centésimos</div><div>25/100 = 0,25</div></div>
+        <div class="s-trow"><div class="prefix">1000</div><div>3</div><div>milésimos</div><div>45/1000 = 0,045</div></div>
+      </div>
+      <p style="margin-top:10px">Se faltar algarismo, completa com <strong>zero à esquerda</strong>: 45/1000 → 0,0<strong>45</strong>.</p>
+    </div>
+
+    <div class="s-sec">
+      <h3>Decimal → fração</h3>
+      <div class="s-rule">Conta as casas depois da vírgula, tira a vírgula e põe o denominador certo.</div>
+      <div class="s-ex"><div class="en">0,8 → 8/10</div><div class="pt">uma casa → denominador 10</div></div>
+      <div class="s-ex"><div class="en">1,5 → 15/10</div><div class="pt">o inteiro vai junto no numerador</div></div>
+      <div class="s-ex"><div class="en">0,06 → 6/100</div><div class="pt">duas casas → denominador 100</div></div>
+    </div>
+
+    <div class="s-sec">
+      <h3>Fração comum → decimal</h3>
+      <p>Transforma o denominador em 10, 100 ou 1000 multiplicando em cima e embaixo pelo mesmo número.</p>
+      <div class="s-ex"><div class="en">2/5 → ×2 → 4/10 = 0,4</div><div class="pt">5 × 2 = 10</div></div>
+      <div class="s-ex"><div class="en">3/4 → ×25 → 75/100 = 0,75</div><div class="pt">4 × 25 = 100</div></div>
+    </div>
+
+    <div class="s-warn">
+      <strong>Comparar decimais:</strong> olha casa por casa, da esquerda pra direita. Mais algarismos NÃO quer dizer maior.<br>
+      <span class="good">Certo:</span> 0,5 &gt; 0,45 &gt; 0,405<br>
+      <span class="bad">Errado:</span> achar que 0,405 é maior "porque tem mais números"
+    </div>
+
+    <div class="s-tip">
+      <strong>Truque:</strong> pensa em dinheiro. 0,25 é 25 centavos (25/100 de um real); 0,5 é 50 centavos. Fica fácil ver que 0,5 é maior.
+    </div>
+  `,
+
+  "Operações com Decimais": `
+    <div class="s-intro">Somar, subtrair, multiplicar e dividir números com vírgula. Cada operação tem um truque com a vírgula — e é só isso que muda em relação aos inteiros.</div>
+
+    <div class="s-sec">
+      <h3>Adição e subtração: alinhar a vírgula</h3>
+      <div class="s-rule">Coloca <strong>vírgula embaixo de vírgula</strong>. Se faltar casa, completa com zero. Depois opera como com inteiros.</div>
+      <div class="s-ex"><div class="en">2,50 + 1,75 = 4,25</div><div class="pt">2,5 virou 2,50 pra alinhar</div></div>
+      <div class="s-ex"><div class="en">5,0 − 1,8 = 3,2</div><div class="pt">5 virou 5,0; empresta do inteiro</div></div>
+    </div>
+
+    <div class="s-sec">
+      <h3>Multiplicação: somar as casas</h3>
+      <div class="s-rule">1) Multiplica <strong>sem a vírgula</strong>. 2) Conta as casas decimais dos dois fatores e <strong>soma</strong>. 3) Coloca a vírgula no resultado com esse total de casas.</div>
+      <div class="s-ex"><div class="en">0,3 × 0,2 → 3×2 = 6 → 0,06</div><div class="pt">1 casa + 1 casa = 2 casas</div></div>
+      <div class="s-ex"><div class="en">1,5 × 4 → 15×4 = 60 → 6,0</div><div class="pt">1 casa + 0 casas = 1 casa</div></div>
+    </div>
+
+    <div class="s-sec">
+      <h3>Divisão: igualar as casas</h3>
+      <div class="s-rule">Se o divisor tem vírgula, iguala as casas decimais dos dois números e <strong>tira a vírgula</strong>. Aí divide normal.</div>
+      <div class="s-ex"><div class="en">3,6 ÷ 0,4 = 36 ÷ 4 = 9</div><div class="pt">os dois tinham 1 casa; sumiu a vírgula</div></div>
+      <div class="s-ex"><div class="en">7,2 ÷ 3 = 2,4</div><div class="pt">divisor sem vírgula: divide e põe a vírgula ao passar por ela</div></div>
+    </div>
+
+    <div class="s-sec">
+      <h3>Por 10, 100, 1000: só anda a vírgula</h3>
+      <ul>
+        <li><strong>Multiplicar</strong> → vírgula anda para a <strong>direita</strong>: 2,35 × 10 = 23,5 · 2,35 × 100 = 235</li>
+        <li><strong>Dividir</strong> → vírgula anda para a <strong>esquerda</strong>: 45,8 ÷ 10 = 4,58 · 45,8 ÷ 100 = 0,458</li>
+      </ul>
+      <p>Uma casa por zero: 10 = 1 casa, 100 = 2 casas, 1000 = 3 casas.</p>
+    </div>
+
+    <div class="s-warn">
+      <strong>Erro clássico na multiplicação:</strong> esquecer de contar as casas.<br>
+      <span class="bad">Errado:</span> 0,3 × 0,2 = 0,6<br>
+      <span class="good">Certo:</span> 0,3 × 0,2 = 0,06 (duas casas!)
+    </div>
+
+    <div class="s-tip">
+      <strong>Confere com estimativa:</strong> 0,3 × 0,2 tem que dar <em>menos</em> que 0,3 (multiplicar por menos de 1 diminui). Se deu 0,6, tem algo errado.
+    </div>
+  `,
+
+  "Operações com Frações": `
+    <div class="s-intro">As quatro operações com frações. A regra muda conforme a operação: soma e subtração precisam de denominador igual; multiplicação e divisão, não.</div>
+
+    <div class="s-sec">
+      <h3>Adição e subtração</h3>
+      <div class="s-rule">
+        Denominadores <strong>iguais</strong> → soma/subtrai os numeradores e <strong>mantém</strong> o denominador.<br>
+        Denominadores <strong>diferentes</strong> → primeiro acha o <strong>denominador comum</strong> (MMC), transforma as frações, depois opera.
+      </div>
+      <div class="s-ex"><div class="en">2/7 + 3/7 = 5/7</div><div class="pt">iguais: só soma em cima</div></div>
+      <div class="s-ex"><div class="en">1/2 + 1/4 = 2/4 + 1/4 = 3/4</div><div class="pt">1/2 virou 2/4</div></div>
+      <div class="s-ex"><div class="en">3/4 − 1/2 = 3/4 − 2/4 = 1/4</div><div class="pt">mesma ideia na subtração</div></div>
+    </div>
+
+    <div class="s-sec">
+      <h3>Multiplicação (a mais fácil)</h3>
+      <div class="s-rule">Numerador × numerador, denominador × denominador. <strong>Direto</strong>, sem igualar nada.</div>
+      <div class="s-ex"><div class="en">2/3 × 3/4 = 6/12 = 1/2</div><div class="pt">depois simplifica</div></div>
+    </div>
+
+    <div class="s-sec">
+      <h3>Divisão: inverte a segunda</h3>
+      <div class="s-rule">Mantém a primeira fração e <strong>multiplica pelo inverso</strong> da segunda (troca numerador e denominador de lugar).</div>
+      <div class="s-ex"><div class="en">1/2 ÷ 1/4 = 1/2 × 4/1 = 4/2 = 2</div><div class="pt">cabem 2 quartos em meio</div></div>
+      <div class="s-ex"><div class="en">3/5 ÷ 2 = 3/5 × 1/2 = 3/10</div><div class="pt">o inteiro 2 é 2/1; invertido vira 1/2</div></div>
+    </div>
+
+    <div class="s-sec">
+      <h3>Simplificar</h3>
+      <p>Divide numerador e denominador pelo <strong>mesmo número</strong> até não dar mais. A resposta "irredutível" é a mais simplificada.</p>
+      <div class="s-ex"><div class="en">12/18 → ÷6 → 2/3</div><div class="pt">6 é o maior divisor comum</div></div>
+      <div class="s-ex"><div class="en">4/8 → ÷4 → 1/2</div><div class="pt"></div></div>
+    </div>
+
+    <div class="s-warn">
+      <strong>O erro nº 1:</strong> somar os denominadores.<br>
+      <span class="bad">Errado:</span> 2/7 + 3/7 = 5/14<br>
+      <span class="good">Certo:</span> 2/7 + 3/7 = 5/7
+    </div>
+
+    <div class="s-tip">
+      <strong>Resumão:</strong> soma/subtração = iguala denominador · multiplicação = direto · divisão = inverte a segunda e multiplica. Sempre simplifica no final.
+    </div>
+  `,
+
+  "Porcentagem": `
+    <div class="s-intro">Por cento = "a cada 100". Então <strong>25% = 25/100 = 0,25</strong>. Porcentagem, fração e decimal são três jeitos de escrever a mesma coisa.</div>
+
+    <div class="s-sec">
+      <h3>As três formas</h3>
+      <div class="s-table">
+        <div class="s-thead"><div>%</div><div>fração</div><div>decimal</div><div>pensa em</div></div>
+        <div class="s-trow"><div class="prefix">100%</div><div>1</div><div>1</div><div>tudo</div></div>
+        <div class="s-trow"><div class="prefix">50%</div><div>1/2</div><div>0,5</div><div>metade</div></div>
+        <div class="s-trow"><div class="prefix">25%</div><div>1/4</div><div>0,25</div><div>um quarto</div></div>
+        <div class="s-trow"><div class="prefix">75%</div><div>3/4</div><div>0,75</div><div>três quartos</div></div>
+        <div class="s-trow"><div class="prefix">10%</div><div>1/10</div><div>0,1</div><div>um décimo</div></div>
+        <div class="s-trow"><div class="prefix">20%</div><div>1/5</div><div>0,2</div><div>um quinto</div></div>
+      </div>
+      <p style="margin-top:10px">Decimal → %: multiplica por 100 (0,3 = 30%). % → decimal: divide por 100 (45% = 0,45).</p>
+    </div>
+
+    <div class="s-sec">
+      <h3>Calcular x% de um número</h3>
+      <div class="s-rule">Começa pelo <strong>10%</strong> (divide por 10) e monta o resto a partir dele.</div>
+      <div class="s-ex"><div class="en">10% de 250 = 25</div><div class="pt">250 ÷ 10</div></div>
+      <div class="s-ex"><div class="en">20% de 150 = 2 × 15 = 30</div><div class="pt">10% é 15; 20% é o dobro</div></div>
+      <div class="s-ex"><div class="en">75% de 40 = 3 × 10 = 30</div><div class="pt">75% = 3/4; 40 ÷ 4 = 10</div></div>
+      <div class="s-ex"><div class="en">50% de 80 = 40</div><div class="pt">metade</div></div>
+    </div>
+
+    <div class="s-sec">
+      <h3>Desconto e aumento</h3>
+      <ul>
+        <li><strong>Desconto</strong> de 10% em R$ 60: 10% = 6 → 60 − 6 = <strong>R$ 54</strong></li>
+        <li><strong>Aumento</strong> de 10% em R$ 60: 60 + 6 = <strong>R$ 66</strong></li>
+      </ul>
+    </div>
+
+    <div class="s-sec">
+      <h3>"Que porcentagem é?"</h3>
+      <p>Monta a fração <strong>parte/todo</strong> e transforma em porcentagem.</p>
+      <div class="s-ex"><div class="en">15 de 60 → 15/60 = 1/4 = 25%</div><div class="pt">simplificou por 15</div></div>
+    </div>
+
+    <div class="s-tip">
+      <strong>Decora os âncoras:</strong> 10%, 25%, 50% e 75%. Quase toda porcentagem da prova se monta combinando esses (ex.: 30% = 3 × 10%; 5% = metade de 10%).
+    </div>
+  `,
+
+  "Potenciação de Decimais": `
+    <div class="s-intro">Potência é <strong>multiplicação repetida</strong>: (0,2)² = 0,2 × 0,2. A base é o número; o expoente diz quantas vezes ele se multiplica.</div>
+
+    <div class="s-sec">
+      <h3>O método em 3 passos</h3>
+      <div class="s-rule">
+        1) Calcula a potência <strong>sem a vírgula</strong>.<br>
+        2) Casas decimais do resultado = casas da base <strong>× expoente</strong>.<br>
+        3) Coloca a vírgula.
+      </div>
+      <div class="s-ex"><div class="en">(0,2)² → 2² = 4 → 1 casa × 2 = 2 casas → 0,04</div><div class="pt"></div></div>
+      <div class="s-ex"><div class="en">(1,5)² → 15² = 225 → 2 casas → 2,25</div><div class="pt"></div></div>
+      <div class="s-ex"><div class="en">(0,1)³ → 1³ = 1 → 1 casa × 3 = 3 casas → 0,001</div><div class="pt"></div></div>
+      <div class="s-ex"><div class="en">(0,05)² → 5² = 25 → 2 casas × 2 = 4 casas → 0,0025</div><div class="pt"></div></div>
+    </div>
+
+    <div class="s-sec">
+      <h3>Casos especiais</h3>
+      <ul>
+        <li>Expoente <strong>1</strong>: o número não muda → (0,7)¹ = 0,7</li>
+        <li>Expoente <strong>0</strong>: dá sempre 1 → (0,7)⁰ = 1</li>
+        <li>Base entre 0 e 1: o resultado fica <strong>menor</strong> que a base → (0,5)² = 0,25</li>
+        <li>Base maior que 1: o resultado fica <strong>maior</strong> → (1,2)² = 1,44</li>
+      </ul>
+    </div>
+
+    <div class="s-warn">
+      <strong>O erro mais comum:</strong> confundir potência com multiplicação pelo expoente.<br>
+      <span class="bad">Errado:</span> (1,5)² = 3 · (0,4)² = 0,8<br>
+      <span class="good">Certo:</span> (1,5)² = 1,5 × 1,5 = 2,25 · (0,4)² = 0,16
+    </div>
+
+    <div class="s-tip">
+      <strong>Confere pelo tamanho:</strong> se a base é menor que 1, a resposta tem que ser menor ainda. (0,3)³ = 0,9? Impossível — 0,9 é maior que 0,3. O certo é 0,027.
+    </div>
   `
 };
 
@@ -3290,7 +3667,12 @@ const TOPIC_ICONS = {
   "Rios e Lagos": "droplet",
   "Oceania": "waves",
   "Climas e Monções": "wind",
-  "Vegetação e Domínios": "leaf"
+  "Vegetação e Domínios": "leaf",
+  "Frações Decimais": "pie",
+  "Operações com Decimais": "calculator",
+  "Operações com Frações": "divide",
+  "Porcentagem": "percent",
+  "Potenciação de Decimais": "superscript"
 };
 
 // ============================================
@@ -3302,6 +3684,7 @@ const STUDENTS = [
 ];
 // Cada bloco = uma prova/matéria de um aluno
 const SETS = [
+  { id: "leomat", student: "leo", label: "Matemática", sub: "Decimais e frações", subject: "matemática" },
   { id: "leo", student: "leo", label: "Inglês", sub: "Unit 5", subject: "inglês" },
   { id: "u24", student: "ber", label: "Inglês", sub: "Units 2–4", subject: "inglês" },
   { id: "geo", student: "ber", label: "Geografia", sub: "Cap. 5", subject: "geografia" },
@@ -3337,7 +3720,13 @@ const TOPIC_SET = {
   "Rios e Lagos": "geo",
   "Oceania": "geo",
   "Climas e Monções": "geo",
-  "Vegetação e Domínios": "geo"
+  "Vegetação e Domínios": "geo",
+  // Matemática do Léo (6º ano)
+  "Frações Decimais": "leomat",
+  "Operações com Decimais": "leomat",
+  "Operações com Frações": "leomat",
+  "Porcentagem": "leomat",
+  "Potenciação de Decimais": "leomat"
 };
 let currentSet = "leo";
 function setName() {
@@ -3398,7 +3787,7 @@ function renderMenu() {
       <div class="info">
         <div class="name">${st.name}</div>
         <div class="grade">${st.grade} · ${topics} temas · ${qs} questões${best ? ` · recorde ${best}%` : ""}</div>
-        <div class="chips">${sets.map(s => `<span class="chip ${s.subject === "geografia" ? "geo" : "en"}">${s.label} · ${s.sub}</span>`).join("")}</div>
+        <div class="chips">${sets.map(s => `<span class="chip ${({ geografia: "geo", matemática: "mat" })[s.subject] || "en"}">${s.label} · ${s.sub}</span>`).join("")}</div>
       </div>
       <span class="go">${icon("arrow", 20)}</span>`;
     b.onclick = () => openStudent(st.id);
