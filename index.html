@@ -1607,612 +1607,427 @@ const QUESTIONS = [
     options: ["ride", "go", "play", "make"], correct: 2,
     explain: "<strong>Play</strong> video games = jogar videogame. Play também para esportes: play football, play tennis." },
 
-  // ===== GEOGRAFIA · LOCALIZAÇÃO E LIMITES (estilo prova: V/F, relacione, interpretação) =====
-  { topic: "Localização e Limites",
-    items: ["O continente asiático localiza-se principalmente no hemisfério oriental e é o maior do mundo em área, com cerca de 30% das terras emersas.",
-            "A Europa situa-se no hemisfério setentrional e é limitada ao norte pelo Oceano Glacial Ártico, a oeste pelo Atlântico e ao sul pelo Mar Mediterrâneo.",
-            "A Oceania localiza-se quase toda no hemisfério sul e não possui fronteiras terrestres com outros continentes.",
-            "Ásia e Europa são separadas por um oceano, o que justifica serem consideradas continentes distintos.",
-            "A Ásia separa-se da África pelo Canal de Suez e pelo Mar Vermelho."],
-    q: "Sobre a localização e os limites da Europa, da Ásia e da Oceania, assinale V para as afirmativas verdadeiras e F para as falsas. A sequência correta é:",
-    options: ["V, V, V, F, V", "V, F, V, F, V", "F, V, V, V, F", "V, V, F, F, V", "V, V, V, V, F"], correct: 0,
-    explain: "(1) <strong>V</strong> — a Ásia tem 44,5 milhões de km², ~30% das terras emersas.<br>(2) <strong>V</strong> — Ártico ao norte, Atlântico a oeste, Mediterrâneo ao sul, Urais a leste.<br>(3) <strong>V</strong> — a Oceania é banhada pelos oceanos Pacífico, Índico e Antártico, sem fronteira terrestre.<br>(4) <strong>F</strong> — não há oceano entre elas; a divisão é <strong>histórica e cultural</strong>, marcada pelos Urais, Cáucaso e mares Negro e Cáspio.<br>(5) <strong>V</strong> — Canal de Suez (Península do Sinai) e Mar Vermelho." },
-  { topic: "Localização e Limites",
-    q: "O continente eurasiano é uma massa de terra contínua, mas dividido historicamente em Europa e Ásia. Qual cadeia montanhosa, situada na Rússia, é considerada a fronteira natural que divide esses dois continentes?",
-    options: ["Montes Urais", "Cordilheira dos Andes", "Cordilheira do Himalaia", "Montes Apalaches", "Alpes"], correct: 0,
-    explain: "Os <strong>Montes Urais</strong>, no sentido norte-sul pela Rússia, são o limite convencional entre Europa e Ásia, junto com os mares Negro e Cáspio e o Cáucaso. Andes e Apalaches ficam na América; o Himalaia está no interior da Ásia; os Alpes, no centro da Europa." },
-  { topic: "Localização e Limites",
-    items: ["Do ponto de vista físico e geológico, Europa e Ásia formam um único bloco continental, a Eurásia.",
-            "A divisão entre Europa e Ásia baseia-se em critérios históricos e culturais, e não na existência de um oceano entre elas.",
-            "Os marcos que delimitam a divisão são os Montes Urais, os mares Negro e Cáspio e a cadeia do Cáucaso.",
-            "Turquia e Rússia são países inteiramente europeus.",
-            "O Mar Cáspio comunica-se com o Mediterrâneo pelos estreitos de Bósforo e Dardanelos."],
-    q: "Sobre a divisão da Eurásia, marque V (verdadeiro) ou F (falso) nas sentenças. A sequência correta é:",
-    options: ["V, V, V, F, F", "V, V, F, F, V", "F, V, V, V, F", "V, F, V, F, V", "V, V, V, V, F"], correct: 0,
-    explain: "(1) <strong>V</strong>. (2) <strong>V</strong>. (3) <strong>V</strong>.<br>(4) <strong>F</strong> — Turquia e Rússia são <strong>transcontinentais</strong>: em parte europeias, em parte asiáticas.<br>(5) <strong>F</strong> — quem se liga ao Mediterrâneo por Bósforo e Dardanelos é o <strong>Mar Negro</strong>. O Cáspio é um mar <strong>fechado</strong>, sem ligação com o oceano." },
-  { topic: "Localização e Limites",
-    passage: "Em um mapa-múndi, a Europa e a maior parte da Ásia aparecem acima da linha do Equador, enquanto a Austrália e a Nova Zelândia aparecem abaixo dela. A leste do Meridiano de Greenwich estão a maior parte da Europa, toda a Ásia e a Oceania.",
-    q: "Com base na descrição, é correto afirmar que:",
-    options: ["Europa e Ásia estão no hemisfério norte; a Oceania, predominantemente no hemisfério sul; e os três continentes situam-se majoritariamente no hemisfério oriental.",
-              "Os três continentes estão inteiramente no hemisfério sul.",
-              "A Oceania está no hemisfério norte e a Europa, no hemisfério sul.",
-              "Europa, Ásia e Oceania situam-se no hemisfério ocidental."], correct: 0,
-    explain: "Acima do Equador = hemisfério <strong>norte (setentrional)</strong>; abaixo = <strong>sul (meridional)</strong>. A leste de Greenwich = hemisfério <strong>oriental</strong>. Por isso a Europa e a Ásia são setentrionais, a Oceania é meridional, e os três são orientais." },
-  { topic: "Localização e Limites",
-    legend: "(A) Ásia · (B) Europa · (C) Oceania",
-    items: ["Maior continente do mundo, com 44,5 milhões de km²; separa-se da África pelo Canal de Suez.",
-            "Segundo menor continente, com 9,9 milhões de km²; limitado a leste pelos Montes Urais.",
-            "Menor continente, com 7,7 milhões de km²; banhado pelos oceanos Pacífico, Índico e Antártico.",
-            "Continente insular, dividido em Australásia, Melanésia, Micronésia e Polinésia.",
-            "Reúne o ponto mais alto (Everest) e o mais baixo (Mar Morto) das terras emersas."],
-    q: "Relacione cada característica ao continente correspondente. A sequência correta é:",
-    options: ["A, B, C, C, A", "A, C, B, C, A", "B, A, C, C, A", "A, B, C, B, A", "C, B, A, C, A"], correct: 0,
-    explain: "Ásia = maior (44,5 mi km²) e dona dos extremos de altitude. Europa = 2ª menor (9,9 mi km²), com os Urais a leste. Oceania = a menor (7,7 mi km²), insular, dividida em quatro regiões." },
-  { topic: "Localização e Limites",
-    items: ["A Oceania, também chamada de continente insular, é composta por inúmeras ilhas, incluindo a Austrália, a Nova Zelândia e as ilhas do Pacífico Sul.",
-            "A Oceania é cercada pelos oceanos Índico e Pacífico e pelo Mar de Coral.",
-            "A Austrália ocupa mais de 90% da área total do continente.",
-            "A maioria das ilhas da Oceania encontra-se dispersa pelo Oceano Atlântico.",
-            "Parte da ilha de Nova Guiné pertence à Oceania e parte pertence à Ásia."],
-    q: "Sobre a localização da Oceania, assinale V ou F. A sequência correta é:",
-    options: ["V, V, V, F, V", "V, F, V, F, V", "F, V, V, F, V", "V, V, F, V, V", "V, V, V, V, F"], correct: 0,
-    explain: "(1) <strong>V</strong>. (2) <strong>V</strong> — o Mar de Coral fica entre a Austrália e a Melanésia.<br>(3) <strong>V</strong> — a Austrália tem mais de 90% das terras da Oceania.<br>(4) <strong>F</strong> — as ilhas estão dispersas pelo <strong>Pacífico</strong>, não pelo Atlântico.<br>(5) <strong>V</strong> — a metade oeste da Nova Guiné pertence à Indonésia (Ásia); a leste é a Papua-Nova Guiné (Oceania)." },
-  { topic: "Localização e Limites",
-    q: "Sobre a dimensão territorial da Ásia, da Europa e da Oceania, assinale a única alternativa correta:",
-    options: ["A Ásia é o maior continente em área, abrangendo cerca de 30% das terras emersas; em seguida estão a Europa, com 6,7%, e a Oceania, com 5,2%.",
-              "A Europa é o maior continente em área terrestre, abrangendo cerca de 30% das terras emersas do planeta.",
-              "A Oceania é o continente com maior área terrestre; em seguida estão a Ásia, com 6,7%, e a Europa, com 5,2%.",
-              "Europa e Oceania juntas possuem área maior que a da Ásia.",
-              "Ásia e Europa têm áreas territoriais equivalentes."], correct: 0,
-    explain: "Ordem de tamanho: <strong>Ásia</strong> (44,5 mi km², ~30%) &gt; <strong>Europa</strong> (9,9 mi km², 6,7%) &gt; <strong>Oceania</strong> (7,7 mi km², 5,2%). Europa + Oceania somam 17,6 mi km², bem menos que a Ásia." },
-  { topic: "Localização e Limites",
-    passage: "Por razões históricas e culturais, Ásia e Europa são consideradas continentes distintos, embora formem um único bloco de terras emersas. Os limites entre eles coincidem com as fronteiras de alguns países, como o Cazaquistão e o Azerbaijão, mas também passam pelos territórios da Turquia e da Rússia.",
-    q: "A partir do texto, conclui-se que:",
-    options: ["Turquia e Rússia são países transcontinentais, com territórios em parte europeus e em parte asiáticos.",
-              "O limite entre Europa e Ásia é um oceano.",
-              "Cazaquistão e Azerbaijão são países inteiramente europeus.",
-              "A Eurásia é dividida por critérios exclusivamente geológicos."], correct: 0,
-    explain: "Se o limite <strong>passa pelo território</strong> da Turquia e da Rússia, esses países ficam com uma parte em cada continente — são <strong>transcontinentais</strong>. O texto diz o contrário das demais alternativas: não há oceano, os critérios são históricos e culturais, e Cazaquistão e Azerbaijão são asiáticos." },
-  { topic: "Localização e Limites",
-    items: ["A Australásia compreende a Austrália e a Nova Zelândia.",
-            "A Melanésia inclui Papua-Nova Guiné, Ilhas Salomão e Fiji.",
-            "A Micronésia é formada por ilhas grandes e montanhosas, como a Nova Guiné.",
-            "A Polinésia inclui centenas de ilhas, como Páscoa, Tonga, Samoa e o arquipélago do Havaí.",
-            "A Oceania foi regionalizada em quatro partes, de acordo com localização, extensão e distribuição das ilhas."],
-    q: "Sobre a regionalização da Oceania, marque V ou F. A sequência correta é:",
-    options: ["V, V, F, V, V", "V, F, V, V, F", "F, V, F, V, V", "V, V, V, F, V", "V, V, F, F, V"], correct: 0,
-    explain: "(1) <strong>V</strong>. (2) <strong>V</strong>. (4) <strong>V</strong>. (5) <strong>V</strong>.<br>(3) <strong>F</strong> — Micronésia significa \"ilhas <strong>pequenas</strong>\" (Palau, Kiribati, Nauru), em geral topos de vulcões submarinos e atóis baixos. A Nova Guiné, grande e montanhosa, é da <strong>Melanésia</strong>." },
-  { topic: "Localização e Limites",
-    q: "Sobre a localização do continente europeu, é correto afirmar que ele:",
-    options: ["situa-se no hemisfério setentrional, limitado ao norte pelo Oceano Glacial Ártico, a oeste pelo Atlântico, ao sul pelo Mediterrâneo e a leste pelos Montes Urais.",
-              "situa-se no hemisfério meridional, limitado ao sul pela Antártica.",
-              "é limitado a oeste pelo Oceano Ártico e ao norte pelo Oceano Atlântico.",
-              "não possui limite definido com a Ásia, por estar separado dela pelo Oceano Índico."], correct: 0,
-    explain: "Cuidado com a troca de posições, uma pegadinha comum: o <strong>Ártico</strong> fica ao <strong>norte</strong> e o <strong>Atlântico</strong>, a <strong>oeste</strong>. A Europa é toda setentrional e faz limite terrestre com a Ásia pelos Urais." },
+  // ===== GEOGRAFIA · CAP. 11 E 12 (Bernardo, 9º ano – estilo prova do prof. Júlio) =====
 
-  // ===== GEOGRAFIA · OCEANIA =====
-  { topic: "Oceania",
-    items: ["A colonização da Oceania promoveu o domínio da cultura britânica sobre povos nativos, como os aborígenes e os maoris.",
-            "O maior país da Oceania é a Austrália, chamada de ilha-continente.",
-            "Além da Austrália, o continente possui duas outras massas territoriais significativas: Papua-Nova Guiné e Nova Zelândia.",
-            "A Oceania conta com inúmeras pequenas ilhas e atóis dispersos pelo Oceano Índico.",
-            "A Nova Zelândia é um arquipélago constituído por duas ilhas principais e outras menores.",
-            "A Tasmânia é uma ilha que pertence à Austrália."],
-    q: "Sobre a Oceania, marque V (verdadeiro) ou F (falso) nas sentenças. A sequência correta é:",
-    options: ["V, V, V, F, V, V", "V, F, V, F, V, V", "F, V, V, F, V, V", "V, V, F, V, V, F", "V, V, V, V, F, V"], correct: 0,
-    explain: "Só a (4) é <strong>F</strong>: as ilhas e atóis estão dispersos pelo Oceano <strong>Pacífico</strong>. As demais são verdadeiras: colonização <strong>britânica</strong> (não estadunidense), Austrália = ilha-continente, Papua-Nova Guiné e Nova Zelândia como as outras grandes massas, Nova Zelândia com duas ilhas principais (Norte e Sul), Tasmânia como estado insular australiano." },
-  { topic: "Oceania",
-    passage: "Com exceção da região que compreende o escudo australiano, todas as unidades de relevo da Oceania são geologicamente recentes, com destaque para as inúmeras ilhas vulcânicas. A grande quantidade de ilhas desse tipo está ligada à presença intensiva do vulcanismo ao longo das zonas oceânicas, graças ao encontro entre placas tectônicas que ocorre nessa localidade.",
-    q: "Com relação ao relevo do continente, pode-se afirmar que:",
-    options: ["na Nova Zelândia ocorrem os fiordes, vales que no passado foram preenchidos por geleiras e depois invadidos pelo mar.",
-              "a maior elevação da Austrália é o Monte Cook, com 3.754 metros.",
-              "as depressões do continente são todas relativas, a exemplo do Lago Eyre.",
-              "o escudo australiano é uma formação geologicamente recente e de grande altitude."], correct: 0,
-    explain: "Os <strong>fiordes</strong> ficam no sul da Nova Zelândia (ex.: Milford Sound). O Monte Cook é da <strong>Nova Zelândia</strong>; a maior elevação australiana é o Kosciuszko (~2.200 m). O Lago Eyre é depressão <strong>absoluta</strong> (−16 m). O escudo australiano é justamente a parte <strong>antiga</strong> e baixa." },
-  { topic: "Oceania",
-    items: ["A Austrália possui bases geológicas muito antigas, com planaltos desgastados e altitudes modestas.",
-            "As montanhas da Nova Zelândia e da Papua-Nova Guiné são mais jovens e mais altas porque esses países estão em bordas de placas tectônicas.",
-            "O Monte Kosciuszko, com pouco mais de 2.200 metros, é a maior elevação da Austrália.",
-            "O Lago Eyre, no centro da Austrália, situa-se em uma depressão absoluta, abaixo do nível do mar.",
-            "A Grande Cordilheira Divisória localiza-se no interior desértico da Austrália."],
-    q: "Sobre o relevo da Oceania, assinale V ou F. A sequência correta é:",
-    options: ["V, V, V, V, F", "V, F, V, V, F", "F, V, V, F, V", "V, V, F, V, V", "V, V, V, F, F"], correct: 0,
-    explain: "(1) a (4) <strong>V</strong>. (5) <strong>F</strong> — a Grande Cordilheira Divisória corre paralela à <strong>costa leste</strong> da Austrália (~3,5 mil km) e separa o litoral úmido do interior seco (Outback)." },
-  { topic: "Oceania",
-    q: "Os atóis, comuns na Micronésia e na Polinésia, são formados:",
-    options: ["pelo afundamento gradual de uma ilha vulcânica enquanto um recife de coral cresce ao seu redor, formando um anel com lagoa central.",
-              "pela erosão provocada pelas geleiras na última Idade do Gelo.",
-              "pelo acúmulo de sedimentos trazidos por grandes rios.",
-              "pelo soerguimento de escudos cristalinos antigos.",
-              "pela colisão entre a placa Australiana e a Euroasiática."], correct: 0,
-    explain: "Sequência do atol: vulcão submarino → ilha vulcânica → erosão e afundamento lento → o <strong>recife de coral</strong> (organismos que secretam carbonato de cálcio) cresce na borda → sobra um <strong>anel</strong> em torno da lagoa. Precisa de águas claras e quentes." },
-  { topic: "Oceania",
-    items: ["A rede hidrográfica da Oceania é escassa, pois as ilhas são pequenas e grande parte da Austrália é desértica ou semiárida.",
-            "Os rios Murray e Darling, na Austrália, são os mais extensos do continente.",
-            "Muitos rios australianos são temporários e secam durante a estiagem.",
-            "A Grande Barreira de Corais localiza-se no litoral nordeste da Austrália e é a maior do mundo.",
-            "Os fiordes da Oceania localizam-se no norte da Austrália."],
-    q: "Sobre a hidrografia e o litoral da Oceania, marque V ou F. A sequência correta é:",
-    options: ["V, V, V, V, F", "V, F, V, V, F", "F, V, V, V, V", "V, V, F, F, V", "V, V, V, F, F"], correct: 0,
-    explain: "(1) a (4) <strong>V</strong>. (5) <strong>F</strong> — os fiordes ficam no <strong>sul da Nova Zelândia</strong>. O norte da Austrália é tropical e não teve geleiras." },
-  { topic: "Oceania",
-    passage: "Kiribati é um país insular composto por 33 ilhas com atóis e recifes de altitudes muito baixas. No Atol de Tarawa, capital do país, as altitudes médias são de cerca de 3 metros acima do nível do mar.",
-    q: "A situação descrita torna Kiribati especialmente vulnerável:",
-    options: ["à elevação do nível do mar associada às mudanças climáticas.",
-              "a terremotos causados pela Cordilheira do Himalaia.",
-              "ao avanço das geleiras polares.",
-              "à desertificação do interior continental."], correct: 0,
-    explain: "Com apenas <strong>3 metros</strong> de altitude média, qualquer elevação do nível do mar ameaça submergir o país. Tuvalu e Kiribati são citados como os primeiros \"refugiados climáticos\" do planeta." },
-  { topic: "Oceania",
-    q: "A Nova Zelândia apresenta vulcões ativos (como Ruapehu e Taranaki), gêiseres e terremotos porque:",
-    options: ["está localizada no Círculo de Fogo do Pacífico, em zona de encontro de placas tectônicas.",
-              "situa-se sobre o escudo australiano, antigo e estável.",
-              "está sobre a linha do Equador.",
-              "é formada apenas por recifes de coral."], correct: 0,
-    explain: "A Nova Zelândia fica na borda entre placas, no <strong>Círculo de Fogo do Pacífico</strong> — daí o vulcanismo e os terremotos. A Austrália, ao contrário, está sobre um escudo antigo e é geologicamente estável." },
-  { topic: "Oceania",
-    items: ["A Austrália foi colonizada pelos britânicos, e o inglês é sua língua oficial.",
-            "Os aborígenes são os povos nativos da Austrália; os maoris, os da Nova Zelândia.",
-            "A população australiana concentra-se no litoral, sobretudo no sudeste, por causa do interior árido (Outback).",
-            "A Austrália possui cerca de 50 milhões de habitantes, em sua maioria mestiços.",
-            "A Oceania é o continente menos populoso do planeta, excetuando-se a Antártica."],
-    q: "Sobre a ocupação humana da Oceania, marque V ou F. A sequência correta é:",
-    options: ["V, V, V, F, V", "V, F, V, F, V", "F, V, V, V, F", "V, V, F, V, V", "V, V, V, V, F"], correct: 0,
-    explain: "(4) <strong>F</strong> — a Austrália tem cerca de <strong>26 milhões</strong> de habitantes, em sua maioria de origem europeia (britânica), com forte imigração asiática recente. As demais são verdadeiras." },
-  { topic: "Oceania",
-    legend: "(A) Austrália · (B) Nova Zelândia · (C) Papua-Nova Guiné · (D) Havaí",
-    items: ["Ilha-continente, com o Outback árido no interior e a Grande Barreira de Corais no litoral nordeste.",
-            "Arquipélago de duas ilhas principais; fiordes ao sul e vulcões na Ilha Norte, como Ruapehu e Taranaki.",
-            "Ocupa a metade leste da ilha de Nova Guiné; abriga o Monte Wilhelm, com 4.509 metros.",
-            "Arquipélago vulcânico do Pacífico Central, onde estão o Mauna Loa e o Kilauea."],
-    q: "Relacione cada descrição ao território correspondente. A sequência correta é:",
-    options: ["A, B, C, D", "A, C, B, D", "B, A, C, D", "A, B, D, C", "D, B, C, A"], correct: 0,
-    explain: "Austrália = ilha-continente + Outback + Grande Barreira. Nova Zelândia = duas ilhas, fiordes (sul) e vulcões (Ilha Norte). Papua-Nova Guiné = Monte Wilhelm (4.509 m). Havaí = Mauna Loa (maior vulcão da Oceania) e Kilauea (um dos mais ativos)." },
-  { topic: "Oceania",
-    q: "A principal ameaça atual à Grande Barreira de Corais, na Austrália, é:",
-    options: ["o branqueamento dos corais provocado pelo aquecimento das águas oceânicas.",
-              "a formação de fiordes no litoral.",
-              "as chuvas de monção de inverno.",
-              "o avanço das dunas do Deserto de Simpson."], correct: 0,
-    explain: "Com a água mais quente, o coral expulsa as algas que lhe dão cor e alimento e fica branco (<strong>branqueamento</strong>). Se o estresse persiste, ele morre. É o maior recife do mundo, com ~2,3 mil km." },
-
-  // ===== GEOGRAFIA · RELEVO E PLACAS TECTÔNICAS =====
-  { topic: "Relevo e Placas Tectônicas",
-    passage: "Um terremoto de magnitude 6 na escala Richter abalou o nordeste do Japão nesta quinta-feira. O tremor foi detectado a cerca de 40 quilômetros de profundidade, com epicentro no litoral norte da província de Fukushima, de acordo com a Agência Meteorológica do Japão.",
-    q: "Fenômenos como o descrito no trecho da reportagem são comuns no Japão, pois o país está:",
-    options: ["localizado no chamado Círculo de Fogo do Pacífico, zona de encontro de placas tectônicas.",
-              "próximo à Cordilheira do Himalaia.",
-              "localizado sobre um planalto elevado e geologicamente estável.",
-              "sobre a maior placa tectônica da Terra, longe de suas bordas."], correct: 0,
-    explain: "O Japão fica no <strong>Círculo de Fogo do Pacífico</strong>, onde placas tectônicas se encontram — por isso os terremotos, tsunamis e vulcões frequentes. Longe das bordas das placas (interior estável) é onde <strong>não</strong> ocorrem terremotos." },
-  { topic: "Relevo e Placas Tectônicas",
-    items: ["O Himalaia formou-se pela colisão da placa que carregava a Índia com a placa Euroasiática, entre 40 e 50 milhões de anos atrás.",
-            "A presença de fósseis marinhos no topo do Everest indica que aquelas rochas já estiveram submersas.",
-            "O Himalaia é uma cordilheira antiga e desgastada, de baixas altitudes.",
-            "As 14 montanhas do planeta com mais de 8 mil metros situam-se no Himalaia.",
-            "O Planalto do Tibete, com altitude média de 4.500 metros, é o mais elevado do mundo."],
-    q: "Sobre a formação e o relevo do Himalaia, marque V ou F. A sequência correta é:",
-    options: ["V, V, F, V, V", "V, F, V, V, F", "F, V, F, V, V", "V, V, V, F, V", "V, V, F, V, F"], correct: 0,
-    explain: "(3) <strong>F</strong> — o Himalaia é uma cordilheira <strong>jovem</strong>, alta e pontiaguda, e ainda cresce alguns milímetros por ano. Montanhas antigas e desgastadas são os <strong>Urais</strong>. As demais são verdadeiras." },
-  { topic: "Relevo e Placas Tectônicas",
-    items: ["O relevo europeu foi fortemente influenciado pelas glaciações do passado, que deixaram vales em U, lagos e fiordes.",
-            "A Europa é um continente de altitudes baixas, com predomínio de planícies, como a Grande Planície Europeia.",
-            "As maiores altitudes europeias estão no Cáucaso (Monte Elbrus, 5.642 m) e nos Alpes (Monte Branco).",
-            "Os Montes Urais são montanhas jovens e pontiagudas, como os Alpes.",
-            "Os fiordes da Noruega são antigos vales glaciais invadidos pelo mar."],
-    q: "Sobre o relevo da Europa, assinale V ou F. A sequência correta é:",
-    options: ["V, V, V, F, V", "V, F, V, F, V", "F, V, V, V, F", "V, V, F, V, V", "V, V, V, V, F"], correct: 0,
-    explain: "(4) <strong>F</strong> — os Urais são montanhas <strong>antigas</strong>, baixas (~1,6 mil m) e arredondadas pela erosão; os Alpes é que são jovens. (1) é verdadeira: as glaciações moldaram vales alpinos, lagos e fiordes." },
-  { topic: "Relevo e Placas Tectônicas",
-    legend: "(1) Planalto · (2) Planície · (3) Depressão · (4) Cordilheira",
-    items: ["Área elevada e aplainada, geralmente sobre escudos cristalinos antigos e desgastados; exemplos: Planalto do Tibete e mesetas espanholas.",
-            "Área baixa e plana, de formação geológica mais recente e sedimentar; exemplos: Grande Planície Europeia e planície do Ganges.",
-            "Área mais baixa que as regiões vizinhas, podendo ficar abaixo do nível do mar; exemplos: Mar Morto e Lago Eyre.",
-            "Conjunto de montanhas jovens e elevadas formado pelo choque de placas; exemplos: Himalaia e Alpes."],
-    q: "Numere as descrições de acordo com a forma de relevo correspondente. A sequência correta é:",
-    options: ["1, 2, 3, 4", "2, 1, 3, 4", "1, 3, 2, 4", "4, 2, 3, 1", "1, 2, 4, 3"], correct: 0,
-    explain: "<strong>Planalto</strong> = elevado e aplainado, antigo. <strong>Planície</strong> = baixa, plana, sedimentar, recente. <strong>Depressão</strong> = mais baixa que o entorno (absoluta quando abaixo do nível do mar). <strong>Cordilheira</strong> = montanhas jovens do choque de placas." },
-  { topic: "Relevo e Placas Tectônicas",
-    q: "Uma depressão absoluta é uma área situada abaixo do nível do mar. São exemplos de depressões absolutas:",
-    options: ["o Mar Morto, na Ásia (cerca de 430 m abaixo do nível do mar), e o Lago Eyre, na Austrália (16 m abaixo).",
-              "o Planalto do Tibete e o Monte Everest.",
-              "a Grande Planície Europeia e o Vale do Ruhr.",
-              "o Monte Cook e o Monte Wilhelm."], correct: 0,
-    explain: "<strong>Absoluta</strong> = abaixo do nível do mar (Mar Morto −430 m; Lago Eyre −16 m). <strong>Relativa</strong> = apenas mais baixa que o entorno, mas acima do nível do mar. Planaltos e montanhas são o oposto de depressões." },
-  { topic: "Relevo e Placas Tectônicas",
-    items: ["Os terrenos mais antigos da Eurásia estão nos planaltos, formados sobre escudos cristalinos pré-cambrianos.",
-            "Bacias sedimentares de antigos ambientes marinhos deram origem ao petróleo, como no Golfo Pérsico e na região entre os mares Negro e Cáspio.",
-            "O carvão da Grande Planície Europeia formou-se de antigos pântanos e impulsionou a Revolução Industrial.",
-            "As planícies são formações geológicas mais antigas que as montanhas e os planaltos.",
-            "Os Montes Urais possuem importantes jazidas de carvão, ferro e cobre."],
-    q: "Sobre a estrutura geológica e os recursos minerais da Eurásia, marque V ou F. A sequência correta é:",
-    options: ["V, V, V, F, V", "V, F, V, F, V", "F, V, V, V, F", "V, V, F, V, V", "V, V, V, V, F"], correct: 0,
-    explain: "(4) <strong>F</strong> — as planícies são, em geral, de formação <strong>mais jovem</strong> (sedimentar) que montanhas e planaltos. Guarde a dupla: ambientes <strong>marinhos</strong> antigos → petróleo; <strong>pântanos</strong> antigos → carvão." },
-  { topic: "Relevo e Placas Tectônicas",
-    passage: "Chamado de \"teto do mundo\", o Planalto Tibetano é o maior e mais elevado planalto do mundo, formado pela colisão entre as placas Indiana e Euroasiática há cerca de 55 milhões de anos. Situado entre o Himalaia, ao sul, e o Deserto de Taklamakan, ao norte, tem altitude média aproximada de 4.500 metros.",
-    q: "Do texto, conclui-se que o Planalto do Tibete:",
-    options: ["tem a mesma origem tectônica do Himalaia: o choque entre a placa Indiana e a Euroasiática.",
-              "é uma planície sedimentar de formação recente.",
-              "formou-se pela erosão de antigas geleiras.",
-              "localiza-se ao norte do Deserto de Taklamakan."], correct: 0,
-    explain: "O texto diz que o planalto nasceu da <strong>colisão Indiana × Euroasiática</strong> — o mesmo processo que ergueu o Himalaia. E o Taklamakan fica ao <strong>norte</strong> do Tibete, não o contrário." },
-  { topic: "Relevo e Placas Tectônicas",
-    q: "Sobre o relevo do continente asiático, é correto afirmar que ele:",
-    options: ["é marcado por grande variedade, desde as altas montanhas do Himalaia, como o Everest, até vastas planícies, como as dos rios Ganges e Yangtzé.",
-              "é uniformemente plano, sem cadeias montanhosas expressivas.",
-              "não possui planaltos nem depressões.",
-              "apresenta as menores altitudes do planeta."], correct: 0,
-    explain: "A Ásia reúne os <strong>maiores contrastes</strong> do mundo: o ponto mais alto (Everest, 8.848 m) e o mais baixo (Mar Morto, −430 m), além de planaltos imensos (Tibete) e planícies densamente povoadas (Ganges, Yangtzé)." },
-  { topic: "Relevo e Placas Tectônicas",
-    items: ["As planícies asiáticas dos rios Tigre, Eufrates, Indo, Ganges, Huang He e Yangtzé abrigaram antigas sociedades agrárias.",
-            "As áreas planas periodicamente inundadas pelos rios tornam-se terras férteis para a agricultura.",
-            "A Grande Planície Europeia estende-se da França à Rússia e concentra grande parte da agricultura e das cidades do continente.",
-            "As planícies europeias despovoaram-se com a Revolução Industrial.",
-            "Na Europa, as áreas planálticas são pouco extensas, com destaque para as mesetas da Espanha."],
-    q: "Sobre as planícies e os planaltos da Eurásia, marque V ou F. A sequência correta é:",
-    options: ["V, V, V, F, V", "V, F, V, F, V", "F, V, V, V, F", "V, V, F, V, V", "V, V, V, V, F"], correct: 0,
-    explain: "(4) <strong>F</strong> — foi o contrário: com o carvão e a Revolução Industrial, as planícies europeias tornaram-se <strong>mais densamente povoadas</strong> e as cidades se multiplicaram (ex.: Vale do Ruhr)." },
-  { topic: "Relevo e Placas Tectônicas",
-    q: "Japão, Indonésia, Filipinas e Nova Zelândia têm em comum:",
-    options: ["a localização no Círculo de Fogo do Pacífico, com frequentes terremotos e vulcões.",
-              "o relevo formado por escudos cristalinos antigos e estáveis.",
-              "a ausência total de atividade vulcânica.",
-              "a localização no interior do continente asiático."], correct: 0,
-    explain: "Todos são arquipélagos sobre <strong>bordas de placas</strong> no Pacífico — o Círculo de Fogo. Isso explica os vulcões da Indonésia, os terremotos do Japão e os gêiseres da Nova Zelândia." },
-
-  // ===== GEOGRAFIA · RIOS E LAGOS =====
-  { topic: "Rios e Lagos",
-    legend: "(A) Rio Volga · (B) Rio Reno · (C) Rio Danúbio",
-    items: ["Importante via de transporte de matérias-primas e produtos industrializados; nasce nos Alpes Suíços, liga a região industrial da Alemanha e desemboca no Mar do Norte, junto ao Porto de Roterdã, na Holanda.",
-            "O mais extenso rio europeu, com cerca de 3.500 km; nasce no Planalto de Valdai, atravessa a planície russa e desemboca no Mar Cáspio.",
-            "Atravessa cerca de dez países da Europa Central e Oriental, banhando Viena, Budapeste e Belgrado; sua foz fica no Mar Negro, na fronteira entre Romênia e Ucrânia."],
-    q: "Relacione a coluna corretamente. A sequência é:",
-    options: ["B, A, C", "A, B, C", "C, A, B", "B, C, A", "A, C, B"], correct: 0,
-    explain: "<strong>Reno</strong> = rio industrial, Alpes → Mar do Norte (Roterdã). <strong>Volga</strong> = o mais longo, deságua no <strong>Cáspio</strong>. <strong>Danúbio</strong> = o mais internacional, Viena/Budapeste/Belgrado → <strong>Mar Negro</strong>." },
-  { topic: "Rios e Lagos",
-    items: ["Os rios europeus são regulares e caudalosos, o que facilita a navegação e o transporte.",
-            "Londres desenvolveu-se às margens do Tâmisa e Paris, às margens do Sena.",
-            "O Danúbio deságua no Mar Cáspio.",
-            "O Volga é o maior rio da Europa.",
-            "O Reno liga a região industrial alemã ao Mar do Norte."],
-    q: "Sobre os rios europeus, marque V ou F. A sequência correta é:",
-    options: ["V, V, F, V, V", "V, F, V, V, F", "F, V, F, V, V", "V, V, V, F, V", "V, V, F, F, V"], correct: 0,
-    explain: "(3) <strong>F</strong> — o Danúbio deságua no <strong>Mar Negro</strong>; quem deságua no Cáspio é o <strong>Volga</strong>. As demais são verdadeiras: o clima temperado dá regularidade aos rios, e as grandes capitais nasceram às margens deles." },
-  { topic: "Rios e Lagos",
-    q: "O curso de um rio divide-se em superior, médio e inferior. As grandes civilizações antigas desenvolveram-se principalmente:",
-    options: ["nos cursos médio e inferior, onde as inundações periódicas tornavam as planícies férteis para a agricultura.",
-              "nos cursos superiores, junto às nascentes nas montanhas.",
-              "nas cabeceiras, onde o relevo é mais acidentado.",
-              "fora das áreas de influência dos rios."], correct: 0,
-    explain: "<strong>Superior</strong> = perto da nascente; <strong>médio</strong> = meio do percurso; <strong>inferior</strong> = trecho final, até a foz. Nos cursos <strong>médio e inferior</strong> o rio corre por áreas planas que inundam e ficam férteis — daí Mesopotâmia, Indo, Ganges, China." },
-  { topic: "Rios e Lagos",
-    items: ["O Yangtzé (Chang Jiang) é o rio mais longo da Ásia.",
-            "O Huang He é chamado de Rio Amarelo por causa dos sedimentos (loess) que transporta.",
-            "O Ganges, na Índia, é considerado sagrado pelo hinduísmo, mas enfrenta graves problemas de poluição.",
-            "Os rios Tigre e Eufrates banham a Península Arábica, no atual Iêmen.",
-            "Muitos grandes rios asiáticos nascem no Himalaia e no Planalto do Tibete, alimentados pelo degelo."],
-    q: "Sobre os rios asiáticos, marque V ou F. A sequência correta é:",
-    options: ["V, V, V, F, V", "V, F, V, F, V", "F, V, V, V, F", "V, V, F, V, V", "V, V, V, V, F"], correct: 0,
-    explain: "(4) <strong>F</strong> — Tigre e Eufrates banham a <strong>Mesopotâmia</strong> (\"terra entre rios\"), no atual <strong>Iraque</strong>, berço de civilizações antigas. As demais são verdadeiras." },
-  { topic: "Rios e Lagos",
-    legend: "(1) Origem glacial · (2) Origem tectônica",
-    items: ["Formados pelo recuo das geleiras após a última Idade do Gelo; comuns na Finlândia, na Suíça e no norte da Rússia (Ladoga, Onega).",
-            "Formados em falhas geológicas; exemplo: Lago Baikal, o mais profundo do mundo.",
-            "Lago de Neuchâtel, na Suíça, nascido de antigas geleiras.",
-            "Mar Morto, situado em uma falha geológica, abaixo do nível do mar."],
-    q: "Numere os lagos e as descrições de acordo com sua origem. A sequência correta é:",
-    options: ["1, 2, 1, 2", "2, 1, 2, 1", "1, 1, 2, 2", "1, 2, 2, 1", "2, 2, 1, 1"], correct: 0,
-    explain: "<strong>Glacial</strong> (mais ao norte, recuo do gelo há ~20 mil anos): Finlândia, Suíça, Ladoga, Onega, Neuchâtel. <strong>Tectônica</strong> (falhas): Baikal, Mar Morto, Cáspio, Golfo de Áqaba, Rift Valley." },
-  { topic: "Rios e Lagos",
-    passage: "O Lago Baikal, na Sibéria, tem mais de 30 mil km² e profundidade superior a 1.600 metros. Mais de 300 rios desembocam nele, mas suas águas não chegam ao oceano: constituem uma bacia endorreica, assim como os mares Morto, Cáspio e Aral.",
-    q: "Uma bacia endorreica é aquela em que:",
-    options: ["os rios não têm foz no oceano, desaguando no interior do continente.",
-              "os rios deságuam diretamente no oceano.",
-              "não existem rios afluentes.",
-              "a água é obrigatoriamente salgada."], correct: 0,
-    explain: "<strong>Endorreica</strong> = \"que corre para dentro\": a água fica no interior do continente. O Baikal é de água <strong>doce</strong>, então salinidade não é critério — o que define é não ter saída para o oceano." },
-  { topic: "Rios e Lagos",
-    items: ["O Mar Cáspio é o maior lago do mundo e, apesar do nome, não tem ligação com o oceano.",
-            "O Mar Morto é abastecido apenas pelo Rio Jordão e tem salinidade cerca de sete vezes maior que a média dos oceanos.",
-            "O Mar de Aral vem desaparecendo por causa do desvio dos rios que o abasteciam para a irrigação.",
-            "O Mar Negro é um mar fechado, sem ligação com nenhum oceano.",
-            "O Lago Baikal é o lago mais profundo do planeta."],
-    q: "Sobre os grandes lagos e mares interiores da Eurásia, marque V ou F. A sequência correta é:",
-    options: ["V, V, V, F, V", "V, F, V, F, V", "F, V, V, V, F", "V, V, F, V, V", "V, V, V, V, F"], correct: 0,
-    explain: "(4) <strong>F</strong> — o Mar Negro é <strong>interior</strong>, mas se liga ao Mediterrâneo pelos estreitos de <strong>Bósforo e Dardanelos</strong>. Fechado, sem ligação com o oceano, é o <strong>Cáspio</strong>." },
-  { topic: "Rios e Lagos",
-    q: "Assinale a alternativa que relaciona corretamente as cidades aos rios que as banham:",
-    options: ["Londres – Tâmisa; Paris – Sena; Bagdá – Tigre; Varanasi – Ganges.",
-              "Londres – Sena; Paris – Tâmisa; Bagdá – Ganges; Varanasi – Tigre.",
-              "Londres – Volga; Paris – Reno; Bagdá – Nilo; Varanasi – Mekong.",
-              "Londres – Danúbio; Paris – Elba; Bagdá – Eufrates; Varanasi – Indo."], correct: 0,
-    explain: "Grandes cidades nasceram às margens dos rios: <strong>Londres/Tâmisa</strong>, <strong>Paris/Sena</strong>, <strong>Hamburgo/Elba</strong>, <strong>Astrakhan/Volga</strong>, <strong>Bagdá/Tigre</strong>, <strong>Varanasi/Ganges</strong>, <strong>Wuhan/Yangtzé</strong>." },
-  { topic: "Rios e Lagos",
-    items: ["O Ganges sofre com o lançamento de esgoto não tratado e com práticas religiosas, como a cremação de corpos.",
-            "O Tâmisa foi importante via de transporte durante a Revolução Industrial.",
-            "As cadeias de montanhas funcionam como divisores de bacias hidrográficas.",
-            "Os rios asiáticos têm pouca importância para a agricultura e o abastecimento de água.",
-            "Nanquim e Wuhan são cidades chinesas situadas às margens do Yangtzé."],
-    q: "Sobre a importância dos rios da Eurásia, marque V ou F. A sequência correta é:",
-    options: ["V, V, V, F, V", "V, F, V, F, V", "F, V, V, V, F", "V, V, F, V, V", "V, V, V, V, F"], correct: 0,
-    explain: "(4) <strong>F</strong> — é o oposto: os rios asiáticos sustentam <strong>bilhões de pessoas</strong>, com agricultura (arroz no delta do Mekong), abastecimento e transporte. As demais são verdadeiras." },
-  { topic: "Rios e Lagos",
-    passage: "Os rios Amu Daria e Sir Daria, que abasteciam o Mar de Aral, foram desviados para irrigar plantações de algodão na Ásia Central. Em poucas décadas, o lago perdeu grande parte de sua área, deixando barcos encalhados em meio ao deserto.",
-    q: "O caso do Mar de Aral exemplifica:",
-    options: ["um desastre ambiental provocado pela ação humana sobre a hidrografia.",
-              "um fenômeno natural causado pelas monções.",
-              "a elevação do nível do mar pelas mudanças climáticas.",
-              "a formação de um lago de origem glacial."], correct: 0,
-    explain: "A causa foi o <strong>desvio dos rios para irrigação</strong> — ação humana, não natural. O Aral é um lago <strong>endorreico</strong>: sem os rios, não tinha de onde repor a água." },
-
-  // ===== GEOGRAFIA · CLIMAS E MONÇÕES =====
-  { topic: "Climas e Monções",
-    passage: "Esquema das monções asiáticas: no INVERNO, um centro de alta pressão (baixas temperaturas) sobre o continente faz os ventos soprarem da Ásia em direção ao Oceano Índico. No VERÃO, um centro de baixa pressão (temperaturas elevadas) sobre o continente faz os ventos soprarem do Oceano Índico em direção à Ásia.",
-    q: "Na Índia, o clima mostrado no esquema é caracterizado por chuvas:",
-    options: ["intensas no verão, em decorrência das massas úmidas vindas do Oceano Índico.",
-              "irregulares e mal distribuídas ao longo do ano, tornando a região seca e de baixa produtividade.",
-              "regulares e bem distribuídas ao longo do ano, contribuindo para a agricultura.",
-              "torrenciais no inverno, oriundas das massas de ar úmidas que se formam no continente asiático."], correct: 0,
-    explain: "No <strong>verão</strong> a baixa pressão sobre o continente puxa os ventos <strong>úmidos do oceano</strong> → chuvas intensas. No inverno o vento sai do continente (ar <strong>seco</strong>) → estação seca. Logo: chuva concentrada no verão, vinda do Índico. A alternativa D inverte tudo." },
-  { topic: "Climas e Monções",
-    passage: "Uma paisagem do sul da Europa mostra colinas cobertas por oliveiras e vinhedos. A região é caracterizada por invernos amenos e chuvosos e verões quentes e secos, condições favoráveis a esses cultivos.",
-    q: "O clima da região retratada é identificado como:",
-    options: ["mediterrâneo", "frio de montanha", "subtropical úmido", "polar", "equatorial"], correct: 0,
-    explain: "Verão <strong>quente e seco</strong> + inverno <strong>ameno e chuvoso</strong> + oliveiras e videiras = clima <strong>mediterrâneo</strong>, típico de Portugal, Espanha, Itália e Grécia." },
-  { topic: "Climas e Monções",
-    legend: "(1) Tropical · (2) Temperado · (3) Equatorial · (4) Desértico · (5) Mediterrâneo · (6) Polar",
-    items: ["Predominante nas regiões costeiras do sul da Europa; associado à vegetação de maquis, com arbustos resistentes à seca; verões secos e invernos amenos.",
-            "Presente em muitas ilhas da Oceania e no norte da Austrália; savanas e florestas tropicais, com estação chuvosa e estação seca.",
-            "Encontrado no Deserto de Gobi e em partes do Irã e da Arábia; vegetação xerófila, adaptada à aridez.",
-            "Extremo norte da Ásia, na Sibéria; tundra de musgos e liquens sobre solos congelados.",
-            "Indonésia, Malásia e Filipinas; florestas densas, quentes e úmidas o ano todo, de rica biodiversidade.",
-            "Grande parte da Europa Central e Ocidental; florestas de folhas largas que caem no inverno, como carvalhos."],
-    q: "Relacione o tipo climático com o texto que melhor descreve suas características. A sequência correta é:",
-    options: ["5, 1, 4, 6, 3, 2", "1, 3, 4, 6, 5, 2", "5, 4, 3, 6, 2, 1", "1, 3, 6, 4, 2, 5", "5, 1, 4, 6, 2, 3"], correct: 0,
-    explain: "Maquis/oliveiras → <strong>mediterrâneo (5)</strong>. Savana com estação seca → <strong>tropical (1)</strong>. Gobi/Arábia, xerófila → <strong>desértico (4)</strong>. Sibéria, tundra → <strong>polar (6)</strong>. Indonésia, úmido o ano todo → <strong>equatorial (3)</strong>. Carvalhos caducifólios → <strong>temperado (2)</strong>." },
-  { topic: "Climas e Monções",
-    items: ["As monções são ventos sazonais causados pela diferença de temperatura entre o continente e o oceano.",
-            "No verão, o continente aquecido forma uma área de baixa pressão, e os ventos úmidos do oceano trazem chuvas intensas.",
-            "No inverno, o padrão se inverte: os ventos sopram do continente para o oceano, e ocorre a estação seca.",
-            "As monções ocorrem principalmente no norte da Europa.",
-            "As monções são essenciais para a agricultura, mas podem causar inundações repentinas e secas prolongadas."],
-    q: "Sobre as monções, marque V ou F. A sequência correta é:",
-    options: ["V, V, V, F, V", "V, F, V, F, V", "F, V, V, V, F", "V, V, F, V, V", "V, V, V, V, F"], correct: 0,
-    explain: "(4) <strong>F</strong> — as monções atuam no <strong>sul e sudeste da Ásia</strong> (Índia, Bangladesh, Sudeste Asiático) e no norte da Austrália, não na Europa. As demais descrevem corretamente o mecanismo e os impactos." },
-  { topic: "Climas e Monções",
-    items: ["O clima predominante na Europa é o temperado, com as quatro estações bem definidas.",
-            "No oeste europeu, o clima temperado oceânico tem chuvas bem distribuídas e invernos amenos, pela influência do Atlântico.",
-            "No leste europeu, o clima temperado continental apresenta maior amplitude térmica e invernos rigorosos.",
-            "O sul da Europa apresenta clima polar.",
-            "A Península Escandinava e o norte da Rússia têm clima frio, com florestas de coníferas (taiga)."],
-    q: "Sobre os climas da Europa, marque V ou F. A sequência correta é:",
-    options: ["V, V, V, F, V", "V, F, V, F, V", "F, V, V, V, F", "V, V, F, V, V", "V, V, V, V, F"], correct: 0,
-    explain: "(4) <strong>F</strong> — o sul da Europa tem clima <strong>mediterrâneo</strong>. Polar só no extremo norte. Lembre a lógica: perto do oceano → menor amplitude térmica; longe (continentalidade) → maior." },
-  { topic: "Climas e Monções",
-    q: "Os grandes desertos da Ásia e da Oceania, como o da Arábia (Rub' al-Khali), o de Thar e os desertos australianos, localizam-se:",
-    options: ["nas latitudes próximas aos trópicos de Câncer e de Capricórnio (23°27' N e S).",
-              "sobre a linha do Equador.",
-              "nas regiões polares.",
-              "no litoral do Oceano Atlântico."], correct: 0,
-    explain: "É a faixa dos <strong>trópicos</strong>: Trópico de Câncer (Arábia, Neguev, Kavir, Thar) e Trópico de Capricórnio (desertos australianos, como o de Simpson). A vegetação ali é <strong>xerófila</strong>." },
-  { topic: "Climas e Monções",
-    items: ["A Ásia apresenta quase todos os tipos de clima do planeta, por sua grande extensão em latitude e suas variações de altitude.",
-            "O clima equatorial, quente e úmido o ano todo, ocorre na Indonésia e na Malásia.",
-            "A Sibéria tem um dos invernos mais rigorosos do planeta, com clima frio e subpolar.",
-            "O Planalto do Tibete e o Himalaia apresentam clima frio de montanha.",
-            "O sul e o sudeste da Ásia têm clima desértico, praticamente sem chuvas."],
-    q: "Sobre a diversidade climática da Ásia, marque V ou F. A sequência correta é:",
-    options: ["V, V, V, V, F", "V, F, V, V, F", "F, V, V, F, V", "V, V, F, V, V", "V, V, V, F, F"], correct: 0,
-    explain: "(5) <strong>F</strong> — o sul e o sudeste asiático são justamente as regiões das <strong>monções</strong>, com chuvas de verão intensas. Os desertos asiáticos ficam na Arábia, no Irã, na Ásia Central e na Mongólia (Gobi)." },
-  { topic: "Climas e Monções",
-    passage: "Do extremo meridional da Nova Zelândia, na Oceania, até os pontos extremos setentrionais da Península do Tamir, na Rússia asiática, ou do Cabo do Norte, na Noruega, existem muitos domínios morfoclimáticos que, em seu conjunto, abrangem as três zonas térmicas da Terra.",
-    q: "As três zonas térmicas da Terra citadas no texto são:",
-    options: ["tropical, temperada e polar.", "equatorial, tropical e subtropical.", "quente, fria e úmida.", "setentrional, meridional e central."], correct: 0,
-    explain: "As <strong>zonas térmicas</strong> são definidas pela latitude: <strong>tropical</strong> (entre os trópicos), <strong>temperada</strong> (entre trópicos e círculos polares) e <strong>polar</strong> (além dos círculos polares)." },
-  { topic: "Climas e Monções",
-    q: "Sobre o clima da Oceania, é correto afirmar que:",
-    options: ["a maior parte da Austrália é árida ou semiárida; o norte é tropical e o sul e sudeste são temperados, onde se concentra a população.",
-              "todo o continente apresenta clima polar.",
-              "a Austrália tem clima equatorial em todo o seu território.",
-              "a Nova Zelândia tem clima desértico."], correct: 0,
-    explain: "O interior australiano (Outback) é <strong>desértico e semiárido</strong>; o norte é <strong>tropical</strong> (monções e savanas); o sul/sudeste é <strong>temperado</strong> — por isso Sydney e Melbourne concentram a população. A Nova Zelândia tem clima temperado oceânico." },
-  { topic: "Climas e Monções",
-    items: ["A latitude influencia o clima: quanto mais próximo dos polos, mais frio.",
-            "A altitude influencia o clima: quanto mais alto, mais frio, como no Himalaia.",
-            "A proximidade do oceano reduz a amplitude térmica (clima oceânico); a distância a aumenta (continentalidade).",
-            "As monções resultam da diferença de temperatura entre continente e oceano.",
-            "Os desertos ocorrem nas regiões mais chuvosas do planeta."],
-    q: "Sobre os fatores que influenciam o clima, marque V ou F. A sequência correta é:",
-    options: ["V, V, V, V, F", "V, F, V, V, F", "F, V, V, V, V", "V, V, F, V, V", "V, V, V, F, V"], correct: 0,
-    explain: "(5) <strong>F</strong> — desertos são regiões de <strong>chuva escassa</strong>, nas latitudes tropicais de ar seco descendente. Os fatores climáticos: <strong>latitude</strong>, <strong>altitude</strong>, <strong>maritimidade/continentalidade</strong> e a dinâmica das massas de ar (monções)." },
-
-  // ===== GEOGRAFIA · VEGETAÇÃO E DOMÍNIOS =====
-  { topic: "Vegetação e Domínios",
-    legend: "(1) Floresta de Coníferas · (2) Vegetação Mediterrânea · (3) Tundra · (4) Pradaria · (5) Savana · (6) Estepe",
-    items: ["Vegetação rasteira de ciclo vegetativo curto, com musgos e liquens, sobre solos congelados.",
-            "Vegetação herbácea esparsa e ressecada, de climas semiáridos, na faixa de transição entre áreas úmidas e desertos.",
-            "Formação florestal típica das zonas frias, conhecida como taiga; predominam os pinheiros.",
-            "Adaptada a verões quentes e secos e invernos amenos e chuvosos; plantas esclerófilas (folhas duras) e arbustos como maquis e garrigues; oliveiras e sobreiros.",
-            "Formação herbácea composta por capim, típica do clima temperado continental.",
-            "Formação de árvores esparsas e gramíneas do clima tropical, com estação seca; na Índia, abriga animais de grande porte, como elefantes."],
-    q: "Numere as colunas relacionando a vegetação à sua característica. A sequência correta é:",
-    options: ["3, 6, 1, 2, 4, 5", "1, 6, 3, 2, 4, 5", "1, 2, 3, 4, 5, 6", "3, 2, 1, 4, 5, 6", "3, 6, 1, 4, 2, 5"], correct: 0,
-    explain: "Musgos e liquens → <strong>tundra (3)</strong>. Herbácea semiárida de transição → <strong>estepe (6)</strong>. Taiga/pinheiros → <strong>coníferas (1)</strong>. Esclerófilas, maquis, oliveiras → <strong>mediterrânea (2)</strong>. Capim temperado → <strong>pradaria (4)</strong>. Tropical com estação seca → <strong>savana (5)</strong>." },
-  { topic: "Vegetação e Domínios",
-    items: ["A floresta temperada ocorre em latitudes médias e tem árvores caducifólias, que perdem as folhas no inverno, como carvalhos, bétulas e faias.",
-            "A vegetação mediterrânea, com maquis e oliveiras, está adaptada ao verão quente e seco.",
-            "O clima e a vegetação mediterrâneos também ocorrem na Califórnia, no Chile central, na África do Sul e no sudoeste da Austrália.",
-            "A floresta temperada é típica das regiões equatoriais.",
-            "A vegetação original da Europa foi muito reduzida pela ocupação humana, pela agricultura e pela industrialização."],
-    q: "Sobre a floresta temperada e a vegetação mediterrânea, marque V ou F. A sequência correta é:",
-    options: ["V, V, V, F, V", "V, F, V, F, V", "F, V, V, V, F", "V, V, F, V, V", "V, V, V, V, F"], correct: 0,
-    explain: "(4) <strong>F</strong> — a floresta temperada é de <strong>latitudes médias</strong> (Europa, leste da China, Japão). Nas regiões equatoriais a formação é a <strong>floresta equatorial</strong>, densa e sempre verde." },
-  { topic: "Vegetação e Domínios",
-    q: "A taiga, ou floresta boreal, estende-se pelo norte da Europa e da Ásia (Escandinávia e Sibéria) e caracteriza-se por:",
-    options: ["coníferas, como pinheiros e abetos, em regiões de baixa densidade demográfica, com longos invernos frios e pouca luminosidade.",
-              "árvores de folhas largas que caem no outono.",
-              "arbustos espinhosos e cactos adaptados à seca.",
-              "musgos e liquens sobre solo permanentemente congelado.",
-              "gramíneas de clima semiárido."], correct: 0,
-    explain: "<strong>Taiga</strong> = floresta de <strong>coníferas</strong> (folhas em agulha, forma de cone, resistentes à neve). Folhas largas caducas = floresta temperada; cactos = deserto; musgos/liquens = tundra; gramíneas semiáridas = estepe." },
-  { topic: "Vegetação e Domínios",
-    items: ["A tundra ocorre em uma faixa estreita ao longo do litoral do Ártico, no extremo norte da Eurásia.",
-            "A vegetação da tundra é rasteira, composta principalmente de liquens e musgos.",
-            "O solo da tundra, congelado durante a maior parte do ano, é chamado de permafrost.",
-            "No verão, com luz solar por 24 horas seguidas, o permafrost descongela e a tundra torna-se pantanosa e florida.",
-            "A tundra é formada por árvores de grande porte, como pinheiros e carvalhos."],
-    q: "Sobre a tundra, marque V ou F. A sequência correta é:",
-    options: ["V, V, V, V, F", "V, F, V, V, F", "F, V, V, F, V", "V, V, F, V, V", "V, V, V, F, F"], correct: 0,
-    explain: "(5) <strong>F</strong> — na tundra <strong>não há árvores</strong>: o frio extremo e o permafrost só permitem vegetação rasteira. Pinheiros são da taiga; carvalhos, da floresta temperada." },
-  { topic: "Vegetação e Domínios",
-    passage: "Nas altas encostas dos Alpes, do Cáucaso e do Himalaia, a vegetação torna-se gradativamente escassa e de porte cada vez menor, até desaparecerem os arbustos e as gramíneas. Restam apenas musgos e liquens, muitas vezes diretamente sobre as rochas. Em altitudes ainda maiores, há apenas geleiras e neve ininterrupta.",
-    q: "O texto descreve a formação vegetal conhecida como:",
-    options: ["tundra alpina, em que a altitude produz efeito semelhante ao das altas latitudes.",
-              "floresta de coníferas (taiga).",
-              "vegetação mediterrânea.",
-              "savana tropical."], correct: 0,
-    explain: "É a <strong>tundra alpina</strong>: a <strong>altitude</strong> reproduz o frio dos polos, e a vegetação vai sumindo até só sobrarem musgos e liquens. Regra: subir uma montanha equivale a caminhar em direção ao polo." },
-  { topic: "Vegetação e Domínios",
-    legend: "(1) Xerófila · (2) Caducifólia · (3) Perenifólia · (4) Latifoliada",
-    items: ["Adaptada à seca; típica dos desertos.",
-            "Perde as folhas no inverno; carvalhos e faias da floresta temperada.",
-            "Permanece verde o ano todo; coníferas e florestas equatoriais.",
-            "De folhas largas; comum nas florestas tropicais e temperadas."],
-    q: "Numere os tipos de vegetação de acordo com a descrição. A sequência correta é:",
-    options: ["1, 2, 3, 4", "2, 1, 4, 3", "1, 3, 2, 4", "4, 2, 3, 1", "1, 2, 4, 3"], correct: 0,
-    explain: "<strong>Xerófila</strong> = seca (xero). <strong>Caducifólia</strong> = folha que cai (caduco). <strong>Perenifólia</strong> = folha perene, sempre verde. <strong>Latifoliada</strong> = folha larga (lati). Vocabulário que a prova adora." },
-  { topic: "Vegetação e Domínios",
-    items: ["A savana é uma formação tropical de gramíneas e árvores esparsas, com estação seca; ocorre no norte da Austrália e no sul da Ásia.",
-            "A estepe é uma formação herbácea de clima semiárido, comum na Ásia Central (Mongólia, Cazaquistão).",
-            "A pradaria é uma formação de gramíneas do clima temperado continental.",
-            "As savanas ocorrem apenas na Europa.",
-            "As estepes são zonas de transição entre áreas úmidas e desertos."],
-    q: "Sobre savanas, estepes e pradarias, marque V ou F. A sequência correta é:",
-    options: ["V, V, V, F, V", "V, F, V, F, V", "F, V, V, V, F", "V, V, F, V, V", "V, V, V, V, F"], correct: 0,
-    explain: "(4) <strong>F</strong> — savana é formação <strong>tropical</strong>: África, norte da Austrália, Índia. Não ocorre na Europa temperada. As três formações herbáceas: <strong>savana</strong> (tropical), <strong>estepe</strong> (semiárida), <strong>pradaria</strong> (temperada)." },
-  { topic: "Vegetação e Domínios",
-    q: "As florestas da Indonésia, da Malásia e das Filipinas caracterizam-se por:",
-    options: ["rica biodiversidade, árvores de grande porte e cobertura densa, em clima quente e úmido durante todo o ano.",
-              "coníferas adaptadas ao frio intenso.",
-              "árvores que perdem as folhas no inverno.",
-              "arbustos resistentes à seca."], correct: 0,
-    explain: "São <strong>florestas equatoriais</strong>: sobre a linha do Equador, chove o ano todo, e a vegetação é densa, alta e sempre verde (perenifólia), com enorme biodiversidade — a seringueira é um exemplo de árvore da região." },
-  { topic: "Vegetação e Domínios",
-    passage: "Em grande parte da Europa Central e Ocidental, no leste da China e no Japão, encontram-se florestas compostas por árvores de folhas largas, como carvalhos, faias e bétulas, que passam por ciclos de perda de folhas no inverno.",
-    q: "A formação descrita no texto é a:",
-    options: ["floresta temperada, de árvores caducifólias.", "taiga", "tundra", "vegetação mediterrânea", "savana"], correct: 0,
-    explain: "Latitudes médias + folhas largas + perda de folhas no inverno = <strong>floresta temperada caducifólia</strong>. Taiga é de coníferas; tundra não tem árvores; mediterrânea tem arbustos e oliveiras; savana é tropical." },
-  { topic: "Vegetação e Domínios",
-    items: ["Clima e vegetação são interdependentes: cada domínio vegetal corresponde a um tipo climático.",
-            "A taiga corresponde ao clima frio; a tundra, ao clima polar.",
-            "A vegetação mediterrânea corresponde ao clima mediterrâneo, do sul da Europa.",
-            "Os desertos têm vegetação xerófila e escassa.",
-            "A floresta equatorial ocorre em climas frios e secos."],
-    q: "Sobre a relação entre clima e vegetação, marque V ou F. A sequência correta é:",
-    options: ["V, V, V, V, F", "V, F, V, V, F", "F, V, V, F, V", "V, V, F, V, V", "V, V, V, F, F"], correct: 0,
-    explain: "(5) <strong>F</strong> — a floresta equatorial exige clima <strong>quente e úmido</strong> o ano todo. A regra geral vale: cada clima tem sua vegetação — frio → taiga; polar → tundra; mediterrâneo → maquis; desértico → xerófila; equatorial → floresta densa." },
-  // ===== EXTRAS · formatos da 2ª chamada (I–IV "estão corretas", INCORRETO, mapa) =====
-  { topic: "Localização e Limites",
-    passage: "Em um mapa-múndi, as linhas de 23°27' N (Trópico de Câncer), 0° (Equador), 23°27' S (Trópico de Capricórnio), 66°33' N (Círculo Polar Ártico) e 66°33' S (Círculo Polar Antártico) dividem o planeta em faixas numeradas: 1 = entre o Equador e o Trópico de Câncer; 2 = entre o Equador e o Trópico de Capricórnio; 3 = entre o Trópico de Capricórnio e o Círculo Polar Antártico; 4 = ao sul do Círculo Polar Antártico; 5 = entre o Trópico de Câncer e o Círculo Polar Ártico; 6 = ao norte do Círculo Polar Ártico.",
-    items: ["Os números 4 e 6 estão localizados nas áreas polares Sul e Norte, respectivamente.",
-            "Os números 1 e 2 estão localizados na zona intertropical do planeta.",
-            "Os números 3 e 5 estão localizados nas zonas temperadas do planeta.",
-            "Os números 5 e 6 estão localizados na zona tropical."],
-    q: "Marque V para as afirmativas verdadeiras e F para as falsas. A sequência correta é:",
-    options: ["V, V, V, F", "F, V, F, V", "V, F, V, F", "F, F, V, V", "V, V, F, F"], correct: 0,
-    explain: "Regra das zonas térmicas: entre os <strong>trópicos</strong> (23°27' N e S) = zona <strong>tropical/intertropical</strong> (1 e 2). Entre trópico e círculo polar (66°33') = zona <strong>temperada</strong> (3 no sul, 5 no norte). Além dos círculos polares = zona <strong>polar</strong> (4 no sul, 6 no norte). Logo, (4) é <strong>F</strong>: 5 e 6 são temperada e polar." },
-  { topic: "Localização e Limites",
-    items: ["É o mais extenso e o mais populoso dos continentes.",
-            "Possui a cordilheira mais alta do mundo: os Andes.",
-            "A região do Oriente Médio apresenta escassez de água, climas secos e grandes reservas de petróleo.",
-            "A maior força industrial do continente está concentrada apenas no Japão e na Rússia.",
-            "É o continente que abriga o país mais fechado do mundo, a Coreia do Sul."],
-    q: "A Ásia é um continente com características humanas, naturais e regionais diversas. Marque V ou F nas afirmativas. A sequência correta é:",
-    options: ["V, F, V, F, F", "F, V, V, F, F", "V, F, F, V, V", "V, V, V, F, F", "F, F, V, F, V"], correct: 0,
-    explain: "(1) <strong>V</strong> — 44,5 mi km² e mais de 4,7 bilhões de habitantes.<br>(2) <strong>F</strong> — a cordilheira mais alta é o <strong>Himalaia</strong>; os Andes ficam na América do Sul.<br>(3) <strong>V</strong> — Golfo Pérsico: deserto e petróleo.<br>(4) <strong>F</strong> — a força industrial asiática inclui <strong>China, Japão, Coreia do Sul e Índia</strong>, não só Japão e Rússia.<br>(5) <strong>F</strong> — o país mais fechado é a <strong>Coreia do Norte</strong>." },
-  { topic: "Oceania",
-    passage: "A superfície do território australiano é marcada por uma formação planáltica muito antiga, denominada planalto Ocidental australiano, que não apresenta grandes altitudes. Por essa razão não existem altitudes elevadas no país. O ponto culminante é o Kosciuszko, com cerca de 2.230 metros, na Cordilheira Australiana. Entre o planalto Ocidental e a cordilheira ficam as planícies Centrais, cortadas por dois importantes rios, o Murray e o Darling.",
-    q: "A geomorfologia do local tratado no texto é caracterizada por:",
-    options: ["resultar da ação erosiva de agentes externos ao longo de milhões de anos e destacar-se como uma das áreas geologicamente mais antigas do planeta.",
-              "estar localizada no centro de uma placa tectônica e apresentar um relevo de dobramentos modernos, jovem.",
-              "possuir intensa atividade geológica, evidenciada pela erosão de montanhas e pela presença de uma vasta planície litorânea.",
-              "ser uma formação resultante da convergência de placas tectônicas e evidenciar um relevo montanhoso."], correct: 0,
-    explain: "\"Muito antiga\" + \"não apresenta grandes altitudes\" = relevo <strong>antigo e desgastado pela erosão</strong> (agentes externos: chuva, vento). Dobramentos modernos, convergência de placas e relevo montanhoso descrevem o oposto — a Nova Zelândia ou o Himalaia, não a Austrália." },
-  { topic: "Oceania",
-    passage: "Os fiordes (grandes entradas de mar entre montanhas) que existem em locais como o Alasca, a Noruega e o sul da Nova Zelândia são especialmente bons em armazenar carbono porque são fundos, recebem fluxos intensos de águas de rios repletas de carbono e possuem águas calmas e oxigenadas, nas quais o carbono afunda.",
-    q: "A leitura do texto permite inferir que as formações apresentadas recebem fluxos intensos de água em razão do seu processo de origem, que envolve:",
-    options: ["a elevação das temperaturas, o degelo e o consequente aumento do nível do mar, que invadiu antigos vales glaciais.",
-              "o desgaste progressivo dos planaltos por agentes erosivos como a chuva e o vento.",
-              "a diferença entre formas de relevo e altitude que influem nos volumes de chuva.",
-              "a existência de topos de montanhas poucos metros acima do nível do mar."], correct: 0,
-    explain: "Fiorde = vale escavado por <strong>geleira</strong> na Idade do Gelo que, com o <strong>degelo e a elevação do nível do mar</strong>, foi <strong>invadido pelo oceano</strong>. Por isso são profundos e recebem rios de degelo. Erosão de planaltos não forma fiordes." },
-  { topic: "Relevo e Placas Tectônicas",
-    passage: "Figuras que explicam a formação do Himalaia mostram a placa Indiana, que carregava o subcontinente, avançando em direção à Eurásia até colidir com ela.",
+  // ----- Revolução Técnico-Científica -----
+  { topic: "Revolução Técnico-Científica",
+    q: "A Revolução Técnico-Científico-Informacional pode ser definida como:",
+    options: ["um conjunto de avanços da ciência e da tecnologia que transformam a produção e a organização do espaço geográfico.",
+              "o processo de industrialização baseado no carvão e na máquina a vapor, iniciado na Inglaterra no século XVIII.",
+              "a divisão do mundo entre um bloco capitalista e um bloco socialista.",
+              "um acordo comercial entre países emergentes, como Brasil, Rússia, Índia e China."], correct: 0,
+    explain: "A RTCI une <strong>ciência, tecnologia e informação</strong> e muda como se produz e como o espaço se organiza. Carvão e máquina a vapor são da <strong>1ª Revolução Industrial</strong>; a divisão em dois blocos é a <strong>Guerra Fria</strong>; o acordo entre emergentes é o <strong>BRICS</strong>." },
+  { topic: "Revolução Técnico-Científica",
+    items: ["Os avanços nos transportes trouxeram maior velocidade e eficiência logística.",
+            "Na comunicação, destacam-se a internet, os celulares e as redes sociais.",
+            "Na produção, a robótica e a automação diminuíram o uso de tecnologia nas fábricas.",
+            "Satélites, computadores e inteligência artificial são avanços no campo da informação.",
+            "A RTCI reduziu a circulação de informações, mercadorias e capitais entre os países."],
+    q: "Sobre os principais avanços da Revolução Técnico-Científico-Informacional, assinale V ou F. A sequência correta é:",
+    options: ["V, V, F, V, F", "V, F, F, V, V", "V, V, V, V, F", "F, V, F, V, V", "V, V, F, F, F"], correct: 0,
+    explain: "(3) <strong>F</strong> — robótica e automação <strong>ampliaram</strong> o uso de tecnologia na produção.<br>(5) <strong>F</strong> — a RTCI <strong>aumentou</strong> a circulação de informações, mercadorias e capitais (é isso que intensifica a globalização).<br>As outras três descrevem os avanços em transportes, comunicação e informação." },
+  { topic: "Revolução Técnico-Científica",
+    q: "Uma região que concentra universidades, centros de pesquisa, empresas tecnológicas e mão de obra qualificada, favorecendo a inovação, é chamada de:",
+    options: ["tecnopolo", "Zona Econômica Especial", "bloco econômico", "Cortina de Ferro", "megalópole"], correct: 0,
+    explain: "<strong>Tecnopolo</strong> = concentração de pesquisa, tecnologia, empresas e inovação. O exemplo mais famoso é o Vale do Silício, nos EUA. ZEE é a zona criada pela China para atrair investimentos — não confundir." },
+  { topic: "Revolução Técnico-Científica",
     marker: "roman",
-    items: ["A colisão entre a placa Indiana e a placa Euroasiática formou a Cordilheira do Himalaia, que continua se soerguendo até hoje.",
-            "O movimento mostrado relaciona-se às forças orogenéticas, responsáveis pelos dobramentos que formam montanhas.",
-            "O Himalaia é resultado da ação de geleiras que escavaram vales profundos durante a Idade do Gelo.",
-            "O território indiano fazia parte do supercontinente Gondwana, do qual se separou e migrou para o norte até chocar-se com a Ásia."],
-    q: "Avalie as afirmações sobre esse fato. São verdadeiras:",
-    options: ["Apenas I, II e IV.", "Apenas I e II.", "Apenas II e III.", "Apenas III e IV.", "Todas as afirmações."], correct: 0,
-    explain: "I <strong>V</strong> — o Himalaia ainda cresce alguns milímetros por ano. II <strong>V</strong> — <strong>orogênese</strong> = formação de montanhas por dobramento. III <strong>F</strong> — geleiras escavam vales (fiordes), não erguem cordilheiras. IV <strong>V</strong> — a Índia veio da <strong>Gondwana</strong> (não da Laurásia)." },
-  { topic: "Relevo e Placas Tectônicas",
-    passage: "Um mapa do relevo da Europa mostra, em tons claros (0 a 400 m), a maior parte do continente — Planície Germano-Polonesa, Planície Central Russa, Bacia Parisiense, Planície Finlandesa — e, em tons escuros (mais de 1.000 m), apenas faixas estreitas: Alpes, Pirineus, Cárpatos, Cáucaso e Alpes Escandinavos.",
-    q: "O mapa apresenta o relevo da Europa; sendo assim, conclui-se que:",
-    options: ["predominam relevos de baixas altitudes, com as cadeias montanhosas concentradas em áreas restritas.",
-              "o continente registra a inexistência de montanhas.",
-              "o continente apresenta áreas sem ação dos agentes exógenos.",
-              "o mapa mostra o predomínio de relevo de altitudes muito elevadas.",
-              "as planícies ocupam áreas pequenas e isoladas."], correct: 0,
-    explain: "Se a <strong>maior parte</strong> do mapa está na faixa de 0 a 400 m, o relevo predominante é de <strong>baixas altitudes</strong>. Montanhas existem (Alpes, Cáucaso), mas em faixas estreitas. Ler a legenda do mapa é a chave dessa questão." },
-  { topic: "Rios e Lagos",
-    passage: "O Mar Morto é um lago de água salgada localizado entre Palestina, Israel e Jordânia. Apesar do nome, não pode ser considerado um mar: é um lago com concentração de sal cerca de sete a nove vezes maior que a dos oceanos, alimentado pelo rio Jordão e situado a cerca de 430 metros abaixo do nível do mar.",
-    q: "A forma de relevo em que o Mar Morto está localizado recebe o nome de:",
-    options: ["depressão absoluta", "planície", "planalto", "montanha"], correct: 0,
-    explain: "\"430 metros <strong>abaixo do nível do mar</strong>\" = <strong>depressão absoluta</strong>. Planície é área baixa e plana, mas <strong>acima</strong> do nível do mar. Essa distinção derrubou muita gente na prova." },
-  { topic: "Rios e Lagos",
+    items: ["Intensificação da globalização.",
+            "Maior circulação de informações, mercadorias e capitais.",
+            "Fim das desigualdades no acesso à tecnologia entre países e pessoas.",
+            "Transformação das profissões e das relações de trabalho."],
+    q: "Analise as afirmações. São consequências da Revolução Técnico-Científico-Informacional:",
+    options: ["Apenas I, II e IV.", "Apenas I e III.", "Apenas II e III.", "Apenas III e IV.", "I, II, III e IV."], correct: 0,
+    explain: "III é <strong>falsa</strong>: a RTCI gerou <strong>desigualdade no acesso à tecnologia</strong> — ela não chega igual a todos os lugares. As demais (globalização, circulação, mudança no trabalho) são consequências diretas." },
+  { topic: "Revolução Técnico-Científica",
+    q: "Sobre a Revolução Técnico-Científico-Informacional, é INCORRETO afirmar:",
+    options: ["Ela garantiu acesso igual à tecnologia para todas as pessoas do mundo.",
+              "Ela intensificou a globalização.",
+              "Ela transformou profissões e relações de trabalho.",
+              "Ela envolve avanços em transportes, comunicação, informação e produção."], correct: 0,
+    explain: "Atenção ao <strong>INCORRETO</strong>: a RTCI aumentou a <strong>desigualdade</strong> no acesso à tecnologia. As outras três afirmações estão certas." },
+  { topic: "Revolução Técnico-Científica",
+    passage: "Em muitas fábricas, braços robóticos montam carros com precisão, enquanto sistemas de computador controlam estoques e entregas. Ao mesmo tempo, algumas funções antes feitas por pessoas deixaram de existir e surgiram novas profissões, como programador e analista de dados.",
+    q: "O texto exemplifica qual consequência da Revolução Técnico-Científico-Informacional?",
+    options: ["A transformação das profissões e das relações de trabalho.",
+              "O fim da globalização.",
+              "A divisão do mundo em dois blocos ideológicos.",
+              "A criação das Zonas Econômicas Especiais na China."], correct: 0,
+    explain: "Profissões que somem (trabalho repetitivo automatizado) e outras que surgem (programador, analista de dados) = <strong>transformação das profissões e das relações de trabalho</strong>." },
+  { topic: "Revolução Técnico-Científica",
+    legend: "(A) Transportes · (B) Comunicação · (C) Informação · (D) Produção",
+    items: ["Robótica e automação industrial.",
+            "Internet, celulares e redes sociais.",
+            "Maior velocidade e eficiência logística.",
+            "Satélites, computadores e inteligência artificial."],
+    q: "Relacione cada avanço à área correspondente. A sequência correta é:",
+    options: ["D, B, A, C", "A, B, C, D", "D, C, A, B", "B, D, A, C", "D, B, C, A"], correct: 0,
+    explain: "Robótica → <strong>produção (D)</strong>. Internet e redes sociais → <strong>comunicação (B)</strong>. Velocidade e logística → <strong>transportes (A)</strong>. Satélites, computadores e IA → <strong>informação (C)</strong>." },
+  { topic: "Revolução Técnico-Científica",
+    q: "A intensificação das conexões entre diferentes partes do mundo, impulsionada pela Revolução Técnico-Científico-Informacional, é chamada de:",
+    options: ["globalização", "multipolaridade", "bipolaridade", "Cortina de Ferro"], correct: 0,
+    explain: "<strong>Globalização</strong> = conexões mais intensas entre lugares do mundo (comércio, informação, pessoas, capitais). Multipolaridade é sobre <strong>poder</strong> (vários centros), não sobre conexões." },
+  { topic: "Revolução Técnico-Científica",
+    passage: "Enquanto em grandes cidades a internet de alta velocidade é comum, em muitas áreas rurais e em países mais pobres grande parte da população ainda não tem acesso à rede.",
+    q: "A situação descrita revela que a Revolução Técnico-Científico-Informacional:",
+    options: ["ocorre de forma desigual, ampliando diferenças no acesso à tecnologia.",
+              "chegou igualmente a todos os lugares do planeta.",
+              "acabou com a globalização.",
+              "depende apenas de recursos naturais, como petróleo e carvão."], correct: 0,
+    explain: "O texto mostra a <strong>desigualdade no acesso à tecnologia</strong>, uma das consequências da RTCI. Ela concentra benefícios onde já há mais recursos." },
+  { topic: "Revolução Técnico-Científica",
+    q: "Para que um tecnopolo se desenvolva, é fundamental a presença de:",
+    options: ["universidades, centros de pesquisa, empresas de tecnologia e mão de obra qualificada.",
+              "grandes reservas de petróleo e carvão mineral.",
+              "mão de obra barata e pouco qualificada.",
+              "fronteiras fechadas ao comércio internacional."], correct: 0,
+    explain: "Tecnopolo vive de <strong>conhecimento</strong>: pesquisa (universidades e centros) + empresas que transformam pesquisa em produto + gente qualificada. Recursos naturais e mão de obra barata não são o centro da questão." },
+
+  // ----- Ascensão da China -----
+  { topic: "Ascensão da China",
+    q: "As reformas econômicas que deram início à abertura da economia chinesa foram lançadas em 1978 pelo líder:",
+    options: ["Deng Xiaoping", "Mao Tsé-tung", "Vladimir Putin", "Kim Il-sung"], correct: 0,
+    explain: "<strong>Deng Xiaoping</strong>, a partir de <strong>1978</strong>. Mao Tsé-tung liderou a revolução de 1949; Putin é russo; Kim Il-sung foi líder da Coreia do Norte." },
+  { topic: "Ascensão da China",
+    q: "Assinale a sequência que representa corretamente o processo de crescimento econômico da China:",
+    options: ["Reformas de Deng Xiaoping (1978) → abertura econômica e investimentos estrangeiros → industrialização, exportações e modernização tecnológica.",
+              "Industrialização → reformas de 1978 → fechamento ao capital estrangeiro.",
+              "Abertura econômica → Guerra da Coreia → reformas de Deng Xiaoping.",
+              "Fechamento da economia → exportações → reformas de 1991."], correct: 0,
+    explain: "A ordem é: <strong>reformas (1978)</strong> → <strong>abertura + investimentos estrangeiros</strong> → <strong>industrialização + exportações + modernização tecnológica</strong>. Uma etapa leva à seguinte." },
+  { topic: "Ascensão da China",
+    items: ["As Zonas Econômicas Especiais localizam-se principalmente no litoral sudeste da China.",
+            "Um dos objetivos das ZEEs é atrair investimentos estrangeiros.",
+            "Shenzhen é um exemplo de Zona Econômica Especial.",
+            "As ZEEs foram criadas no interior do país para evitar o contato com o comércio exterior.",
+            "As ZEEs buscam gerar empregos, ampliar exportações e incorporar tecnologias."],
+    q: "Sobre as Zonas Econômicas Especiais (ZEEs) da China, marque V ou F. A sequência correta é:",
+    options: ["V, V, V, F, V", "V, F, V, F, V", "F, V, V, V, F", "V, V, F, F, V", "V, V, V, V, V"], correct: 0,
+    explain: "(4) <strong>F</strong> — as ZEEs ficam no <strong>litoral</strong> justamente para <strong>facilitar</strong> o comércio exterior (portos para exportar e receber investimentos). As demais estão corretas." },
+  { topic: "Ascensão da China",
+    q: "A chamada \"contradição chinesa\" refere-se ao fato de o país ter:",
+    options: ["economia com mecanismos de mercado e abertura internacional, mas controle político exercido pelo Partido Comunista.",
+              "economia totalmente fechada e regime democrático com vários partidos.",
+              "economia socialista sem empresas privadas e sem comércio exterior.",
+              "governo liberal e economia controlada por países europeus."], correct: 0,
+    explain: "A contradição: na <strong>economia</strong>, funciona como mercado (empresas, lucro, comércio internacional); na <strong>política</strong>, quem manda é um partido único, o <strong>Partido Comunista Chinês</strong>." },
+  { topic: "Ascensão da China",
+    passage: "Por volta de 1980, Shenzhen era uma pequena vila de pescadores no sul da China. Após ser transformada em Zona Econômica Especial, recebeu fábricas de empresas estrangeiras e de tecnologia e hoje é uma metrópole com milhões de habitantes.",
+    q: "O crescimento de Shenzhen está ligado:",
+    options: ["à criação das ZEEs, que atraíram investimentos e indústrias voltadas à exportação.",
+              "ao fechamento da China ao comércio internacional.",
+              "à Guerra da Coreia.",
+              "à entrada da China na União Europeia."], correct: 0,
+    explain: "Shenzhen é o exemplo clássico de <strong>ZEE</strong>: com regras especiais para atrair capital estrangeiro, virou um polo industrial e tecnológico." },
+  { topic: "Ascensão da China",
     marker: "roman",
-    items: ["O Reno é uma das principais hidrovias da Europa e liga a região industrial alemã ao Porto de Roterdã, no Mar do Norte.",
-            "O Volga, o mais extenso rio europeu, deságua no Mar Negro.",
-            "O Danúbio atravessa vários países e banha capitais como Viena, Budapeste e Belgrado.",
-            "Os rios europeus são pouco navegáveis, por serem irregulares e cheios de corredeiras."],
-    q: "Sobre os rios europeus, analise as afirmações. Estão corretas:",
-    options: ["I e III.", "I e II.", "II e III.", "III e IV.", "I, II e III."], correct: 0,
-    explain: "I <strong>V</strong>. III <strong>V</strong>. II <strong>F</strong> — o Volga deságua no <strong>Mar Cáspio</strong>; no Mar Negro deságua o Danúbio. IV <strong>F</strong> — os rios europeus são <strong>regulares e navegáveis</strong>, graças ao clima temperado e ao relevo plano." },
-  { topic: "Climas e Monções",
-    passage: "O clima tropical monçônico é o mais úmido do mundo. Durante seis meses (abril a setembro), período que corresponde ao verão no Hemisfério Norte, as chuvas se intensificam, chegando a atingir 630 mm/mês. As temperaturas, no entanto, são relativamente estáveis durante todo o ano, resultando em baixa amplitude térmica. No esquema, a monção de inverno mostra um centro de alta pressão (baixas temperaturas) sobre o continente; a de verão, um centro de baixa pressão (temperaturas elevadas) sobre o continente.",
+    items: ["A abertura econômica permitiu a entrada de investimentos estrangeiros.",
+            "A China passou a se destacar na industrialização e nas exportações.",
+            "Com as reformas, o Partido Comunista deixou de governar o país.",
+            "O crescimento chinês contribuiu para a multipolaridade da Nova Ordem Mundial."],
+    q: "Sobre a ascensão econômica da China, estão corretas:",
+    options: ["Apenas I, II e IV.", "Apenas I e III.", "Apenas II e III.", "Apenas III e IV.", "I, II, III e IV."], correct: 0,
+    explain: "III é <strong>falsa</strong>: o Partido Comunista <strong>continua</strong> no poder — é a \"contradição chinesa\". IV é verdadeira: a China virou um dos grandes centros de poder do mundo atual." },
+  { topic: "Ascensão da China",
+    q: "Sobre a ascensão econômica da China, é INCORRETO afirmar:",
+    options: ["As reformas de 1978 fecharam a China aos investimentos estrangeiros.",
+              "As ZEEs ficam principalmente no litoral sudeste do país.",
+              "A modernização tecnológica fez parte do crescimento chinês.",
+              "O país combina economia de mercado com controle político do Partido Comunista."], correct: 0,
+    explain: "As reformas de 1978 fizeram o <strong>contrário</strong>: abriram a China aos investimentos estrangeiros. As outras três estão corretas." },
+  { topic: "Ascensão da China",
+    q: "As ZEEs foram instaladas principalmente no litoral sudeste da China porque essa localização:",
+    options: ["facilita o comércio exterior, com portos para exportar e receber investimentos.",
+              "fica longe do mar, protegendo as fábricas.",
+              "concentra as maiores reservas de petróleo do mundo.",
+              "faz fronteira com a Europa."], correct: 0,
+    explain: "Se o objetivo é <strong>atrair investimento e exportar</strong>, ficar perto de <strong>portos</strong> é essencial. O litoral sudeste também fica próximo de Hong Kong e de rotas comerciais do Pacífico." },
+  { topic: "Ascensão da China",
+    q: "NÃO é objetivo das Zonas Econômicas Especiais chinesas:",
+    options: ["impedir a entrada de tecnologia estrangeira.", "atrair investimentos.", "gerar empregos.", "ampliar as exportações."], correct: 0,
+    explain: "As ZEEs querem <strong>incorporar</strong> tecnologia estrangeira, não impedir. Objetivos: atrair investimentos, gerar empregos, ampliar exportações e incorporar tecnologias." },
+  { topic: "Ascensão da China",
+    q: "Além de grande potência econômica, a China faz parte de qual agrupamento de economias emergentes?",
+    options: ["BRICS", "União Europeia", "OTAN", "Cortina de Ferro"], correct: 0,
+    explain: "A China é o <strong>C</strong> do <strong>BRICS</strong> (Brasil, Rússia, Índia, China e África do Sul). A UE reúne países europeus; a OTAN é uma aliança militar ocidental." },
+
+  // ----- União Europeia e BRICS -----
+  { topic: "União Europeia e BRICS",
+    q: "A União Europeia (UE) é:",
+    options: ["um bloco de integração econômica e política entre países europeus.",
+              "um agrupamento de cooperação entre economias emergentes de vários continentes.",
+              "uma aliança militar liderada pela antiga URSS.",
+              "uma Zona Econômica Especial criada pela China."], correct: 0,
+    explain: "<strong>UE</strong> = integração <strong>econômica e política</strong> entre países <strong>europeus</strong>. O agrupamento de emergentes de vários continentes é o <strong>BRICS</strong>." },
+  { topic: "União Europeia e BRICS",
+    items: ["A UE facilita o comércio entre seus membros.",
+            "A UE promove a circulação de bens, serviços, pessoas e capitais segundo regras comuns.",
+            "Todos os países da UE utilizam o euro como moeda.",
+            "A UE é um bloco de integração econômica e política."],
+    q: "Sobre a União Europeia, marque V ou F. A sequência correta é:",
+    options: ["V, V, F, V", "V, V, V, V", "V, F, F, V", "F, V, F, V", "V, V, F, F"], correct: 0,
+    explain: "(3) <strong>F</strong> — só <strong>parte</strong> dos membros usa o euro. É a pegadinha mais comum sobre a UE. As outras três estão certas." },
+  { topic: "União Europeia e BRICS",
+    q: "A sigla BRIC, criada em 2001, reunia inicialmente:",
+    options: ["Brasil, Rússia, Índia e China.", "Bélgica, Romênia, Itália e Chipre.", "Brasil, Reino Unido, Irã e Canadá.", "Bolívia, Rússia, Indonésia e Coreia."], correct: 0,
+    explain: "<strong>B</strong>rasil, <strong>R</strong>ússia, <strong>Í</strong>ndia e <strong>C</strong>hina. A letra S (de South Africa, África do Sul) veio em 2011." },
+  { topic: "União Europeia e BRICS",
+    q: "A letra \"S\" foi acrescentada à sigla, formando BRICS, com a entrada de qual país em 2011?",
+    options: ["África do Sul", "Suécia", "Singapura", "Sérvia"], correct: 0,
+    explain: "<strong>África do Sul</strong> (em inglês, <em>South Africa</em>), em <strong>2011</strong>. É o único membro africano do grupo original." },
+  { topic: "União Europeia e BRICS",
+    q: "A sigla BRIC foi criada em 2001 por:",
+    options: ["Jim O'Neill, economista.", "Deng Xiaoping, líder chinês.", "os países fundadores da União Europeia.", "a ONU, após a Guerra da Coreia."], correct: 0,
+    explain: "O economista <strong>Jim O'Neill</strong> criou a sigla em <strong>2001</strong> para indicar economias emergentes que ganhariam importância no mundo." },
+  { topic: "União Europeia e BRICS",
+    q: "Qual é a diferença essencial entre a União Europeia e o BRICS?",
+    options: ["A UE é uma integração entre países europeus; o BRICS é um agrupamento de cooperação entre economias emergentes, sem moeda única.",
+              "Os dois têm moeda única e livre circulação de pessoas.",
+              "O BRICS é formado apenas por países europeus.",
+              "A UE reúne apenas países emergentes da Ásia."], correct: 0,
+    explain: "<strong>UE</strong> = integração profunda (regras comuns, livre circulação, euro em parte dos membros). <strong>BRICS</strong> = cooperação entre emergentes; <strong>não</strong> é união econômica e monetária como a zona do euro." },
+  { topic: "União Europeia e BRICS",
+    legend: "(A) União Europeia · (B) BRICS",
+    items: ["Parte dos membros utiliza o euro.",
+            "Busca maior participação das economias emergentes nas decisões mundiais.",
+            "Promove a livre circulação de pessoas e capitais entre os membros.",
+            "Sigla criada por Jim O'Neill em 2001.",
+            "Reúne Brasil, Rússia, Índia, China e África do Sul."],
+    q: "Relacione cada característica ao grupo correspondente. A sequência correta é:",
+    options: ["A, B, A, B, B", "A, A, B, B, B", "B, A, A, B, A", "A, B, B, A, B", "A, B, A, A, B"], correct: 0,
+    explain: "Euro e livre circulação → <strong>UE</strong>. Participação dos emergentes, Jim O'Neill e os cinco países → <strong>BRICS</strong>." },
+  { topic: "União Europeia e BRICS",
     marker: "roman",
-    items: ["Na monção de inverno, o centro de alta pressão está localizado sobre o oceano.",
-            "Na monção de verão, o centro de baixa pressão está localizado sobre o continente.",
-            "Os ventos fluem dos centros de alta pressão para os centros de baixa pressão.",
-            "O período mais chuvoso no continente ocorre durante o inverno."],
-    q: "Analise a imagem e as afirmações. Estão corretas:",
-    options: ["II e III.", "I e II.", "I e III.", "III e IV.", "I e IV."], correct: 0,
-    explain: "I <strong>F</strong> — no inverno a alta pressão fica sobre o <strong>continente</strong> (frio). II <strong>V</strong>. III <strong>V</strong> — o vento sempre sai da alta e vai para a baixa pressão. IV <strong>F</strong> — o período chuvoso é o <strong>verão</strong>, quando o vento úmido vem do oceano." },
-  { topic: "Climas e Monções",
-    q: "Sobre as características e a localização dos tipos climáticos, é INCORRETO afirmar:",
-    options: ["O clima temperado apresenta as quatro estações definidas e é encontrado na região do Golfo do México, no sul da Índia e no leste da África.",
-              "O clima frio de montanha está presente em áreas muito elevadas, com temperaturas baixas durante todo o ano, como nos Andes e no Himalaia.",
-              "O clima semiárido apresenta temperaturas elevadas e índices pluviométricos muito baixos; ocorre no Nordeste do Brasil e em áreas da Austrália.",
-              "O clima tropical apresenta duas estações bem definidas, com verões úmidos e invernos secos.",
-              "O clima mediterrâneo tem verões quentes e secos e invernos amenos e chuvosos."], correct: 0,
-    explain: "Atenção ao <strong>INCORRETO</strong>: a descrição do temperado está certa, mas a <strong>localização</strong> está errada — Golfo do México, sul da Índia e leste da África são regiões <strong>tropicais</strong>. O temperado ocorre na Europa, no leste da China, no Japão e no sul da Austrália." },
-  { topic: "Vegetação e Domínios",
+    items: ["O BRICS tem como objetivo a cooperação econômica e política.",
+            "O BRICS busca ampliar a participação das economias emergentes nas decisões mundiais.",
+            "O BRICS é uma união econômica e monetária como a zona do euro.",
+            "O Brasil faz parte do grupo desde a criação da sigla."],
+    q: "Sobre o BRICS, estão corretas:",
+    options: ["Apenas I, II e IV.", "Apenas I e III.", "Apenas III e IV.", "Apenas II e III.", "I, II, III e IV."], correct: 0,
+    explain: "III é <strong>falsa</strong>: o BRICS <strong>não</strong> tem moeda única nem integração como a UE — é cooperação. O Brasil é o <strong>B</strong> da sigla desde 2001." },
+  { topic: "União Europeia e BRICS",
+    q: "Um grupo de países que estabelece acordos de integração econômica e comercial é chamado de:",
+    options: ["bloco econômico", "tecnopolo", "multipolaridade", "Cortina de Ferro"], correct: 0,
+    explain: "<strong>Bloco econômico</strong> — a UE é o exemplo mais avançado. Tecnopolo é concentração de pesquisa e tecnologia; multipolaridade é distribuição de poder." },
+  { topic: "União Europeia e BRICS",
+    q: "Sobre a União Europeia e o BRICS, é INCORRETO afirmar:",
+    options: ["O BRICS adota uma moeda única, assim como a zona do euro.",
+              "A UE facilita o comércio entre seus membros.",
+              "A África do Sul entrou no grupo em 2011.",
+              "O BRICS reúne economias emergentes."], correct: 0,
+    explain: "O BRICS <strong>não tem moeda única</strong>. Essa é a diferença essencial em relação à UE (onde parte dos membros usa o euro)." },
+
+  // ----- Nova Ordem Mundial -----
+  { topic: "Nova Ordem Mundial",
+    q: "A Nova Ordem Mundial é:",
+    options: ["o contexto geopolítico que surge após o fim da Guerra Fria, com mudanças na distribuição do poder político, econômico, militar e tecnológico.",
+              "o período de rivalidade entre EUA e URSS iniciado após a Segunda Guerra Mundial.",
+              "a divisão da Europa entre capitalistas e socialistas.",
+              "o acordo que encerrou a Guerra da Coreia."], correct: 0,
+    explain: "<strong>Nova Ordem</strong> = o mundo <strong>depois</strong> da Guerra Fria (a partir de 1991). A rivalidade EUA × URSS é a própria Guerra Fria; a divisão da Europa é a Cortina de Ferro." },
+  { topic: "Nova Ordem Mundial",
+    legend: "(A) 1947–1991 · (B) 1991 · (C) Atualidade",
+    items: ["Fim da URSS e encerramento da ordem bipolar.",
+            "Multipolaridade, com vários centros de poder.",
+            "Ordem bipolar: EUA × URSS (Guerra Fria)."],
+    q: "Relacione cada período ao acontecimento correspondente. A sequência correta é:",
+    options: ["B, C, A", "A, B, C", "C, A, B", "B, A, C", "A, C, B"], correct: 0,
+    explain: "<strong>1947–1991</strong> = ordem bipolar (Guerra Fria). <strong>1991</strong> = fim da URSS. <strong>Atualidade</strong> = Nova Ordem Mundial, multipolar." },
+  { topic: "Nova Ordem Mundial",
+    q: "A existência de vários centros de poder econômico, político, militar e tecnológico é chamada de:",
+    options: ["multipolaridade", "bipolaridade", "globalização", "Cortina de Ferro"], correct: 0,
+    explain: "<strong>Multi</strong> = vários; <strong>polos</strong> = centros de poder. Na Guerra Fria eram dois (<strong>bipolaridade</strong>)." },
+  { topic: "Nova Ordem Mundial",
+    items: ["O fim da ordem bipolar ocorreu em 1991, com o fim da URSS.",
+            "Houve expansão da globalização econômica.",
+            "No período inicial, os EUA exerceram forte influência no mundo.",
+            "China e Índia perderam importância econômica.",
+            "Blocos econômicos e organizações internacionais foram enfraquecidos."],
+    q: "Sobre as características da Nova Ordem Mundial, marque V ou F. A sequência correta é:",
+    options: ["V, V, V, F, F", "V, F, V, F, V", "V, V, F, V, F", "F, V, V, F, F", "V, V, V, V, F"], correct: 0,
+    explain: "(4) <strong>F</strong> — China, Índia e outras potências <strong>cresceram</strong>.<br>(5) <strong>F</strong> — blocos e organizações internacionais se <strong>fortaleceram</strong>.<br>As três primeiras estão corretas." },
+  { topic: "Nova Ordem Mundial",
+    passage: "Hoje, além dos Estados Unidos, países como China, Índia e Rússia e blocos como a União Europeia têm grande peso nas decisões econômicas e políticas do mundo.",
+    q: "O texto descreve uma característica da Nova Ordem Mundial, que é a:",
+    options: ["multipolaridade", "bipolaridade", "Cortina de Ferro", "ordem colonial"], correct: 0,
+    explain: "Vários países e blocos com peso nas decisões = <strong>vários centros de poder</strong> = <strong>multipolaridade</strong>." },
+  { topic: "Nova Ordem Mundial",
+    q: "A ordem mundial entre 1947 e 1991 era chamada de bipolar porque:",
+    options: ["o poder estava dividido entre duas superpotências, EUA e URSS.",
+              "havia vários centros de poder espalhados pelo mundo.",
+              "só existiam dois continentes industrializados.",
+              "dois blocos econômicos, a UE e o BRICS, dominavam o comércio."], correct: 0,
+    explain: "<strong>Bi</strong>polar = dois polos: <strong>EUA</strong> (capitalismo) e <strong>URSS</strong> (socialismo). Vários centros é multipolaridade; o BRICS nem existia nessa época." },
+  { topic: "Nova Ordem Mundial",
     marker: "roman",
-    items: ["A taiga é uma floresta de coníferas das altas latitudes do Hemisfério Norte.",
-            "A tundra é formada por árvores de grande porte.",
-            "A vegetação mediterrânea é adaptada ao verão seco, com maquis e oliveiras.",
-            "A savana é uma formação tropical com estação seca, presente no norte da Austrália e na Índia."],
-    q: "Avalie as afirmações sobre a vegetação. São verdadeiras:",
-    options: ["Apenas I, III e IV.", "Apenas I e II.", "Apenas II e III.", "Apenas II e IV.", "Todas as afirmações."], correct: 0,
-    explain: "Só a II é <strong>falsa</strong>: na tundra <strong>não há árvores</strong> — apenas musgos, liquens e arbustos baixos sobre o permafrost. Taiga (coníferas), mediterrânea (maquis) e savana (tropical com estação seca) estão corretas." },
-  { topic: "Vegetação e Domínios",
-    q: "Sobre a relação entre clima e vegetação na Eurásia e na Oceania, é INCORRETO afirmar:",
-    options: ["A floresta equatorial da Indonésia e da Malásia é formada por coníferas adaptadas ao frio intenso.",
-              "A floresta temperada da Europa Central tem árvores caducifólias, como carvalhos e faias.",
-              "A vegetação xerófila dos desertos é adaptada a longos períodos sem chuva.",
-              "A tundra ártica é composta de musgos e liquens sobre solo congelado (permafrost)."], correct: 0,
-    explain: "A alternativa <strong>incorreta</strong> mistura dois domínios: coníferas são da <strong>taiga</strong> (frio); a floresta <strong>equatorial</strong> é quente, úmida, densa e de folhas largas. As outras três estão certas." },
+    items: ["A Nova Ordem Mundial começou após o fim da URSS.",
+            "A globalização econômica se expandiu.",
+            "Há disputas por recursos naturais, mercados e territórios.",
+            "O mundo voltou a ser dividido em apenas dois blocos rivais."],
+    q: "Sobre a Nova Ordem Mundial, estão corretas:",
+    options: ["Apenas I, II e III.", "Apenas I e IV.", "Apenas II e IV.", "Apenas III e IV.", "I, II, III e IV."], correct: 0,
+    explain: "IV é <strong>falsa</strong>: a Nova Ordem é <strong>multipolar</strong> (vários centros de poder), não dividida em dois blocos — isso era a Guerra Fria." },
+  { topic: "Nova Ordem Mundial",
+    q: "Sobre a Nova Ordem Mundial, é INCORRETO afirmar:",
+    options: ["A URSS continua sendo a principal rival dos EUA.",
+              "O crescimento da China e da Índia é uma de suas características.",
+              "Os blocos econômicos se fortaleceram.",
+              "Há disputas por recursos naturais, mercados e territórios."], correct: 0,
+    explain: "A <strong>URSS deixou de existir em 1991</strong> — e é justamente o fim dela que marca o início da Nova Ordem. Hoje existe a <strong>Rússia</strong>, não a URSS." },
+  { topic: "Nova Ordem Mundial",
+    q: "Qual acontecimento marca o fim da ordem bipolar?",
+    options: ["O fim da URSS, em 1991.", "A Guerra da Coreia, em 1950.", "As reformas de Deng Xiaoping, em 1978.", "A anexação da Crimeia, em 2014."], correct: 0,
+    explain: "Sem a URSS, acaba um dos dois polos — fim da <strong>ordem bipolar</strong> em <strong>1991</strong>." },
+  { topic: "Nova Ordem Mundial",
+    legend: "(1) Globalização · (2) Bloco econômico · (3) Tecnopolo · (4) Multipolaridade · (5) Cortina de Ferro",
+    items: ["Distribuição do poder entre vários centros de influência.",
+            "Divisão político-ideológica da Europa durante a Guerra Fria.",
+            "Intensificação das conexões entre diferentes partes do mundo.",
+            "Concentração de pesquisa, tecnologia, empresas e inovação.",
+            "Grupo de países com acordos de integração econômica e comercial."],
+    q: "Relacione cada conceito à sua definição. A sequência correta é:",
+    options: ["4, 5, 1, 3, 2", "1, 2, 3, 4, 5", "4, 1, 5, 3, 2", "5, 4, 1, 2, 3", "4, 5, 3, 1, 2"], correct: 0,
+    explain: "São os cinco <strong>\"conceitos que precisam saber relacionar\"</strong> da revisão: multipolaridade (4), Cortina de Ferro (5), globalização (1), tecnopolo (3), bloco econômico (2)." },
+
+  // ----- Guerra Fria e Guerra da Coreia -----
+  { topic: "Guerra Fria e Guerra da Coreia",
+    q: "A Guerra Fria foi:",
+    options: ["um conflito político, ideológico, econômico, tecnológico e militar entre EUA e URSS, sem guerra direta entre as duas superpotências.",
+              "uma guerra direta entre EUA e URSS travada no território europeu.",
+              "um conflito entre China e Japão pelo comércio do Pacífico.",
+              "a disputa entre Rússia e Ucrânia pela Crimeia."], correct: 0,
+    explain: "\"Fria\" porque as duas superpotências <strong>não se enfrentaram diretamente</strong>. A rivalidade aparecia na política, na economia, na tecnologia, na corrida armamentista e em conflitos regionais." },
+  { topic: "Guerra Fria e Guerra da Coreia",
+    legend: "(A) Estados Unidos · (B) União Soviética",
+    items: ["Capitalismo.", "Regime de partido único.", "Democracia liberal.", "Socialismo.", "Influência no mundo oriental."],
+    q: "Relacione cada característica à superpotência correspondente. A sequência correta é:",
+    options: ["A, B, A, B, B", "B, A, B, A, A", "A, A, B, B, B", "A, B, B, A, B", "A, B, A, A, B"], correct: 0,
+    explain: "<strong>EUA</strong>: capitalismo, democracia liberal, influência no mundo ocidental. <strong>URSS</strong>: socialismo, partido único, influência no mundo oriental." },
+  { topic: "Guerra Fria e Guerra da Coreia",
+    q: "A expressão \"Cortina de Ferro\" simbolizava:",
+    options: ["a divisão política e ideológica entre a Europa Ocidental capitalista e a Europa Oriental socialista, sob influência soviética.",
+              "um muro construído entre a Coreia do Norte e a Coreia do Sul.",
+              "a fronteira entre Rússia e Ucrânia após 2014.",
+              "uma barreira comercial criada pela União Europeia contra a China."], correct: 0,
+    explain: "<strong>Cortina de Ferro</strong> = linha imaginária que separava a Europa <strong>Ocidental (capitalista)</strong> da Europa <strong>Oriental (socialista)</strong>, sob influência da URSS." },
+  { topic: "Guerra Fria e Guerra da Coreia",
+    q: "A divisão da Guerra Fria também se expressou em outros territórios, como na cidade de Berlim, por meio do:",
+    options: ["Muro de Berlim", "Canal de Suez", "Montes Urais", "Grande Muralha da China"], correct: 0,
+    explain: "O <strong>Muro de Berlim</strong> dividia a cidade em lado ocidental e oriental — o símbolo mais concreto da Cortina de Ferro." },
+  { topic: "Guerra Fria e Guerra da Coreia",
+    items: ["A Guerra Fria opôs EUA e URSS, principalmente após a Segunda Guerra Mundial.",
+            "As duas superpotências entraram em guerra direta várias vezes.",
+            "A rivalidade se manifestou em conflitos regionais, como a Guerra da Coreia.",
+            "Os EUA defendiam o socialismo e o regime de partido único.",
+            "O período de 1947 a 1991 é conhecido como ordem bipolar."],
+    q: "Sobre a Guerra Fria, marque V ou F. A sequência correta é:",
+    options: ["V, F, V, F, V", "V, V, V, F, V", "F, F, V, F, V", "V, F, F, V, V", "V, F, V, V, F"], correct: 0,
+    explain: "(2) <strong>F</strong> — EUA e URSS <strong>nunca</strong> entraram em guerra direta.<br>(4) <strong>F</strong> — socialismo e partido único eram da <strong>URSS</strong>; os EUA defendiam o capitalismo e a democracia liberal." },
+  { topic: "Guerra Fria e Guerra da Coreia",
+    legend: "(A) Coreia do Norte · (B) Coreia do Sul",
+    items: ["Regime socialista.", "Apoio dos EUA e da ONU.", "Regime anticomunista.", "Apoio da China e da URSS."],
+    q: "Na Guerra da Coreia, relacione cada característica ao lado correspondente. A sequência correta é:",
+    options: ["A, B, B, A", "B, A, A, B", "A, A, B, B", "A, B, A, B", "B, B, A, A"], correct: 0,
+    explain: "<strong>Norte</strong>: socialista, apoiado por <strong>China e URSS</strong>. <strong>Sul</strong>: anticomunista, apoiado pelos <strong>EUA e pela ONU</strong>. Cada lado tinha uma superpotência por trás." },
+  { topic: "Guerra Fria e Guerra da Coreia",
+    q: "A Guerra da Coreia (1950–1953) começou quando:",
+    options: ["a Coreia do Norte invadiu a Coreia do Sul.", "os EUA invadiram a China.", "a Coreia do Sul anexou a Crimeia.", "a URSS se dissolveu."], correct: 0,
+    explain: "Em <strong>1950</strong>, a <strong>Coreia do Norte invadiu a Coreia do Sul</strong>. O conflito logo envolveu as potências rivais da Guerra Fria." },
+  { topic: "Guerra Fria e Guerra da Coreia",
+    q: "Em 1953, a Guerra da Coreia terminou com:",
+    options: ["a assinatura de um armistício, sem tratado de paz definitivo.",
+              "a reunificação das duas Coreias em um único país.",
+              "um tratado de paz que encerrou oficialmente o conflito.",
+              "a vitória total da Coreia do Sul."], correct: 0,
+    explain: "<strong>Armistício</strong> = acordo para parar os combates, <strong>não</strong> um tratado de paz. Por isso as duas Coreias continuam separadas até hoje." },
+  { topic: "Guerra Fria e Guerra da Coreia",
+    passage: "A Guerra da Coreia envolveu países aliados das duas superpotências: a Coreia do Norte recebeu apoio da China e da URSS, e a Coreia do Sul, dos EUA e da ONU.",
+    q: "A Guerra da Coreia é importante para entender a Guerra Fria porque:",
+    options: ["mostrou como a rivalidade entre EUA e URSS se manifestava em conflitos regionais.",
+              "foi uma guerra direta entre EUA e URSS.",
+              "marcou o fim da Guerra Fria.",
+              "levou à criação da União Europeia."], correct: 0,
+    explain: "As superpotências não brigavam diretamente: apoiavam lados opostos em <strong>conflitos regionais</strong>. A Coreia é o primeiro grande exemplo disso." },
+  { topic: "Guerra Fria e Guerra da Coreia",
+    marker: "roman",
+    items: ["A Coreia do Norte, socialista, recebeu apoio da China e da URSS.",
+            "O conflito terminou com um armistício, sem tratado de paz definitivo.",
+            "A Guerra da Coreia foi um desdobramento da Guerra Fria.",
+            "Ao final da guerra, as duas Coreias se reunificaram em um único país."],
+    q: "Sobre a Guerra da Coreia, estão corretas:",
+    options: ["Apenas I, II e III.", "Apenas I e IV.", "Apenas II e IV.", "Apenas III e IV.", "I, II, III e IV."], correct: 0,
+    explain: "IV é <strong>falsa</strong>: as Coreias <strong>não</strong> se reunificaram — o armistício só parou os combates, e a península segue dividida." },
+
+  // ----- Rússia × Ucrânia -----
+  { topic: "Rússia × Ucrânia",
+    legend: "(A) 1991 · (B) 2014 · (C) 2022",
+    items: ["Anexação da Crimeia pela Rússia.",
+            "Invasão russa em larga escala da Ucrânia.",
+            "Independência da Ucrânia após a dissolução da URSS."],
+    q: "Relacione cada ano ao acontecimento correspondente. A sequência correta é:",
+    options: ["B, C, A", "A, B, C", "C, A, B", "B, A, C", "A, C, B"], correct: 0,
+    explain: "<strong>1991</strong> independência · <strong>2014</strong> anexação da Crimeia · <strong>2022</strong> invasão em larga escala. Decore a linha do tempo nessa ordem." },
+  { topic: "Rússia × Ucrânia",
+    q: "A Ucrânia tornou-se independente em 1991, após:",
+    options: ["a dissolução da URSS.", "o fim da Guerra da Coreia.", "a criação do BRICS.", "as reformas de Deng Xiaoping."], correct: 0,
+    explain: "A Ucrânia era uma das repúblicas da <strong>URSS</strong>. Com a <strong>dissolução da URSS em 1991</strong>, tornou-se independente — o mesmo ano que encerra a ordem bipolar." },
+  { topic: "Rússia × Ucrânia",
+    items: ["A expansão da OTAN para o Leste Europeu é um dos fatores do conflito.",
+            "A possibilidade de aproximação da Ucrânia à OTAN preocupa a Rússia.",
+            "Há disputas territoriais envolvendo a Crimeia e o leste ucraniano.",
+            "O conflito não envolve interesses econômicos, energéticos nem militares."],
+    q: "Sobre os fatores geopolíticos do conflito Rússia × Ucrânia, marque V ou F. A sequência correta é:",
+    options: ["V, V, V, F", "V, F, V, F", "V, V, V, V", "F, V, V, F", "V, V, F, F"], correct: 0,
+    explain: "(4) <strong>F</strong> — interesses <strong>econômicos, energéticos e militares</strong> estão entre os principais fatores do conflito. As outras três estão corretas." },
+  { topic: "Rússia × Ucrânia",
+    q: "Em 2014, a Rússia anexou qual região que pertencia à Ucrânia?",
+    options: ["Crimeia", "Sibéria", "Berlim", "Shenzhen"], correct: 0,
+    explain: "A <strong>Crimeia</strong>, península no Mar Negro, foi anexada pela Rússia em <strong>2014</strong>." },
+  { topic: "Rússia × Ucrânia",
+    q: "Uma das consequências do conflito entre Rússia e Ucrânia é:",
+    options: ["a intensificação das tensões entre a Rússia e países ocidentais, com impactos na segurança e na economia internacionais.",
+              "o fim da OTAN.",
+              "a recriação da URSS.",
+              "a entrada da Rússia na União Europeia."], correct: 0,
+    explain: "O conflito aumentou a <strong>tensão Rússia × Ocidente</strong> e afetou a <strong>segurança</strong> e a <strong>economia</strong> do mundo (energia, alimentos, comércio)." },
+  { topic: "Rússia × Ucrânia",
+    passage: "Desde o fim da URSS, vários países do Leste Europeu que antes estavam sob influência soviética passaram a integrar a OTAN, a aliança militar liderada pelos EUA. A Rússia vê essa aproximação como uma ameaça à sua segurança.",
+    q: "O texto ajuda a explicar qual fator geopolítico do conflito Rússia × Ucrânia?",
+    options: ["A expansão da OTAN para o Leste Europeu.",
+              "A criação das Zonas Econômicas Especiais.",
+              "A Revolução Técnico-Científico-Informacional.",
+              "A Guerra da Coreia."], correct: 0,
+    explain: "Países que ficavam do lado soviético da Cortina de Ferro entraram na <strong>OTAN</strong>. Para a Rússia, a Ucrânia na OTAN seria a aliança militar ocidental na sua fronteira." },
+  { topic: "Rússia × Ucrânia",
+    marker: "roman",
+    items: ["O conflito envolve disputas territoriais e interesses estratégicos na Europa Oriental.",
+            "A invasão russa em larga escala ocorreu em 2022.",
+            "A Ucrânia fazia parte da URSS até 1991.",
+            "O conflito começou durante a Guerra Fria, em 1950."],
+    q: "Sobre o conflito Rússia × Ucrânia, estão corretas:",
+    options: ["Apenas I, II e III.", "Apenas I e IV.", "Apenas II e IV.", "Apenas III e IV.", "I, II, III e IV."], correct: 0,
+    explain: "IV é <strong>falsa</strong>: 1950 é o início da <strong>Guerra da Coreia</strong>. O conflito Rússia × Ucrânia é da Nova Ordem Mundial (2014 e 2022)." },
+  { topic: "Rússia × Ucrânia",
+    q: "Sobre o conflito Rússia × Ucrânia, é INCORRETO afirmar:",
+    options: ["A Crimeia foi anexada pela Rússia em 1991.",
+              "A Ucrânia se tornou independente em 1991.",
+              "A invasão em larga escala ocorreu em 2022.",
+              "Interesses econômicos, energéticos e militares estão entre os fatores do conflito."], correct: 0,
+    explain: "A anexação da Crimeia foi em <strong>2014</strong>. Em 1991 foi a <strong>independência</strong> da Ucrânia. Questão de troca de datas, típica de prova." },
+  { topic: "Rússia × Ucrânia",
+    q: "O conflito entre Rússia e Ucrânia está ligado à Nova Ordem Mundial porque:",
+    options: ["surgiu do rearranjo da Europa Oriental após o fim da URSS e envolve a disputa de influência entre a Rússia e os países ocidentais.",
+              "é uma continuação direta da Guerra da Coreia.",
+              "foi causado pela criação do BRICS.",
+              "não tem nenhuma relação com a dissolução da URSS."], correct: 0,
+    explain: "Com o fim da URSS (1991), a Ucrânia ficou independente e o Leste Europeu passou a ser disputado: <strong>influência russa × aproximação com o Ocidente</strong> (OTAN, UE)." },
+  { topic: "Rússia × Ucrânia",
+    q: "Entre os principais fatores geopolíticos do conflito Rússia × Ucrânia, NÃO está:",
+    options: ["a criação do BRIC por Jim O'Neill em 2001.",
+              "a expansão da OTAN para o Leste Europeu.",
+              "as disputas territoriais na Crimeia e no leste ucraniano.",
+              "os interesses econômicos, energéticos e militares."], correct: 0,
+    explain: "A sigla BRIC não tem relação com o conflito. Os fatores são: <strong>expansão da OTAN</strong>, possível <strong>aproximação da Ucrânia à OTAN</strong>, <strong>disputas territoriais</strong> e <strong>interesses econômicos, energéticos e militares</strong>." },
 
   // ===== MATEMÁTICA · FRAÇÕES DECIMAIS (Léo, 6º ano) =====
   { topic: "Frações Decimais", q: "A fração 7/10 escrita como número decimal é:",
@@ -3101,419 +2916,249 @@ const STUDY_CONTENT = {
   `
 ,
 
-  "Localização e Limites": `
-    <div class="s-intro">Como se define o limite entre os continentes e como Ásia, Europa e Oceania se formaram ao longo do tempo geológico. Base do <strong>Capítulo 5</strong>.</div>
+  "Revolução Técnico-Científica": `
+    <div class="s-intro"><strong>Capítulo 11.</strong> Revolução Técnico-Científico-Informacional (RTCI): avanços da ciência e da tecnologia que <strong>transformam a produção</strong> e a <strong>organização do espaço geográfico</strong>.</div>
 
     <div class="s-sec">
-      <h3>O que é um continente?</h3>
-      <p>Continentes são grandes massas de terras emersas circundadas por mares e oceanos. Mas atenção: a definição dos limites <strong>não é consensual</strong> — não existe um critério único, e nem sempre o mesmo método é aplicado.</p>
+      <h3>Principais avanços</h3>
+      <div class="s-table">
+        <div class="s-thead"><div>área</div><div>avanço</div><div></div><div></div></div>
+        <div class="s-trow"><div class="prefix">Transportes</div><div>maior velocidade e eficiência logística</div><div></div><div></div></div>
+        <div class="s-trow"><div class="prefix">Comunicação</div><div>internet, celulares, redes sociais</div><div></div><div></div></div>
+        <div class="s-trow"><div class="prefix">Informação</div><div>satélites, computadores, inteligência artificial</div><div></div><div></div></div>
+        <div class="s-trow"><div class="prefix">Produção</div><div>robótica e automação industrial</div><div></div><div></div></div>
+      </div>
     </div>
 
     <div class="s-sec">
-      <h3>Eurásia: um bloco, dois continentes</h3>
-      <div class="s-rule">
-        Do ponto de vista <strong>físico e geológico</strong> → Ásia + Europa = <strong>Eurásia</strong> (um bloco só)<br>
-        Por razões <strong>históricas e culturais</strong> → são considerados continentes distintos
-      </div>
-      <p>O limite entre eles não é um oceano, e sim:</p>
+      <h3>Consequências</h3>
       <ul>
-        <li><strong>Montes Urais</strong> (na Rússia)</li>
-        <li><strong>Mares Negro e Cáspio</strong></li>
-        <li><strong>Cadeia montanhosa do Cáucaso</strong>, que se estende entre eles</li>
+        <li><strong>Intensificação da globalização</strong></li>
+        <li><strong>Maior circulação</strong> de informações, mercadorias e capitais</li>
+        <li><strong>Transformação das profissões</strong> e das relações de trabalho (umas somem, outras surgem)</li>
+        <li><strong>Desigualdade no acesso à tecnologia</strong> — ela não chega igual a todos</li>
       </ul>
-      <p>Esses limites coincidem com fronteiras de alguns países asiáticos, como Cazaquistão e Azerbaijão, mas cortam os territórios da <strong>Turquia</strong> e da <strong>Rússia</strong> — países em parte europeus, em parte asiáticos.</p>
+    </div>
+
+    <div class="s-sec">
+      <h3>Tecnopolo</h3>
+      <div class="s-rule">Região que concentra <strong>universidades, centros de pesquisa, empresas tecnológicas e mão de obra qualificada</strong>, favorecendo a inovação. Exemplo famoso: Vale do Silício (EUA).</div>
     </div>
 
     <div class="s-warn">
-      <strong>Não confunda os dois mares:</strong><br>
-      <span class="good">Mar Negro</span> = mar interior, mas <strong>conectado</strong> ao Mediterrâneo pelos estreitos de <strong>Bósforo e Dardanelos</strong>.<br>
-      <span class="bad">Mar Cáspio</span> = mar <strong>fechado</strong>, sem nenhuma ligação com o oceano.
-    </div>
-
-    <div class="s-sec">
-      <h3>Outros limites importantes</h3>
-      <ul>
-        <li><strong>Ásia × África</strong>: pelo oceano, pelo <strong>Canal de Suez</strong> (Península do Sinai, fronteira Egito–Israel) e pelo <strong>Mar Vermelho</strong></li>
-        <li><strong>Europa</strong>: ao sul, Mar Mediterrâneo; a leste, Montes Urais; ao norte, Oceano Glacial Ártico e Mar do Norte</li>
-        <li><strong>Oceania</strong>: <strong>não tem fronteira terrestre</strong> com nenhum continente — é banhada pelos oceanos Pacífico, Índico e Antártico</li>
-      </ul>
-    </div>
-
-    <div class="s-sec">
-      <h3>Dimensões (decora esses números!)</h3>
-      <div class="s-table">
-        <div class="s-thead"><div>continente</div><div>área</div><div>% terras emersas</div><div>posição</div></div>
-        <div class="s-trow"><div class="prefix">Ásia</div><div>44,5 mi km²</div><div>~30%</div><div>o maior</div></div>
-        <div class="s-trow"><div class="prefix">Europa</div><div>9,9 mi km²</div><div>6,7%</div><div>2º menor</div></div>
-        <div class="s-trow"><div class="prefix">Oceania</div><div>7,7 mi km²</div><div>5,2%</div><div>o menor</div></div>
-      </div>
-    </div>
-
-    <div class="s-sec">
-      <h3>Oceania: as quatro regiões</h3>
-      <ul>
-        <li><strong>Australásia</strong> — Austrália e Nova Zelândia</li>
-        <li><strong>Melanésia</strong> — Papua-Nova Guiné, Ilhas Salomão, Fiji</li>
-        <li><strong>Micronésia</strong> — Palau, Kiribati, Nauru</li>
-        <li><strong>Polinésia</strong> — Páscoa, Tonga, Samoa, arquipélago do Havaí</li>
-      </ul>
-      <p>A Austrália ocupa mais de <strong>93%</strong> da área total do continente.</p>
-    </div>
-
-    <div class="s-sec">
-      <h3>Formação dos continentes</h3>
-      <p>A lenta movimentação das <strong>placas tectônicas</strong> vem definindo as paisagens até hoje. A <strong>Pangeia</strong>, supercontinente que unia todas as terras, foi se separando e resultou na configuração atual.</p>
-      <div class="s-rule">
-        <strong>Himalaia</strong>: há 60 milhões de anos, Índia e Ásia eram separadas por uma bacia oceânica. As placas colidiram e, entre <strong>40 e 50 milhões de anos</strong> atrás, ergueram a mais alta cadeia de montanhas do planeta.<br><br>
-        <strong>Oceania</strong>: formada pela fragmentação da <strong>Gondwana</strong>. Há cerca de <strong>33 milhões de anos</strong> a Austrália separou-se da Antártica e deslocou-se para o norte. As ilhas vulcânicas do Pacífico são bem mais jovens: ~8 milhões de anos.
-      </div>
-    </div>
-
-    <div class="s-sec">
-      <h3>Como cai na prova</h3>
-      <ul>
-        <li><strong>Hemisférios</strong>: Europa e Ásia → setentrional (norte); Oceania → quase toda meridional (sul). Os três → majoritariamente oriental (a leste de Greenwich).</li>
-        <li><strong>Oceanos que banham</strong>: Europa → Ártico (norte), Atlântico (oeste), Mediterrâneo (sul). Oceania → Pacífico, Índico, Antártico e o <strong>Mar de Coral</strong> (entre Austrália e Melanésia).</li>
-        <li><strong>Zonas térmicas pela latitude</strong>: entre os trópicos (23°27') = tropical; entre trópico e círculo polar (66°33') = temperada; além do círculo polar = polar.</li>
-        <li>A prova gosta de <strong>afirmações longas com um detalhe trocado</strong> (Ártico no lugar de Atlântico, Índico no lugar de Pacífico, Andes no lugar de Himalaia). Leia cada nome com atenção.</li>
-      </ul>
+      <strong>Pegadinha:</strong> a RTCI <strong>aumentou</strong> a circulação e a globalização, mas <strong>não</strong> acabou com a desigualdade — ampliou a diferença entre quem tem e quem não tem acesso à tecnologia.<br>
+      <span class="bad">Não confunda:</span> carvão e máquina a vapor = 1ª Revolução Industrial, não a RTCI.
     </div>
 
     <div class="s-tip">
-      <strong>A pegadinha do Everest:</strong> há <u>fósseis marinhos</u> no topo do Monte Everest. Isso prova que aquelas rochas se formaram <strong>no fundo do mar</strong> e foram <strong>erguidas</strong> pelo choque entre as placas tectônicas. É a evidência mais forte de como o Himalaia nasceu.
+      <strong>Pra decorar as 4 áreas:</strong> "<u>T</u>odo <u>C</u>elular <u>I</u>nforma <u>P</u>roduções" → Transportes, Comunicação, Informação, Produção.
     </div>
   `,
 
-  "Relevo e Placas Tectônicas": `
-    <div class="s-intro">Planaltos erodidos, as montanhas mais altas do mundo, planícies imensas e depressões abaixo do nível do mar — tudo isso está na <strong>Eurásia</strong>.</div>
+  "Ascensão da China": `
+    <div class="s-intro"><strong>Capítulo 11.</strong> Como a China saiu de uma economia fechada e virou uma das maiores potências do mundo.</div>
 
     <div class="s-sec">
-      <h3>A base geológica</h3>
-      <p>Os terrenos mais antigos estão nos <strong>planaltos</strong>, originados principalmente sobre <strong>escudos cristalinos</strong> (formações pré-cambrianas) e, em alguns casos, sobre <strong>bacias sedimentares</strong>.</p>
+      <h3>A sequência do crescimento</h3>
       <div class="s-rule">
-        Bacias sedimentares de antigos ambientes <strong>marinhos</strong> + pressão tectônica → <strong>petróleo</strong><br>
-        Antigos <strong>pântanos</strong> com restos de vegetação + pressão → <strong>carvão mineral</strong>
-      </div>
-      <p>Principais jazidas de petróleo e gás: região entre os mares <strong>Negro e Cáspio</strong>, <strong>Leste Europeu</strong> e <strong>Golfo Pérsico</strong> (entre Arábia Saudita e Irã).</p>
-    </div>
-
-    <div class="s-sec">
-      <h3>Planaltos: ondulados e erodidos</h3>
-      <ul>
-        <li><strong>Europa</strong>: áreas planálticas pouco extensas. Destaque para as <strong>mesetas</strong> da Espanha (~40% do território, entre 400 e 1.000 m) e os <strong>Balcãs</strong>, no sudeste</li>
-        <li><strong>Ásia</strong>: planaltos vastos — Península Arábica, Irã, planalto do <strong>Decan</strong> (centro-sul da Índia), Ásia Central (Mongólia, Cazaquistão, centro-oeste chinês)</li>
-        <li><strong>Planalto do Tibete</strong> — o "teto do mundo", o maior e mais elevado; altitude média de <strong>4.500 m</strong>; formado pela colisão das placas Indiana e Euroasiática no Cenozoico, há ~55 milhões de anos</li>
-      </ul>
-    </div>
-
-    <div class="s-sec">
-      <h3>Topo do mundo: as montanhas</h3>
-      <div class="s-table">
-        <div class="s-thead"><div>pico</div><div>altitude</div><div>cadeia</div><div>onde</div></div>
-        <div class="s-trow"><div class="prefix">Everest</div><div>8.848 m</div><div>Himalaia</div><div>Nepal</div></div>
-        <div class="s-trow"><div class="prefix">K2</div><div>8.611 m</div><div>Karakorum</div><div>2º do mundo</div></div>
-        <div class="s-trow"><div class="prefix">Noshaq</div><div>7.492 m</div><div>Hindu Kush</div><div>Afeganistão</div></div>
-        <div class="s-trow"><div class="prefix">Ismail Samani</div><div>7.495 m</div><div>Pamir</div><div>Tajiquistão</div></div>
-        <div class="s-trow"><div class="prefix">Elbrus</div><div>5.642 m</div><div>Cáucaso</div><div>maior da Europa</div></div>
-      </div>
-      <p style="margin-top:10px">O Everest também é chamado de <strong>Sagarmatha</strong> ou <strong>Chomolungma</strong>. As <strong>14 montanhas</strong> com mais de 8 mil metros ficam todas no Himalaia — é a chamada <strong>"zona da morte"</strong>, por causa do ar rarefeito e das mudanças bruscas de tempo.</p>
-    </div>
-
-    <div class="s-sec">
-      <h3>Outras cadeias importantes</h3>
-      <ul>
-        <li><strong>Europa</strong>: Alpes (Monte Branco, França/Itália), Apeninos (a "espinha dorsal" da Itália), Cárpatos, Alpes Dináricos, Alpes Escandinavos</li>
-        <li><strong>Montes Urais</strong>: centro-oeste da Rússia, limite Europa/Ásia, cerca de <strong>1,6 mil m</strong>; jazidas de <strong>carvão, ferro e cobre</strong></li>
-        <li><strong>Ásia</strong>: Montes Zagros (Irã), Montes Altai (Mongólia), vulcões da Península de Kamchatka, Alpes japoneses, Tian Shan (China/Quirguistão)</li>
-      </ul>
-    </div>
-
-    <div class="s-sec">
-      <h3>Planícies e o carvão</h3>
-      <p>As planícies têm formação geológica <strong>mais jovem</strong> que montanhas e planaltos. A <strong>Grande Planície Europeia</strong> vai da França à Rússia.</p>
-      <div class="s-rule">Há ~300 milhões de anos essa área era ocupada por <strong>pântanos</strong> cercados de árvores. Cobertos por sedimentos e pressionados, os restos orgânicos formaram o <strong>carvão</strong>.</div>
-      <p>A exploração começou no fim do século XVIII na <strong>Grã-Bretanha</strong> e impulsionou a <strong>Revolução Industrial</strong>. O <strong>Vale do Ruhr</strong> (Alemanha) tornou-se grande região industrial. Nas planícies asiáticas, surgiram sociedades agrárias milenares: Tigre e Eufrates, vales do Indo e do Ganges, e a <strong>mesopotâmia chinesa</strong>, entre os rios Amarelo (Huang He) e Azul (Yangtsé).</p>
-    </div>
-
-    <div class="s-sec">
-      <h3>Depressões</h3>
-      <ul>
-        <li>A leste dos Urais: planícies da <strong>Sibéria Ocidental</strong> e do Norte, ocupadas pela <strong>taiga</strong></li>
-        <li><strong>Depressão Caspiana</strong>: onde fica a foz em delta do <strong>Volga</strong>, o maior rio europeu; campos de petróleo e gás</li>
-        <li><strong>Mar Morto</strong>: depressão absoluta em falha geológica, ~650 km², a <strong>430 m abaixo</strong> do nível do Mediterrâneo; abastecido apenas pelo <strong>Rio Jordão</strong>; salinidade <strong>7 vezes</strong> a média oceânica</li>
-        <li><strong>Mares Cáspio e Aral</strong>: também em depressões, sem conexão com o mar aberto</li>
-      </ul>
-    </div>
-
-    <div class="s-sec">
-      <h3>As formas de relevo (a prova cobra a definição)</h3>
-      <div class="s-table">
-        <div class="s-thead"><div>forma</div><div>o que é</div><div>idade</div><div>exemplo</div></div>
-        <div class="s-trow"><div class="prefix">Planalto</div><div>elevado e aplainado</div><div>antigo</div><div>Tibete, mesetas</div></div>
-        <div class="s-trow"><div class="prefix">Planície</div><div>baixo e plano</div><div>recente</div><div>Gr. Planície Europeia</div></div>
-        <div class="s-trow"><div class="prefix">Depressão</div><div>mais baixo que o entorno</div><div>—</div><div>Mar Morto, L. Eyre</div></div>
-        <div class="s-trow"><div class="prefix">Cordilheira</div><div>montanhas do choque de placas</div><div>jovem</div><div>Himalaia, Alpes</div></div>
-      </div>
-      <p style="margin-top:10px">Depressão <strong>absoluta</strong> = abaixo do nível do mar (Mar Morto −430 m; Lago Eyre −16 m). <strong>Relativa</strong> = só mais baixa que o entorno. Não confunda o Mar Morto com "planície"!</p>
-    </div>
-
-    <div class="s-sec">
-      <h3>Como cai na prova</h3>
-      <ul>
-        <li><strong>Orogênese</strong> = formação de montanhas por dobramento, quando placas colidem (forças orogenéticas). Himalaia, Alpes e Andes são dobramentos <strong>modernos</strong>.</li>
-        <li>A Índia veio da <strong>Gondwana</strong> (não da Laurásia) e migrou para o norte até chocar-se com a Ásia.</li>
-        <li><strong>Glaciações</strong> moldaram o relevo europeu: vales em U nos Alpes, milhares de lagos, fiordes na Noruega e a Planície do Norte.</li>
-        <li><strong>Círculo de Fogo do Pacífico</strong>: Japão, Indonésia, Filipinas, Nova Zelândia — terremotos e vulcões por encontro de placas.</li>
-        <li><strong>Lendo um mapa de relevo</strong>: se a maior parte está na faixa de 0–400 m, "predominam baixas altitudes". Olhe a legenda antes de responder.</li>
-      </ul>
-    </div>
-
-    <div class="s-tip">
-      <strong>Depressão absoluta</strong> = área abaixo do nível do mar. Guarda os dois exemplos do capítulo: <u>Mar Morto</u> (−430 m, Eurásia) e <u>Lago Eyre</u> (−16 m, Austrália).
-    </div>
-  `,
-
-  "Rios e Lagos": `
-    <div class="s-intro">Grandes civilizações nasceram às margens dos rios da Ásia e da Europa, há 10 mil a 5 mil anos. Entender o <strong>curso de um rio</strong> e a <strong>origem dos lagos</strong> é o foco aqui.</div>
-
-    <div class="s-sec">
-      <h3>As três partes do curso fluvial</h3>
-      <div class="s-table">
-        <div class="s-thead"><div>curso</div><div>onde fica</div><div>característica</div><div></div></div>
-        <div class="s-trow"><div class="prefix">superior</div><div>perto da nascente</div><div>trecho inicial</div><div></div></div>
-        <div class="s-trow"><div class="prefix">médio</div><div>meio do percurso</div><div>áreas planas férteis</div><div></div></div>
-        <div class="s-trow"><div class="prefix">inferior</div><div>parte final</div><div>leva à foz</div><div></div></div>
-      </div>
-      <p style="margin-top:10px">As civilizações se desenvolveram sobretudo nos <strong>cursos médio e inferior</strong>: ali as áreas planas eram inundadas periodicamente, virando <strong>terras férteis</strong> para agricultura e criação de animais.</p>
-    </div>
-
-    <div class="s-sec">
-      <h3>Cidades e seus rios</h3>
-      <ul>
-        <li><strong>Londres</strong> (Reino Unido) — Rio <strong>Tâmisa</strong></li>
-        <li><strong>Paris</strong> (França) — Rio <strong>Sena</strong></li>
-        <li><strong>Hamburgo</strong> (Alemanha) — Rio <strong>Elba</strong></li>
-        <li><strong>Astrakhan</strong> (Rússia) — Rio <strong>Volga</strong></li>
-        <li><strong>Bagdá</strong> (Iraque) — Rio <strong>Tigre</strong></li>
-        <li><strong>Varanasi</strong> (Índia) — Rio <strong>Ganges</strong></li>
-        <li><strong>Nanquim e Wuhan</strong> (China) — Rio <strong>Yangtsé</strong></li>
-      </ul>
-      <p>O Tâmisa foi via de transporte na Revolução Industrial. Varanasi tem mais de <strong>3.000 anos</strong>, mas o Ganges hoje sofre com poluição por <strong>esgoto não tratado</strong> e pela cremação de corpos.</p>
-    </div>
-
-    <div class="s-sec">
-      <h3>Lagos: duas origens diferentes</h3>
-      <div class="s-rule">
-        <strong>Origem glacial</strong> — a maioria, mais ao norte. Formados com o recuo da glaciação, há ~20 mil anos, pelo movimento do gelo maciço. Da Irlanda à Sibéria.<br>
-        Exemplos: <strong>Ladoga</strong> (~18 mil km²) e <strong>Onega</strong> (~10 mil km²), na Rússia; lago de <strong>Neuchâtel</strong> (Suíça); os inúmeros lagos da <strong>Finlândia</strong>.
-      </div>
-      <div class="s-rule" style="margin-top:14px">
-        <strong>Origem tectônica</strong> — formados em <strong>falhas geológicas</strong>. O mais extenso é o <strong>Lago Baikal</strong>, na Sibéria: mais de 30 mil km² e profundidade superior a <strong>1.600 m</strong>. Mais de 300 rios desembocam nele, e é o rio de água doce mais volumoso do continente asiático.
-      </div>
-      <p>A falha do Baikal pode estar ligada à formação de outras depressões: Mar Cáspio, Mar Morto, Golfo de Áqaba e até o <strong>Rift Valley</strong> (Grande Vale da Fenda, na África Oriental).</p>
-    </div>
-
-    <div class="s-warn">
-      <strong>Bacia endorreica:</strong> quando os rios que desembocam em um corpo d'água <strong>não têm foz no oceano</strong>, e sim no interior do continente. É o caso do <u>Lago Baikal</u> e dos mares <u>Morto</u>, <u>Cáspio</u> e <u>Aral</u>.
-    </div>
-
-    <div class="s-sec">
-      <h3>Os três rios que a prova relaciona</h3>
-      <div class="s-rule">
-        <strong>Volga</strong> — o mais extenso da Europa (~3.500 km); nasce no Planalto de Valdai, atravessa a planície russa e deságua no <strong>Mar Cáspio</strong>.<br><br>
-        <strong>Reno</strong> — o rio industrial; nasce nos Alpes Suíços, passa pelo Lago Constança e por um trecho da França, liga a região industrial da Alemanha ao <strong>Mar do Norte</strong>, no Porto de Roterdã (Holanda).<br><br>
-        <strong>Danúbio</strong> — o mais internacional; atravessa cerca de dez países (Alemanha, Áustria, Eslováquia, Hungria, Sérvia, Romênia...), banha <strong>Viena, Budapeste e Belgrado</strong> e deságua no <strong>Mar Negro</strong>.
-      </div>
-      <p>Truque: <u>Volga</u> = Cáspio; <u>Danúbio</u> = Negro; <u>Reno</u> = Mar do Norte. Trocar essas fozes é o erro mais comum.</p>
-    </div>
-
-    <div class="s-tip">
-      <strong>Dica:</strong> as mais altas e extensas cadeias de montanhas funcionam como <strong>divisores de bacias</strong> — nelas nascem os rios que descem pelas encostas. Nos planaltos e planícies, as águas se avolumam com a contribuição dos <strong>afluentes</strong>.
-    </div>
-  `,
-
-  "Oceania": `
-    <div class="s-intro">A Oceania é um continente <strong>fisicamente dividido de forma desigual</strong>: quase tudo está em três países, e o resto se espalha por milhares de ilhas no Pacífico.</div>
-
-    <div class="s-sec">
-      <h3>A divisão desigual</h3>
-      <div class="s-rule">
-        <strong>98,8%</strong> da superfície = Austrália + Papua-Nova Guiné + Nova Zelândia<br>
-        A <strong>Austrália</strong> sozinha compreende <strong>90%</strong> de todas as terras da Oceania<br>
-        Pouco mais de <strong>1%</strong> está dividido entre milhares de ilhas
+        <strong>1978</strong> — reformas econômicas de <strong>Deng Xiaoping</strong><br>
+        ↓<br>
+        <strong>Abertura econômica</strong> + investimentos estrangeiros<br>
+        ↓<br>
+        <strong>Industrialização</strong> + exportações + modernização tecnológica
       </div>
     </div>
 
     <div class="s-sec">
-      <h3>Como nasce um atol</h3>
-      <p>As ilhas da <strong>Micronésia</strong> são, em geral, <strong>topos de vulcões submarinos</strong> que se elevam poucos metros acima do oceano, próximos às bordas de placas tectônicas.</p>
-      <ol style="padding-left:18px;font-size:0.9rem;line-height:1.6;color:var(--ink-soft)">
-        <li>O vulcão submarino se ergue até a superfície e forma uma <strong>ilha vulcânica</strong></li>
-        <li>Com os milênios, a erosão marinha e a sedimentação fazem a ilha <strong>afundar lentamente</strong></li>
-        <li>O <strong>recife de coral</strong> se desenvolve na borda do vulcão submerso</li>
-        <li>O recife cresce e forma um <strong>anel</strong> em volta de uma lagoa central</li>
-      </ol>
-      <p style="margin-top:10px">Os corais são formados pelos esqueletos de organismos marinhos que secretam <strong>carbonato de cálcio</strong>. Precisam de <strong>águas claras e quentes</strong> para sobreviver.</p>
-      <p>Vistos do alto, os atóis têm forma de <strong>anel</strong>: areia e vegetação arbórea no anel, lagoa rasa e clara no centro. Exemplos: Ilhas Carolina e Marshall (Micronésia).</p>
-    </div>
-
-    <div class="s-sec">
-      <h3>Ilhas baixas × montanhas altas</h3>
+      <h3>ZEEs — Zonas Econômicas Especiais</h3>
       <ul>
-        <li><strong>Kiribati</strong> — 33 ilhas de atóis e recifes; no <strong>Atol de Tarawa</strong> (capital), altitudes médias de apenas <strong>3 metros</strong></li>
-        <li><strong>Grande Cordilheira Divisória</strong> — costa leste da Austrália, ~3,5 mil km; maior elevação: <strong>Monte Kosciuszko</strong>, pouco mais de 2.200 m</li>
-        <li><strong>Monte Wilhelm</strong> — 4.509 m, Papua-Nova Guiné</li>
-        <li><strong>Monte Cook</strong> — 3.754 m, Nova Zelândia; a 43° de latitude sul, tem neves e geleiras eternas</li>
-      </ul>
-      <div class="s-rule">Austrália = bases geológicas <strong>muito antigas</strong>, planaltos desgastados, altitudes modestas (rochas sedimentares de ~300 milhões de anos, do Período Carbonífero).<br>Nova Zelândia e Papua-Nova Guiné = nas <strong>bordas de placas</strong> → montanhas <strong>mais jovens e mais altas</strong>.</div>
-    </div>
-
-    <div class="s-sec">
-      <h3>Vulcanismo</h3>
-      <p>A Oceania é geologicamente <strong>dinâmica</strong>, por causa da interação das placas tectônicas do Pacífico.</p>
-      <ul>
-        <li><strong>Havaí</strong> — <strong>Mauna Loa</strong>, maior vulcão da Oceania (mais de 4.000 m a partir da base submarina), e <strong>Kilauea</strong>, um dos mais ativos do mundo</li>
-        <li><strong>Nova Zelândia</strong> — Ilha Norte: Montes <strong>Ruapehu, Taranaki e Ngauruhoe</strong></li>
-      </ul>
-    </div>
-
-    <div class="s-sec">
-      <h3>Planícies, depressão e costas</h3>
-      <ul>
-        <li><strong>Planície de Nullarbor</strong> — ao norte da Grande Baía Australiana; vasta, paisagem esparsa, pouca vegetação, terreno plano</li>
-        <li><strong>Lago Eyre</strong> — centro da Austrália, <strong>depressão absoluta a 16 m abaixo</strong> do nível do mar; recebe as águas temporárias do <strong>Rio Cooper</strong></li>
-        <li><strong>Grande Barreira de Corais</strong> — litoral <strong>nordeste</strong> da Austrália, ~<strong>2,3 mil km</strong>, a maior do mundo, sobre um paredão quase contínuo de calcário de coral</li>
-        <li><strong>Fiordes</strong> — no <strong>sul da Nova Zelândia</strong> (ex.: Milford Sound). Na última Idade do Gelo os vales foram preenchidos por geleiras; com o degelo e a elevação do nível do mar, as águas oceânicas invadiram os vales glaciais. O nome é de origem <strong>norueguesa</strong></li>
+        <li><strong>Localização:</strong> principalmente no <strong>litoral sudeste</strong> da China (perto dos portos)</li>
+        <li><strong>Objetivos:</strong> atrair investimentos, gerar empregos, ampliar exportações e incorporar tecnologias</li>
+        <li><strong>Exemplo:</strong> <strong>Shenzhen</strong> — de vila de pescadores a metrópole industrial e tecnológica</li>
       </ul>
     </div>
 
     <div class="s-warn">
-      <strong>Hidrografia escassa:</strong> a rede hidrográfica da Oceania é <strong>escassa e restrita</strong> — territórios insulares pequenos e o imenso deserto australiano. Mesmo na Austrália, onde estão as maiores bacias (rios <strong>Murray e Darling</strong>), o clima desértico e semiárido causa <strong>baixos índices pluviométricos</strong>, formando <strong>rios temporários</strong> que secam completamente na estiagem.
-    </div>
-
-    <div class="s-sec">
-      <h3>Como cai na prova</h3>
-      <ul>
-        <li><strong>Continente insular</strong>: formado só por ilhas; a Austrália é a <strong>ilha-continente</strong>. Cercada pelos oceanos Pacífico e Índico e pelo <strong>Mar de Coral</strong>.</li>
-        <li><strong>Colonização britânica</strong> (não estadunidense): inglês como língua oficial. Povos nativos: <strong>aborígenes</strong> (Austrália) e <strong>maoris</strong> (Nova Zelândia).</li>
-        <li><strong>População</strong>: Austrália ~26 milhões (não 50), maioria de origem europeia; concentrada no litoral sudeste. Nova Zelândia ~5 milhões. É o continente menos populoso.</li>
-        <li><strong>Tasmânia</strong> = ilha/estado da Austrália. <strong>Nova Guiné</strong>: metade oeste é Indonésia (Ásia), metade leste é Papua-Nova Guiné (Oceania).</li>
-        <li><strong>Geologia em dois blocos</strong>: Austrália = escudo antigo, erodido, baixo, estável. Nova Zelândia e Papua-Nova Guiné = borda de placas, montanhas jovens e altas, vulcões.</li>
-        <li><strong>Fiordes</strong> = vale glacial invadido pelo mar após degelo e elevação do nível do mar (sul da Nova Zelândia).</li>
-      </ul>
+      <strong>A "contradição chinesa":</strong><br>
+      <span class="good">Economia</span> com mecanismos de <strong>mercado</strong> e abertura internacional<br>
+      <span class="bad">Política</span> controlada por um partido único, o <strong>Partido Comunista Chinês</strong>
     </div>
 
     <div class="s-tip">
-      <strong>Dica:</strong> nas ilhas, o relevo controla a chuva — ilhas <u>baixas</u> recebem menos chuva que as de <u>formações montanhosas</u>. Os <strong>pali</strong> (penhascos escarpados da ilha de Oahu, no Havaí) são exemplo disso: interferem no fluxo do ar e na distribuição das chuvas.
+      <strong>Por que no litoral?</strong> Se o objetivo é exportar e receber investimento estrangeiro, precisa de <strong>porto</strong>. Pensa assim que não erra a localização das ZEEs.
     </div>
   `,
 
-  "Climas e Monções": `
-    <div class="s-intro">Do extremo sul da Nova Zelândia ao norte da Península do Tamir e ao Cabo do Norte, esses continentes abrangem <strong>as três zonas térmicas da Terra</strong>: tropical, temperada e polar.</div>
+  "União Europeia e BRICS": `
+    <div class="s-intro"><strong>Capítulo 11.</strong> Dois agrupamentos de países muito diferentes. A prova adora pedir a <strong>diferença</strong> entre eles.</div>
 
     <div class="s-sec">
-      <h3>Tipos climáticos do mapa</h3>
-      <p>Equatorial · Tropical · Subtropical · Desértico · Semiárido · Mediterrâneo · Temperado · Frio · Polar · Frio de montanha.</p>
-      <p>No norte da Austrália e no sul e sudeste da Ásia predominam as <strong>savanas e florestas tropicais secas</strong>, região regida pelo movimento das <strong>monções</strong>.</p>
+      <h3>União Europeia (UE)</h3>
+      <ul>
+        <li>Bloco de <strong>integração econômica e política</strong> entre países europeus</li>
+        <li>Facilita o <strong>comércio</strong> entre os membros</li>
+        <li>Livre circulação de <strong>bens, serviços, pessoas e capitais</strong>, com regras comuns</li>
+        <li><strong>Parte</strong> dos membros usa o <strong>euro</strong> (não todos!)</li>
+      </ul>
     </div>
 
     <div class="s-sec">
-      <h3>Monções: o tema mais cobrado</h3>
-      <p><strong>O que são:</strong> massas de ar que atuam de acordo com a estação do ano. São padrões climáticos caracterizados por <strong>ventos sazonais</strong>, principalmente nas regiões costeiras da Ásia.</p>
-      <p><strong>Por que acontecem:</strong> por diferenças de temperatura entre o continente e os oceanos que o circundam.</p>
+      <h3>BRICS</h3>
+      <ul>
+        <li><strong>BRIC</strong>: Brasil, Rússia, Índia e China — sigla criada por <strong>Jim O'Neill</strong> em <strong>2001</strong></li>
+        <li><strong>África do Sul</strong> entrou em <strong>2011</strong> → virou BRIC<strong>S</strong></li>
+        <li>Objetivos: <strong>cooperação econômica e política</strong> e maior participação das <strong>economias emergentes</strong> nas decisões mundiais</li>
+      </ul>
+    </div>
+
+    <div class="s-sec">
+      <h3>Diferença essencial</h3>
       <div class="s-table">
-        <div class="s-thead"><div>estação</div><div>o continente</div><div>pressão</div><div>ventos e tempo</div></div>
-        <div class="s-trow"><div class="prefix">Verão</div><div>esquenta rápido</div><div>baixa</div><div>oceano → terra; chuva</div></div>
-        <div class="s-trow"><div class="prefix">Inverno</div><div>esfria rápido</div><div>alta</div><div>terra → oceano; seca</div></div>
+        <div class="s-thead"><div></div><div>UE</div><div>BRICS</div><div></div></div>
+        <div class="s-trow"><div class="prefix">Quem</div><div>países europeus</div><div>emergentes de vários continentes</div><div></div></div>
+        <div class="s-trow"><div class="prefix">Tipo</div><div>integração</div><div>cooperação</div><div></div></div>
+        <div class="s-trow"><div class="prefix">Moeda</div><div>euro (parte dos membros)</div><div>não tem moeda única</div><div></div></div>
       </div>
-      <p style="margin-top:10px">No <strong>verão</strong>, o aquecimento rápido do continente cria uma área de <strong>baixa pressão</strong>; os ventos sopram do oceano para a terra levando muita <strong>umidade</strong>, o que resulta em chuvas intensas e duradouras. No <strong>inverno</strong> acontece o oposto: o continente esfria mais rápido que os oceanos, o padrão se inverte e vem a <strong>estação seca</strong>.</p>
     </div>
 
     <div class="s-warn">
-      <strong>Impacto das monções:</strong> são essenciais para a <strong>agricultura, a economia e o abastecimento de água</strong> dessas regiões. Mas também trazem desafios: <strong>inundações repentinas</strong> e <strong>secas prolongadas</strong>, que afetam significativamente as comunidades locais.
-    </div>
-
-    <div class="s-sec">
-      <h3>Desertos</h3>
-      <p>Localizam-se nas latitudes dos <strong>trópicos, 23°27' ao Norte e ao Sul</strong>, e próximo a elas. A vegetação é escassa, do tipo <strong>xerófila</strong> — espécies que se adaptam a longos períodos sem chuva.</p>
-      <ul>
-        <li><strong>Trópico de Capricórnio</strong> (Hemisfério Sul): desertos <strong>australianos</strong>, no centro e oeste do território (ex.: Deserto de Simpson)</li>
-        <li><strong>Trópico de Câncer</strong> (Hemisfério Norte): <strong>Rub' al-Khali</strong> ou Deserto da Arábia; desertos de <strong>Neguev</strong>; <strong>Grande Deserto Salgado de Kavir</strong> (Irã); <strong>Deserto de Thar</strong> (fronteira Índia–Paquistão)</li>
-      </ul>
-    </div>
-
-    <div class="s-sec">
-      <h3>Como cai na prova</h3>
-      <ul>
-        <li><strong>Pressão e vento</strong>: o vento sempre sai da <strong>alta</strong> pressão (frio) para a <strong>baixa</strong> (quente). Verão: baixa sobre o continente → vento do oceano → chuva. Inverno: alta sobre o continente → vento para o oceano → seca.</li>
-        <li><strong>Onde fica cada clima</strong>: temperado = Europa, leste da China, Japão, sul da Austrália (4 estações, pode nevar). Tropical = 2 estações (verão úmido, inverno seco) — Índia, norte da Austrália, Golfo do México, leste da África. Semiárido = Nordeste do Brasil, interior da Austrália. Frio de montanha = Andes, Himalaia, Alpes.</li>
-        <li><strong>Fatores do clima</strong>: latitude (mais perto do polo, mais frio), altitude (mais alto, mais frio), maritimidade (perto do mar, amplitude térmica menor) × continentalidade.</li>
-        <li>Questão "<strong>é INCORRETO afirmar</strong>": procure a alternativa que troca a <strong>localização</strong> — a descrição costuma estar certa e o lugar, errado.</li>
-      </ul>
+      <strong>Duas pegadinhas certeiras:</strong><br>
+      <span class="bad">Errado:</span> "todos os países da UE usam o euro"<br>
+      <span class="bad">Errado:</span> "o BRICS é uma união monetária como a zona do euro"
     </div>
 
     <div class="s-tip">
-      <strong>Truque pra não errar:</strong> pensa em quem esquenta mais rápido. Terra esquenta e esfria <u>rápido</u>; água, <u>devagar</u>. Verão → terra quente → ar sobe → baixa pressão → o vento vem do mar (com chuva). Inverno → terra fria → alta pressão → o vento vai pro mar (seco).
+      <strong>Bloco econômico</strong> = grupo de países com acordos de integração econômica e comercial. A UE é o exemplo mais avançado.
     </div>
   `,
 
-  "Vegetação e Domínios": `
-    <div class="s-intro">Os grandes <strong>domínios naturais</strong> da Ásia, da Europa e da Oceania: temperados, mediterrâneos, frios e polares.</div>
+  "Nova Ordem Mundial": `
+    <div class="s-intro"><strong>Capítulo 12.</strong> Nova Ordem Mundial: o contexto geopolítico que surge <strong>após o fim da Guerra Fria</strong>, com mudanças na distribuição do poder político, econômico, militar e tecnológico.</div>
 
     <div class="s-sec">
-      <h3>Floresta temperada</h3>
-      <p>Ecossistema de <strong>latitudes médias</strong>, influenciado pelo clima temperado, com <strong>estações bem definidas</strong> e temperaturas moderadas.</p>
-      <p><strong>Onde:</strong> maior parte do território europeu; leste da China; maior porção do arquipélago japonês; norte da Nova Zelândia; sudeste da Austrália (ilha da Tasmânia).</p>
-      <div class="s-rule">Espécies de destaque: árvores de <strong>folhas caducas (caducifólias)</strong>, que perdem as folhas no inverno — <strong>carvalhos, bétulas, faias e freixos</strong>. Também plantas frutíferas: <strong>maçã, pera e cereja</strong>.</div>
+      <h3>Linha do tempo</h3>
+      <div class="s-table">
+        <div class="s-thead"><div>quando</div><div>o quê</div><div>ordem</div><div></div></div>
+        <div class="s-trow"><div class="prefix">1947–1991</div><div>EUA × URSS (Guerra Fria)</div><div>bipolar</div><div></div></div>
+        <div class="s-trow"><div class="prefix">1991</div><div>fim da URSS</div><div>fim da bipolar</div><div></div></div>
+        <div class="s-trow"><div class="prefix">Atualidade</div><div>Nova Ordem Mundial</div><div>multipolar</div><div></div></div>
+      </div>
     </div>
 
     <div class="s-sec">
-      <h3>Domínio mediterrâneo</h3>
-      <p><strong>Onde:</strong> no entorno do Mar Mediterrâneo, do sul do continente europeu até o litoral norte da África.</p>
-      <div class="s-rule">Clima: meses de <strong>verão muito quentes e secos</strong>; <strong>inverno frio e chuvoso</strong>.<br>Vegetação: mescla bosques <strong>arbóreos e arbustivos</strong>, como os <strong>maquis</strong>.</div>
-      <p>A denominação mediterrânea também se aplica a outras regiões do globo com características semelhantes: <strong>Califórnia</strong> (EUA), região central do <strong>Chile</strong>, sudoeste da <strong>África do Sul</strong> e sudoeste da <strong>Austrália</strong>.</p>
+      <h3>Principais características</h3>
+      <ul>
+        <li>Fim da ordem bipolar (<strong>1991</strong>)</li>
+        <li>Expansão da <strong>globalização</strong> econômica</li>
+        <li>Forte influência dos <strong>EUA</strong> no período inicial</li>
+        <li>Crescimento da <strong>China, Índia</strong> e outras potências</li>
+        <li><strong>Fortalecimento</strong> de blocos econômicos e organizações internacionais</li>
+        <li>Disputas por <strong>recursos naturais, mercados e territórios</strong></li>
+      </ul>
     </div>
 
     <div class="s-sec">
-      <h3>Floresta fria ou boreal (taiga)</h3>
-      <p><strong>Onde:</strong> norte da Europa, na Península Escandinava e na Rússia.</p>
-      <p>Constituída de <strong>coníferas</strong>. São regiões de <strong>baixa densidade demográfica</strong>, principalmente por conta dos longos períodos anuais de <strong>baixas temperaturas e pouca luminosidade</strong>, próprios do clima frio das altas latitudes boreais.</p>
+      <h3>Multipolaridade</h3>
+      <div class="s-rule">Existência de <strong>vários centros de poder</strong> econômico, político, militar e tecnológico (EUA, China, UE, Rússia, Índia...).<br><strong>Bi</strong>polar = 2 polos · <strong>Multi</strong>polar = vários polos.</div>
     </div>
 
     <div class="s-sec">
-      <h3>Domínios polares: a tundra</h3>
-      <p>Em uma faixa estreita ao longo do litoral do <strong>Ártico</strong>, no extremo norte da Eurásia, desenvolve-se uma vegetação rasteira composta principalmente de <strong>liquens e musgo</strong>.</p>
-      <div class="s-rule"><strong>Permafrost</strong>: o solo passa a maior parte do ano <strong>congelado</strong>. No verão, sob a luz solar durante 24 horas por vários dias seguidos, ele descongela e a tundra se torna um ambiente <strong>pantanoso</strong> e muitas vezes colorido pelas flores que se abrem.</div>
-    </div>
-
-    <div class="s-sec">
-      <h3>Tundra alpina</h3>
-      <p>Nas altitudes mais elevadas de montanhas em áreas mais quentes, a vegetação vai ficando escassa e de porte cada vez menor, até desaparecerem os arbustos e as gramíneas. Restam apenas <strong>musgos e liquens</strong>, muitas vezes diretamente sobre as rochas: é a <strong>tundra alpina</strong>.</p>
-      <p>Em altitudes ainda maiores há <strong>ausência total de vegetação</strong> — apenas geleiras e neve ininterrupta. Ocorre nas altas encostas e nos cumes dos <strong>Alpes, Cáucaso e Himalaia</strong>.</p>
+      <h3>Conceitos que precisam saber relacionar</h3>
+      <ul>
+        <li><strong>Globalização</strong> — intensificação das conexões entre diferentes partes do mundo</li>
+        <li><strong>Bloco econômico</strong> — grupo de países com acordos de integração econômica e comercial</li>
+        <li><strong>Tecnopolo</strong> — concentração de pesquisa, tecnologia, empresas e inovação</li>
+        <li><strong>Multipolaridade</strong> — distribuição do poder entre vários centros de influência</li>
+        <li><strong>Cortina de Ferro</strong> — divisão político-ideológica da Europa durante a Guerra Fria</li>
+      </ul>
     </div>
 
     <div class="s-warn">
-      <strong>Vocabulário que cai na prova:</strong><br>
-      <span class="good">caducifólia</span> = perde as folhas no inverno (carvalho, faia)<br>
-      <span class="good">perenifólia</span> = permanece verde o ano todo<br>
-      <span class="good">latifoliada</span> = de folhas largas<br>
-      <span class="good">xerófila</span> = adaptada à seca (desertos)
+      <strong>Pegadinha:</strong> na Nova Ordem a <u>URSS não existe mais</u> (acabou em 1991). Hoje é a <strong>Rússia</strong>. Se a afirmação disser "URSS" no mundo atual, desconfie.
+    </div>
+  `,
+
+  "Guerra Fria e Guerra da Coreia": `
+    <div class="s-intro"><strong>Capítulo 12.</strong> Guerra Fria: conflito <strong>político, ideológico, econômico, tecnológico e militar</strong> entre <strong>EUA e URSS</strong>, principalmente após a Segunda Guerra Mundial.</div>
+
+    <div class="s-sec">
+      <h3>As duas superpotências</h3>
+      <div class="s-table">
+        <div class="s-thead"><div></div><div>EUA</div><div>URSS</div><div></div></div>
+        <div class="s-trow"><div class="prefix">Sistema</div><div>capitalismo</div><div>socialismo</div><div></div></div>
+        <div class="s-trow"><div class="prefix">Política</div><div>democracia liberal</div><div>partido único</div><div></div></div>
+        <div class="s-trow"><div class="prefix">Influência</div><div>mundo ocidental</div><div>mundo oriental</div><div></div></div>
+      </div>
+      <p style="margin-top:10px">Apesar da rivalidade, <strong>as duas superpotências não entraram em guerra direta</strong> — por isso "fria".</p>
     </div>
 
     <div class="s-sec">
-      <h3>Formações que a prova cobra além do livro</h3>
+      <h3>Cortina de Ferro</h3>
+      <div class="s-rule">Expressão que simbolizava a <strong>divisão política e ideológica</strong> entre a <strong>Europa Ocidental (capitalista)</strong> e a <strong>Europa Oriental (socialista)</strong>, sob influência soviética. A divisão também apareceu em Berlim, com o <strong>Muro de Berlim</strong>.</div>
+    </div>
+
+    <div class="s-sec">
+      <h3>Guerra da Coreia (1950–1953)</h3>
       <div class="s-table">
-        <div class="s-thead"><div>formação</div><div>clima</div><div>aspecto</div><div>onde</div></div>
-        <div class="s-trow"><div class="prefix">Savana</div><div>tropical</div><div>gramíneas + árvores esparsas; estação seca</div><div>N da Austrália, Índia</div></div>
-        <div class="s-trow"><div class="prefix">Estepe</div><div>semiárido</div><div>herbácea esparsa; transição p/ deserto</div><div>Ásia Central</div></div>
-        <div class="s-trow"><div class="prefix">Pradaria</div><div>temperado continental</div><div>capim</div><div>planícies temperadas</div></div>
-        <div class="s-trow"><div class="prefix">Fl. equatorial</div><div>equatorial</div><div>densa, alta, sempre verde</div><div>Indonésia, Malásia</div></div>
+        <div class="s-thead"><div></div><div>Coreia do Norte</div><div>Coreia do Sul</div><div></div></div>
+        <div class="s-trow"><div class="prefix">Regime</div><div>socialista</div><div>anticomunista</div><div></div></div>
+        <div class="s-trow"><div class="prefix">Apoio</div><div>China e URSS</div><div>EUA e ONU</div><div></div></div>
       </div>
-      <p style="margin-top:10px">Mediterrânea: plantas <strong>esclerófilas</strong> (folhas duras) — <strong>maquis, garrigue, chaparral</strong>; oliveiras e sobreiros; alecrim, lavanda, tomilho.</p>
+      <ul style="margin-top:10px">
+        <li><strong>1950</strong> — a Coreia do <strong>Norte invadiu</strong> a Coreia do Sul</li>
+        <li>O conflito envolveu potências rivais da Guerra Fria</li>
+        <li><strong>1953</strong> — <strong>armistício</strong>, <u>sem tratado de paz definitivo</u> (as Coreias seguem divididas)</li>
+      </ul>
+      <div class="s-rule"><strong>Importância:</strong> mostrou como a rivalidade EUA × URSS se manifestava em <strong>conflitos regionais</strong>.</div>
+    </div>
+
+    <div class="s-warn">
+      <strong>Pegadinhas:</strong><br>
+      <span class="bad">Errado:</span> "EUA e URSS se enfrentaram diretamente" · "as Coreias se reunificaram"<br>
+      <span class="good">Certo:</span> armistício ≠ tratado de paz — só parou os combates
     </div>
 
     <div class="s-tip">
-      <strong>Ordem do frio:</strong> descendo do polo para o equador → <u>tundra</u> (liquens e musgo) → <u>taiga</u> (coníferas) → <u>floresta temperada</u> (caducifólias) → <u>mediterrânea</u> (maquis). E na montanha a mesma sequência se repete, só que subindo: quanto mais alto, mais parecido com o polo.
+      <strong>Pra não trocar os lados:</strong> o <u>Norte</u> fica perto da <u>China</u> e da <u>URSS</u> (socialistas); o Sul foi apoiado pelos EUA e pela ONU.
+    </div>
+  `,
+
+  "Rússia × Ucrânia": `
+    <div class="s-intro"><strong>Capítulo 12.</strong> Conflito que envolve <strong>disputas territoriais</strong>, <strong>influência política</strong> e <strong>interesses estratégicos</strong> na Europa Oriental.</div>
+
+    <div class="s-sec">
+      <h3>Contexto histórico</h3>
+      <div class="s-table">
+        <div class="s-thead"><div>ano</div><div>acontecimento</div><div></div><div></div></div>
+        <div class="s-trow"><div class="prefix">1991</div><div>independência da Ucrânia após a dissolução da URSS</div><div></div><div></div></div>
+        <div class="s-trow"><div class="prefix">2014</div><div>anexação da Crimeia pela Rússia</div><div></div><div></div></div>
+        <div class="s-trow"><div class="prefix">2022</div><div>invasão russa em larga escala da Ucrânia</div><div></div><div></div></div>
+      </div>
+    </div>
+
+    <div class="s-sec">
+      <h3>Principais fatores geopolíticos</h3>
+      <ul>
+        <li>Expansão da <strong>OTAN</strong> (aliança militar ocidental) para o <strong>Leste Europeu</strong></li>
+        <li>Possibilidade de <strong>aproximação da Ucrânia à OTAN</strong></li>
+        <li><strong>Disputas territoriais</strong>: Crimeia e leste ucraniano</li>
+        <li>Interesses <strong>econômicos, energéticos e militares</strong></li>
+      </ul>
+    </div>
+
+    <div class="s-sec">
+      <h3>Consequência</h3>
+      <div class="s-rule">Intensificação das <strong>tensões entre a Rússia e os países ocidentais</strong> e impactos na <strong>segurança e na economia internacionais</strong>.</div>
+    </div>
+
+    <div class="s-warn">
+      <strong>Troca de datas é a pegadinha:</strong><br>
+      <span class="good">1991</span> independência · <span class="good">2014</span> Crimeia · <span class="good">2022</span> invasão<br>
+      <span class="bad">1950</span> é a Guerra da Coreia, não tem nada a ver com a Ucrânia.
+    </div>
+
+    <div class="s-tip">
+      <strong>Ligando os capítulos:</strong> o fim da URSS (1991) encerra a Guerra Fria, inicia a Nova Ordem Mundial <em>e</em> torna a Ucrânia independente. O conflito atual é uma disputa de influência dessa Nova Ordem.
     </div>
   `,
 
@@ -3747,12 +3392,12 @@ const TOPIC_ICONS = {
   "Simple Present": "sun",
   "Adverbs of Frequency": "calendar",
   "Gadgets & Free Time": "zap",
-  "Localização e Limites": "globe",
-  "Relevo e Placas Tectônicas": "mountain",
-  "Rios e Lagos": "droplet",
-  "Oceania": "waves",
-  "Climas e Monções": "wind",
-  "Vegetação e Domínios": "leaf",
+  "Revolução Técnico-Científica": "zap",
+  "Ascensão da China": "trending",
+  "União Europeia e BRICS": "link",
+  "Nova Ordem Mundial": "globe",
+  "Guerra Fria e Guerra da Coreia": "flame",
+  "Rússia × Ucrânia": "target",
   "Frações Decimais": "pie",
   "Operações com Decimais": "calculator",
   "Operações com Frações": "divide",
@@ -3772,7 +3417,7 @@ const SETS = [
   { id: "leomat", student: "leo", label: "Matemática", sub: "Decimais e frações", subject: "matemática" },
   { id: "leo", student: "leo", label: "Inglês", sub: "Unit 5", subject: "inglês" },
   { id: "u24", student: "ber", label: "Inglês", sub: "Units 2–4", subject: "inglês" },
-  { id: "geo", student: "ber", label: "Geografia", sub: "Cap. 5", subject: "geografia" },
+  { id: "geo", student: "ber", label: "Geografia", sub: "Cap. 11–12", subject: "geografia" },
   { id: "rev", student: "ber", label: "Inglês", sub: "Revisão · KET", subject: "inglês" }
 ];
 let currentStudent = "leo";
@@ -3800,12 +3445,12 @@ const TOPIC_SET = {
   "Adverbs of Frequency": "leo",
   "Gadgets & Free Time": "leo",
   // Geografia do Bernardo (9º ano)
-  "Localização e Limites": "geo",
-  "Relevo e Placas Tectônicas": "geo",
-  "Rios e Lagos": "geo",
-  "Oceania": "geo",
-  "Climas e Monções": "geo",
-  "Vegetação e Domínios": "geo",
+  "Revolução Técnico-Científica": "geo",
+  "Ascensão da China": "geo",
+  "União Europeia e BRICS": "geo",
+  "Nova Ordem Mundial": "geo",
+  "Guerra Fria e Guerra da Coreia": "geo",
+  "Rússia × Ucrânia": "geo",
   // Matemática do Léo (6º ano)
   "Frações Decimais": "leomat",
   "Operações com Decimais": "leomat",
