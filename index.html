@@ -160,6 +160,24 @@
   .student-card .chip.geo { background: #e8f8ee; color: #248a3d; }
   .student-card .chip.mat { background: #fff1e6; color: #c2410c; }
   .student-card .go { color: var(--muted); flex-shrink: 0; }
+  .student-card .chip.arq { background: transparent; color: var(--muted); border: 1px dashed var(--line); }
+  .archive-item {
+    display: flex; align-items: center; gap: 12px; width: 100%; text-align: left;
+    background: var(--bg-soft); border: 1px solid var(--line); border-radius: 14px;
+    padding: 12px 14px; margin-bottom: 8px; cursor: pointer; font-family: inherit; color: var(--ink);
+  }
+  .archive-item:last-child { margin-bottom: 0; }
+  .archive-item:active { transform: scale(0.99); }
+  .archive-item .ico-box {
+    width: 32px; height: 32px; border-radius: 9px; background: #fff; border: 1px solid var(--line);
+    display: flex; align-items: center; justify-content: center; color: var(--muted); flex-shrink: 0;
+  }
+  .archive-item .txt { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+  .archive-item .t { font-weight: 700; font-size: 0.9rem; }
+  .archive-item .sub { font-size: 0.74rem; color: var(--muted); font-weight: 600; margin-top: 1px; }
+  .archive-item .go { color: var(--muted); font-size: 0.72rem; font-weight: 700; flex-shrink: 0; }
+  .archive-item.active { border-color: var(--primary); background: var(--primary-tint); }
+  .archive-item.active .go { color: var(--primary); }
 
   /* ========= TOP BAR (voltar ao menu) ========= */
   .top-bar { display: flex; align-items: center; margin-bottom: 4px; }
@@ -953,6 +971,14 @@
         Quer entender melhor um tema antes do simulado? Escolhe um abaixo pra ver as regras, exemplos e dicas.
       </p>
       <div class="topics-grid" id="study-grid"></div>
+    </div>
+
+    <div class="card hidden" id="archive-card">
+      <div class="section-title"><span class="bar"></span> Arquivo</div>
+      <p style="font-size:0.88rem;line-height:1.5;color:var(--ink-soft);font-weight:500;margin-bottom:12px">
+        Provas anteriores. Continuam aqui para revisar quando quiser.
+      </p>
+      <div id="archive-list"></div>
     </div>
 
     <div class="card">
@@ -4000,15 +4026,27 @@ const STUDENTS = [
 ];
 // Cada bloco = uma prova/matéria de um aluno
 const SETS = [
-  { id: "leomat", student: "leo", label: "Matemática", sub: "Decimais e frações", subject: "matemática" },
+  // archived: true = fica no "Arquivo" (fora das abas, mas ainda acessível)
   { id: "leo", student: "leo", label: "Inglês", sub: "Units 6–9", subject: "inglês" },
-  { id: "u24", student: "ber", label: "Inglês", sub: "Units 2–4", subject: "inglês" },
+  { id: "leomat", student: "leo", label: "Matemática", sub: "Decimais e frações", subject: "matemática", archived: true },
   { id: "geo", student: "ber", label: "Geografia", sub: "Cap. 11–12", subject: "geografia" },
-  { id: "rev", student: "ber", label: "Inglês", sub: "Revisão · KET", subject: "inglês" }
+  { id: "u24", student: "ber", label: "Inglês", sub: "Units 2–4", subject: "inglês", archived: true },
+  { id: "rev", student: "ber", label: "Inglês", sub: "Revisão · KET", subject: "inglês", archived: true }
 ];
 let currentStudent = "leo";
 const lastSetByStudent = {};
 function setsForStudent(sid) { return SETS.filter(s => s.student === sid); }
+function activeSets(sid) { return SETS.filter(s => s.student === sid && !s.archived); }
+function archivedSets(sid) { return SETS.filter(s => s.student === sid && s.archived); }
+function selectSet(id) {
+  currentSet = id;
+  lastSetByStudent[currentStudent] = id;
+  selectedTopic = "all";
+  renderSetSwitch();
+  renderStatsBar();
+  renderTopicGrid();
+  renderStudyGrid();
+}
 // A qual bloco cada tema pertence
 const TOPIC_SET = {
   // Revisão (provas anteriores do Bernardo)
@@ -4099,7 +4137,8 @@ function renderMenu() {
   if (!list) return;
   list.innerHTML = "";
   STUDENTS.forEach(st => {
-    const sets = setsForStudent(st.id);
+    const sets = activeSets(st.id);
+    const nArq = archivedSets(st.id).length;
     const topics = sets.reduce((n, s) => n + topicsInSet(s.id).length, 0);
     const qs = sets.reduce((n, s) => n + poolForSet(s.id).length, 0);
     const best = Math.max(0, ...sets.map(s => statsForSet(s.id).best || 0));
@@ -4110,7 +4149,7 @@ function renderMenu() {
       <div class="info">
         <div class="name">${st.name}</div>
         <div class="grade">${st.grade} · ${topics} temas · ${qs} questões${best ? ` · recorde ${best}%` : ""}</div>
-        <div class="chips">${sets.map(s => `<span class="chip ${({ geografia: "geo", matemática: "mat" })[s.subject] || "en"}">${s.label} · ${s.sub}</span>`).join("")}</div>
+        <div class="chips">${sets.map(s => `<span class="chip ${({ geografia: "geo", matemática: "mat" })[s.subject] || "en"}">${s.label} · ${s.sub}</span>`).join("")}${nArq ? `<span class="chip arq">${nArq} no arquivo</span>` : ""}</div>
       </div>
       <span class="go">${icon("arrow", 20)}</span>`;
     b.onclick = () => openStudent(st.id);
@@ -4122,7 +4161,7 @@ function renderMenu() {
 
 function openStudent(sid) {
   currentStudent = sid;
-  const sets = setsForStudent(sid);
+  const sets = activeSets(sid);
   currentSet = lastSetByStudent[sid] || (sets[0] && sets[0].id);
   selectedTopic = "all";
   goHome();
@@ -4130,28 +4169,38 @@ function openStudent(sid) {
 
 function goMenu() { renderMenu(); showScreen("menu-screen"); }
 
+function renderArchive() {
+  const card = document.getElementById("archive-card");
+  const list = document.getElementById("archive-list");
+  if (!card || !list) return;
+  const arq = archivedSets(currentStudent);
+  card.classList.toggle("hidden", !arq.length);
+  list.innerHTML = "";
+  arq.forEach(s => {
+    const b = document.createElement("button");
+    b.className = "archive-item" + (currentSet === s.id ? " active" : "");
+    b.innerHTML = `<span class="ico-box">${icon("book", 16)}</span><span class="txt"><span class="t">${s.label} · ${s.sub}</span><span class="sub">${topicsInSet(s.id).length} temas · ${poolForSet(s.id).length} questões</span></span><span class="go">${currentSet === s.id ? "aberto" : icon("arrow", 16)}</span>`;
+    b.onclick = () => { if (currentSet !== s.id) { selectSet(s.id); window.scrollTo({ top: 0, behavior: "smooth" }); } };
+    list.appendChild(b);
+  });
+}
+
 function renderSetSwitch() {
   const el = document.getElementById("set-switch");
   if (!el) return;
   el.innerHTML = "";
-  const sets = setsForStudent(currentStudent);
+  const sets = activeSets(currentStudent);
+  const cur = SETS.find(s => s.id === currentSet);
+  if (cur && cur.archived) sets.push(cur);
   el.classList.toggle("hidden", sets.length < 2);
   sets.forEach(s => {
     const b = document.createElement("button");
     b.className = currentSet === s.id ? "active" : "";
-    b.innerHTML = `<span class="t">${s.label}</span><span class="sub">${s.sub}</span>`;
-    b.onclick = () => {
-      if (currentSet === s.id) return;
-      currentSet = s.id;
-      lastSetByStudent[currentStudent] = s.id;
-      selectedTopic = "all";
-      renderSetSwitch();
-      renderStatsBar();
-      renderTopicGrid();
-      renderStudyGrid();
-    };
+    b.innerHTML = `<span class="t">${s.label}</span><span class="sub">${s.archived ? "Arquivo · " : ""}${s.sub}</span>`;
+    b.onclick = () => { if (currentSet !== s.id) selectSet(s.id); };
     el.appendChild(b);
   });
+  renderArchive();
   const heroName = document.getElementById("hero-name");
   if (heroName) heroName.textContent = setName() + "!";
   const heroSub = document.getElementById("hero-sub");
