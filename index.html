@@ -1081,6 +1081,10 @@ const ICONS = {
   waves:     '<path d="M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.4 2 5 2 1.3 0 1.9-.5 2.5-1"/><path d="M2 12c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 1.3 0 1.9-.5 2.5-1"/><path d="M2 18c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 1.3 0 1.9-.5 2.5-1"/>',
   globe:     '<circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/>',
   wind:      '<path d="M12.8 19.6A2 2 0 1 0 14 16H2"/><path d="M17.5 8a2.5 2.5 0 1 1 2 4H2"/><path d="M9.8 4.4A2 2 0 1 1 11 8H2"/>',
+  smile:     '<circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/>',
+  heart:     '<path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>',
+  shirt:     '<path d="M20.38 3.46 16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23z"/>',
+  utensils:  '<path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/>',
   pie:       '<path d="M21.21 15.89A10 10 0 1 1 8 2.83"/><path d="M22 12A10 10 0 0 0 12 2v10z"/>',
   calculator:'<rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="16" y1="14" x2="16" y2="18"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/>',
   divide:    '<circle cx="12" cy="6" r="1.2" fill="currentColor"/><line x1="5" y1="12" x2="19" y2="12"/><circle cx="12" cy="18" r="1.2" fill="currentColor"/>',
@@ -1511,101 +1515,437 @@ const QUESTIONS = [
     options: ["before", "until", "while", "since"], correct: 0,
     explain: "<strong>Before</strong> = antes de. Apague as luzes antes de sair." },
 
-  // ===== SIMPLE PRESENT (Unit 05 – Free Time – Léo) =====
-  { topic: "Simple Present", q: "She ______ to school by bus.",
-    options: ["go", "goes", "going", "gos"], correct: 1,
-    explain: "Com <strong>he/she/it</strong>, o verbo ganha <strong>-es/-s</strong>: she go<strong>es</strong>. Verbos terminados em -o levam -es." },
-  { topic: "Simple Present", q: "I ______ football on weekends.",
-    options: ["plays", "play", "playing", "played"], correct: 1,
-    explain: "Com <strong>I/you/we/they</strong>, o verbo fica na forma normal, SEM -s: I play." },
-  { topic: "Simple Present", q: "He ______ TV every night.",
-    options: ["watch", "watchs", "watches", "watching"], correct: 2,
-    explain: "Verbos terminados em <strong>-ch</strong> ganham <strong>-es</strong> com he/she/it: watch → watch<strong>es</strong>." },
-  { topic: "Simple Present", q: "My parents ______ in a hospital.",
-    options: ["works", "work", "working", "workes"], correct: 1,
-    explain: "<strong>My parents</strong> = they (plural) → verbo sem -s: work." },
-  { topic: "Simple Present", q: "______ you like pizza?",
-    options: ["Does", "Do", "Is", "Are"], correct: 1,
-    explain: "Pergunta com <strong>you</strong> → <strong>Do</strong>: Do you like...? (Does é só para he/she/it.)" },
-  { topic: "Simple Present", q: "______ she speak English?",
-    options: ["Do", "Is", "Does", "Are"], correct: 2,
-    explain: "Pergunta com <strong>she</strong> → <strong>Does</strong>: Does she speak...? O verbo principal fica SEM -s." },
-  { topic: "Simple Present", q: "I ______ like horror movies. (frase negativa)",
-    options: ["don't", "doesn't", "not", "am not"], correct: 0,
-    explain: "Negativa com <strong>I</strong> → <strong>don't</strong> + verbo: I don't like." },
-  { topic: "Simple Present", q: "He ______ coffee. (frase negativa)",
-    options: ["don't drink", "doesn't drink", "doesn't drinks", "not drink"], correct: 1,
-    explain: "Negativa com <strong>he</strong> → <strong>doesn't</strong> + verbo SEM -s: doesn't drink (o -s fica no doesn't)." },
-  { topic: "Simple Present", q: "Tom ______ his homework after school.",
-    options: ["do", "dos", "does", "doing"], correct: 2,
-    explain: "<strong>Tom</strong> = he → do vira <strong>does</strong>: Tom does his homework." },
-  { topic: "Simple Present", q: "We ______ breakfast at 7 o'clock.",
-    options: ["has", "have", "haves", "having"], correct: 1,
-    explain: "<strong>We</strong> → verbo sem -s: have. (Só he/she/it usa <em>has</em>.)" },
+  // ===== INGLÊS LÉO · UNITS 6–9 (speaking test 16/11 + online test) =====
 
-  // ===== ADVERBS OF FREQUENCY (Léo) =====
-  { topic: "Adverbs of Frequency", q: "I ______ brush my teeth. (100% do tempo, todo dia)",
-    options: ["never", "sometimes", "always", "often"], correct: 2,
-    explain: "<strong>Always</strong> = sempre (100%). Never = nunca (0%)." },
-  { topic: "Adverbs of Frequency", q: "He ______ eats fish. (0% — nunca)",
-    options: ["always", "never", "usually", "often"], correct: 1,
-    explain: "<strong>Never</strong> = nunca (0%). Atenção: o verbo continua afirmativo (never eats, sem 'don't')." },
-  { topic: "Adverbs of Frequency", q: "We ______ go to the cinema. (às vezes)",
-    options: ["sometimes", "never", "always", "usually"], correct: 0,
-    explain: "<strong>Sometimes</strong> = às vezes (mais ou menos 50%)." },
-  { topic: "Adverbs of Frequency", q: "She ______ gets up at 6 o'clock. (quase sempre)",
-    options: ["never", "sometimes", "usually", "always"], correct: 2,
-    explain: "<strong>Usually</strong> = geralmente/quase sempre (uns 80-90% das vezes)." },
-  { topic: "Adverbs of Frequency", q: "Which adverb is the MOST frequent (o mais frequente de todos)?",
-    options: ["sometimes", "often", "always", "usually"], correct: 2,
-    explain: "Ordem de frequência: <strong>always</strong> (100%) > usually > often > sometimes > never (0%)." },
-  { topic: "Adverbs of Frequency", q: "He is ______ late for school. (nunca)",
-    options: ["never", "always", "often", "usually"], correct: 0,
-    explain: "<strong>Never</strong> = nunca. Com o verbo <strong>be</strong>, o advérbio vem DEPOIS: he IS never late." },
-  { topic: "Adverbs of Frequency", q: "Choose the correct sentence:",
-    options: ["I always drink milk.", "I drink always milk.", "Always I drink milk.", "I drink milk always."], correct: 0,
-    explain: "O advérbio de frequência vem <strong>ANTES do verbo principal</strong>: I <u>always</u> drink." },
-  { topic: "Adverbs of Frequency", q: "Choose the correct sentence:",
-    options: ["She never is sad.", "She is never sad.", "Never she is sad.", "She is sad never."], correct: 1,
-    explain: "Com o verbo <strong>be</strong>, o advérbio vem <strong>DEPOIS</strong>: she is <u>never</u> sad." },
-  { topic: "Adverbs of Frequency", q: "Which adverb means 'às vezes'?",
-    options: ["always", "never", "usually", "sometimes"], correct: 3,
-    explain: "<strong>Sometimes</strong> = às vezes. Always = sempre; never = nunca; usually = geralmente." },
-  { topic: "Adverbs of Frequency", q: "My dad ______ cooks on Sundays. (muitas vezes, frequentemente)",
-    options: ["never", "often", "always", "sometimes"], correct: 1,
-    explain: "<strong>Often</strong> = frequentemente/muitas vezes (mais que sometimes, menos que usually)." },
+  // ----- Have got & Has got (Unit 6) -----
+  { topic: "Have got & Has got", q: "I ______ a skateboard.",
+    options: ["have got", "has got", "haves got", "am got"], correct: 0,
+    hint: "Olha o sujeito: I. Com I, you, we e they usa uma forma; com he, she e it, outra.",
+    explain: "<strong>I / you / we / they</strong> → <strong>have got</strong>. Só he/she/it usa <em>has got</em>." },
+  { topic: "Have got & Has got", q: "My mother ______ a bike.",
+    options: ["has got", "have got", "is got", "haves got"], correct: 0,
+    hint: "Troca 'my mother' por um pronome: ela = she. Qual forma vai com she?",
+    explain: "<strong>My mother</strong> = she → <strong>has got</strong>." },
+  { topic: "Have got & Has got", q: "______ you got a pet?",
+    options: ["Have", "Has", "Do", "Are"], correct: 0,
+    hint: "Na pergunta, a palavra que significa 'ter' vai para o começo. Qual das formas combina com you?",
+    explain: "Pergunta: <strong>Have</strong> + you + got...? (Has é só para he/she/it.)" },
+  { topic: "Have got & Has got", q: "______ your pet got a long tail?",
+    options: ["Has", "Have", "Is", "Does"], correct: 0,
+    hint: "'Your pet' é um animal só = it. Qual forma vai com it?",
+    explain: "<strong>Your pet</strong> = it → <strong>Has</strong> your pet got...?" },
+  { topic: "Have got & Has got", q: "Have you got a big family? — Yes, I ______.",
+    options: ["have", "has", "got", "do"], correct: 0,
+    hint: "A resposta curta repete a palavra do começo da pergunta, sem o 'got'.",
+    explain: "Short answer: <strong>Yes, I have.</strong> / <strong>No, I haven't.</strong> O <em>got</em> não aparece na resposta curta." },
+  { topic: "Have got & Has got", q: "Has your family got a car? — No, it ______.",
+    options: ["hasn't", "haven't", "doesn't", "isn't"], correct: 0,
+    hint: "A pergunta começa com Has. A resposta é negativa. Junta has + not.",
+    explain: "Pergunta com <strong>Has</strong> → resposta <strong>No, it hasn't</strong> (has not)." },
+  { topic: "Have got & Has got", q: "We ______ got a garden. We live in an apartment.",
+    options: ["haven't", "hasn't", "don't", "aren't"], correct: 0,
+    hint: "A frase é negativa e o sujeito é we. We usa have; agora junta com not.",
+    explain: "Negativa com <strong>we</strong> → <strong>haven't got</strong> (have not got)." },
+  { topic: "Have got & Has got", q: "She's got blue eyes. Aqui, o 's significa:",
+    options: ["has", "is", "was", "does"], correct: 0,
+    hint: "O 's pode ser 'is' ou 'has'. Leia a frase trocando pelos dois: qual faz sentido antes de 'got'?",
+    explain: "Antes de <strong>got</strong>, o 's é <strong>has</strong>: She has got blue eyes. (She's tall = she is tall.)" },
+  { topic: "Have got & Has got", q: "My body ______ got ten fingers.",
+    options: ["has", "have", "is", "are"], correct: 0,
+    hint: "'My body' é uma coisa só = it.",
+    explain: "<strong>My body</strong> = it → <strong>has got</strong>." },
+  { topic: "Have got & Has got", q: "Tom ______ got a brother. He's got two sisters.",
+    options: ["hasn't", "haven't", "isn't", "doesn't"], correct: 0,
+    hint: "Tom = he. A frase é negativa (ele não tem irmão).",
+    explain: "<strong>Tom</strong> = he → negativa <strong>hasn't got</strong>." },
 
-  // ===== GADGETS & FREE TIME (Unit 5 – online test 25/08 – Léo) =====
-  { topic: "Gadgets & Free Time", q: "You use this to listen to music without other people hearing: ______.",
-    options: ["speaker", "headphones", "charger", "camera"], correct: 1,
-    explain: "<strong>Headphones</strong> = fones de ouvido (só você escuta). Speaker = caixa de som (todo mundo escuta)." },
-  { topic: "Gadgets & Free Time", q: "My phone's battery is low. I need my ______.",
-    options: ["camera", "console", "charger", "screen"], correct: 2,
-    explain: "<strong>Charger</strong> = carregador. Bateria fraca (low battery) → precisa carregar (charge)." },
-  { topic: "Gadgets & Free Time", q: "A computer you can carry in your backpack is a ______.",
-    options: ["laptop", "smart TV", "speaker", "printer"], correct: 0,
-    explain: "<strong>Laptop</strong> = notebook (computador portátil). Desktop = computador de mesa." },
-  { topic: "Gadgets & Free Time", q: "I play video games on my games ______.",
-    options: ["camera", "console", "charger", "tablet"], correct: 1,
-    explain: "<strong>Games console</strong> = videogame (o aparelho: PlayStation, Xbox, Switch)." },
-  { topic: "Gadgets & Free Time", q: "A ______ is like a big phone with a touchscreen, good for videos and games.",
-    options: ["smartwatch", "speaker", "tablet", "charger"], correct: 2,
-    explain: "<strong>Tablet</strong> = tablet (tela de toque, maior que o celular). Touchscreen = tela sensível ao toque." },
-  { topic: "Gadgets & Free Time", q: "I send messages and make calls on my ______.",
-    options: ["smartphone", "printer", "speaker", "console"], correct: 0,
-    explain: "<strong>Smartphone</strong> = celular. Send messages = mandar mensagens; make calls = ligar." },
-  { topic: "Gadgets & Free Time", q: "You wear a ______ on your wrist. It shows the time and your messages.",
-    options: ["headphone", "smartwatch", "laptop", "tablet"], correct: 1,
-    explain: "<strong>Smartwatch</strong> = relógio inteligente. Wrist = pulso; wear = usar (no corpo)." },
-  { topic: "Gadgets & Free Time", q: "Please ______ the TV. It's time for bed! (desligar)",
-    options: ["turn on", "turn off", "charge", "download"], correct: 1,
-    explain: "<strong>Turn off</strong> = desligar. <strong>Turn on</strong> = ligar. São os verbos mais usados com aparelhos." },
-  { topic: "Gadgets & Free Time", q: "In my free time, I ______ my bike in the park.",
-    options: ["ride", "play", "go", "do"], correct: 0,
-    explain: "<strong>Ride a bike</strong> = andar de bicicleta. Ride para bike/horse; play para jogos e esportes com bola." },
-  { topic: "Gadgets & Free Time", q: "What do you do in your free time? — I ______ video games and watch TV.",
-    options: ["ride", "go", "play", "make"], correct: 2,
-    explain: "<strong>Play</strong> video games = jogar videogame. Play também para esportes: play football, play tennis." },
+  // ----- Describing People (Unit 6) -----
+  { topic: "Describing People", q: "She ______ long red hair.",
+    options: ["has got", "have got", "is", "are"], correct: 0,
+    hint: "Em inglês a pessoa TEM cabelo, como em português ('ela tem cabelo ruivo'). E she vai com qual forma?",
+    explain: "Cabelo, olhos, barba → <strong>have got / has got</strong>. She → <strong>has got</strong>." },
+  { topic: "Describing People", q: "He ______ tall and slim.",
+    options: ["is", "has got", "have", "are"], correct: 0,
+    hint: "Altura e corpo a gente É (ele é alto). Qual verbo significa 'ser'?",
+    explain: "Altura e corpo → verbo <strong>be</strong>: He <strong>is</strong> tall and slim." },
+  { topic: "Describing People", q: "Her hair isn't straight. It's very ______.",
+    options: ["curly", "tall", "slim", "blue"], correct: 0,
+    hint: "O contrário de liso. Pensa no cabelo cacheado da menina da foto.",
+    explain: "<strong>Straight</strong> = liso · <strong>curly</strong> = cacheado · <strong>wavy</strong> = ondulado." },
+  { topic: "Describing People", q: "She has got ______.",
+    options: ["long blond hair", "blond long hair", "hair long blond", "hair blond long"], correct: 0,
+    hint: "Em inglês o adjetivo vem ANTES da palavra hair. E o tamanho vem antes da cor.",
+    explain: "Ordem: <strong>tamanho → cor → hair</strong>. Long blond hair, short dark hair." },
+  { topic: "Describing People", q: "The man has got hair under his nose. He has got a ______.",
+    options: ["moustache", "beard", "glasses", "freckles"], correct: 0,
+    hint: "Embaixo do nariz é diferente de no queixo inteiro. Lembra do homem de óculos da foto.",
+    explain: "<strong>Moustache</strong> = bigode (embaixo do nariz). <strong>Beard</strong> = barba (queixo e rosto)." },
+  { topic: "Describing People", q: "He wears ______ to read better.",
+    options: ["glasses", "a beard", "freckles", "a moustache"], correct: 0,
+    hint: "O que a gente usa no rosto para enxergar melhor?",
+    explain: "<strong>Glasses</strong> = óculos. Sempre no plural: <em>He wears glasses</em>." },
+  { topic: "Describing People", q: "Cristiano Ronaldo has got ______ hair.",
+    options: ["short dark", "long blond", "curly red", "long straight"], correct: 0,
+    hint: "Lembra da foto: o cabelo dele é curto ou comprido? Claro ou escuro?",
+    explain: "<strong>Short dark hair</strong> = cabelo curto e escuro." },
+  { topic: "Describing People", q: "Small brown spots on the face, like on the red-haired girl, are called ______.",
+    options: ["freckles", "glasses", "beards", "eyebrows"], correct: 0,
+    hint: "São pintinhas no rosto, comuns em pessoas ruivas.",
+    explain: "<strong>Freckles</strong> = sardas." },
+  { topic: "Describing People", q: "My eyes ______ blue.",
+    options: ["are", "is", "has", "am"], correct: 0,
+    hint: "Eyes está no plural (dois olhos). Qual forma do verbo be vai com plural?",
+    explain: "<strong>Eyes</strong> = plural → <strong>are</strong>. (Ou: I've got blue eyes.)" },
+  { topic: "Describing People", q: "A pergunta \"What does she look like?\" quer saber:",
+    options: ["como ela é fisicamente", "do que ela gosta", "onde ela mora", "o que ela está fazendo"], correct: 0,
+    hint: "'Look' tem a ver com olhar, aparência.",
+    explain: "<strong>What does she look like?</strong> = Como ela é? Resposta: She's tall. She's got curly hair." },
+
+  // ----- What's the Time? (Unit 7) -----
+  { topic: "What's the Time?", q: "7:00 — It's seven ______.",
+    options: ["o'clock", "half", "quarter", "past"], correct: 0,
+    hint: "Hora certinha, sem minutos. Qual palavra se usa só com hora exata?",
+    explain: "Hora exata = <strong>o'clock</strong>: It's seven o'clock." },
+  { topic: "What's the Time?", q: "7:30 — What's the time?",
+    options: ["It's half past seven.", "It's half past eight.", "It's seven past half.", "It's quarter past seven."], correct: 0,
+    hint: "30 minutos é metade da hora (half). 'Past' quer dizer 'depois de'. Depois de qual hora?",
+    explain: "<strong>Half past</strong> + hora = e meia. 7:30 = half past seven." },
+  { topic: "What's the Time?", q: "3:15 — What's the time?",
+    options: ["It's quarter past three.", "It's quarter to three.", "It's half past three.", "It's three to quarter."], correct: 0,
+    hint: "15 minutos é um quarto da hora (quarter). Já passou das 3 ou falta pras 3?",
+    explain: "<strong>Quarter past</strong> = e quinze. 3:15 = quarter past three." },
+  { topic: "What's the Time?", q: "3:45 — What's the time?",
+    options: ["It's quarter to four.", "It's quarter past three.", "It's quarter to three.", "It's half past four."], correct: 0,
+    hint: "Quanto falta para a próxima hora? Quando falta, usa 'to' + a hora que está chegando.",
+    explain: "3:45 = faltam 15 para as 4 → <strong>quarter to four</strong>." },
+  { topic: "What's the Time?", q: "8:40 — What's the time?",
+    options: ["It's twenty to nine.", "It's twenty past eight.", "It's forty to eight.", "It's twenty to eight."], correct: 0,
+    hint: "Depois dos 30 minutos, conta quanto falta. Quanto falta de 8:40 para a próxima hora?",
+    explain: "Faltam 20 minutos para as 9 → <strong>twenty to nine</strong>." },
+  { topic: "What's the Time?", q: "10:05 — What's the time?",
+    options: ["It's five past ten.", "It's five to ten.", "It's ten past five.", "It's five to eleven."], correct: 0,
+    hint: "Passaram 5 minutos de qual hora? Primeiro os minutos, depois 'past', depois a hora.",
+    explain: "5 minutos depois das 10 → <strong>five past ten</strong>." },
+  { topic: "What's the Time?", q: "I get up ______ seven o'clock.",
+    options: ["at", "in", "on", "to"], correct: 0,
+    hint: "Qual preposição vai com horário?",
+    explain: "Horas → <strong>at</strong>: at seven o'clock, at half past six." },
+  { topic: "What's the Time?", q: "My birthday is ______ May.",
+    options: ["in", "at", "on", "to"], correct: 0,
+    hint: "Mês usa uma preposição diferente da de horário e da de dia da semana.",
+    explain: "<strong>in</strong> + mês (in May) · <strong>on</strong> + dia (on Monday, on May 10th) · <strong>at</strong> + hora." },
+  { topic: "What's the Time?", q: "We have P.E. lessons ______ Tuesday.",
+    options: ["on", "in", "at", "to"], correct: 0,
+    hint: "Dia da semana usa qual preposição?",
+    explain: "Dias da semana → <strong>on</strong>: on Tuesday, on Monday." },
+  { topic: "What's the Time?", q: "\"It's quarter to twelve.\" Em números, é:",
+    options: ["11:45", "12:15", "11:15", "12:45"], correct: 0,
+    hint: "'To' = falta para. Falta quanto? E para qual hora?",
+    explain: "Falta um quarto (15 min) para as 12 → <strong>11:45</strong>." },
+
+  // ----- Present Continuous (Unit 8) -----
+  { topic: "Present Continuous", q: "Look! Peter ______ in the park.",
+    options: ["is running", "runs", "are running", "is runing"], correct: 0,
+    hint: "'Look!' mostra que está acontecendo agora. Use is/am/are + verbo com -ing — e veja a grafia do run.",
+    explain: "Agora → <strong>is + running</strong>. Run termina em consoante-vogal-consoante: dobra o n." },
+  { topic: "Present Continuous", q: "Every day I go to school by bus, but today I ______ to school.",
+    options: ["am walking", "walk", "walks", "is walking"], correct: 0,
+    hint: "'Every day' é rotina; 'today' é agora, uma exceção. Com I, qual forma do be?",
+    explain: "Rotina = present simple (I go). Hoje, agora = present continuous: <strong>I am walking</strong>." },
+  { topic: "Present Continuous", q: "They ______ football at the moment.",
+    options: ["are playing", "is playing", "plays", "am playing"], correct: 0,
+    hint: "'At the moment' = agora. They vai com qual forma do be?",
+    explain: "They → <strong>are playing</strong>." },
+  { topic: "Present Continuous", q: "Callie is sitting under a tree. She ______ a book.",
+    options: ["is reading", "are reading", "reads", "is read"], correct: 0,
+    hint: "She + forma do be + verbo com -ing.",
+    explain: "She → <strong>is reading</strong>." },
+  { topic: "Present Continuous", q: "swim + ing =",
+    options: ["swimming", "swiming", "swimmming", "swimeing"], correct: 0,
+    hint: "Swim termina em consoante + vogal + consoante (w-i-m). Nesse caso a última letra dobra.",
+    explain: "<strong>swim → swimming</strong> (como run → running, sit → sitting)." },
+  { topic: "Present Continuous", q: "dance + ing =",
+    options: ["dancing", "danceing", "dancking", "dancinng"], correct: 0,
+    hint: "Dance termina em -e mudo. O que acontece com esse e quando entra o -ing?",
+    explain: "Verbo terminado em <strong>-e</strong>: tira o e. <strong>dance → dancing</strong>, write → writing." },
+  { topic: "Present Continuous", q: "What ______ you doing? — I'm doing my homework.",
+    options: ["are", "is", "do", "am"], correct: 0,
+    hint: "A pergunta é com you. Qual forma do be vai com you?",
+    explain: "<strong>What are you doing?</strong> = O que você está fazendo?" },
+  { topic: "Present Continuous", q: "______ she singing? — Yes, she is.",
+    options: ["Is", "Are", "Does", "Do"], correct: 0,
+    hint: "Na pergunta, o be vai para o começo. Qual forma vai com she? A resposta dá a pista.",
+    explain: "Pergunta: <strong>Is she singing?</strong> → Yes, she is / No, she isn't." },
+  { topic: "Present Continuous", q: "Matt isn't sleeping. He ______ a photo with his phone.",
+    options: ["is taking", "are taking", "takes", "is takeing"], correct: 0,
+    hint: "He + is + verbo com -ing. Take termina em -e: o que acontece com ele?",
+    explain: "<strong>take → taking</strong> (tira o e). He <strong>is taking</strong> a photo." },
+  { topic: "Present Continuous",
+    passage: "In the park: Claire is talking on the phone, Charles is doing a handstand, Elena is singing and Rob is shouting \"Goal!\".",
+    q: "Which sentence is correct?",
+    options: ["Elena is singing.", "Elena are singing.", "Elena singing.", "Elena is sing."], correct: 0,
+    hint: "A frase precisa das duas partes: a forma certa do be para uma pessoa + o verbo com -ing.",
+    explain: "Uma pessoa → <strong>is</strong> + <strong>singing</strong>. Sem o be ou sem o -ing, a frase fica errada." },
+
+  // ----- Like, Love, Hate + ing (Unit 8) -----
+  { topic: "Like, Love, Hate + ing", q: "I love ______ video games.",
+    options: ["playing", "play", "to playing", "plays"], correct: 0,
+    hint: "Depois de love, like e hate, o verbo ganha uma terminação. Qual é o tema da aula?",
+    explain: "<strong>love / like / hate + verbo-ing</strong>: I love playing." },
+  { topic: "Like, Love, Hate + ing", q: "She ______ dancing.",
+    options: ["likes", "like", "liking", "is like"], correct: 0,
+    hint: "She → o verbo ganha uma letra no final (regra do Simple Present).",
+    explain: "He/she/it → <strong>likes</strong>, loves, hates. She likes dancing." },
+  { topic: "Like, Love, Hate + ing", q: "He ______ like swimming.",
+    options: ["doesn't", "don't", "isn't", "not"], correct: 0,
+    hint: "Negativa com he. É don't ou a outra forma?",
+    explain: "He/she/it → <strong>doesn't like</strong>. I/you/we/they → don't like." },
+  { topic: "Like, Love, Hate + ing", q: "Qual é a ordem, do que você MAIS gosta para o que MENOS gosta?",
+    options: ["love → like → don't like → hate", "like → love → hate → don't like", "hate → like → love → don't like", "don't like → hate → like → love"], correct: 0,
+    hint: "Pensa nos rostos da tabela: olhos de coração, sorriso, rosto triste, rosto bravo.",
+    explain: "<strong>love</strong> (adora) → <strong>like</strong> (gosta) → <strong>don't like</strong> (não gosta) → <strong>hate</strong> (odeia)." },
+  { topic: "Like, Love, Hate + ing",
+    passage: "Na tabela da professora, Peter tem olhos de coração em 'reading' e rosto bravo em 'cooking'.",
+    q: "Which sentence is true about Peter?",
+    options: ["Peter loves reading but he hates cooking.", "Peter hates reading but he loves cooking.", "Peter doesn't like reading.", "Peter loves cooking."], correct: 0,
+    hint: "Olhos de coração = adora. Rosto bravo = odeia. Agora encaixa cada atividade.",
+    explain: "Coração = <strong>loves</strong>; bravo = <strong>hates</strong>. Peter loves reading but hates cooking." },
+  { topic: "Like, Love, Hate + ing",
+    passage: "Na tabela, John tem olhos de coração em 'cooking' e rosto bravo em 'swimming'.",
+    q: "John ______ cooking, but he ______ swimming.",
+    options: ["loves / hates", "hates / loves", "likes / loves", "doesn't like / likes"], correct: 0,
+    hint: "Primeiro lacuna = coração; segunda = bravo.",
+    explain: "John <strong>loves</strong> cooking, but he <strong>hates</strong> swimming." },
+  { topic: "Like, Love, Hate + ing", q: "What do you hate doing? — I hate ______ my room.",
+    options: ["cleaning", "clean", "cleans", "to cleaning"], correct: 0,
+    hint: "Depois de hate, o verbo fica igual depois de love e like.",
+    explain: "<strong>hate + -ing</strong>: I hate cleaning my room." },
+  { topic: "Like, Love, Hate + ing", q: "Do you like shopping for clothes? — No, I ______.",
+    options: ["don't", "doesn't", "am not", "not like"], correct: 0,
+    hint: "A pergunta começa com Do. A resposta curta usa a mesma palavra no negativo.",
+    explain: "Pergunta com <strong>Do</strong> → <strong>No, I don't.</strong> / Yes, I do." },
+  { topic: "Like, Love, Hate + ing", q: "ride + ing =",
+    options: ["riding", "rideing", "ridding", "rideng"], correct: 0,
+    hint: "Ride termina em -e. Mesma regra do dance e do write.",
+    explain: "Tira o e: <strong>ride → riding</strong>. I love riding my bike." },
+  { topic: "Like, Love, Hate + ing",
+    passage: "Na tabela, Mary tem rosto bravo em 'cycling'.",
+    q: "Mary ______ cycling.",
+    options: ["hates", "hate", "hating", "is hate"], correct: 0,
+    hint: "Rosto bravo = odeia. Mary = she, então o verbo ganha uma letra.",
+    explain: "She → <strong>hates</strong> cycling." },
+
+  // ----- Clothes (Unit 8) -----
+  { topic: "Clothes", q: "You wear them on your feet:",
+    options: ["shoes", "gloves", "a cap", "a scarf"], correct: 0,
+    hint: "Feet = pés. O que vai nos pés?",
+    explain: "<strong>Shoes</strong> = sapatos. Também: trainers/sneakers (tênis), boots (botas), socks (meias), sandals." },
+  { topic: "Clothes", q: "You wear it on your head:",
+    options: ["a cap", "socks", "a skirt", "trousers"], correct: 0,
+    hint: "Head = cabeça.",
+    explain: "<strong>Cap</strong> = boné. <strong>Hat</strong> = chapéu." },
+  { topic: "Clothes", q: "When it's cold, you wear a ______ around your neck.",
+    options: ["scarf", "shorts", "sandals", "T-shirt"], correct: 0,
+    hint: "Neck = pescoço. O que se enrola no pescoço no frio?",
+    explain: "<strong>Scarf</strong> = cachecol." },
+  { topic: "Clothes", q: "A ______ is like a skirt and a top together, in one piece.",
+    options: ["dress", "jacket", "sock", "shirt"], correct: 0,
+    hint: "Uma peça só, que cobre o corpo e as pernas. Muito usada em festas.",
+    explain: "<strong>Dress</strong> = vestido. <strong>Skirt</strong> = saia." },
+  { topic: "Clothes", q: "In summer, at the beach, I wear ______ and sandals.",
+    options: ["shorts", "a coat", "gloves", "boots"], correct: 0,
+    hint: "Praia, calor. Elimina tudo que é de frio.",
+    explain: "<strong>Shorts</strong> = bermuda/short. Coat, gloves e boots são roupas de frio." },
+  { topic: "Clothes", q: "My jeans ______ blue.",
+    options: ["are", "is", "am", "has"], correct: 0,
+    hint: "Em inglês, jeans, trousers e shorts são sempre plural (têm duas pernas).",
+    explain: "<strong>Jeans</strong> é plural → <strong>are</strong>. My jeans are blue. O mesmo com trousers e shorts." },
+  { topic: "Clothes", q: "What are you wearing today? — I ______ a T-shirt and jeans.",
+    options: ["'m wearing", "wear", "'m wear", "wearing"], correct: 0,
+    hint: "A pergunta é no Present Continuous (are you wearing). A resposta também: am + -ing.",
+    explain: "<strong>I'm wearing</strong> = estou vestindo agora." },
+  { topic: "Clothes", q: "You wear ______ on your hands when it's cold.",
+    options: ["gloves", "socks", "boots", "a hat"], correct: 0,
+    hint: "Hands = mãos.",
+    explain: "<strong>Gloves</strong> = luvas." },
+  { topic: "Clothes", q: "\"Trainers\" (ou \"sneakers\") são:",
+    options: ["tênis", "treinadores", "meias", "chinelos"], correct: 0,
+    hint: "Cuidado com o falso amigo: não é uma pessoa. É algo que se usa nos pés pra fazer esporte.",
+    explain: "<strong>Trainers</strong> (britânico) / <strong>sneakers</strong> (americano) = tênis." },
+  { topic: "Clothes", q: "At school I wear a ______: the same clothes as all the other students.",
+    options: ["uniform", "pyjamas", "scarf", "swimsuit"], correct: 0,
+    hint: "Roupa igual para todos os alunos.",
+    explain: "<strong>Uniform</strong> = uniforme. Pyjamas = pijama; swimsuit = maiô." },
+
+  // ----- Must & Mustn't (Unit 9) -----
+  { topic: "Must & Mustn't", q: "You ______ wear a uniform at school. It's a rule.",
+    options: ["must", "mustn't", "can't", "musts"], correct: 0,
+    hint: "É uma regra que manda FAZER (obrigação), não uma proibição. E lembra que esse verbo nunca ganha -s.",
+    explain: "<strong>Must</strong> = obrigação (tem que). You must wear a uniform." },
+  { topic: "Must & Mustn't", q: "You ______ run in the corridors. It's dangerous.",
+    options: ["mustn't", "must", "can", "musts"], correct: 0,
+    hint: "É perigoso, então é proibido. Qual forma proíbe?",
+    explain: "<strong>Mustn't</strong> (must not) = proibido." },
+  { topic: "Must & Mustn't", q: "Which sentence is correct?",
+    options: ["You must do your homework.", "You must to do your homework.", "You must doing your homework.", "You musts do your homework."], correct: 0,
+    hint: "Depois de must vem o verbo puro: sem to, sem -ing. E must não muda.",
+    explain: "<strong>must + verbo base</strong>: must do, must listen, must wear." },
+  { topic: "Must & Mustn't", q: "She ______ be late for class.",
+    options: ["mustn't", "mustn't to", "don't must", "not must"], correct: 0,
+    hint: "Negativa de must: junta must + not. Nada de don't nem 'to'.",
+    explain: "Negativa: <strong>mustn't</strong> + verbo. Igual para todas as pessoas." },
+  { topic: "Must & Mustn't", q: "\"Mustn't\" significa:",
+    options: ["é proibido", "é obrigatório", "é permitido", "é opcional"], correct: 0,
+    hint: "Must = tem que fazer. Must NOT = ...?",
+    explain: "<strong>mustn't</strong> = não pode, é proibido." },
+  { topic: "Must & Mustn't", q: "Students ______ use their phones in class.",
+    options: ["mustn't", "must", "musts", "mustn't to"], correct: 0,
+    hint: "Na escola, celular em sala é permitido ou proibido?",
+    explain: "Regra de proibição → <strong>mustn't</strong>." },
+  { topic: "Must & Mustn't", q: "You ______ listen to the teacher.",
+    options: ["must", "mustn't", "musts", "must to"], correct: 0,
+    hint: "Ouvir o professor é obrigação ou proibição? E lembra: esse verbo não ganha -s nem leva 'to' depois.",
+    explain: "Obrigação → <strong>must listen</strong>." },
+  { topic: "Must & Mustn't", q: "You ______ eat fruit and vegetables. They're good for you.",
+    options: ["must", "mustn't", "musts", "can't to"], correct: 0,
+    hint: "Se é bom pra você, é algo que você TEM que fazer.",
+    explain: "<strong>must eat</strong> = tem que comer." },
+  { topic: "Must & Mustn't", q: "You ______ drink a lot of soda. It's bad for your teeth.",
+    options: ["mustn't", "must", "musts", "mustn't to"], correct: 0,
+    hint: "Faz mal aos dentes. Então é uma regra de proibição.",
+    explain: "<strong>mustn't drink</strong> = não pode beber." },
+  { topic: "Must & Mustn't",
+    passage: "LIBRARY RULES: Be quiet. Don't eat. Give the books back on time.",
+    q: "Which sentence is correct about the library?",
+    options: ["You mustn't eat in the library.", "You must eat in the library.", "You mustn't be quiet in the library.", "You must to be quiet in the library."], correct: 0,
+    hint: "Compara cada frase com as regras: 'Don't eat' é proibição. E veja se alguma frase tem erro de gramática.",
+    explain: "'Don't eat' = <strong>You mustn't eat</strong>. 'Be quiet' = You must be quiet (sem 'to')." },
+
+  // ----- Can & Can't – permission (Unit 9) -----
+  { topic: "Can & Can't (Permission)", q: "______ I go to the toilet, please?",
+    options: ["Can", "Must", "Do", "Am"], correct: 0,
+    hint: "Você está pedindo permissão. Qual palavra pede permissão?",
+    explain: "Pedir permissão: <strong>Can I ...?</strong> Can I go to the toilet, please?" },
+  { topic: "Can & Can't (Permission)", q: "Can I watch TV? — Yes, you ______.",
+    options: ["can", "can't", "do", "must"], correct: 0,
+    hint: "A resposta é sim, e repete a palavra da pergunta.",
+    explain: "<strong>Yes, you can.</strong> / No, you can't." },
+  { topic: "Can & Can't (Permission)", q: "Can I use my phone in class? — No, you ______.",
+    options: ["can't", "can", "don't", "aren't"], correct: 0,
+    hint: "A resposta é não, com a mesma palavra da pergunta.",
+    explain: "<strong>No, you can't</strong> = não, você não pode." },
+  { topic: "Can & Can't (Permission)", q: "Which sentence is correct?",
+    options: ["She can go to the party.", "She cans go to the party.", "She can to go to the party.", "She can goes to the party."], correct: 0,
+    hint: "Can é igual para todas as pessoas (sem -s) e o verbo depois dele é puro (sem to, sem -s).",
+    explain: "<strong>can + verbo base</strong>: She can go. Nada de cans, can to ou can goes." },
+  { topic: "Can & Can't (Permission)", q: "At home, I ______ play video games after my homework. My mom says yes!",
+    options: ["can", "can't", "mustn't", "must to"], correct: 0,
+    hint: "A mãe deixa. Então é permissão positiva.",
+    explain: "Permissão → <strong>I can play</strong>." },
+  { topic: "Can & Can't (Permission)", q: "I ______ stay up late. I go to bed at nine.",
+    options: ["can't", "can", "must", "cans"], correct: 0,
+    hint: "Se ele vai dormir às nove, ele tem permissão de ficar acordado até tarde?",
+    explain: "Sem permissão → <strong>I can't stay up late</strong>." },
+  { topic: "Can & Can't (Permission)", q: "Which question asks for permission politely?",
+    options: ["Can I open the window, please?", "I open the window.", "Open the window!", "You can open the window?"], correct: 0,
+    hint: "Pedido educado: começa com a palavra de permissão e termina com uma palavrinha mágica.",
+    explain: "<strong>Can I ..., please?</strong> é o jeito educado de pedir." },
+  { topic: "Can & Can't (Permission)", q: "\"You can't\" significa:",
+    options: ["você não pode (não tem permissão)", "você deve", "você precisa", "você é obrigado"], correct: 0,
+    hint: "Can = pode. Can't = ...?",
+    explain: "<strong>can't</strong> = não pode, não tem permissão." },
+  { topic: "Can & Can't (Permission)", q: "Can we eat in the classroom? — No, ______.",
+    options: ["we can't", "we don't", "we aren't", "we mustn't to"], correct: 0,
+    hint: "Resposta curta: repete o sujeito e a palavra da pergunta, no negativo.",
+    explain: "Pergunta com <strong>Can</strong> → <strong>No, we can't</strong>." },
+  { topic: "Can & Can't (Permission)", q: "\"You can't run here\" e \"You mustn't run here\" querem dizer:",
+    options: ["as duas: não é permitido correr aqui", "a primeira proíbe e a segunda obriga", "as duas obrigam a correr", "nenhuma fala de regra"], correct: 0,
+    hint: "Can't = não pode. Mustn't = é proibido. São parecidas ou opostas?",
+    explain: "As duas expressam <strong>proibição</strong>. Mustn't soa mais forte, como regra; can't é 'não tem permissão'." },
+
+  // ----- Food and Drink (Unit 9) -----
+  { topic: "Food and Drink", q: "Which one is a DRINK?",
+    options: ["juice", "bread", "cheese", "rice"], correct: 0,
+    hint: "Drink = bebida. Qual dessas você bebe?",
+    explain: "<strong>Juice</strong> = suco. Bread = pão, cheese = queijo, rice = arroz." },
+  { topic: "Food and Drink", q: "Which one is a FRUIT?",
+    options: ["banana", "carrot", "chicken", "cheese"], correct: 0,
+    hint: "Fruit = fruta.",
+    explain: "<strong>Banana</strong>. Carrot = cenoura (legume), chicken = frango, cheese = queijo." },
+  { topic: "Food and Drink", q: "Which one is a VEGETABLE?",
+    options: ["carrot", "apple", "milk", "cake"], correct: 0,
+    hint: "Vegetable = legume ou verdura.",
+    explain: "<strong>Carrot</strong> = cenoura. Apple = maçã (fruta), milk = leite, cake = bolo." },
+  { topic: "Food and Drink", q: "Cows give us ______.",
+    options: ["milk", "eggs", "honey", "juice"], correct: 0,
+    hint: "Cow = vaca. O que vem da vaca?",
+    explain: "<strong>Milk</strong> = leite." },
+  { topic: "Food and Drink", q: "Chickens give us ______.",
+    options: ["eggs", "milk", "cheese", "bread"], correct: 0,
+    hint: "O que a galinha bota?",
+    explain: "<strong>Eggs</strong> = ovos." },
+  { topic: "Food and Drink", q: "Bees make ______.",
+    options: ["honey", "cheese", "rice", "bread"], correct: 0,
+    hint: "Bee = abelha.",
+    explain: "<strong>Honey</strong> = mel." },
+  { topic: "Food and Drink", q: "The first meal of the day is ______.",
+    options: ["breakfast", "lunch", "dinner", "dessert"], correct: 0,
+    hint: "A refeição de manhã, logo depois de acordar.",
+    explain: "<strong>Breakfast</strong> = café da manhã · <strong>lunch</strong> = almoço · <strong>dinner</strong> = jantar." },
+  { topic: "Food and Drink", q: "\"Rice and beans\" significa:",
+    options: ["arroz e feijão", "arroz e batata", "feijão e carne", "pão e feijão"], correct: 0,
+    hint: "O prato mais brasileiro de todos. Rice já apareceu numa questão anterior.",
+    explain: "<strong>Rice</strong> = arroz · <strong>beans</strong> = feijão." },
+  { topic: "Food and Drink", q: "Which one is NOT healthy food?",
+    options: ["sweets", "salad", "fruit", "water"], correct: 0,
+    hint: "Healthy = saudável. Qual delas tem muito açúcar?",
+    explain: "<strong>Sweets</strong> = doces. You mustn't eat too many sweets!" },
+  { topic: "Food and Drink", q: "I'm thirsty. Can I have some ______, please?",
+    options: ["water", "bread", "cheese", "chicken"], correct: 0,
+    hint: "Thirsty = com sede. (Hungry = com fome.)",
+    explain: "Com sede → <strong>water</strong>. Unit 9: <em>Who's hungry?</em> = Quem está com fome?" },
+
+  // ----- Speaking Practice (perguntas da professora) -----
+  { topic: "Speaking Practice", q: "When is your birthday?",
+    options: ["It's in July.", "It's at July.", "It's on July.", "I have July."], correct: 0,
+    hint: "Mês usa qual preposição? (A mesma de 'in summer'.)",
+    explain: "<strong>in</strong> + mês: It's in July. Com a data: It's on July 5th." },
+  { topic: "Speaking Practice", q: "What time do you get up?",
+    options: ["I get up at seven o'clock.", "I get up in seven o'clock.", "I get up on seven.", "I'm get up at seven."], correct: 0,
+    hint: "Responde repetindo o verbo da pergunta. E hora usa qual preposição?",
+    explain: "<strong>I get up at seven o'clock.</strong> Rotina = Simple Present; hora = at." },
+  { topic: "Speaking Practice", q: "What are you wearing today?",
+    options: ["I'm wearing jeans and a T-shirt.", "I wearing jeans and a T-shirt.", "I am wear jeans and a T-shirt.", "I'm wear jeans and a T-shirt."], correct: 0,
+    hint: "A pergunta está no Present Continuous. A resposta precisa de am + verbo com -ing.",
+    explain: "<strong>I'm wearing ...</strong> = estou vestindo." },
+  { topic: "Speaking Practice", q: "What do you love doing?",
+    options: ["I love playing video games.", "I love play video games.", "I loves playing video games.", "I'm love playing video games."], correct: 0,
+    hint: "Depois de love o verbo ganha -ing. E com I, o love não muda.",
+    explain: "<strong>I love + -ing</strong>: I love playing video games." },
+  { topic: "Speaking Practice", q: "Has your pet got a long tail?",
+    options: ["Yes, it has.", "Yes, it is.", "Yes, it does.", "Yes, it have."], correct: 0,
+    hint: "A pergunta começa com Has. A resposta curta usa a mesma palavra.",
+    explain: "<strong>Yes, it has.</strong> / No, it hasn't." },
+  { topic: "Speaking Practice", q: "Tell me the rules from your school using MUST and MUST NOT.",
+    options: ["We must wear a uniform. We mustn't run in the corridors.", "We must to wear a uniform. We mustn't to run.", "We musts wear a uniform.", "We must wearing a uniform."], correct: 0,
+    hint: "Must e mustn't + verbo puro. Sem to, sem -s, sem -ing.",
+    explain: "<strong>We must wear ...</strong> / <strong>We mustn't run ...</strong> Fale pelo menos uma de cada." },
+  { topic: "Speaking Practice", q: "Tell what you have permission to do at home. Use CAN or CAN'T.",
+    options: ["I can play video games, but I can't go to bed late.", "I can to play video games.", "I cans play video games.", "I can playing video games."], correct: 0,
+    hint: "Can + verbo puro. Tente usar can E can't na mesma resposta.",
+    explain: "<strong>I can ... but I can't ...</strong> mostra as duas formas — ótimo para a prova oral." },
+  { topic: "Speaking Practice", q: "What can you do?",
+    options: ["I can swim and ride a bike.", "I can swimming.", "I can to swim.", "I cans swim."], correct: 0,
+    hint: "Can + verbo puro, e can não muda.",
+    explain: "Aqui o can é de <strong>habilidade</strong>: I can swim, I can ride a bike, I can play the guitar." },
+  { topic: "Speaking Practice", q: "When does summer start in your country (Brazil)?",
+    options: ["It starts in December.", "It starts in June.", "It starts in March.", "It starts in September."], correct: 0,
+    hint: "No Brasil (hemisfério sul) o verão é na época do Natal e das férias.",
+    explain: "No Brasil, o verão começa em <strong>dezembro</strong>; a primavera, em setembro. Summer holiday = dezembro a fevereiro." },
+  { topic: "Speaking Practice", q: "Are you watching any good TV show now?",
+    options: ["Yes, I am. I'm watching a cartoon series.", "Yes, I do. I watching a cartoon.", "Yes, I'm watch a cartoon.", "Yes, I are."], correct: 0,
+    hint: "A pergunta começa com Are you... A resposta curta com I usa am. Depois, uma frase com -ing.",
+    explain: "<strong>Yes, I am. I'm watching ...</strong> Responde curto e completa com uma frase." },
 
   // ===== GEOGRAFIA · CAP. 11 E 12 (Bernardo, 9º ano – estilo prova do prof. Júlio) =====
 
@@ -2834,147 +3174,326 @@ const STUDY_CONTENT = {
     </div>
   `,
 
-  "Simple Present": `
-    <div class="s-intro">O Simple Present fala de rotinas, gostos e hábitos (Unit 05 – Free Time): o que você faz todo dia, o que gosta, seu tempo livre.</div>
-
+  "Have got & Has got": `
+    <div class="s-intro"><strong>Unit 6 – Best Friends.</strong> <em>Have got</em> = ter (posse, família, características). É o tema das perguntas sobre sport, family, pets e você.</div>
     <div class="s-sec">
-      <h3>A regra do -S (a mais importante!)</h3>
-      <div class="s-rule">
-        <strong>I / you / we / they</strong> → verbo normal: play, like, go<br>
-        <strong>he / she / it</strong> → verbo + <strong>-s</strong>: plays, likes, goes
-      </div>
-      <div class="s-ex"><div class="en">I <u>play</u> video games. · She <u>plays</u> tennis.</div><div class="pt">Eu jogo videogame. · Ela joga tênis.</div></div>
-      <div class="s-ex"><div class="en">He <u>watches</u> TV. · She <u>goes</u> to school.</div><div class="pt">Verbos em -ch, -sh, -o ganham -ES: watches, goes.</div></div>
-    </div>
-
-    <div class="s-sec">
-      <h3>Negativa: don't / doesn't</h3>
-      <div class="s-rule">
-        I/you/we/they → <strong>don't</strong> + verbo<br>
-        he/she/it → <strong>doesn't</strong> + verbo (SEM -s!)
-      </div>
-      <div class="s-ex"><div class="en">I <u>don't like</u> horror movies.</div><div class="pt">Eu não gosto de filmes de terror.</div></div>
-      <div class="s-ex"><div class="en">He <u>doesn't drink</u> coffee.</div><div class="pt">Ele não bebe café. (drink sem -s!)</div></div>
-    </div>
-
-    <div class="s-sec">
-      <h3>Pergunta: Do / Does</h3>
-      <div class="s-rule">
-        <strong>Do</strong> + I/you/we/they...?<br>
-        <strong>Does</strong> + he/she/it...? (verbo SEM -s)
-      </div>
-      <div class="s-ex"><div class="en"><u>Do</u> you like pizza?</div><div class="pt">Você gosta de pizza?</div></div>
-      <div class="s-ex"><div class="en"><u>Does</u> she speak English?</div><div class="pt">Ela fala inglês? (speak sem -s)</div></div>
-    </div>
-
-    <div class="s-warn">
-      <strong>O erro nº 1:</strong> usar -s duas vezes. Quando aparece <u>does/doesn't</u>, o -s já está nele!<br>
-      <span class="bad">Errado:</span> She doesn't like<strong>s</strong>. · Does he play<strong>s</strong>?<br>
-      <span class="good">Certo:</span> She doesn't like. · Does he play?
-    </div>
-
-    <div class="s-tip">
-      <strong>Palavras-chave</strong> do Simple Present: every day, on weekends, always, usually, never. Se é rotina/hábito → Simple Present.
-    </div>
-  `,
-
-  "Adverbs of Frequency": `
-    <div class="s-intro">Os advérbios de frequência dizem <strong>quantas vezes</strong> você faz algo: sempre, geralmente, muitas vezes, às vezes ou nunca.</div>
-
-    <div class="s-sec">
-      <h3>A escada da frequência</h3>
+      <h3>A regra</h3>
       <div class="s-table">
-        <div class="s-thead"><div>advérbio</div><div>significado</div><div>frequência</div></div>
-        <div class="s-trow"><div class="prefix">always</div><div>sempre</div><div>100%</div></div>
-        <div class="s-trow"><div class="prefix">usually</div><div>geralmente</div><div>~85%</div></div>
-        <div class="s-trow"><div class="prefix">often</div><div>muitas vezes</div><div>~65%</div></div>
-        <div class="s-trow"><div class="prefix">sometimes</div><div>às vezes</div><div>~40%</div></div>
-        <div class="s-trow"><div class="prefix">never</div><div>nunca</div><div>0%</div></div>
+        <div class="s-thead"><div></div><div>I / you / we / they</div><div>he / she / it</div><div></div></div>
+        <div class="s-trow"><div class="prefix">+</div><div>have got ('ve got)</div><div>has got ('s got)</div><div></div></div>
+        <div class="s-trow"><div class="prefix">−</div><div>haven't got</div><div>hasn't got</div><div></div></div>
+        <div class="s-trow"><div class="prefix">?</div><div>Have you got...?</div><div>Has she got...?</div><div></div></div>
       </div>
     </div>
-
     <div class="s-sec">
-      <h3>Onde colocar na frase?</h3>
-      <div class="s-rule">
-        <strong>ANTES</strong> do verbo principal: I <u>always</u> study.<br>
-        <strong>DEPOIS</strong> do verbo <strong>be</strong>: He is <u>always</u> happy.
-      </div>
-      <div class="s-ex"><div class="en">I <u>usually</u> get up at 7.</div><div class="pt">Eu geralmente acordo às 7.</div></div>
-      <div class="s-ex"><div class="en">She <u>never</u> eats fish.</div><div class="pt">Ela nunca come peixe.</div></div>
-      <div class="s-ex"><div class="en">They are <u>often</u> tired.</div><div class="pt">Eles estão frequentemente cansados. (depois do are!)</div></div>
+      <h3>Exemplos da professora</h3>
+      <div class="s-ex"><div class="en">Have you got a pet? — Yes, I have. / No, I haven't.</div><div class="pt">Você tem um bicho de estimação?</div></div>
+      <div class="s-ex"><div class="en">Has your mother got a bike? — Yes, she has. / No, she hasn't.</div><div class="pt">Sua mãe tem bicicleta?</div></div>
+      <div class="s-ex"><div class="en">Has your pet got a long tail? — Yes, it has.</div><div class="pt">Seu bicho tem rabo comprido?</div></div>
+      <div class="s-ex"><div class="en">Has your family got a car? — No, it hasn't.</div><div class="pt">Sua família tem carro?</div></div>
     </div>
-
     <div class="s-warn">
-      <strong>Cuidado com o never:</strong> ele já é negativo, então o verbo fica normal.<br>
-      <span class="bad">Errado:</span> I don't never eat fish.<br>
-      <span class="good">Certo:</span> I never eat fish.
+      <strong>Resposta curta sem "got":</strong><br>
+      <span class="bad">Errado:</span> Yes, I have got.<br>
+      <span class="good">Certo:</span> Yes, I have. · No, she hasn't.
     </div>
+    <div class="s-tip"><strong>Truque:</strong> troca o sujeito por pronome. My mother = she → has. Your pet = it → has. My friends = they → have.</div>
+  `,
 
-    <div class="s-tip">
-      <strong>Truque:</strong> pensa numa escada descendo — <u>always</u> (topo, 100%) → usually → often → sometimes → <u>never</u> (chão, 0%). E a posição: antes do verbo comum, depois do verbo be.
+  "Describing People": `
+    <div class="s-intro"><strong>Unit 6.</strong> Como descrever a aparência de uma pessoa — como nas fotos da professora (Cristiano Ronaldo, a menina ruiva, o homem de bigode).</div>
+    <div class="s-sec">
+      <h3>Dois verbos diferentes</h3>
+      <div class="s-rule">
+        <strong>be</strong> → altura e corpo: He <u>is</u> tall. She <u>is</u> short and slim.<br>
+        <strong>have got</strong> → cabelo, olhos, barba: She <u>has got</u> curly hair. He <u>has got</u> a beard.
+      </div>
+    </div>
+    <div class="s-sec">
+      <h3>Vocabulário</h3>
+      <ul>
+        <li><strong>Hair:</strong> long / short · straight (liso) / curly (cacheado) / wavy (ondulado) · blond (loiro) / dark (escuro) / brown (castanho) / red (ruivo)</li>
+        <li><strong>Eyes:</strong> blue / brown / green</li>
+        <li><strong>Face:</strong> beard (barba) · moustache (bigode) · glasses (óculos) · freckles (sardas)</li>
+        <li><strong>Body:</strong> tall (alto) · short (baixo) · slim (magro)</li>
+      </ul>
+    </div>
+    <div class="s-sec">
+      <h3>Descrevendo as fotos</h3>
+      <div class="s-ex"><div class="en">He has got short dark hair and brown eyes.</div><div class="pt">Cristiano Ronaldo</div></div>
+      <div class="s-ex"><div class="en">She has got long red hair, blue eyes and freckles.</div><div class="pt">a menina ruiva</div></div>
+      <div class="s-ex"><div class="en">He has got short dark hair, a moustache and glasses.</div><div class="pt">o homem de bigode</div></div>
+      <div class="s-ex"><div class="en">She has got long curly hair.</div><div class="pt">a menina de cabelo cacheado</div></div>
+      <div class="s-ex"><div class="en">He has got a beard.</div><div class="pt">o homem de barba</div></div>
+      <div class="s-ex"><div class="en">She has got long straight blond hair and blue eyes.</div><div class="pt">a moça loira</div></div>
+    </div>
+    <div class="s-warn">
+      <strong>Ordem das palavras:</strong> tamanho → cor → hair.<br>
+      <span class="good">Certo:</span> long blond hair · short dark hair<br>
+      <span class="bad">Errado:</span> hair long · blond long hair
     </div>
   `,
 
-  "Gadgets & Free Time": `
-    <div class="s-intro">Vocabulário da Unit 5 pra prova online: os <strong>gadgets</strong> (aparelhos eletrônicos) e as <strong>atividades de tempo livre</strong>.</div>
-
+  "What's the Time?": `
+    <div class="s-intro"><strong>Unit 7 – Living for sports.</strong> Como perguntar e dizer as horas.</div>
     <div class="s-sec">
-      <h3>Gadgets (aparelhos)</h3>
+      <h3>Pergunta e resposta</h3>
+      <div class="s-rule"><strong>What's the time?</strong> (ou What time is it?) → <strong>It's ...</strong></div>
+    </div>
+    <div class="s-sec">
+      <h3>O relógio dividido ao meio</h3>
+      <div class="s-table">
+        <div class="s-thead"><div>hora</div><div>em inglês</div><div>regra</div><div></div></div>
+        <div class="s-trow"><div class="prefix">7:00</div><div>seven o'clock</div><div>hora exata</div><div></div></div>
+        <div class="s-trow"><div class="prefix">7:05</div><div>five past seven</div><div>past = passou</div><div></div></div>
+        <div class="s-trow"><div class="prefix">7:15</div><div>quarter past seven</div><div>quarter = 15</div><div></div></div>
+        <div class="s-trow"><div class="prefix">7:30</div><div>half past seven</div><div>half = 30</div><div></div></div>
+        <div class="s-trow"><div class="prefix">7:40</div><div>twenty to eight</div><div>to = falta para</div><div></div></div>
+        <div class="s-trow"><div class="prefix">7:45</div><div>quarter to eight</div><div>falta 15</div><div></div></div>
+      </div>
+      <p style="margin-top:10px">Até os 30 minutos usa <strong>past</strong> + a hora que passou. Depois dos 30, usa <strong>to</strong> + a hora que está chegando.</p>
+    </div>
+    <div class="s-sec">
+      <h3>Preposições de tempo</h3>
       <ul>
-        <li><strong>smartphone / mobile phone</strong> — celular</li>
-        <li><strong>tablet</strong> — tablet</li>
-        <li><strong>laptop</strong> — notebook</li>
-        <li><strong>headphones / earphones</strong> — fones de ouvido</li>
-        <li><strong>speaker</strong> — caixa de som</li>
-        <li><strong>charger</strong> — carregador</li>
-        <li><strong>games console</strong> — videogame (o aparelho)</li>
-        <li><strong>smartwatch</strong> — relógio inteligente</li>
-        <li><strong>camera</strong> — câmera</li>
-        <li><strong>smart TV</strong> — TV inteligente</li>
-        <li><strong>screen / touchscreen</strong> — tela / tela de toque</li>
+        <li><strong>at</strong> + hora: at seven o'clock, at half past six</li>
+        <li><strong>on</strong> + dia: on Monday, on my birthday, on May 10th</li>
+        <li><strong>in</strong> + mês/estação: in May, in summer, in the morning</li>
       </ul>
     </div>
-
-    <div class="s-sec">
-      <h3>Verbos que combinam com gadgets</h3>
-      <ul>
-        <li><strong>turn on</strong> — ligar · <strong>turn off</strong> — desligar</li>
-        <li><strong>charge</strong> — carregar (the battery is low = bateria fraca)</li>
-        <li><strong>send messages</strong> — mandar mensagens</li>
-        <li><strong>make calls</strong> — fazer ligações</li>
-        <li><strong>download</strong> — baixar · <strong>chat online</strong> — conversar online</li>
-        <li><strong>take photos</strong> — tirar fotos</li>
-        <li><strong>wear</strong> — usar no corpo (a smartwatch on your wrist = no pulso)</li>
-      </ul>
-      <div class="s-ex"><div class="en">I <u>turn off</u> my phone at night and <u>charge</u> it.</div><div class="pt">Eu desligo meu celular à noite e coloco pra carregar.</div></div>
-    </div>
-
-    <div class="s-sec">
-      <h3>Free time (tempo livre)</h3>
-      <p>Cuidado com o verbo certo pra cada atividade:</p>
-      <ul>
-        <li><strong>play</strong> video games / football / tennis — jogar</li>
-        <li><strong>ride</strong> a bike / a horse — andar de bike / cavalo</li>
-        <li><strong>watch</strong> TV / movies — assistir</li>
-        <li><strong>listen to</strong> music — escutar música</li>
-        <li><strong>read</strong> books / comics — ler</li>
-        <li><strong>go</strong> swimming / shopping — ir nadar / às compras</li>
-        <li><strong>hang out</strong> with friends — sair com os amigos</li>
-      </ul>
-      <div class="s-ex"><div class="en">In my free time, I <u>play</u> video games and <u>hang out</u> with friends.</div><div class="pt">No meu tempo livre, jogo videogame e saio com meus amigos.</div></div>
-    </div>
-
     <div class="s-warn">
-      <strong>Não confunda os verbos:</strong><br>
-      <span class="bad">Errado:</span> I <strong>play</strong> a bike. · I <strong>ride</strong> video games.<br>
-      <span class="good">Certo:</span> I <strong>ride</strong> a bike. · I <strong>play</strong> video games.
+      <strong>Pegadinha do "to":</strong> 8:40 é <u>twenty to NINE</u>, não "to eight". O "to" aponta pra hora que vem.
     </div>
+  `,
 
-    <div class="s-tip">
-      <strong>Pra prova:</strong> revisa também Simple Present (o tema aqui do site) — a prova cobra os dois juntos: "She <u>plays</u> video games", "He <u>doesn't watch</u> TV". E confere as páginas 46–53 do Student's Book + Workbook Unit 5.
+  "Present Continuous": `
+    <div class="s-intro"><strong>Unit 8 – Feel the Rhythm.</strong> Para o que está acontecendo <strong>agora</strong>. A professora pergunta: <em>What are you doing now?</em></div>
+    <div class="s-sec">
+      <h3>Forma</h3>
+      <div class="s-rule">
+        <strong>am / is / are</strong> + verbo-<strong>ing</strong><br>
+        I am reading · She is singing · They are playing
+      </div>
+      <div class="s-ex"><div class="en">What are you doing? — I'm studying English.</div><div class="pt">O que você está fazendo?</div></div>
+      <div class="s-ex"><div class="en">Is she singing? — Yes, she is. / No, she isn't.</div><div class="pt"></div></div>
     </div>
-  `
-,
+    <div class="s-sec">
+      <h3>Grafia do -ing</h3>
+      <ul>
+        <li>Normal: play → play<strong>ing</strong>, read → read<strong>ing</strong></li>
+        <li>Termina em -e: tira o e → dance → danc<strong>ing</strong>, ride → rid<strong>ing</strong>, take → tak<strong>ing</strong></li>
+        <li>Consoante-vogal-consoante: dobra → run → ru<strong>nn</strong>ing, swim → swi<strong>mm</strong>ing, sit → si<strong>tt</strong>ing</li>
+      </ul>
+    </div>
+    <div class="s-sec">
+      <h3>O parque da professora</h3>
+      <div class="s-ex"><div class="en">Callie is reading a book.</div><div class="pt"></div></div>
+      <div class="s-ex"><div class="en">Claire is talking on the phone.</div><div class="pt"></div></div>
+      <div class="s-ex"><div class="en">Peter is running.</div><div class="pt"></div></div>
+      <div class="s-ex"><div class="en">Charles is doing a handstand.</div><div class="pt">plantando bananeira</div></div>
+      <div class="s-ex"><div class="en">Elena is singing.</div><div class="pt"></div></div>
+      <div class="s-ex"><div class="en">Matt is taking a photo.</div><div class="pt"></div></div>
+      <div class="s-ex"><div class="en">Rob is watching football on his phone.</div><div class="pt"></div></div>
+      <div class="s-ex"><div class="en">Lucy is sitting on a bench.</div><div class="pt"></div></div>
+      <div class="s-ex"><div class="en">Joe and Keri are talking.</div><div class="pt"></div></div>
+    </div>
+    <div class="s-tip"><strong>Palavras-chave:</strong> now, right now, at the moment, today, Look!, Listen! → Present Continuous. Every day, usually → Simple Present.</div>
+  `,
+
+  "Like, Love, Hate + ing": `
+    <div class="s-intro"><strong>Unit 8.</strong> Falar do que você gosta e não gosta de fazer. Depois desses verbos, a ação vem com <strong>-ing</strong>.</div>
+    <div class="s-sec">
+      <h3>A escala (os rostos da tabela)</h3>
+      <div class="s-table">
+        <div class="s-thead"><div>rosto</div><div>verbo</div><div>significado</div><div></div></div>
+        <div class="s-trow"><div class="prefix">olhos de coração</div><div>love</div><div>adoro</div><div></div></div>
+        <div class="s-trow"><div class="prefix">sorriso</div><div>like</div><div>gosto</div><div></div></div>
+        <div class="s-trow"><div class="prefix">triste</div><div>don't like</div><div>não gosto</div><div></div></div>
+        <div class="s-trow"><div class="prefix">bravo</div><div>hate</div><div>odeio</div><div></div></div>
+      </div>
+    </div>
+    <div class="s-sec">
+      <h3>Forma</h3>
+      <div class="s-rule">
+        I <strong>love</strong> reading · I <strong>don't like</strong> cooking<br>
+        She <strong>loves</strong> swimming · He <strong>doesn't like</strong> cycling (he/she → -s e doesn't)
+      </div>
+    </div>
+    <div class="s-sec">
+      <h3>Lendo a tabela</h3>
+      <div class="s-ex"><div class="en">Peter loves reading and cycling, but he hates cooking.</div><div class="pt"></div></div>
+      <div class="s-ex"><div class="en">John loves cooking, but he hates reading and swimming.</div><div class="pt"></div></div>
+      <div class="s-ex"><div class="en">Mary loves swimming, but she hates cycling.</div><div class="pt"></div></div>
+      <div class="s-ex"><div class="en">Tom loves cycling. He likes reading and swimming.</div><div class="pt"></div></div>
+    </div>
+    <div class="s-warn">
+      <span class="bad">Errado:</span> I love play. · She like dancing.<br>
+      <span class="good">Certo:</span> I love playing. · She likes dancing.
+    </div>
+  `,
+
+  "Clothes": `
+    <div class="s-intro"><strong>Unit 8 – Vocabulary (SB p.79).</strong> Roupas. Na prova oral: <em>What are you wearing today?</em></div>
+    <div class="s-sec">
+      <h3>Vocabulário</h3>
+      <ul>
+        <li><strong>T-shirt</strong> camiseta · <strong>shirt</strong> camisa · <strong>sweater/jumper</strong> blusa de lã · <strong>hoodie</strong> moletom com capuz</li>
+        <li><strong>jacket</strong> jaqueta · <strong>coat</strong> casaco</li>
+        <li><strong>jeans</strong> calça jeans · <strong>trousers</strong> calça · <strong>shorts</strong> bermuda · <strong>skirt</strong> saia · <strong>dress</strong> vestido</li>
+        <li><strong>shoes</strong> sapatos · <strong>trainers/sneakers</strong> tênis · <strong>boots</strong> botas · <strong>sandals</strong> sandálias · <strong>socks</strong> meias</li>
+        <li><strong>cap</strong> boné · <strong>hat</strong> chapéu · <strong>scarf</strong> cachecol · <strong>gloves</strong> luvas</li>
+        <li><strong>uniform</strong> uniforme · <strong>pyjamas</strong> pijama</li>
+      </ul>
+    </div>
+    <div class="s-sec">
+      <h3>Frases prontas</h3>
+      <div class="s-ex"><div class="en">I'm wearing jeans, a T-shirt and trainers.</div><div class="pt">Estou vestindo...</div></div>
+      <div class="s-ex"><div class="en">I love wearing shorts. I hate wearing a coat.</div><div class="pt">adoro / odeio usar</div></div>
+      <div class="s-ex"><div class="en">On the weekend I wear shorts and a cap.</div><div class="pt">rotina = Simple Present</div></div>
+    </div>
+    <div class="s-warn">
+      <strong>Sempre plural:</strong> jeans, trousers, shorts, glasses, pyjamas.<br>
+      <span class="good">Certo:</span> My jeans <u>are</u> blue.<br>
+      <span class="bad">Falso amigo:</span> trainers = tênis (não "treinadores")
+    </div>
+  `,
+
+  "Must & Mustn't": `
+    <div class="s-intro"><strong>Unit 9 – Who's hungry? (SB p.86).</strong> Regras: o que você tem que fazer e o que é proibido.</div>
+    <div class="s-sec">
+      <h3>Forma</h3>
+      <div class="s-rule">
+        <strong>must</strong> + verbo = tem que (obrigação)<br>
+        <strong>mustn't</strong> (must not) + verbo = é proibido<br>
+        Igual para todas as pessoas: I must, she must, they must.
+      </div>
+    </div>
+    <div class="s-sec">
+      <h3>Regras da escola (prova oral!)</h3>
+      <div class="s-ex"><div class="en">We must wear a uniform.</div><div class="pt">Temos que usar uniforme.</div></div>
+      <div class="s-ex"><div class="en">We must listen to the teacher.</div><div class="pt"></div></div>
+      <div class="s-ex"><div class="en">We must do our homework.</div><div class="pt"></div></div>
+      <div class="s-ex"><div class="en">We mustn't run in the corridors.</div><div class="pt">Não podemos correr nos corredores.</div></div>
+      <div class="s-ex"><div class="en">We mustn't use our phones in class.</div><div class="pt"></div></div>
+      <div class="s-ex"><div class="en">We mustn't be late.</div><div class="pt"></div></div>
+    </div>
+    <div class="s-sec">
+      <h3>Com comida (Unit 9)</h3>
+      <div class="s-ex"><div class="en">You must eat fruit and vegetables.</div><div class="pt"></div></div>
+      <div class="s-ex"><div class="en">You mustn't eat too many sweets.</div><div class="pt"></div></div>
+    </div>
+    <div class="s-warn">
+      <span class="bad">Errado:</span> You must to go. · She musts go. · You must going.<br>
+      <span class="good">Certo:</span> You must go. · She must go.
+    </div>
+  `,
+
+  "Can & Can't (Permission)": `
+    <div class="s-intro"><strong>Unit 9 (SB p.87).</strong> <em>Can</em> para pedir e dar permissão. Na prova oral: <em>Tell what you have permission to do at home.</em></div>
+    <div class="s-sec">
+      <h3>Pedir e responder</h3>
+      <div class="s-rule">
+        <strong>Can I</strong> + verbo ..., please?<br>
+        Yes, you <strong>can</strong>. / No, you <strong>can't</strong>.
+      </div>
+      <div class="s-ex"><div class="en">Can I go to the toilet, please?</div><div class="pt">Posso ir ao banheiro?</div></div>
+      <div class="s-ex"><div class="en">Can I open the window, please? — Yes, you can.</div><div class="pt"></div></div>
+    </div>
+    <div class="s-sec">
+      <h3>O que você pode fazer em casa</h3>
+      <div class="s-ex"><div class="en">I can play video games after my homework.</div><div class="pt"></div></div>
+      <div class="s-ex"><div class="en">I can watch TV on the weekend.</div><div class="pt"></div></div>
+      <div class="s-ex"><div class="en">I can't go to bed late.</div><div class="pt"></div></div>
+      <div class="s-ex"><div class="en">I can't eat sweets before dinner.</div><div class="pt"></div></div>
+    </div>
+    <div class="s-warn">
+      <strong>Can não muda e não leva "to":</strong><br>
+      <span class="bad">Errado:</span> She cans go. · I can to play. · He can plays.<br>
+      <span class="good">Certo:</span> She can go. · I can play.
+    </div>
+    <div class="s-tip"><strong>Dois usos do can:</strong> permissão (Can I go out?) e habilidade (I can swim — usado em "What can you do?").</div>
+  `,
+
+  "Food and Drink": `
+    <div class="s-intro"><strong>Unit 9 – Who's hungry? (SB p.86).</strong> Comidas e bebidas. <em>Hungry</em> = com fome · <em>thirsty</em> = com sede.</div>
+    <div class="s-sec">
+      <h3>Vocabulário</h3>
+      <ul>
+        <li><strong>Drinks:</strong> water (água) · juice (suco) · milk (leite) · tea (chá) · coffee (café) · soda (refrigerante)</li>
+        <li><strong>Fruit:</strong> apple (maçã) · banana · orange (laranja) · grapes (uvas) · strawberries (morangos)</li>
+        <li><strong>Vegetables:</strong> carrot (cenoura) · tomato · potato (batata) · lettuce (alface) · salad (salada)</li>
+        <li><strong>Other:</strong> bread (pão) · cheese (queijo) · eggs (ovos) · rice (arroz) · beans (feijão) · meat (carne) · chicken (frango) · fish (peixe) · pasta (macarrão) · honey (mel)</li>
+        <li><strong>Treats:</strong> cake (bolo) · sweets (doces) · chocolate · biscuits (biscoitos) · ice cream (sorvete)</li>
+      </ul>
+    </div>
+    <div class="s-sec">
+      <h3>Refeições</h3>
+      <ul>
+        <li><strong>breakfast</strong> café da manhã · <strong>lunch</strong> almoço · <strong>dinner</strong> jantar · <strong>snack</strong> lanche</li>
+      </ul>
+      <div class="s-ex"><div class="en">For breakfast I have bread, cheese and milk.</div><div class="pt"></div></div>
+      <div class="s-ex"><div class="en">For lunch I have rice, beans and chicken.</div><div class="pt"></div></div>
+    </div>
+    <div class="s-tip"><strong>De onde vem:</strong> cows → milk · chickens → eggs · bees → honey.</div>
+  `,
+
+  "Speaking Practice": `
+    <div class="s-intro"><strong>Speaking test a partir de 16/11.</strong> Estas são as perguntas do PDF da professora com uma resposta-modelo. Treine <strong>em voz alta</strong> e troque pelas suas informações.</div>
+    <div class="s-sec">
+      <h3>Have got (Unit 6)</h3>
+      <div class="s-ex"><div class="en">Have you got a favorite sport?</div><div class="pt">Yes, I have. It's football.</div></div>
+      <div class="s-ex"><div class="en">Have you got a big family?</div><div class="pt">No, I haven't. I've got a small family.</div></div>
+      <div class="s-ex"><div class="en">Has your family got a car?</div><div class="pt">Yes, it has.</div></div>
+      <div class="s-ex"><div class="en">Have you got a pet? / Has your pet got a long tail?</div><div class="pt">Yes, I have. I've got a dog. Yes, it has.</div></div>
+      <div class="s-ex"><div class="en">Have you got blue eyes?</div><div class="pt">No, I haven't. I've got brown eyes.</div></div>
+    </div>
+    <div class="s-sec">
+      <h3>Describing people</h3>
+      <div class="s-ex"><div class="en">(apontando uma foto) Describe this person.</div><div class="pt">She has got long red hair and blue eyes. She has got freckles.</div></div>
+    </div>
+    <div class="s-sec">
+      <h3>Time and dates (Unit 7)</h3>
+      <div class="s-ex"><div class="en">When is your birthday?</div><div class="pt">It's in ... / It's on ... (in + mês)</div></div>
+      <div class="s-ex"><div class="en">What time do you get up?</div><div class="pt">I get up at half past six.</div></div>
+      <div class="s-ex"><div class="en">What time do you go to school? / go home?</div><div class="pt">I go to school at seven o'clock. I go home at twelve thirty.</div></div>
+      <div class="s-ex"><div class="en">What time do you have your school break?</div><div class="pt">I have my break at quarter to ten.</div></div>
+      <div class="s-ex"><div class="en">When do you do your homework?</div><div class="pt">I do my homework in the afternoon.</div></div>
+      <div class="s-ex"><div class="en">When do you have P.E. lessons?</div><div class="pt">I have P.E. on Tuesday.</div></div>
+      <div class="s-ex"><div class="en">When is summer holiday in your country?</div><div class="pt">It's in December and January.</div></div>
+      <div class="s-ex"><div class="en">When does spring start in your country?</div><div class="pt">It starts in September.</div></div>
+      <div class="s-ex"><div class="en">When does summer start in your country?</div><div class="pt">It starts in December.</div></div>
+      <div class="s-ex"><div class="en">Where do you usually celebrate your birthday?</div><div class="pt">I usually celebrate it at home / at a restaurant.</div></div>
+      <div class="s-ex"><div class="en">What can you do?</div><div class="pt">I can swim, ride a bike and play video games.</div></div>
+    </div>
+    <div class="s-sec">
+      <h3>Present Continuous e clothes (Unit 8)</h3>
+      <div class="s-ex"><div class="en">What are you doing now / right now?</div><div class="pt">I'm talking to you! / I'm doing my English test.</div></div>
+      <div class="s-ex"><div class="en">What is your mom / brother / best friend doing now?</div><div class="pt">My mom is working. My brother is studying.</div></div>
+      <div class="s-ex"><div class="en">What are you wearing today / now?</div><div class="pt">I'm wearing my school uniform and trainers.</div></div>
+      <div class="s-ex"><div class="en">What do you wear on the weekend?</div><div class="pt">I wear shorts, a T-shirt and a cap.</div></div>
+      <div class="s-ex"><div class="en">Do you wear different clothes during the week?</div><div class="pt">Yes, I do. I wear my school uniform.</div></div>
+      <div class="s-ex"><div class="en">What are your favorite clothes?</div><div class="pt">My favorite clothes are my jeans and my hoodie.</div></div>
+      <div class="s-ex"><div class="en">What do you usually wear for a birthday party?</div><div class="pt">I usually wear jeans and a shirt.</div></div>
+      <div class="s-ex"><div class="en">When do you go shopping?</div><div class="pt">I go shopping on the weekend.</div></div>
+      <div class="s-ex"><div class="en">Are you watching any good TV show now?</div><div class="pt">Yes, I am. I'm watching ... / No, I'm not.</div></div>
+      <div class="s-ex"><div class="en">What book are you reading at the moment?</div><div class="pt">I'm reading ... / I'm not reading a book now.</div></div>
+    </div>
+    <div class="s-sec">
+      <h3>Like / love / hate + ing</h3>
+      <div class="s-ex"><div class="en">What clothes do you like / hate wearing?</div><div class="pt">I like wearing shorts. I hate wearing a coat.</div></div>
+      <div class="s-ex"><div class="en">Do you like shopping for clothes? Why or why not?</div><div class="pt">No, I don't. It's boring! / Yes, I do. It's fun.</div></div>
+      <div class="s-ex"><div class="en">Which color do you love or hate wearing?</div><div class="pt">I love wearing blue. I hate wearing pink.</div></div>
+      <div class="s-ex"><div class="en">What do you like / love doing?</div><div class="pt">I love playing football. I like reading.</div></div>
+      <div class="s-ex"><div class="en">What do you hate / don't you like doing?</div><div class="pt">I hate cleaning my room. I don't like cooking.</div></div>
+      <div class="s-ex"><div class="en">Do you like recycling your clothes?</div><div class="pt">Yes, I do. I give my old clothes to my cousin.</div></div>
+    </div>
+    <div class="s-sec">
+      <h3>Must / Can (Unit 9)</h3>
+      <div class="s-ex"><div class="en">Tell me the rules from your school using MUST and MUST NOT.</div><div class="pt">We must wear a uniform. We must listen to the teacher. We mustn't run in the corridors. We mustn't use our phones in class.</div></div>
+      <div class="s-ex"><div class="en">Tell what you have permission to do at home. Use CAN or CAN'T.</div><div class="pt">I can play video games after my homework. I can't go to bed late.</div></div>
+    </div>
+    <div class="s-tip"><strong>Dica de ouro:</strong> nunca responda só "yes" ou "no". Dê a resposta curta (Yes, I have) e acrescente mais uma frase. A professora quer ouvir você falar!</div>
+  `,
 
   "Revolução Técnico-Científica": `
     <div class="s-intro"><strong>Capítulo 11.</strong> Revolução Técnico-Científico-Informacional (RTCI): avanços da ciência e da tecnologia que <strong>transformam a produção</strong> e a <strong>organização do espaço geográfico</strong>.</div>
@@ -3449,9 +3968,16 @@ const TOPIC_ICONS = {
   "Had Better": "bulb",
   "Conditionals": "shuffle",
   "Time Conjunctions": "clock",
-  "Simple Present": "sun",
-  "Adverbs of Frequency": "calendar",
-  "Gadgets & Free Time": "zap",
+  "Have got & Has got": "users",
+  "Describing People": "smile",
+  "What's the Time?": "clock",
+  "Present Continuous": "play",
+  "Like, Love, Hate + ing": "heart",
+  "Clothes": "shirt",
+  "Must & Mustn't": "alert",
+  "Can & Can't (Permission)": "check",
+  "Food and Drink": "utensils",
+  "Speaking Practice": "help",
   "Revolução Técnico-Científica": "zap",
   "Ascensão da China": "trending",
   "União Europeia e BRICS": "link",
@@ -3475,7 +4001,7 @@ const STUDENTS = [
 // Cada bloco = uma prova/matéria de um aluno
 const SETS = [
   { id: "leomat", student: "leo", label: "Matemática", sub: "Decimais e frações", subject: "matemática" },
-  { id: "leo", student: "leo", label: "Inglês", sub: "Unit 5", subject: "inglês" },
+  { id: "leo", student: "leo", label: "Inglês", sub: "Units 6–9", subject: "inglês" },
   { id: "u24", student: "ber", label: "Inglês", sub: "Units 2–4", subject: "inglês" },
   { id: "geo", student: "ber", label: "Geografia", sub: "Cap. 11–12", subject: "geografia" },
   { id: "rev", student: "ber", label: "Inglês", sub: "Revisão · KET", subject: "inglês" }
@@ -3501,9 +4027,16 @@ const TOPIC_SET = {
   "Conditionals": "u24",
   "Time Conjunctions": "u24",
   // Prova do Léo (Units 3–5)
-  "Simple Present": "leo",
-  "Adverbs of Frequency": "leo",
-  "Gadgets & Free Time": "leo",
+  "Have got & Has got": "leo",
+  "Describing People": "leo",
+  "What's the Time?": "leo",
+  "Present Continuous": "leo",
+  "Like, Love, Hate + ing": "leo",
+  "Clothes": "leo",
+  "Must & Mustn't": "leo",
+  "Can & Can't (Permission)": "leo",
+  "Food and Drink": "leo",
+  "Speaking Practice": "leo",
   // Geografia do Bernardo (9º ano)
   "Revolução Técnico-Científica": "geo",
   "Ascensão da China": "geo",
